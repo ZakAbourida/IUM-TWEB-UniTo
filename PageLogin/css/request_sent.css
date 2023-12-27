@@ -1,6 +1,6 @@
 /*
  Foglio di stile per la pagina di login.
- Sviluppata da: Daniel Rabottini - Tommaso Remondino - Zakaria Abourida
+ Sviluppata da: Daniel Rabottini - Tommaso Ramondino - Zakaria Abourida
  Data: 2023/2024
 */
 
@@ -60,22 +60,13 @@
     position: absolute;
     top: 10%;
 }
-/* Definisce lo stile della box di input in cui all'interno vengono inseriti una label e un tag di input*/
-.input-div {
-    display: flex;
-    width: 100%;
-    height: 25%;
-    flex-direction: column;
-    margin:10%;
-    gap: 4px;
-}
-/* Ridefinisce lo stile della label */
-label {
-    color: #101828;
-    font-family: sans-serif;
-    font-size: 1.3vw;
-    font-style: normal;
-    font-weight: 700;
+/* Definisce il paragrafo in viola*/
+.paragraph{
+    color: #590061;
+    font-size: 150%;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 50%;
 }
 /* Ridefinisce lo stile di input */
 input {
@@ -98,8 +89,8 @@ input {
     border-radius: 25px;
     background-color: #590061;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    margin: 15%;
-    padding: 4%;
+    margin: 18%;
+    padding: 16%;
 
     /*Stile per il testo del bottone */
     color: #D2BB72;
@@ -107,7 +98,6 @@ input {
     font-size: 1.3rem;
     font-weight: 700;
 }
-
 /* Definisce lo stile per il nome dalla pagina con il logo all'interno dell'header */
 .title-container {
     /* Layout */
@@ -158,7 +148,7 @@ input {
 .element {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 2.5%;
 }
 /* Rende invisibile la sezione in cui viene utilizzata questa classe */
 .invisible {
@@ -170,3 +160,7 @@ input {
     overflow: hidden;
 }
 
+/* Definisce le dimensioni per le componenti che devono essere responsive per gli schermi più piccoli*/
+@media screen and (max-width: 600px){
+
+}

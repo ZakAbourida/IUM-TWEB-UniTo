@@ -1,6 +1,6 @@
 /*
  Foglio di stile per la pagina di login.
- Sviluppata da: Daniel Rabottini - Tommaso Remondino - Zakaria Abourida
+ Sviluppata da: Daniel Rabottini - Tommaso Ramondino - Zakaria Abourida
  Data: 2023/2024
 */
 
@@ -66,8 +66,8 @@
     width: 100%;
     height: 25%;
     flex-direction: column;
-    margin:10%;
     gap: 4px;
+    margin-bottom: 15%;
 }
 /* Ridefinisce lo stile della label */
 label {
@@ -76,6 +76,14 @@ label {
     font-size: 1.3vw;
     font-style: normal;
     font-weight: 700;
+}
+
+.paragraph{
+    color: #590061;
+    font-size: 120%;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 30%;
 }
 /* Ridefinisce lo stile di input */
 input {
@@ -93,12 +101,12 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 60%;
     height: 2em;
     border-radius: 25px;
     background-color: #590061;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    margin: 15%;
+    margin: 18%;
     padding: 4%;
 
     /*Stile per il testo del bottone */
@@ -107,7 +115,6 @@ input {
     font-size: 1.3rem;
     font-weight: 700;
 }
-
 /* Definisce lo stile per il nome dalla pagina con il logo all'interno dell'header */
 .title-container {
     /* Layout */
@@ -158,7 +165,7 @@ input {
 .element {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 2.5%;
 }
 /* Rende invisibile la sezione in cui viene utilizzata questa classe */
 .invisible {
@@ -170,3 +177,7 @@ input {
     overflow: hidden;
 }
 
+/* Definisce le dimensioni per le componenti che devono essere responsive per gli schermi più piccoli*/
+@media screen and (max-width: 600px){
+
+}
