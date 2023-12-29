@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom, #590061, #000000E5);
+    background: #590061;
 }
 
 /* Definisce lo stile del container per gli elementi principali della pagina (form,pagine di navigazione) */
