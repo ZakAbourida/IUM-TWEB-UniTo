@@ -1,0 +1,183 @@
+/*
+ Foglio di stile per la pagina di login.
+ Sviluppata da: Daniel Rabottini - Tommaso Ramondino - Zakaria Abourida
+ Data: 2023/2024
+*/
+
+
+/* Definisce lo stile dell'intero container per la pagina.
+    !important viene utilizzato per far avere una maggiore priorità di stile a questi parametri personalizzati, rispetto a quelli di Bootstrap.
+ */
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Definisce lo stile dell'header della pagina */
+.header {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #590061, #000000E5);
+}
+
+/* Definisce lo stile del container per gli elementi principali della pagina (form,pagine di navigazione) */
+.container-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+/* Definisce lo stile del container del form */
+.container-form {
+    display: flex;
+    width: 50%;
+    height: auto;
+    justify-content: center;
+    background: #D9D9D9;
+}
+/* Definisce lo stile del container per gli elementi secondari della pagina (info sulla sicurezza) */
+.container-info {
+    display: flex;
+    width: 50%;
+    height: auto;
+    background: #870093;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* Definisce lo stile del form in cui all'interno sono presenti elementi di input, label e bottoni */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 30%;
+    margin: 1%;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+}
+/* Definisce lo stile della box di input in cui all'interno vengono inseriti una label e un tag di input*/
+.input-div {
+    display: flex;
+    width: 100%;
+    height: 25%;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 15%;
+}
+/* Ridefinisce lo stile della label */
+label {
+    color: #101828;
+    font-family: sans-serif;
+    font-size: 1.3vw;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.paragraph{
+    color: #590061;
+    font-size: 120%;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 30%;
+}
+/* Ridefinisce lo stile di input */
+input {
+    display: flex;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    background: #FFF1C4;
+
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+}
+/* Definisce lo stile del bottone per il login */
+.button {
+    /*Stile per il bottone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 2em;
+    border-radius: 25px;
+    background-color: #590061;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    margin: 18%;
+    padding: 4%;
+
+    /*Stile per il testo del bottone */
+    color: #D2BB72;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+/* Definisce lo stile per il nome dalla pagina con il logo all'interno dell'header */
+.title-container {
+    /* Layout */
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    margin-left: 5%;
+
+    /* Style */
+    background: linear-gradient(180deg, #E3C977 66.35%, rgba(0, 0, 0, 0.00) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Definisce le dimensioni del logo contenuto nell'header (width: 42px; height: 44px;) */
+.logo {
+    width: 4%;
+    height: auto;
+    margin: 0 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Definisce il titolo nell'header */
+.football-whispers{
+    font-size: 2em;
+}
+/* Definisce il container dove sono contenute le infomazioni secondarie*/
+.info {
+    width: 90%;
+    height: auto;
+}
+/* Definisce le dimensioni del frame per le immagini informative */
+.circle-frame img {
+    border-radius:50%;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    margin: 12px;
+}
+/* Definisce lo stile  del testo per il lato informativo */
+.text {
+    color: #FFEFBC;
+    font-size: 1.3vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+/* Definisce il container per gli elementi informaivtivi(composti da immagine + testo) */
+.element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5%;
+}
+/* Rende invisibile la sezione in cui viene utilizzata questa classe */
+.invisible {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Definisce le dimensioni per le componenti che devono essere responsive per gli schermi più piccoli*/
+@media screen and (max-width: 600px){
+
+}
