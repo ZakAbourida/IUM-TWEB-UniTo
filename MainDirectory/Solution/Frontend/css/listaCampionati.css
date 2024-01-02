@@ -136,7 +136,7 @@ footer{
     margin: 5%;
     border-radius: 30px;
     position: relative;
-    height: 155vh;
+    height: 93vh;
     padding:2% 2%;
     padding-bottom: 10vh;
 }
@@ -148,6 +148,7 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
 }
 .round-button-w {
     width: 7vw;
@@ -183,3 +184,61 @@ footer{
     text-align: center;
 }
 
+.top-footer{
+    background-image: url("../images/Footer.png") ;
+    background-size: cover;
+    background-repeat: repeat;
+    display: flex;
+    height: 70%;
+    padding: 1% 1%;
+    border: 0.3vh solid #ffffff;
+}
+.top-footer h2{
+    color: #E3C977;
+    font-family: Josefin Sans, 'Source Sans Pro';
+    font-size: 300%;
+    font-weight: bolder;
+    text-align: center;
+}
+.top-footer p{
+    color: white;
+    font-size: 300%;
+}
+.top-footer-info{
+    width: 33.3%;
+}
+.top-footer-info-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top-footer-info-social p{
+    margin: 0.7vh;
+    color: white;
+    text-decoration: underline;
+    font-size: 3vh;
+    font-weight: bolder;
+    text-align: center;
+}
+.bottom-footer{
+    width: 100%;
+    height: 25%;
+    background-color: #590061;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.bottom-footer1{
+    margin: 0.7vh;
+    color: #E3C977;
+    font-size: 200%;
+}
+.bottom-footer2{
+    margin: 0.7vh;
+    color: white;
+    text-decoration: underline;
+    font-size: 200%;
+    font-weight: bolder;
+    text-align: center;
+}

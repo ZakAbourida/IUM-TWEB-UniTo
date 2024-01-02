@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13820be2-3b03-4f0b-a7f9-81a7bd71be9f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/BundesligaLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/Footer2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/LaligaLogo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/Ligue1Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/SerieALogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/SerieBLogo.png.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/premierLeagueLogo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/ListaCampionati.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/ListaCampionati.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/listaCampionati.css" beforeDir="false" afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/listaCampionati.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,25 +32,29 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2aOwZ6Bd2Dck0G2vP7HfCHwzz7x" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
     <option name="sortKey" value="BY_TIME_ASCENDING" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -58,11 +71,14 @@
       <option name="presentableId" value="Default" />
       <updated>1704202986482</updated>
       <workItem from="1704202989060" duration="979000" />
-      <workItem from="1704205181380" duration="1258000" />
+      <workItem from="1704205181380" duration="3279000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
