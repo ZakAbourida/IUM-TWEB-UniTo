@@ -1,0 +1,237 @@
+<!--
+    Autori: Daniel Rabottini - Tommaso Remondino - Zakaria Abourida
+    Data: 2023/2024
+    Descrizione: Pagina contentente l'elenco di tutti i campionati
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista Campionati</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- GoogleLapis -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish%3A400%2C700"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca%3A400%2C700"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend%3A400%2C700"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Exa%3A700"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C700"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Mega%3A700"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans%3A400"/>
+	<!-- CSS -->
+	<link href="css/listaCampionati.css" rel="stylesheet">
+	<!-- Bootstrap -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+	<header class="header">
+		<div class="title-container">
+			<div class="container-logo">
+				<img class="logo" src="images/logo-homepage.png" alt="Logo Football Whisper">
+			</div>
+			<div class="link-container">
+				<nav>
+					<ul class="link-header">
+						<li><a class="altri-a" href="homepage.html">Home</a></li>
+						<li><a class="altri-a" href="canale.html">Canale</a></li>
+						<li><a class="homepage-a" href="campionati.html">Campionati</a></li>
+						<li><a class="altri-a" href="squadre.html">Squadre</a></li>
+						<li><a class="altri-a" href="giocatori.html">Giocatori</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="search-login-container">
+				<button class="search-button">
+					<img class="search-img" src="images/searchbar.png" alt="searchbar">
+				</button>
+				<button class="login-button">
+					<img class="login-img" src="images/login-img.png" alt="login">
+				</button>
+			</div>
+		</div>
+	</header>
+	
+	<div class="container-w-n">
+		<div class="container-w">
+			<div class="wrap-w">
+				<h2>Campionati più cercati</h2>
+				<div class="wrap-wn-items">
+					<div class="container-single-w img">
+						<button class="round-button-w">
+							<img class="round-button-w img" src="images/premierLeagueLogo.jpg" alt="premier league logo">
+						</button>
+					</div>
+					<div><h3>PREMIER LEAGUE</h3></div>
+				</div>
+				<div class="wrap-wn-items">
+					<div class="container-single-w img">
+						<button class="round-button-w">
+							<img class="round-button-w img" src="images/LaligaLogo.jpg" alt="la liga logo">
+						</button>
+					</div>
+					<div><h3>LA LIGA</h3></div>
+				</div>
+				<div class="wrap-wn-items">
+					<div class="container-single-w img">
+						<button class="round-button-w">
+							<img class="round-button-w img" src="images/SerieALogo.png" alt="serie A logo">
+						</button>
+					</div>
+					<div><h3>SERIE A</h3></div>
+				</div>
+				<div class="wrap-wn-items">
+					<div class="container-single-w img">
+						<button class="round-button-w">
+							<img class="round-button-w img" src="images/BundesligaLogo.png" alt="bundesliga logo">
+						</button>
+					</div>
+					<div><h3>BUNDESLIGA</h3></div>
+				</div>
+				<div class="wrap-wn-items">
+					<div class="container-single-w img">
+						<button class="round-button-w">
+							<img class="round-button-w img" src="images/SerieBLogo.png.jpeg" alt="serie B logo">
+						</button>
+					</div>
+					<div><h3>SERIE B</h3></div>
+				</div>
+				<div class="wrap-wn-items">
+					<div class="container-single-w img">
+						<button class="round-button-w">
+							<img class="round-button-w img" src="images/Ligue1Logo.png" alt="ligue 1 logo">
+						</button>
+					</div>
+					<div><h3>LIGUE 1</h3></div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="container-n">
+			<div class="wrap-n">
+				<h2>Tutti i campionati</h2>
+				<div class="wrap-n3-items">
+					<div><h4>#</h4></div>
+					<div><h4>Nome</h4></div>
+				</div>
+				<div class="wrap-n1-items">
+					<div><h3>1</h3></div>
+					<div><h3>Premier League</h3></div>
+				</div>
+				<div class="wrap-n2-items">
+					<div><h3>2</h3></div>
+					<div><h3>La Liga</h3></div>
+				</div>
+				<div class="wrap-n1-items">
+					<div><h3>3</h3></div>
+					<div><h3>Serie A</h3></div>
+				</div>
+				<div class="wrap-n2-items">
+					<div><h3>4</h3></div>
+					<div><h3>Bundesliga</h3></div>
+				</div>
+				<div class="wrap-n1-items">
+					<div><h3>5</h3></div>
+					<div><h3>Brasileirao Serie A</h3></div>
+				</div>
+				<div class="wrap-n2-items">
+					<div><h3>6</h3></div>
+					<div><h3>Ligue 1</h3></div>
+				</div>
+				<div class="wrap-n1-items">
+					<div><h3>7</h3></div>
+					<div><h3>Major League Soccer</h3></div>
+				</div>
+				<div class="wrap-n2-items">
+					<div><h3>8</h3></div>
+					<div><h3>Primera Division</h3></div>
+				</div>
+				<div class="wrap-n1-items">
+					<div><h3>9</h3></div>
+					<div><h3>Eredivise</h3></div>
+				</div>
+				<div class="wrap-n2-items">
+					<div><h3>10</h3></div>
+					<div><h3>Primeira Liga</h3></div>
+				</div>
+				<div class="wrap-n1-items">
+					<div><h3>11</h3></div>
+					<div><h3>SuperLig</h3></div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<footer>
+		<div class="top-footer">
+			<div class="top-footer-info">
+				<h2>FOOTBALL WHISPERS</h2>
+				<p>Da noi tutte le statistiche dei giocatori e delle squadre. Non perderti neanche i nostri pronostici!</p>
+			</div>
+			<div class="top-footer-info">
+				<h2>SOCIAL</h2>
+				<div class="top-footer-info-social">
+					<p>Facebook</p>
+					<p>Instagram</p>
+					<p>Twitter</p>
+				</div>
+			</div>
+			<div class="top-footer-info">
+				<h2>CONTATTI</h2>
+				<p>Via Roma 2, Torino, TO 10100, IT</p>
+				<p>info@footballwhispers.com  +39 347 3085745</p>
+			</div>
+		</div>
+		<div class="bottom-footer">
+			<p class="bottom-footer1">@2021 Copyright: </p>
+			<p class="bottom-footer2">footballwhispers.com</p>
+		</div>
+	</footer>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
