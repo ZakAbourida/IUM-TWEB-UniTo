@@ -446,13 +446,13 @@ footer{
 }
 
 .top-footer{
-    background-image: url("../images/Footer.png.png") ;
+    background-image: url("../images/Footer.png") ;
     background-size: cover;
     background-repeat: repeat;
     display: flex;
     height: 70%;
     padding: 1% 1%;
-    border: 0.3vh solid #ffffff;
+    opacity: 0.90;
 }
 .top-footer h2{
     color: #E3C977;
