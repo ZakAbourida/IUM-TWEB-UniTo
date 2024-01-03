@@ -164,6 +164,7 @@ footer{
     /*overflow-y: auto;*/
     margin-bottom: 2vh;
     padding:2% 2%;
+    overflow: hidden;
 }
 .container-single-w{
     background-color: #E3C977;
