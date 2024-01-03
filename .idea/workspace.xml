@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13820be2-3b03-4f0b-a7f9-81a7bd71be9f" name="Changes" comment="Creata la sezione dell'elenco campionati in Lista Campionati">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/ListaCampionati.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/ListaCampionati.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/listaCampionati.css" beforeDir="false" afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/listaCampionati.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/homepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +64,7 @@
       <workItem from="1704202989060" duration="979000" />
       <workItem from="1704205181380" duration="3279000" />
       <workItem from="1704275965067" duration="2135000" />
+      <workItem from="1704288043488" duration="128000" />
     </task>
     <servers />
   </component>
