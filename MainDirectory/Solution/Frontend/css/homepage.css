@@ -458,13 +458,13 @@ footer{
 .top-footer h2{
     color: #E3C977;
     font-family: Josefin Sans, 'Source Sans Pro';
-    font-size: 300%;
+    font-size: 4.5vh;
     font-weight: bolder;
     text-align: center;
 }
 .top-footer p{
     color: white;
-    font-size: 300%;
+    font-size: 3vh;
 }
 .top-footer-info{
     width: 33.3%;
