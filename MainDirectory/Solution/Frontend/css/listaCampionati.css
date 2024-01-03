@@ -173,7 +173,7 @@ footer{
     text-align: center;
 }
 .container-w h2{
-    font-size: 1.8vw;
+    font-size: 230%;
     font-weight: bold;
     color: #000000;
     font-family: Lexend Mega, 'Source Sans Pro';
@@ -242,7 +242,7 @@ footer{
 }
 
 .container-n h2{
-    font-size: 2vw;
+    font-size: 280%;
     font-weight: bold;
     color: #ffffff;
     font-family: Lexend Mega, 'Source Sans Pro';
@@ -251,7 +251,7 @@ footer{
     margin-left: 2vh;
 }
 .container-n h3{
-    font-size: 2vw;
+    font-size: 220%;
     color: #ffffff;
     font-family: Lexend Mega, 'Source Sans Pro';
     white-space: nowrap;
