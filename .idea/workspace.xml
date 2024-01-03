@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13820be2-3b03-4f0b-a7f9-81a7bd71be9f" name="Changes" comment="Creata la sezione dell'elenco campionati in Lista Campionati">
-      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/Canale.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/canale.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/Utente1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/Utente2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/images/Utente3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/Canale.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/Canale.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/canale.css" beforeDir="false" afterPath="$PROJECT_DIR$/MainDirectory/Solution/Frontend/css/canale.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +79,7 @@
       <workItem from="1704202989060" duration="979000" />
       <workItem from="1704205181380" duration="3279000" />
       <workItem from="1704275965067" duration="2135000" />
-      <workItem from="1704288043488" duration="636000" />
+      <workItem from="1704288043488" duration="2622000" />
     </task>
     <servers />
   </component>
