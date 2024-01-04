@@ -366,7 +366,7 @@ footer{
     height: 7vh;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     gap: 10em;
 }
 .wrap-n2-items{
@@ -374,7 +374,7 @@ footer{
     height: 7vh;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     gap: 10em;
 }
 .wrap-n3-items{
@@ -382,7 +382,7 @@ footer{
     height: 5vh;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     gap: 10em;
     margin-bottom: 2vh;
 }
