@@ -173,7 +173,6 @@ footer{
     display: table;
 }
 .container-chat img {
-    margin-right: 3vw;
     border-radius: 50%;
     float: left;
     cursor: pointer;
@@ -185,7 +184,7 @@ footer{
 }
 .container-chat img.right {
     float: right;
-    margin-left: 3vw;
+    margin-left: 2.5vw;
     margin-right:0;
 }
 .time-right {
@@ -207,25 +206,21 @@ footer{
     margin-left: 2vh;
 }
 .box-testo-sx{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     text-align: left;
     box-sizing: border-box;
     word-wrap: break-word;
     overflow-y: auto;
 }
 .box-testo-dx{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     text-align: right;
     box-sizing: border-box;
     word-wrap: break-word;
     overflow-y: auto;
 }
-
-
-
-
 .container-pp-rp{
     list-style-type: none;
     width: 100%;
@@ -253,7 +248,7 @@ footer{
     border-radius: 30px;
     padding:1% 1%;
     overflow-y: auto;
-    height: 100vh;
+    height: 93vh;
     margin-bottom: 2vh;
 }
 .container-single-pp{
@@ -270,17 +265,17 @@ footer{
     margin-left: 2vh;
 }
 .single-pp-img{
-    margin: 2vh;
+    margin: 1.5vh;
 }
 .single-pp-img img{
-    width: 6vh;
-    height: auto;
+    width: 12vh;
+    height: 11vh;
 }
 .single-pp p{
     margin-top: 3.5vh;
     color: #000000;
     font-family: Josefin Sans, 'Source Sans Pro';
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     text-align: left;
 }
 .container-rp{
@@ -291,14 +286,20 @@ footer{
 }
 .container-rp h2{
     font-size: 2vw;
-    font-weight: 700;
+    font-weight: bold;
     color: #ffffff;
     font-family: Lexend Mega, 'Source Sans Pro';
     white-space: nowrap;
     align-content: center;
 }
-
-
+.container-rp h4{
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #000000;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    align-content: center;
+}
 .wrap-rp{
     background-color: #ffffff;
     margin: 1%;
@@ -321,3 +322,31 @@ footer{
     display: flex;
     flex-direction: column;
 }
+.container-testo {
+    border: 0.5vh solid #999999;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-left: 1vw;
+    font-size: 2vw;
+    width: 72vw;
+    height: 10vh;
+}
+.button-invia{
+    border: 0.5vh solid #D2BB72;
+    width: 15vw;
+    height: 10vh;
+    background-color: #E3C977;
+    font-size: 4vh;
+    font-weight: bold;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    margin-left: 1.5vw;
+    border-radius: 30px;
+}
+.container-testo-button{
+    width: 100%;
+    height: 13vh;
+    display:flex;
+    align-items: flex-start;
+
+}
+
