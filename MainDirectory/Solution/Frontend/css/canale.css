@@ -190,15 +190,15 @@ footer{
 .time-right {
     float: right;
     color: #aaa;
-    font-size: 2vh;
+    font-size: 2.2vh;
 }
 .time-left {
     float: left;
     color: #999;
-    font-size: 2vh;
+    font-size: 2.2vh;
 }
 .container-chat p{
-    font-size: 1.5vw;
+    font-size: 1vw;
     color: #ffffff;
     font-family: Lexend Mega, 'Source Sans Pro';
     white-space: nowrap;
@@ -216,9 +216,9 @@ footer{
 .box-testo-dx{
     width: 80%;
     height: 80%;
+    float: right;
     text-align: right;
     box-sizing: border-box;
-    word-wrap: break-word;
     overflow-y: auto;
 }
 .container-pp-rp{
@@ -253,7 +253,7 @@ footer{
 }
 .container-single-pp{
     background-color: #E3C977;
-    margin: 8%;
+    margin: 3%;
     border-radius: 30px;
     padding: 1% 1%;
     align-content: center;
@@ -262,20 +262,20 @@ footer{
 }
 .single-pp{
     display: flex;
-    margin-left: 2vh;
+    margin-left: 0.5vh;
 }
 .single-pp-img{
-    margin: 1.5vh;
+    margin: 0.5vh;
 }
 .single-pp-img img{
-    width: 12vh;
-    height: 11vh;
+    width: 10vh;
+    height: 9vh;
 }
 .single-pp p{
-    margin-top: 3.5vh;
+    margin-top: 2vh;
     color: #000000;
     font-family: Josefin Sans, 'Source Sans Pro';
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     text-align: left;
 }
 .container-rp{
@@ -328,7 +328,7 @@ footer{
     border-radius: 15px;
     margin-left: 1vw;
     font-size: 2vw;
-    width: 72vw;
+    width: 77vw;
     height: 10vh;
 }
 .button-invia{
