@@ -305,5 +305,20 @@ footer{
     justify-content: center;
     align-items: center;
 }
+.text-wrapped{
+    width: auto;
+    top: 0;
+    left: 0;
+    text-shadow: 0px 15px 10px #00000066;
+    font-family: "Lexend Deca-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 3vw;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    margin-bottom: 3vh;
+}
 
 
