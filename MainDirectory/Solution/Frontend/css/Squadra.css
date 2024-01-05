@@ -389,13 +389,12 @@ footer{
     margin-top: 2vh;
     margin-right: 5%;
     border-radius: 30px;
-    position: relative;
     height: 100%;
     padding:2% 2%;
 }
 
 .title-n{
-    padding: 2% 2%;
+    padding: 5% 8%;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -411,13 +410,14 @@ footer{
 .body-n{
     display: flex;
     flex-direction: column;
-    height: 90%;
+    height: 112vh;
+    overflow-y: auto;
 }
 .pattern-n{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3% 3%;
+    padding: 8% 1%;
     height: 10%;
 }
 .pattern1-n{
@@ -428,17 +428,16 @@ footer{
     height: 10%;
 }
 .numero-n{
-    width: 5%;
+    width: 25%;
 }
 .voto-n{
     width: 20%;
 }
 .nome-n{
-    width: 75%;
+    width: 65%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 10vh;
 }
 
 .pattern-n p{
@@ -454,20 +453,4 @@ footer{
     line-height: 1.25;
     color: white;
     font-family: Lexend, 'Source Sans Pro';
-}
-
-.nome-n-img{
-    width: 40%;
-    height: 100%;
-    padding: 0% 7%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    overflow: hidden;
-    margin: 3%;
-}
-.nome-n-img img{
-    width: 250%;
-    height: auto;
 }
