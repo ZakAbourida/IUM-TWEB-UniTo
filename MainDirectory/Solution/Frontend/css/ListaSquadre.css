@@ -83,8 +83,8 @@ header{
     object-fit: contain;
     vertical-align: top;
     flex-shrink: 0;
-    height: 10vh;
-    width: 10vh;
+    height: 7vh;
+    width: 7vh;
 }
 .login-img{
     cursor: pointer;
