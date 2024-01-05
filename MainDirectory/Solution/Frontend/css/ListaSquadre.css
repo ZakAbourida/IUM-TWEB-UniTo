@@ -8,12 +8,6 @@ header{
     height: 10%;
     width: 100%;
 }
-footer{
-    height: 12%;
-    width: 100%;
-    background-color: white;
-}
-
 .homepage-a{
     color: #e3c976;
     font-size: 2.2vw;
@@ -99,27 +93,29 @@ footer{
     flex-shrink: 0;
     height: 10vh;
     width: 10vh;
-}
+}footer{
+     height: 13vh;
+     width: 100%;
+ }
 .top-footer{
     background-image: url("../images/Footer.png") ;
     background-size: cover;
     background-repeat: repeat;
     display: flex;
-    height: 70%;
-    padding: 1% 1%;
-    border: 0.3vh solid #ffffff;
-    opacity: 0.85;
+    height: 80%;
+    padding: 0.5%;
+    opacity: 0.90;
 }
 .top-footer h2{
     color: #E3C977;
     font-family: Josefin Sans, 'Source Sans Pro';
-    font-size: 4vh;
+    font-size: 2.5vh;
     font-weight: bolder;
     text-align: center;
 }
 .top-footer p{
     color: white;
-    font-size: 3vh;
+    font-size: 1.5vh;
 }
 .top-footer-info{
     width: 33.3%;
@@ -129,37 +125,51 @@ footer{
     align-items: center;
     justify-content: center;
 }
+.top-footer-info-posti{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .top-footer-info-social p{
     margin: 0.7vh;
     color: white;
     text-decoration: underline;
-    font-size: 3vh;
+    font-size: 1.5vh;
+    font-weight: bolder;
+    text-align: center;
+}
+.top-footer-info-posti p{
+    color: white;
+    text-decoration: underline;
+    font-size: 1.5vh;
     font-weight: bolder;
     text-align: center;
 }
 .bottom-footer{
     width: 100%;
-    height: 25%;
+    height: 20%;
     background-color: #590061;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding:0.5%
 }
 .bottom-footer1{
-    margin: 0.7vh;
+    margin:0.7vh;
     color: #E3C977;
-    font-size: 200%;
+    font-size: 150%;
+    text-align: center;
 }
 .bottom-footer2{
-    margin: 0.7vh;
+    margin:0.7vh;
     color: white;
     text-decoration: underline;
-    font-size: 200%;
+    font-size: 150%;
     font-weight: bolder;
     text-align: center;
 }
-
 .navbar {
     margin-left: 70%;
     width: 20%;
