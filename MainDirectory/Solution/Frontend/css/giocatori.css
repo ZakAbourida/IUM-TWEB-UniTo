@@ -239,7 +239,7 @@ footer{
     margin-left: 2vh;
 }
 .container-ris h4{
-    font-size: 1.5vw;
+    font-size: 1.4vw;
     color: #ffffff;
     font-family: Lexend Mega, 'Source Sans Pro';
     white-space: nowrap;
@@ -261,7 +261,9 @@ footer{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 10em;
+    gap: 8em;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 .wrap-ris2-items{
     background: #590061;
@@ -269,7 +271,9 @@ footer{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 10em;
+    gap: 8em;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 .wrap-ris3-items{
     background: #590061;
@@ -278,6 +282,8 @@ footer{
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 10em;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 .wrap-ris4-items{
     border-radius: 0px 0px 30px 30px;
