@@ -587,7 +587,7 @@ footer{
     gap: 5vh;
 }
 .wrap-stat{
-    background-color: #870093;
+    background-color: #590061;
     margin: 1vh;
     border-radius: 30px;
     position: relative;
@@ -683,7 +683,7 @@ footer{
     display: flex;
 }
 .statistiche-w2-img{
-    background: #590061;
+    background: #870093;
     border-radius: 30px;
     padding: 1%;
     height: 85%;
