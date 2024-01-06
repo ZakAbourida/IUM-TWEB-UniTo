@@ -144,13 +144,13 @@ footer{
 .bottom-footer1{
     margin: 0.7vh;
     color: #E3C977;
-    font-size: 200%;
+    font-size: 0.7vw;
 }
 .bottom-footer2{
     margin: 0.7vh;
     color: white;
     text-decoration: underline;
-    font-size: 200%;
+    font-size: 0.7vw;
     font-weight: bolder;
     text-align: center;
 }
@@ -177,31 +177,30 @@ footer{
     height: 100%;
     padding: 2% 2%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: baseline;
     text-align: left;
 }
 .logo-container{
     padding: 1% 1%;
-    height: 60%;
-    width: 20%;
+    height: auto;
+    width: auto;
 }
 .logo-container img{
-    height: 100%;
-    width: 100%;
+    height: 15vw;
+    width: 15vw;
+    padding-left: 2vw;
 }
 .nome-container{
-    height: 100%;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1% 1%;
+    height: auto;
+    width: 10vw;
+    margin-bottom: 2vh;
+    text-align: center;
 }
 .nome-container h1{
     height: 100%;
     width: 100%;
-    font-size: 450%;
+    font-size: 4vh;
     font-weight: 600;
     line-height: 1.25;
     color: #d2bb72;
@@ -218,7 +217,7 @@ footer{
     line-height: 1.25;
     color: #ffffff;
     font-family: Lexend, 'Source Sans Pro';
-    font-size: 300%;
+    font-size: 1.5vw;
 }
 .wrap-w2 {
     background-color: #4e0055;
@@ -245,7 +244,8 @@ footer{
     line-height: 1.25;
     color: #ffffff;
     font-family: Lexend, 'Source Sans Pro';
-    font-size: 400%;
+    font-size: 2.5vw;
+    font-weight: bold;
 }
 .navbar-w2 {
     border-radius: 20px;
@@ -257,7 +257,7 @@ footer{
 }
 .navbar-w2 a {
     float: left;
-    font-size: 100%;
+    font-size: 1vw;
     color: white;
     text-align: center;
     padding: 2% 2%;
@@ -269,7 +269,7 @@ footer{
 }
 
 .dropdown .dropbtn {
-    font-size: 300%;
+    font-size: 1.4vw;
     border: none;
     outline: none;
     color: white;
@@ -295,7 +295,7 @@ footer{
     float: none;
     color: black;
     padding: 5% 5%;
-    font-size: 250%;
+    font-size: 2vw;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -357,7 +357,7 @@ footer{
     color: black;
     font-family: Lexend, 'Source Sans Pro';
     text-align: left;
-    font-size: 200%;
+    font-size: 2vw;
 }
 
 .tendina-w2 button {
@@ -368,7 +368,7 @@ footer{
     cursor: pointer;
 }
 .tendina-single-w2 h3{
-    font-size: 220%;
+    font-size: 1.7vw;
     font-weight: 500;
     line-height: 1.25;
     color: black;
@@ -401,7 +401,7 @@ footer{
     height: 10%;
 }
 .title-n h2{
-    font-size: 300%;
+    font-size: 2.4vw;
     font-weight: 500;
     line-height: 1.25;
     color: white;
@@ -441,7 +441,7 @@ footer{
 }
 
 .pattern-n p{
-    font-size: 240%;
+    font-size: 1.2vw;
     font-weight: 500;
     line-height: 1.25;
     color: white;
