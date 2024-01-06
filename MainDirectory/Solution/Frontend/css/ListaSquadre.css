@@ -159,29 +159,29 @@ header{
 .bottom-footer1{
     margin:0.7vh;
     color: #E3C977;
-    font-size: 150%;
+    font-size: 1.1vw;
     text-align: center;
 }
 .bottom-footer2{
     margin:0.7vh;
     color: white;
     text-decoration: underline;
-    font-size: 150%;
+    font-size: 1.1vw;
     font-weight: bolder;
     text-align: center;
 }
 .navbar {
     margin-left: 70%;
     width: 20%;
+    height: 4vh;
     background-color: rgb(128, 128, 128);
 }
 
 .navbar a {
     float: left;
-    font-size: 100%;
+    font-size: 1vw;
     color: white;
     text-align: center;
-    padding: 2% 2%;
     text-decoration: none;
 }
 
@@ -190,11 +190,11 @@ header{
 }
 
 .dropdown .dropbtn {
-    font-size: 300%;
+    font-size: 1.4vw;
+    text-align: center;
     border: none;
     outline: none;
     color: white;
-    padding: 5% 0%;
     background-color: inherit;
     font-family: inherit;
 }
@@ -215,8 +215,8 @@ header{
 .dropdown-content a {
     float: none;
     color: black;
-    padding: 5% 5%;
-    font-size: 250%;
+    padding: 1%;
+    font-size: 2vw;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -261,7 +261,7 @@ header{
 .wrap-w-chat-nome h1{
     color: #e3c976;
     font-family: Lexend Deca, 'Source Sans Pro';
-    font-size: 350%;
+    font-size: 2.5vw;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 .wrap-w-chat-info{
@@ -269,7 +269,7 @@ header{
     text-align: left;
 }
 .wrap-w-chat-info p{
-    font-size: 200%;
+    font-size: 1.5vw;
     font-weight: 400;
     color: #000000;
     font-family: Lexend, 'Source Sans Pro';
@@ -277,7 +277,7 @@ header{
 
 
 .container-w h2{
-    font-size: 300%;
+    font-size: 1.5vw;
     font-weight: bold;
     color: #000000;
     font-family: Lexend Mega, 'Source Sans Pro';
@@ -350,7 +350,7 @@ header{
     margin-left: 2vh;
 }
 .container-n h3{
-    font-size: 300%;
+    font-size: 1.2vw;
     color: #ffffff;
     font-family: Lexend Mega, 'Source Sans Pro';
     white-space: nowrap;
@@ -358,7 +358,7 @@ header{
     margin-left: 2%;
 }
 .container-n h4{
-    font-size: 1.5vw;
+    font-size: 1vw;
     color: #ffffff;
     font-family: Lexend Mega, 'Source Sans Pro';
     white-space: nowrap;
