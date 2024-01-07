@@ -172,7 +172,7 @@ footer{
 }
 .container-advSearch{
     width: 100%;
-    height: fit-content;
+    height: auto;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -205,7 +205,7 @@ footer{
     align-items: center;
 }
 .wrap-advS-item{
-    height: 14vh;
+    height: auto;
     width: 12vw;
     padding: 1vh;
     text-align: center;
@@ -219,7 +219,7 @@ footer{
 }
 .container-ris{
     width: 100%;
-    height: 100vh;
+    height: auto;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -252,7 +252,7 @@ footer{
 .wrap-ris{
     border-radius: 30px;
     position: relative;
-    height: 30vh;
+    height: auto;
     width: 99%;
     padding:0.5%;
     margin: 1vh;
@@ -299,9 +299,7 @@ footer{
     background: #590061;
     height: auto;
     display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    gap: 10em;
+    justify-content: center;
 }
 .button-mostra{
     border-radius: 0px 0px 30px 30px;
@@ -328,9 +326,8 @@ footer{
     line-height: normal;
     white-space: nowrap;
     margin-bottom: 3vh;
+    margin-top: 3vh;
 }
-
-
 .statistiche-w2{
     width: 80%;
     display: flex;
@@ -342,7 +339,8 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
+    width: 110%;
+    height: 6vh;
     background-color: rgb(128, 128, 128);
 }
 .navbar-w2 a {
@@ -352,11 +350,9 @@ footer{
     padding: 2% 2%;
     text-decoration: none;
 }
-
 .dropdown {
     float: left;
 }
-
 .dropdown .dropbtn {
     font-size: 1.7vw;
     border: none;
@@ -366,11 +362,9 @@ footer{
     background-color: inherit;
     font-family: inherit;
 }
-
 .navbar-w2 a:hover, .dropdown:hover .dropbtn {
     background-color: darkgray;
 }
-
 .dropdown-content1 {
     display: none;
     position: absolute;
@@ -379,7 +373,6 @@ footer{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
 .dropdown-content1 a {
     float: none;
     color: black;
@@ -481,7 +474,7 @@ footer{
 }
 .container-w h3{
     height: 7vh;
-    font-size: 2vh;
+    font-size: 2.5vh;
     font-weight: bold;
     margin-left: 2vh;
     line-height: 1.25;
@@ -491,8 +484,7 @@ footer{
 .container-n h3{
     height: 4vh;
     text-align: left;
-    font-size: 2vh;
-    font-weight: bold;
+    font-size: 2.5vh;
     margin-top: 2vh;
     margin-left: 2vh;
     line-height: 1.25;
@@ -511,14 +503,14 @@ footer{
 }
 
 .container-w h4{
-    font-size: 1.5vh;
+    font-size: 2vh;
     margin-left: 2vh;
     line-height: 1.25;
     color: #ffffff;
     font-family: Lexend Exa, 'Source Sans Pro';
 }
 .container-n h4{
-    font-size: 1.5vh;
+    font-size: 2vh;
     margin-left: 1vh;
     line-height: 1.25;
     text-align: left;
@@ -540,6 +532,7 @@ footer{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    min-height: min-content;
 }
 .wrap-n-item{
     margin: 1vh;
