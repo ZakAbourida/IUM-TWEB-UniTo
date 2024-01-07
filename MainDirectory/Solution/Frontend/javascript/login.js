@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mostraDiv3 = document.getElementById('mostra-div-3')
     const div3 = document.getElementById('div-3')
     const mostraDiv1 = document.getElementById('mostra-div-1')
+    const accedi = document.getElementById('accedi-btn')
 
 
     mostraDiv2.addEventListener('click', function(event) {
@@ -53,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
             div3.classList.remove('hidden');
             div3.classList.add('visible');
         }
+    });
+
+    accedi.addEventListener('click', function() {
+        window.location.href = 'homepage.html'; // Cambia 'pagina_di_destinazione.html' con l'URL della pagina a cui desideri collegarti
     });
 
 });
