@@ -205,11 +205,10 @@ footer{
     align-items: center;
 }
 .wrap-advS-item{
-    height: auto;
-    width: auto;
-    margin-bottom: 1vh;
+    height: 14vh;
+    width: 12vw;
     padding: 1vh;
-    align-items: center;
+    text-align: center;
 }
 .wrap-filtri{
     width: 100%;
