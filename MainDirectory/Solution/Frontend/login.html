@@ -20,6 +20,8 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Javascript -->
+    <script src="javascript/login.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -38,7 +40,7 @@
           assistive di identificare rapidamente il contenuto centrale della pagina.
     -->
     <main class="container-flex">
-        <div class="container-form">
+        <div id="div-1" class="visible container-form">
             <!--
              Form: composto dai campi "Email" e "Password", dove è stato aggiunto il tag aria-label, dove
                    viene utilizzato per fornire una descrizione accessibile per un campo di input.
@@ -47,8 +49,8 @@
             -->
             <form class="form">
                 <div class="input-div">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Insert email" aria-label="Insert email"
+                    <label for="email1">Email:</label>
+                    <input type="email" id="email1" name="email" placeholder="Insert email" aria-label="Insert email"
                            required>
                 </div>
                 <div class="input-div">
@@ -76,9 +78,36 @@
             -->
             <nav class="sign-box">
                 <a class="sign-box-a1" href="register.html" aria-label="Link for sign-in">Registrati</a>
-                <a href="forgot-password.html" aria-label="Link for resume password">Hai dimenticato la password?</a>
+                <a id="mostra-div-2" href="#" aria-label="Link for resume password">Hai dimenticato la password?</a>
             </nav>
         </div>
+
+        <!-- Div che cambia quando si clicca il link "Hai dimenticato la password?" -->
+        <div id="div-2" class="hidden container-form">
+
+            <form class="form">
+                <div>
+                    <p class="paragraph">Inserisci l'email per resettare la password</p>
+                </div>
+                <div class="input-div">
+                    <label for="email2">Email:</label>
+                    <input type="email" id="email2" name="email" placeholder="Insert email" aria-label="Insert email"
+                           required>
+                </div>
+                <button id="mostra-div-3" type="button" class="button" aria-label="Invia">Invia</button>
+            </form>
+        </div>
+
+        <!-- Div che cambia quando si clicca il link "Hai dimenticato la password?" -->
+        <div id="div-3" class=" hidden container-form">
+            <form class="form">
+                <div>
+                    <p class="paragraph">L'email è stata inviata!</p>
+                </div>
+                <button id="mostra-div-1" type="button" class="button" aria-label="TornaIndietro">Torna indietro</button>
+            </form>
+        </div>
+
         <!--
           Aside: il tag aside è stato utilizzato per definire questa sezione come collegata al contenuto princiapale ma che si trova , anche graficamente,
                  in una zona separata.

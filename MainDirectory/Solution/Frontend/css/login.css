@@ -39,6 +39,19 @@
     justify-content: center;
     background: #D9D9D9;
 }
+.visible{
+    display: flex;
+}
+.hidden{
+    display: none;
+}
+.paragraph{
+    color: #590061;
+    font-size: 120%;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 30%;
+}
 /* Definisce lo stile del container per gli elementi secondari della pagina (info sulla sicurezza) */
 .container-info {
     display: flex;
