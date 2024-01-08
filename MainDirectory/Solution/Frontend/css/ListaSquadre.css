@@ -97,7 +97,7 @@ header{
 }
 
 .wrap-barra-ricerca{
-    height: 14vh;
+    height: 12vh;
     width: 100%;
     display: flex;
     justify-content: end;
