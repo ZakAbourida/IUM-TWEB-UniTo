@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const opzioniLogin = document.getElementById('opzioni-login');
     const mostraOpzioni = document.getElementById('mostra-opzioni');
 
+    const containerW1 = document.getElementById('wrap-w-items1');
+    const containerW2 = document.getElementById('wrap-w-items2');
+    const mostraAltroW = document.getElementById('btn-switch-w');
+
+    const containerN1 = document.getElementById('wrap-n-items1');
+    const containerN2 = document.getElementById('wrap-n-items2');
+    const mostraAltroN = document.getElementById('btn-switch-n');
+
 
     mostraBarra.addEventListener('click', function() {
         if(!barraRicerca.classList.contains('visible')) {
@@ -23,6 +31,34 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             opzioniLogin.classList.remove('visible');
             opzioniLogin.classList.add('hidden');
+        }
+    });
+
+    mostraAltroW.addEventListener('click', function () {
+        if(!containerW2.classList.contains('visible-wn')) {
+            containerW1.classList.remove('visible-wn');
+            containerW1.classList.add('hidden-wn');
+            containerW2.classList.remove('hidden-wn');
+            containerW2.classList.add('visible-wn');
+        } else {
+            containerW2.classList.remove('visible-wn');
+            containerW2.classList.add('hidden-wn');
+            containerW1.classList.remove('hidden-wn');
+            containerW1.classList.add('visible-wn');
+        }
+    });
+
+    mostraAltroN.addEventListener('click', function () {
+        if(!containerN2.classList.contains('visible-wn')) {
+            containerN1.classList.remove('visible-wn');
+            containerN1.classList.add('hidden-wn');
+            containerN2.classList.remove('hidden-wn');
+            containerN2.classList.add('visible-wn');
+        } else {
+            containerN2.classList.remove('visible-wn');
+            containerN2.classList.add('hidden-wn');
+            containerN1.classList.remove('hidden-wn');
+            containerN1.classList.add('visible-wn');
         }
     });
 

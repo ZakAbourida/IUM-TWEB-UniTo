@@ -126,6 +126,7 @@ header{
 .hidden{
     display: none;
 }
+
 .opzioni-login-container{
     margin: 0.5%;
     width: 20vh;
@@ -213,9 +214,14 @@ header{
 .wrap-wn-items{
     height: 141vh;
     /*overflow-y: auto;*/
-    margin-bottom: 2vh;
     padding:2% 2%;
     overflow: hidden;
+}
+.visible-wn{
+    display: block;
+}
+.hidden-wn{
+    display: none;
 }
 .container-single-w{
     background-color: #E3C977;
@@ -267,6 +273,7 @@ header{
 .container-wn-btn{
     display: flex;
     justify-content: center;
+    padding: 1.5% 0%;
 }
 .whisper-altro-btn{
     position: absolute;
@@ -298,7 +305,9 @@ header{
     background-color: #590061;
     margin: 2%;
     border-radius: 30px;
-    padding:0.7% 0.7%;
+    position: relative;
+    height: 155vh;
+    padding:0.4% 0.7%;
 }
 .container-single-n{
     background-color: #E3C977;
@@ -351,7 +360,6 @@ header{
     align-items: center;
     justify-content: center;
     background-color: #e3c976;
-    margin-bottom: 2vh;
 }
 
 
