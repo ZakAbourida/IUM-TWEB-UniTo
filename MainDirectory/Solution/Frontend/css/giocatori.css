@@ -760,3 +760,75 @@ footer{
     color: black;
     font-family: Lexend, 'Source Sans Pro';
 }
+.table-ris {
+    width: 99%;
+    border-collapse: collapse;
+    margin: 1vh;
+}
+.table-ris th,
+.table-ris td {
+    padding: 0.5%;
+    border: 1px solid #590061;
+    font-size: 1.4vw;
+    color: #ffffff;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: nowrap;
+    text-align: left;
+}
+
+.table-ris th {
+    background: #590061;
+}
+
+.table-ris .row-ris1 {
+    background: #8C0098;
+}
+
+.table-ris .row-ris2,
+.table-ris .row-ris4,
+.table-ris .row-ris6,
+.table-ris .row-ris8,
+.table-ris .row-ris10 {
+    background: #590061;
+}
+
+.table-ris .row-ris3,
+.table-ris .row-ris5,
+.table-ris .row-ris7,
+.table-ris .row-ris9 {
+    background: #590061;
+    gap: 10em;
+}
+
+.table-ris .row-ris11 {
+    background: #590061;
+    border-radius: 0px 0px 30px 30px;
+}
+
+.table-ris .row-ris5 {
+    border-radius: 30px 30px 0px 0px;
+}
+
+.table-ris .row-ris6,
+.table-ris .row-ris7,
+.table-ris .row-ris8,
+.table-ris .row-ris9,
+.table-ris .row-ris10 {
+    justify-content: center;
+}
+/* per applicare colori alternati alle righe del corpo della tabella:
+    - primo pari
+    - secondo dispari
+*/
+.table-ris tbody tr:nth-child(even) {
+    background: #590061;
+}
+
+.table-ris tbody tr:nth-child(odd) {
+    background: #8C0098;
+}
+
+
+
+
+
