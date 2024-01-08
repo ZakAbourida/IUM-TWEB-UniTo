@@ -23,6 +23,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownContent6 = document.getElementById('dropdownContent6');
     /*const contentToMove6 = document.querySelector('.content-to-move6');*/
 
+    const barraRicerca = document.getElementById('barra-ricerca');
+    const mostraBarra = document.getElementById('mostra-barra');
+
+    const opzioniLogin = document.getElementById('opzioni-login');
+    const mostraOpzioni = document.getElementById('mostra-opzioni');
+
+    mostraBarra.addEventListener('click', function() {
+        if(!barraRicerca.classList.contains('visible')) {
+            barraRicerca.classList.remove('hidden');
+            barraRicerca.classList.add('visible');
+        } else {
+            barraRicerca.classList.remove('visible');
+            barraRicerca.classList.add('hidden');
+        }
+    });
+
+    mostraOpzioni.addEventListener('click', function() {
+        if(!opzioniLogin.classList.contains('visible')) {
+            opzioniLogin.classList.remove('hidden');
+            opzioniLogin.classList.add('visible');
+        } else {
+            opzioniLogin.classList.remove('visible');
+            opzioniLogin.classList.add('hidden');
+        }
+    });
+
     toggleBtn1.addEventListener('click', function() {
         const tendinaAltezza = dropdownContent1.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato

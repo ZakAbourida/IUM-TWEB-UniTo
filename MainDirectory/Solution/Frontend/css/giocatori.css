@@ -30,6 +30,7 @@ header{
     display: flex;
     box-sizing: border-box;
     padding: 5% 0%;
+    padding-bottom: 1%;
     height: 10%;
     align-items: center;
     flex-shrink: 0;
@@ -93,6 +94,66 @@ header{
     height: 10vh;
     width: 10vh;
 }
+
+.wrap-barra-ricerca{
+    height: 14vh;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.barra-ricerca-container{
+    height: 100%;
+    float: right;
+    /*display: flex;*/
+    justify-content: center;
+    padding: 2% 0%;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+}
+#input-ricerca{
+    height: 6vh;
+    width: 40vh;
+    border-radius: 30px;
+    font-size: 250%;
+    font-weight: 700;
+    font-family: Lexend Deca, 'Source Sans Pro';
+    padding-left: 8%;
+}
+
+.visible{
+    display: flex;
+}
+.hidden{
+    display: none;
+}
+
+.opzioni-login-container{
+    margin: 0.5%;
+    width: 20vh;
+}
+.wrap-opzioni-login{
+    background-color: #e3c976;
+    padding: 5% 5%;
+    margin: 2%;
+    position: relative;
+    flex-direction: column;
+    border-radius: 30px;
+    justify-content: space-between;
+}
+.wrap-opzioni-login button{
+    padding: 5% 0%;
+    border-radius: 30px;
+    font-size: 300%;
+    font-weight: 700;
+    font-family: Lexend Deca, 'Source Sans Pro';
+    border: none;
+    background-color: #e3c976;
+    cursor: pointer;
+}
+.wrap-opzioni-login button:hover{
+    background-color: #DDBB4E;
+}
+
+
 footer{
     height: 13vh;
     width: 100%;
