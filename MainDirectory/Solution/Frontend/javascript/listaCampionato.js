@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function MostraAncora() {
-    console.log("MOSTRA ANCORA: Chiamata effettuata");
     if (container1 && container2) {
         if (container1.style.display === 'block') {
             container1.style.display = 'none';

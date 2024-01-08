@@ -298,7 +298,6 @@ footer{
     width: 100%;
     display: flex;
     height: 100%;
-    margin-top: 1%;
     align-items: flex-start;
 }
 .container-w{
@@ -399,6 +398,7 @@ footer{
 
 
 .container-n{
+    display: none;
     width: 70%;
     height: 200%;
     justify-content: center;
@@ -430,7 +430,7 @@ footer{
 }
 .wrap-n{
     background-color: #590061;
-    margin: 3%;
+    margin: 1%;
     border-radius: 30px;
     height: 100%;
     padding:1% 1%;
