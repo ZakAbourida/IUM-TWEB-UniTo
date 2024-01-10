@@ -303,7 +303,7 @@ footer{
     margin-top: 0.5%;
 }
 .container-pp{
-    width: 35%;
+    width: 25%;
     height: 100%;
     justify-content: center;
     text-align: center;
@@ -353,7 +353,7 @@ footer{
     text-align: left;
 }
 .container-rp{
-    width: 100%;
+    width: 75%;
     height: 100%;
     justify-content: center;
     text-align: center;
@@ -400,27 +400,66 @@ footer{
     border: 0.5vh solid #999999;
     background-color: #ffffff;
     border-radius: 15px;
-    margin-left: 1vw;
     font-size: 2vw;
-    width: 77vw;
+    width: 74%;
     height: 10vh;
 }
 .button-invia{
     border: 0.5vh solid #D2BB72;
-    width: 15vw;
+    width: 23%;
     height: 10vh;
+    margin-left: 3%;
     background-color: #E3C977;
     font-size: 4vh;
     font-weight: bold;
     font-family: Lexend Mega, 'Source Sans Pro';
-    margin-left: 1.5vw;
     border-radius: 30px;
 }
 .container-testo-button{
-    width: 100%;
+    width: 98%;
+    margin: 1%;
     height: 13vh;
     display:flex;
     align-items: flex-start;
-
 }
 
+#message_container li{
+    border-radius: 20px;
+    margin-bottom: 1vh;
+    padding: 1% 3%;
+    font-size: 300%;
+    font-weight: 700;
+    font-family: Lexend Deca, 'Source Sans Pro';
+}
+
+#listaUtenti li{
+    background-color: #E3C977;
+    border-radius: 20px;
+    margin: 1vh;
+    padding: 2% 3%;
+    font-size: 400%;
+    font-weight: 700;
+    font-family: Lexend Deca, 'Source Sans Pro';
+}
+
+
+/* Parte del submit poi da levare*/
+#form_container{
+    height: 40vh;
+}
+.row{
+    height: 10vh;
+    margin: 5%;
+}
+.row label{
+    font-size: 300%;
+    text-align: left;
+}
+.row input{
+    height: 7vh;
+    font-size: 400%;
+}
+.row button{
+    font-size: 300%;
+}
+/* fine parte da levare*/
