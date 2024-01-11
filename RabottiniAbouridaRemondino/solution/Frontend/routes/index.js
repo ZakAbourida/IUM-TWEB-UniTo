@@ -1,16 +1,17 @@
 var express = require('express');
 const path = require("path");
 var router = express.Router();
+const axios = require('axios');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname, '../public/login.html'));
 });
 
-router.get('/loadHP', async function (req, res, next) {
+router.get('/loadHP',  async function (req, res, next) {
   try {
     // Esegui la richiesta GET al server del database
-    const response = await axios.get('http://localhost:3000/');
+    const response = await axios.get('http://localhost:3001/loadHP');
 
     // Ottenere i dati desiderati dalla risposta
     const stadio = response.data.stadio;
@@ -19,8 +20,8 @@ router.get('/loadHP', async function (req, res, next) {
     const risultato = response.data.risultato;
     const elencoMarcatori = response.data.elenco_marcatori;
 
-    // Ora puoi passare questi dati alla tua pagina HTML
-    res.sendFile(path.join(__dirname, '../public/login.html'), {
+    // Ora puoi passare questi dati alla pagina HTML
+    res.sendFile(path.join(__dirname, '../public/homepage.html'), {
       stadio,
       nomeSquadraCasa,
       nomeSquadraFuoriCasa,

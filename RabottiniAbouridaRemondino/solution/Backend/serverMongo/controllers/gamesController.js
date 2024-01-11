@@ -11,9 +11,9 @@ const createGame = async (gameData) => {
     }
 };
 
-const getGames = async () => {
+const getGame = async () => {
     try {
-        return await Games.find();
+        return await Games.findOne();
     } catch (error) {
         throw error;
     }
@@ -52,11 +52,22 @@ const findGamesByCompetitionId = async (competitionId) => {
     }
 };
 
+const getRecentGames = async () => {
+    try {
+        // Ordina per data in ordine decrescente (dalla più recente alla meno recente)
+        // e limita il risultato alle ultime 20 partite
+        return await Games.find().sort({ date: -1 }).limit(20);
+    } catch (error) {
+        throw error;
+    }
+};
+
 module.exports = {
     createGame,
-    getGames,
+    getGame,
     getGameById,
     updateGame,
     deleteGame,
     findGamesByCompetitionId,
+    getRecentGames
 };

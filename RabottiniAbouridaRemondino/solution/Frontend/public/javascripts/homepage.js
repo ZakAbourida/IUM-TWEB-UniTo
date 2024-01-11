@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const containerN2 = document.getElementById('wrap-n-items2');
     const mostraAltroN = document.getElementById('btn-switch-n');
 
-
     mostraBarra.addEventListener('click', function() {
         if(!barraRicerca.classList.contains('visible')) {
             barraRicerca.classList.remove('hidden');
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    onSubmit('DOMContentLoaded');
+    onSubmit();
 });
 function sendAxiosQuery(url, stadio, nome_sq_casa, nome_sq_fuori, risultato, elenco_marcatori) {
     // Costruisci l'URL con i parametri della query
@@ -94,18 +93,17 @@ function sendAxiosQuery(url, stadio, nome_sq_casa, nome_sq_fuori, risultato, ele
             document.getElementById('results').innerHTML = "Error occurred";
         });
 }
-function onSubmit(event) {
+function onSubmit() {
     // Ottieni i valori dei campi del modulo HTML
-    const stadio = document.getElementById('stadio');
-    const nome_sq_casa = document.getElementById('nome_squadra_casa');
-    const nome_sq_fuori = document.getElementById('nome_squadra_fuori_casa');
-    const risultato = document.getElementById('risultato');
-    const elenco_marcatori = document.getElementById('marcatori');
+    const stadio = document.getElementById('stadio').value;
+    const nome_sq_casa = document.getElementById('nome_squadra_casa').value;
+    const nome_sq_fuori = document.getElementById('nome_squadra_fuori_casa').value;
+    const risultato = document.getElementById('risultato').value;
+    const elenco_marcatori = document.getElementById('marcatori').value;
 
     console.log("Caricamento dati in homepage");
     // Chiamata a sendAxiosQuery con i valori dei campi
     sendAxiosQuery('/loadHP', stadio, nome_sq_casa, nome_sq_fuori, risultato, elenco_marcatori);
-    // prevent the form from reloading the page (normal behaviour for forms)
-    event.preventDefault()
+
 }
 
