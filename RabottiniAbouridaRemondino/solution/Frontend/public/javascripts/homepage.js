@@ -63,3 +63,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+async function testDatabaseConnection() {
+    try {
+        const databaseServerURL = 'http://localhost:3001';npm
+
+        // Effettua una richiesta GET al server del database
+        const response = await axios.get(`${databaseServerURL}/test`);
+
+        // Visualizza la risposta sulla console
+        console.log('Connection to the database server successful:', response.data);
+
+        // Puoi fare ulteriori operazioni o manipolazioni con la risposta se necessario
+
+        return response.data;
+    } catch (error) {
+        console.error('Error connecting to the database server:', error);
+
+        // Puoi gestire l'errore in base alle tue esigenze
+
+        throw error;
+    }
+}
+
+// Esempio di chiamata alla funzione
+testDatabaseConnection()
+    .then(result => {
+        console.log('Test successful:', result);
+    })
+    .catch(error => {
+        console.error('Test failed:', error);
+    });
+
+
+

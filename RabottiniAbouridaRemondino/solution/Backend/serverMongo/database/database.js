@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoDB = 'mongodb://localhost:27017';
+const mongoDB = 'mongodb://localhost:27017/DynamicDatabase';
 mongoose.Promise = global.Promise;
 connection = mongoose.connect(mongoDB, {
     useNewUrlParser: true,
