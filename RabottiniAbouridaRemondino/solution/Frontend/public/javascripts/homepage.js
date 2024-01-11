@@ -62,37 +62,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    onSubmit();
+
 });
-async function testDatabaseConnection() {
-    try {
-        const databaseServerURL = 'http://localhost:3001';npm
-
-        // Effettua una richiesta GET al server del database
-        const response = await axios.get(`${databaseServerURL}/test`);
-
-        // Visualizza la risposta sulla console
-        console.log('Connection to the database server successful:', response.data);
-
-        // Puoi fare ulteriori operazioni o manipolazioni con la risposta se necessario
-
-        return response.data;
-    } catch (error) {
-        console.error('Error connecting to the database server:', error);
-
-        // Puoi gestire l'errore in base alle tue esigenze
-
-        throw error;
-    }
+function sendAxiosQuery(url, data) {
+    axios.post(url , data)
+        .then (function (dataR) {
+            document.getElementById('results').innerHTML= "The result is: "+dataR.data;
+        })
+        .catch( function (response) {
+            alert (response.toJSON());
+        })
 }
-
-// Esempio di chiamata alla funzione
-testDatabaseConnection()
-    .then(result => {
-        console.log('Test successful:', result);
-    })
-    .catch(error => {
-        console.error('Test failed:', error);
-    });
-
-
-
+function onSubmit(event) {
+    // The .serializeArray() method creates a JavaScript array of objects
+    // https://api.jquery.com/serializearray/
+    const formArray= $("form").serializeArray();
+    const data={};
+    for (let index in formArray){
+        data[formArray[index].name]= formArray[index].value;
+    }
+    // const data = JSON.stringify($(this).serializeArray());
+    sendAxiosQuery('/', data);
+    // prevent the form from reloading the page (normal behaviour for forms)
+    event.preventDefault()
+}
