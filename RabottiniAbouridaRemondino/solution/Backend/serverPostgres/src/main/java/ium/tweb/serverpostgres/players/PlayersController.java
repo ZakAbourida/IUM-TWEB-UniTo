@@ -2,6 +2,7 @@ package ium.tweb.serverpostgres.players;
 
 import ium.tweb.serverpostgres.competitions.Competitions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +20,10 @@ public class PlayersController {
     @PostMapping("/load_players")
     public void savePlayers(@RequestBody List<Players> players) {
         playersService.savePlayers(players);
+    }
+
+    @GetMapping("/get_role")
+    public List<String> getRole(){
+        return playersService.getRole();
     }
 }

@@ -16,4 +16,8 @@ public class PlayersService {
     public void savePlayers(List<Players> players){
         playersRepository.saveAll(players);
     }
+
+    public List<String> getRole(){
+       return playersRepository.getRole();
+    }
 }

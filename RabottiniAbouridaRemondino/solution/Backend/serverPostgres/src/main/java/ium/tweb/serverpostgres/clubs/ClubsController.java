@@ -20,4 +20,9 @@ public class ClubsController {
     public void saveClubs(@RequestBody List<Clubs> clubs) {
         clubsService.saveClubs(clubs);
     }
+
+    @PostMapping("/list_teams")
+    public List<String> ListTeamsByCompetitionName(@RequestBody String CompetitionName){
+        return clubsService.listTeamsByCompetitionName(CompetitionName);
+    }
 }

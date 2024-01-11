@@ -16,4 +16,10 @@ public class CompetitionsService  {
     public void saveCompetitions(List<Competitions> competitions){
         competitionsRepository.saveAll(competitions);
     }
+
+    public List<String> listCompetitions(){
+        return competitionsRepository.listCompetitions();
+    }
+
+
 }

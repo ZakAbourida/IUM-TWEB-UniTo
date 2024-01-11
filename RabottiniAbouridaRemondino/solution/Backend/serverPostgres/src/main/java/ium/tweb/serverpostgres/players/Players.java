@@ -3,6 +3,9 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 @Entity
 @Table(name = "players")
@@ -61,7 +64,7 @@ public class Players {
     private BigDecimal highest_market_value_in_eur;
 
     @Column(name = "contract_expiration_date")
-    private LocalDate contract_expiration_date;
+    private String contract_expiration_date;
 
     @Column(name = "agent_name")
     private String agent_name;
@@ -218,11 +221,11 @@ public class Players {
         this.highest_market_value_in_eur = highest_market_value_in_eur;
     }
 
-    public LocalDate getContract_expiration_date() {
+    public String getContract_expiration_date() {
         return contract_expiration_date;
     }
 
-    public void setContract_expiration_date(LocalDate contract_expiration_date) {
+    public void setContract_expiration_date(String contract_expiration_date) {
         this.contract_expiration_date = contract_expiration_date;
     }
 
@@ -264,5 +267,17 @@ public class Players {
 
     public void setCurrent_club_name(String current_club_name) {
         this.current_club_name = current_club_name;
+    }
+
+    public LocalDateTime getParsedContractExpirationDate() {
+        if (contract_expiration_date != null && !contract_expiration_date.isEmpty()) {
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                return LocalDateTime.parse(contract_expiration_date, formatter);
+            } catch (DateTimeParseException e) {
+
+            }
+        }
+        return null;
     }
 }

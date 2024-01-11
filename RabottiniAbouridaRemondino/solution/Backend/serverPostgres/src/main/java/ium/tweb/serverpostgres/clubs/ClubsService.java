@@ -17,4 +17,8 @@ public class ClubsService {
     public void saveClubs(List<Clubs> clubs){
         clubsRepository.saveAll(clubs);
     }
+
+    public List<String> listTeamsByCompetitionName(String CompetitionName){
+        return clubsRepository.listTeamsByCompetitionName(CompetitionName);
+    }
 }
