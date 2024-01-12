@@ -14,11 +14,15 @@ public class ClubsService {
         this.clubsRepository = clubsRepository;
     }
 
-    public void saveClubs(List<Clubs> clubs){
+    public void saveClubs(List<Clubs> clubs) {
         clubsRepository.saveAll(clubs);
     }
 
-    public List<String> listTeamsByCompetitionName(String CompetitionName){
+    public List<String> listTeamsByCompetitionName(String CompetitionName) {
         return clubsRepository.listTeamsByCompetitionName(CompetitionName);
+    }
+
+    public List<String> listTeams() {
+        return clubsRepository.listTeams();
     }
 }

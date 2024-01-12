@@ -11,4 +11,7 @@ public interface ClubsRepository extends JpaRepository<Clubs, Long> {
 
     @Query("SELECT DISTINCT c.name FROM Clubs c JOIN Competitions comp ON c.domestic_competition_id = comp.competition_id WHERE comp.name = :CompetitionName")
     List<String> listTeamsByCompetitionName(String CompetitionName);
+
+    @Query(value = "SELECT DISTINCT c.name FROM Clubs c ORDER BY c.name ASC")
+    List<String> listTeams();
 }

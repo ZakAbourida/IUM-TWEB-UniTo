@@ -1,6 +1,7 @@
 package ium.tweb.serverpostgres.playervaluations;
 
 import ium.tweb.serverpostgres.competitions.Competitions;
+import ium.tweb.serverpostgres.players.Players;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,8 +17,11 @@ public class PlayerValuationsController {
     public PlayerValuationsController(PlayerValuationsService playerValuationsService) {
         this.playerValuationsService = playerValuationsService;
     }
+
     @PostMapping("/load_playervaluations")
     public void savePlayerValuations(@RequestBody List<PlayerValuations> playerValuations) {
         playerValuationsService.savePlayerValuations(playerValuations);
     }
+
+
 }
