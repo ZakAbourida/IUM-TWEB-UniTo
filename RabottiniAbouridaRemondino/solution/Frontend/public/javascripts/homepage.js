@@ -74,6 +74,21 @@ function sendAxiosQuery(url) {
             document.getElementById('risultato1').innerText = response.data.aggregate.toString();
 
         })
+
+   /* axios.get(url)
+        .then(function (response) {
+            console.log(response.data);
+            console.log(response.data.length);
+            const data = response.data[i].stadium;
+
+            for (let i = 0; i < response.data.length; i++) {
+                document.getElementById(`stadio${i + 1}`).innerHTML = response.data[i].stadium.toString();
+                document.getElementById(`nome_squadra_casa${i + 1}`).innerHTML = response.data[i].home_club_name.toString();
+                document.getElementById(`nome_squadra_fuori_casa${i + 1}`).innerHTML = response.data[i].away_club_name.toString();
+                document.getElementById(`risultato${i + 1}`).innerHTML = response.data[i].aggregate.toString();
+            }
+        })*/
+        
         .catch(function (error) {
             // Gestisci gli errori
             console.error('Error:', error);
