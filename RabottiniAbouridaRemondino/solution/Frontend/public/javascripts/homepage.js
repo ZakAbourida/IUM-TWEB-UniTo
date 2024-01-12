@@ -63,29 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     onSubmit();
 });
-function sendAxiosQuery(url, stadio, nome_sq_casa, nome_sq_fuori, risultato, elenco_marcatori) {
-    // Costruisci l'URL con i parametri della query
-    const queryParameters = {
-        stadio,
-        nome_sq_casa,
-        nome_sq_fuori,
-        risultato
-    };
-
+function sendAxiosQuery(url) {
     axios.get(url)
         .then(function (response) {
-            // Gestisci la risposta come necessario
-            queryParameters.stadio = response.data.stadium;
-            queryParameters.nome_sq_casa = response.data.home_club_name;
-            queryParameters.nome_sq_fuori = response.data.away_club_name;
-            queryParameters.risultato = response.data.aggregate;
+            const data = response.data;
 
-            document.getElementById('stadio').innerText = queryParameters.stadio.toString();
-            document.getElementById('nome_squadra_casa').innerText = queryParameters.nome_sq_casa.toString();
-            document.getElementById('nome_squadra_fuori_casa').innerText = queryParameters.nome_sq_fuori.toString();
-            document.getElementById('risultato').innerText = queryParameters.risultato.toString();
+            document.getElementById('stadio1').innerText = response.data.stadium.toString();
+            document.getElementById('nome_squadra_casa1').innerText = response.data.home_club_name.toString();
+            document.getElementById('nome_squadra_fuori_casa1').innerText = response.data.away_club_name.toString();
+            document.getElementById('risultato1').innerText = response.data.aggregate.toString();
 
-            console.log("Risultati:"+queryParameters);
         })
         .catch(function (error) {
             // Gestisci gli errori
@@ -96,15 +83,9 @@ function sendAxiosQuery(url, stadio, nome_sq_casa, nome_sq_fuori, risultato, ele
         });
 }
 function onSubmit() {
-    // Ottieni i valori dei campi del modulo HTML
-    const stadio = document.getElementById('stadio').value;
-    const nome_sq_casa = document.getElementById('nome_squadra_casa').value;
-    const nome_sq_fuori = document.getElementById('nome_squadra_fuori_casa').value;
-    const risultato = document.getElementById('risultato').value;
-
     console.log("Caricamento dati in homepage");
     // Chiamata a sendAxiosQuery con i valori dei campi
-    sendAxiosQuery('/loadHP', stadio, nome_sq_casa, nome_sq_fuori, risultato);
+    sendAxiosQuery('/loadHP');
 
 }
 

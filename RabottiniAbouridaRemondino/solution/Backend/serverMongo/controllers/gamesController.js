@@ -56,7 +56,7 @@ const getRecentGames = async () => {
     try {
         // Ordina per data in ordine decrescente (dalla più recente alla meno recente)
         // e limita il risultato alle ultime 20 partite
-        return await Games.find().sort({ date: -1 }).limit(20);
+        return await Games.find().sort({ date: -1 }).limit(10);
     } catch (error) {
         throw error;
     }
