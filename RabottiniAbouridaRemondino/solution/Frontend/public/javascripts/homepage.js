@@ -69,21 +69,23 @@ function sendAxiosQuery(url, stadio, nome_sq_casa, nome_sq_fuori, risultato, ele
         stadio,
         nome_sq_casa,
         nome_sq_fuori,
-        risultato,
-        elenco_marcatori
+        risultato
     };
 
-    axios.get(url, { params: queryParameters })
+    axios.get(url)
         .then(function (response) {
             // Gestisci la risposta come necessario
-            console.log(response.data);
+            queryParameters.stadio = response.data.stadium;
+            queryParameters.nome_sq_casa = response.data.home_club_name;
+            queryParameters.nome_sq_fuori = response.data.away_club_name;
+            queryParameters.risultato = response.data.aggregate;
 
-            // Aggiorna i risultati nel DOM
-            document.getElementById('stadio').innerHTML = response.data.stadio;
-            document.getElementById('nome_squadra_casa').innerHTML = response.data.nome_sq_casa;
-            document.getElementById('nome_squadra_fuori_casa').innerHTML = response.data.nome_sq_fuori;
-            document.getElementById('risultato').innerHTML = response.data.risultato;
-            document.getElementById('marcatori').innerHTML = response.data.elenco_marcatori;
+            document.getElementById('stadio').innerText = queryParameters.stadio.toString();
+            document.getElementById('nome_squadra_casa').innerText = queryParameters.nome_sq_casa.toString();
+            document.getElementById('nome_squadra_fuori_casa').innerText = queryParameters.nome_sq_fuori.toString();
+            document.getElementById('risultato').innerText = queryParameters.risultato.toString();
+
+            console.log("Risultati:"+queryParameters);
         })
         .catch(function (error) {
             // Gestisci gli errori
@@ -99,11 +101,10 @@ function onSubmit() {
     const nome_sq_casa = document.getElementById('nome_squadra_casa').value;
     const nome_sq_fuori = document.getElementById('nome_squadra_fuori_casa').value;
     const risultato = document.getElementById('risultato').value;
-    const elenco_marcatori = document.getElementById('marcatori').value;
 
     console.log("Caricamento dati in homepage");
     // Chiamata a sendAxiosQuery con i valori dei campi
-    sendAxiosQuery('/loadHP', stadio, nome_sq_casa, nome_sq_fuori, risultato, elenco_marcatori);
+    sendAxiosQuery('/loadHP', stadio, nome_sq_casa, nome_sq_fuori, risultato);
 
 }
 

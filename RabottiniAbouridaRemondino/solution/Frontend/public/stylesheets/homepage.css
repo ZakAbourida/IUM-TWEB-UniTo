@@ -476,6 +476,7 @@ header{
     justify-content: center;
 }
 .match-rp-risultato img{
+    display: none;
     margin-right: 8%;
     margin-left: 8%;
     margin-bottom: 2%;
