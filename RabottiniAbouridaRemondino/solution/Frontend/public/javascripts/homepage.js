@@ -78,9 +78,6 @@ function sendAxiosQuery(url) {
 
     axios.get(url)
         .then(function (response) {
-            console.log(response.data);
-
-            console.log(response.data[9].stadium);
 
             for (let i = 0; i < response.data.length; i++) {
                 document.getElementById(`stadio${1+i}`).innerHTML = response.data[i].stadium.toString();
