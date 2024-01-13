@@ -5,8 +5,8 @@ const gameController = require('../controllers/gamesController');
 router.get('/loadHP', async function (req, res, next) {
   try {
     // Chiamata alla nuova funzione getRecentGames nel tuo controller
-    //const recentGame = await gameController.getRecentGames();   <-- FUNZIONE PER PRENDERE LE ULTIME 10 PARTITE
-    const recentGame = await gameController.getGame();
+    const recentGame = await gameController.getRecentGames();   //<-- FUNZIONE PER PRENDERE LE ULTIME 10 PARTITE
+    //const recentGame = await gameController.getGame();           //<-- FUNZIONE PER PRENDERE UNA SOLA PARTITA
 
     // Puoi ora utilizzare recentGames come dati da restituire al client
     res.json(recentGame);

@@ -51,12 +51,20 @@ const findGamesByCompetitionId = async (competitionId) => {
         throw error;
     }
 };
-
 const getRecentGames = async () => {
     try {
-        // Ordina per data in ordine decrescente (dalla più recente alla meno recente)
-        // e limita il risultato alle ultime 20 partite
-        return await Games.find().sort({ date: -1 }).limit(10);
+        // Seleziona solo i campi desiderati e filtra le partite con dati inconsistenti
+        // $ne              --> (not equal) serve per escludere documenti in cui il campo è nullo o indefinito
+        // $exist: true     --> controlla che il campo esista
+        const recentGames = await Games.find({
+            stadium: { $ne: null, $exists: true },
+            home_club_name: { $ne: null, $exists: true },
+            away_club_name: { $ne: null, $exists: true },
+            aggregate: { $ne: null, $exists: true }
+        }).sort({ date: -1 }).limit(10)
+            .select('stadium home_club_name away_club_name aggregate');
+
+        return recentGames;
     } catch (error) {
         throw error;
     }

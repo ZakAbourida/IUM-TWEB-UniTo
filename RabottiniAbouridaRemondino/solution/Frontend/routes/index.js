@@ -9,11 +9,10 @@ router.get('/', function(req, res, next) {
 });
 router.get('/loadHP',  async function (req, res, next) {
   try {
-    // Esegui la richiesta GET al server del database
+    // Richiesta GET al server del database
     const response = await axios.get('http://localhost:3001/loadHP');
 
-    console.log(response.data);
-    // Ora puoi passare questi dati alla pagina HTML
+    // Ora si possono passare i dati alla pagina HTML
     res.json(response.data);
 
   } catch (error) {

@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
     onSubmit();
 });
 function sendAxiosQuery(url) {
-    axios.get(url)
+    /* FUNZIONE PER STAMPARE UNA SOLA PARTITA
+     axios.get(url)
         .then(function (response) {
             const data = response.data;
 
@@ -73,22 +74,21 @@ function sendAxiosQuery(url) {
             document.getElementById('nome_squadra_fuori_casa1').innerText = response.data.away_club_name.toString();
             document.getElementById('risultato1').innerText = response.data.aggregate.toString();
 
-        })
+        })*/
 
-   /* axios.get(url)
+    axios.get(url)
         .then(function (response) {
             console.log(response.data);
-            console.log(response.data.length);
-            const data = response.data[i].stadium;
+
+            console.log(response.data[9].stadium);
 
             for (let i = 0; i < response.data.length; i++) {
-                document.getElementById(`stadio${i + 1}`).innerHTML = response.data[i].stadium.toString();
-                document.getElementById(`nome_squadra_casa${i + 1}`).innerHTML = response.data[i].home_club_name.toString();
-                document.getElementById(`nome_squadra_fuori_casa${i + 1}`).innerHTML = response.data[i].away_club_name.toString();
-                document.getElementById(`risultato${i + 1}`).innerHTML = response.data[i].aggregate.toString();
+                document.getElementById(`stadio${1+i}`).innerHTML = response.data[i].stadium.toString();
+                document.getElementById(`nome_squadra_casa${1+i}`).innerHTML = response.data[i].home_club_name.toString();
+                document.getElementById(`nome_squadra_fuori_casa${1+i}`).innerHTML = response.data[i].away_club_name.toString();
+                document.getElementById(`risultato${1+i}`).innerHTML = response.data[i].aggregate.toString();
             }
-        })*/
-        
+        })
         .catch(function (error) {
             // Gestisci gli errori
             console.error('Error:', error);
