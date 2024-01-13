@@ -1,3 +1,8 @@
+/*
+The Players class defines the table with its columns for the Postgres server.
+Since the annotations are sufficient to understand the context of the code, every line of code will not be commented out.
+*/
+
 package ium.tweb.serverpostgres.players;
 
 import jakarta.persistence.Column;
@@ -15,6 +20,7 @@ import java.time.format.DateTimeParseException;
 @Table(name = "players")
 public class Players {
 
+    // Columns related to the table.
     @Id
     @Column(name = "player_id")
     private Long player_id;
@@ -85,10 +91,11 @@ public class Players {
     @Column(name = "current_club_name")
     private String current_club_name;
 
-    // Constructor without parameters
+    //Empty constructor
     public Players() {
     }
 
+    //All getter and setter
     public long getPlayer_id() {
         return player_id;
     }
@@ -273,6 +280,11 @@ public class Players {
         this.current_club_name = current_club_name;
     }
 
+
+    /*
+    Method that manages the date format of 'contract_expiration_date',
+    because when loading the data on the server this format gave problems when using the LocalDateTime type without modifying the format.
+    */
     public LocalDateTime getParsedContractExpirationDate() {
         if (contract_expiration_date != null && !contract_expiration_date.isEmpty()) {
             try {

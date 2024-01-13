@@ -1,3 +1,8 @@
+/*
+The Competitions class defines the table with its columns for the Postgres server.
+Since the annotations are sufficient to understand the context of the code, every line of code will not be commented out.
+*/
+
 package ium.tweb.serverpostgres.competitions;
 
 import jakarta.persistence.Column;
@@ -8,6 +13,8 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "competitions")
 public class Competitions {
+
+    // Columns related to the table.
 
     @Id
     @Column(name = "competition_id")
@@ -40,9 +47,11 @@ public class Competitions {
     @Column(name = "url")
     private String url;
 
+    //Empty constructor
     public Competitions() {
     }
 
+    //All getter and setter
     public String getCompetition_id() {
         return competition_id;
     }

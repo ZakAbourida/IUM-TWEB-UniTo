@@ -1,3 +1,8 @@
+/*
+The Player Valuations class defines the table with its columns for the Postgres server.
+Since the annotations are sufficient to understand the context of the code, every line of code will not be commented out.
+*/
+
 package ium.tweb.serverpostgres.playervaluations;
 
 import jakarta.persistence.Column;
@@ -11,6 +16,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "player_valuations")
 public class PlayerValuations {
+
+    // Columns related to the table.
 
     @Id
     @Column(name = "player_id")
@@ -40,10 +47,11 @@ public class PlayerValuations {
     @Column(name = "player_club_domestic_competition_id", columnDefinition = "TEXT")
     private String player_club_domestic_competition_id;
 
-
+    //Empty constructor
     public PlayerValuations() {
     }
 
+    //All getter and setter
     public Long getPlayer_id() {
         return player_id;
     }

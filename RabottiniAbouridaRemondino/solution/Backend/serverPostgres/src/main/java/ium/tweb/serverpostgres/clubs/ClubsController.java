@@ -1,3 +1,7 @@
+/*
+The Clubs controller class manages calls to the server and routes them through the appropriate routes.
+*/
+
 package ium.tweb.serverpostgres.clubs;
 
 import org.springframework.beans.factory.annotation.Autowired;

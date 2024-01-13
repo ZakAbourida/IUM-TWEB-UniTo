@@ -1,3 +1,8 @@
+/*
+The Clubs class defines the table with its columns for the Postgres server.
+Since the annotations are sufficient to understand the context of the code, every line of code will not be commented out.
+*/
+
 package ium.tweb.serverpostgres.clubs;
 
 import jakarta.persistence.Column;
@@ -10,6 +15,9 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "clubs")
 public class Clubs {
+
+
+    // Columns related to the table.
 
     @Id
     @Column(name = "club_id")
@@ -60,9 +68,11 @@ public class Clubs {
     @Column(name = "url")
     private String url;
 
+    //Empty constructor
     public Clubs() {
     }
 
+    // All getter and setter
     public Long getClub_id() {
         return club_id;
     }

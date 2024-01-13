@@ -1,3 +1,6 @@
+/*
+The Competitions controller class manages calls to the server and routes them through the appropriate routes.
+*/
 package ium.tweb.serverpostgres.competitions;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +25,6 @@ public class CompetitionsController {
         competitionsService.saveCompetitions(competitions);
     }
 
-    //Ottieni la lista delle competizioni
     @GetMapping("/list_competitions")
     public List<String> ListCompetitions() {
         return competitionsService.listCompetitions();

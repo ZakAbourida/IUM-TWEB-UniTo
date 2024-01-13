@@ -1,3 +1,7 @@
+/*
+The Player Valuations controller class manages calls to the server and routes them through the appropriate routes.
+*/
+
 package ium.tweb.serverpostgres.playervaluations;
 
 import ium.tweb.serverpostgres.competitions.Competitions;
