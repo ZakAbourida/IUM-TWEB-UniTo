@@ -243,7 +243,7 @@ header{
 .container-single-w-img img{
     width: 120%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 30px;
 }
 .container-single-w p{
@@ -318,7 +318,7 @@ header{
     display: flex;
 }
 .container-single-n-img{
-    width: 40%;
+    width: auto;
     height: 32.5vh;
     overflow: hidden;
     display: flex;
@@ -330,7 +330,7 @@ header{
     margin: 5%;
     color: #000000;
     font-family: Josefin Sans, 'Source Sans Pro';
-    font-size: 3vh;
+    font-size: 2vh;
     text-align: left;
     flex-direction: column;
 }
@@ -404,7 +404,10 @@ header{
 }
 .single-pp{
     display: flex;
-    margin-left: 2vh;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 2vw;
+    gap: 3vw;
 }
 .single-pp-img{
     margin: 2vh;
@@ -417,7 +420,8 @@ header{
     margin-top: 3.5vh;
     color: #000000;
     font-family: Josefin Sans, 'Source Sans Pro';
-    font-size: 1.5vw;
+    font-size: 1.7vw;
+    font-weight: bolder;
     text-align: left;
 }
 
