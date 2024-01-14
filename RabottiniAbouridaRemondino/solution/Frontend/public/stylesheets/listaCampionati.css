@@ -251,7 +251,7 @@ footer{
     font-family: Lexend Mega, 'Source Sans Pro';
     white-space: nowrap;
     align-content: center;
-    margin-top: 3vh;
+    margin-top: 2vh;
 }
 .container-w h3{
     font-size: 1vw;
@@ -389,6 +389,126 @@ footer{
     align-items: center;
 }
 
+
+.container-ris{
+    width: 200%;
+    height: 200%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.container-ris h2{
+    font-size: 4vh;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    margin: 1vh;
+}
+.container-ris h3{
+    font-size: 1vw;
+    color: #ffffff;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    margin-top: 1.5vh;
+    margin-left: 2vh;
+}
+.container-ris h4{
+    font-size: 1.4vw;
+    color: #ffffff;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    margin-top: 1.5vh;
+    margin-left: 2vh;
+}
+.wrap-ris{
+    border-radius: 30px;
+    position: relative;
+    height: auto;
+    width: 99%;
+    padding:0.5%;
+    margin: 1vh;
+}
+.wrap-ris1-items{
+    background: #8C0098;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8em;
+    white-space: nowrap;
+}
+.wrap-ris2-items{
+    background: #590061;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8em;
+    white-space: nowrap;
+}
+.wrap-ris3-items{
+    background: #590061;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10em;
+    white-space: nowrap;
+    width: auto;
+}
+.wrap-ris4-items{
+    border-radius: 0px 0px 30px 30px;
+    background: #590061;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10em;
+}
+.wrap-ris5-items{
+    border-radius: 30px 30px 0px 0px;
+    background: #590061;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.table-ris {
+    width: 100%;
+    height: 84vh;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-ris th,
+.table-ris td {
+    padding-left: 1vw;
+    font-size: 1.4vw;
+    color: #ffffff;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: left;
+}
+
+.table-ris th {
+    background: #590061;
+}
+
+.table-ris .row-ris1 {
+    background: #8C0098;
+}
+
+/* per applicare colori alternati alle righe del corpo della tabella:
+    - primo pari
+    - secondo dispari
+*/
+.table-ris tbody tr:nth-child(even) {
+    background: #590061;
+}
+
+.table-ris tbody tr:nth-child(odd) {
+    background: #8C0098;
+}
 
 
 
