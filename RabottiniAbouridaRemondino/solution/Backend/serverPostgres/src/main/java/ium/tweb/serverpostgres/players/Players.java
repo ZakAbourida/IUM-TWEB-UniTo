@@ -1,8 +1,3 @@
-/*
-The Players class defines the table with its columns for the Postgres server.
-Since the annotations are sufficient to understand the context of the code, every line of code will not be commented out.
-*/
-
 package ium.tweb.serverpostgres.players;
 
 import jakarta.persistence.Column;
@@ -11,16 +6,23 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-
+/**
+ * <h1>Players Class</h1>
+ * <h3>The Players class defines the table with its columns for the Postgres server.</h3>
+ * <h3><li>Since the annotations are sufficient to understand the context of the code, every line of code will not be commented out.</li></h3>
+ */
 @Entity
 @Table(name = "players")
 public class Players {
 
-    // Columns related to the table.
+    /**
+     * <h2>All columns relative to the table</h2>
+     */
     @Id
     @Column(name = "player_id")
     private Long player_id;
@@ -80,10 +82,10 @@ public class Players {
     private String agent_name;
 
     @Column(name = "image_url")
-    private String image_url;
+    private URL image_url;
 
     @Column(name = "url")
-    private String url;
+    private URL url;
 
     @Column(name = "current_club_domestic_competition_id")
     private String current_club_domestic_competition_id;
@@ -91,11 +93,15 @@ public class Players {
     @Column(name = "current_club_name")
     private String current_club_name;
 
-    //Empty constructor
+    /**
+     * <h2>Empty constructor</h2>
+     */
     public Players() {
     }
 
-    //All getter and setter
+    /**
+     *<h2>Below are all the getters and setters</h2>
+     */
     public long getPlayer_id() {
         return player_id;
     }
@@ -248,19 +254,19 @@ public class Players {
         this.agent_name = agent_name;
     }
 
-    public String getImage_url() {
+    public URL getImage_url() {
         return image_url;
     }
 
-    public void setImage_url(String image_url) {
+    public void setImage_url(URL image_url) {
         this.image_url = image_url;
     }
 
-    public String getUrl() {
+    public URL getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(URL url) {
         this.url = url;
     }
 
@@ -281,10 +287,11 @@ public class Players {
     }
 
 
-    /*
-    Method that manages the date format of 'contract_expiration_date',
-    because when loading the data on the server this format gave problems when using the LocalDateTime type without modifying the format.
-    */
+    /**
+     * <p>Method that manages the date format of 'contract_expiration_date',</p>
+     * <p>because when loading the data on the server this format gave problems when using the LocalDateTime type without modifying the format.</p>
+     * @return A LocalDateTime in a format -> yyyy-MM-dd HH:mm:ss
+     */
     public LocalDateTime getParsedContractExpirationDate() {
         if (contract_expiration_date != null && !contract_expiration_date.isEmpty()) {
             try {
