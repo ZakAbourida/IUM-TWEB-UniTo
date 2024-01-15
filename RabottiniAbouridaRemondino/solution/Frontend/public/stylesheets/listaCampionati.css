@@ -476,7 +476,7 @@ footer{
 }
 .table-ris {
     width: 100%;
-    height: 84vh;
+    height: auto;
     border-collapse: collapse;
     justify-content: center;
 }
@@ -489,7 +489,10 @@ footer{
     white-space: normal;
     text-align: left;
 }
-
+.table-ris td{
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
 .table-ris th {
     background: #590061;
 }

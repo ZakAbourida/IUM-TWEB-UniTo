@@ -432,7 +432,7 @@ footer{
     background-color: #590061;
     margin: 1%;
     border-radius: 30px;
-    height: 93vh;
+    height: auto;
     padding:1% 1%;
 }
 .wrap-n1-items{
@@ -483,7 +483,7 @@ footer{
 
 .table-ris {
     width: 100%;
-    height: 84vh;
+    height: auto;
     border-collapse: collapse;
     justify-content: center;
 }
@@ -496,7 +496,10 @@ footer{
     white-space: normal;
     text-align: left;
 }
-
+.table-ris td{
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
 .table-ris th {
     background: #590061;
 }

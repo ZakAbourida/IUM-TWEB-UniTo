@@ -431,12 +431,8 @@ footer{
     font-size: 1.7vw;
     font-weight: 500;
     line-height: 1.25;
-    color: black;
-    font-family: Lexend, 'Source Sans Pro';
+    color: black;font-family: Lexend, 'Source Sans Pro';
 }
-
-
-
 .container-n{
     width: 22%;
     height: 100%;
@@ -452,7 +448,6 @@ footer{
     height: 100%;
     padding:2% 2%;
 }
-
 .title-n{
     padding: 5% 8%;
     display: flex;
@@ -514,3 +509,90 @@ footer{
     color: white;
     font-family: Lexend, 'Source Sans Pro';
 }
+
+.container-x{
+    width: 96%;
+    height: auto;
+    justify-content: left;
+    text-align: left;
+}
+.wrap-x{
+    background-color: #590061;
+    margin: 1%;
+    margin-top: 2vh;
+    border-radius: 30px;
+    height: auto;
+    width: 100%;
+    padding:1% 1%;
+}
+.container-x h2{
+    font-weight: 400;
+    line-height: 1.25;
+    color: #ffffff;
+    font-family: Lexend, 'Source Sans Pro';
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.wrap-x1-items{
+    background: #590061;
+    height: 7vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10em;
+}
+
+.wrap-x2-items{
+    border-radius: 0px 0px 30px 30px;
+    background: #590061;
+    height: 7vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10em;
+}
+.table-ris {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-ris th,
+.table-ris td {
+    padding-left: 1vw;
+    font-size: 1vw;
+    color: #ffffff;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: left;
+}
+.table-ris td{
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+.table-ris th {
+    background: #590061;
+}
+
+.table-ris .row-ris1 {
+    background: #8C0098;
+}
+
+/* per applicare colori alternati alle righe del corpo della tabella:
+    - primo pari
+    - secondo dispari
+*/
+.table-ris tbody tr:nth-child(even) {
+    background: #590061;
+}
+
+.table-ris tbody tr:nth-child(odd) {
+    background: #8C0098;
+}
+.button-table{
+    background: transparent;
+    border: none;
+}
+
