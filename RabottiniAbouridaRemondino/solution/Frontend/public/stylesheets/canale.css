@@ -463,6 +463,24 @@ footer{
 #top-chat{
     margin-bottom: 0%;
 }
+#logout{
+    display: flex;
+    margin-left: 6%;
+    width: 25vh;
+    height: 7vh;
+    padding: 4%;
+    justify-content: center;
+    align-items: center;
+}
+#welcome{
+    width: 70%;
+    padding-left: 30%;
+    color: black;
+    font-size: 400%;
+    font-weight: 700;
+    font-family: Lexend Deca, 'Source Sans Pro';
+    margin-bottom: 5vh;
+}
 .row{
     height: 10vh;
     margin: 1%;
