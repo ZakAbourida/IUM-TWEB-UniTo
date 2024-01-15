@@ -60,7 +60,7 @@ function redirectToPage(buttonID) {
     localStorage.setItem('campionato', val);
 
     // Reindirizza alla pagina "ListaSquadre.html"
-    window.location.href = '../public/ListaSquadre.html';
+    window.location.href = '../ListaSquadre.html';
 }
 
 

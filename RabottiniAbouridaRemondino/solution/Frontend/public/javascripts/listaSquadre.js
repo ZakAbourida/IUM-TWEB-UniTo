@@ -61,7 +61,7 @@ function redirectToPage(buttonID) {
     localStorage.setItem('squadra', val);
 
     // Reindirizza alla pagina "ListaSquadre.html"
-    window.location.href = '../public/Squadra.html';
+    window.location.href = '../Squadra.html';
 }
 
 
