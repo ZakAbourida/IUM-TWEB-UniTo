@@ -18,9 +18,8 @@ router.get('/loadHP', async function (req, res, next) {
 router.post('/loadSq', async function (req, res, next) {
   try {
     const squadName = req.body.squad;
-
     // Utilizza la funzione getHistorySquadMatches per ottenere i dati desiderati
-    const squadMatches = await gameController.getHistorySquadMatches();
+    const squadMatches = await gameController.getHistorySquadMatches(squadName);
 
     res.json(squadMatches);
   } catch (error) {

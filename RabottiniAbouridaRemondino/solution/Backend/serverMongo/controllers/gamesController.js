@@ -72,14 +72,26 @@ const getRecentGames = async () => {
 
 const getHistorySquadMatches = async (squadName) => {
     try {
-        // Seleziona solo i campi desiderati
+        // Seleziona solo i campi desiderati e filtra quelli con valori non nulli o undefined
         const squadMatches = await Games.find({
             $or: [
                 { home_club_name: squadName },
                 { away_club_name: squadName }
-            ]
+            ],
+            home_club_name: { $exists: true, $ne: null, $ne: undefined },
+            away_club_name: { $exists: true, $ne: null, $ne: undefined },
+            date: { $exists: true, $ne: null, $ne: undefined },
+            season: { $exists: true, $ne: null, $ne: undefined },
+            home_club_goals: { $exists: true, $ne: null, $ne: undefined },
+            away_club_goals: { $exists: true, $ne: null, $ne: undefined },
+            home_club_position: { $exists: true, $ne: null, $ne: undefined },
+            away_club_position: { $exists: true, $ne: null, $ne: undefined },
+            round: { $exists: true, $ne: null, $ne: undefined },
+            stadium: { $exists: true, $ne: null, $ne: undefined },
+            referee: { $exists: true, $ne: null, $ne: undefined },
+            competition_type: { $exists: true, $ne: null, $ne: undefined }
         }).sort({ date: -1 }).limit(5)
-            .select('date season home_club_name away_club_name home_club_goals away_club_goals round home_club_position away_club_position stadium referee competition_type');
+            .select('date season home_club_name away_club_name home_club_goals away_club_goals away_club_position home_club_position round stadium referee competition_type');
 
         return squadMatches;
     } catch (error) {

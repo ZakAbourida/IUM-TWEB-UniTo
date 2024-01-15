@@ -157,23 +157,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function sendAxiosQuerySq(url, squad){
     // Richiesta POST con annessa la squadra della pagina
-    axios.post(url, squad)
+    axios.post(url, {squad: squad})
         .then(function (response) {
             const matches = response.data;
+
+            console.log(matches);
 
             // Loop attraverso le partite ricevute
             for (let i = 0; i < matches.length; i++) {
                 const match = matches[i];
                 const rowId = `rowTable${i + 1}`;
 
-                // Popola le colonne della riga della tabella
-                document.getElementById(`colTable${1 + i * 10}`).innerText = i + 1;
+                if(squad == match.home_club_name){ // la squadra scelta gioca in casa
+                    document.getElementById(`colTable${4 + i * 10}`).innerText = match.away_club_name;
+                    document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.home_club_goals}:${match.away_club_goals}`;
+                    document.getElementById(`colTable${7 + i * 10}`).innerText = match.away_club_position;
+                }else{                             // la squadra scelta gioca fuori casa
+                    document.getElementById(`colTable${4 + i * 10}`).innerText = match.home_club_name;
+                    document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.away_club_goals}:${match.home_club_goals}`;
+                    document.getElementById(`colTable${7 + i * 10}`).innerText = match.home_club_position;
+                }
                 document.getElementById(`colTable${2 + i * 10}`).innerText = match.date;
                 document.getElementById(`colTable${3 + i * 10}`).innerText = match.season;
-                document.getElementById(`colTable${4 + i * 10}`).innerText = match.home_club_name === squadName ? match.away_club_name : match.home_club_name;
-                document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.home_club_goals}:${match.away_club_goals}`;
                 document.getElementById(`colTable${6 + i * 10}`).innerText = match.round;
-                document.getElementById(`colTable${7 + i * 10}`).innerText = match.home_club_position === null ? 'N/A' : match.home_club_position;
                 document.getElementById(`colTable${8 + i * 10}`).innerText = match.stadium;
                 document.getElementById(`colTable${9 + i * 10}`).innerText = match.referee;
                 document.getElementById(`colTable${10 + i * 10}`).innerText = match.competition_type;
@@ -190,8 +196,9 @@ function sendAxiosQuerySq(url, squad){
 
 function onSubmit(){
     console.log("Caricamento dati in homepage");
-    const squadra = localStorage.getItem('squadra');
+    //const squadra = localStorage.getItem('squadra');
     // Chiamata a sendAxiosQuery con i valori dei campi
+    const squadra = 'Real Madrid Club de Fútbol';
     sendAxiosQuerySq('/loadSq', squadra);
 }
 
