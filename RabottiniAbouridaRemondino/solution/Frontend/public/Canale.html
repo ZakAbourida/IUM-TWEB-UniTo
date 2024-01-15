@@ -25,6 +25,7 @@
 	<script src="../socket.io/socket.io.js"></script>
 	<!-- Javascript -->
 	<script src="javascripts/canale.js"></script>
+	<script src="javascripts/login.js"></script>
 	<!-- Axios -->
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
@@ -69,14 +70,14 @@
 			</div>
 		</div>
 	</header>
-	
+
 	<div class="container-pp-rp">
 		<div class="container-rp">
 			<h2>LIVE CHAT</h2>
 			<div class="wrap-rp">
 
 				<div class="container mt-5 w-100">
-					<div class="row">
+					<div id="top-chat" class="row">
 						<h1 id="welcome" class="col-md-10">Welcome!</h1>
 						<button id="logout" class="btn btn-small btn-danger col-md-2">Logout</button>
 					</div>
@@ -84,6 +85,7 @@
 
 				<div class="container mt-5 w-100" id="form_container">
 					<form id="form">
+						<!--
 						<div class="row">
 							<label for="name">Name:</label>
 							<input id="name" name="name" type="text" class="w-75">
@@ -92,13 +94,24 @@
 							<label for="surname">Surname:</label>
 							<input id="surname" name="surname" type="text" class="w-75">
 						</div>
+						-->
+						<h2>Scegli dove chattare!</h2>
 						<div class="row">
-							<button id="form-btn" class="btn btn-primary mt-4">Submit</button>
+							<button id="form-btn1" class="btn btn-primary mt-4">Entra nel canale principale</button>
+						</div>
+						<div class="row">
+							<button id="form-btn2" class="btn btn-primary mt-4">Entra nel canale della Premier League</button>
+						</div>
+						<div class="row">
+							<button id="form-btn3" class="btn btn-primary mt-4">Entra nel canale della Serie A</button>
+						</div>
+						<div class="row">
+							<button id="form-btn4" class="btn btn-primary mt-4">Entra nel canale della Liga</button>
 						</div>
 					</form>
 				</div>
 				<div class="container mt-5 w-100" id="message_container">
-					<ul id="messages"></ul>
+					<div id="messages"></div>
 				</div>
 
 
@@ -113,16 +126,16 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="send_container" class="container-testo-button">
 		<input id="messageInput1" class="container-testo" type="text" name="testo" placeholder=" Inserisci il tuo messaggio">
 		<button id="messageButton1" class="button-invia">INVIA</button>
 	</div>
-	
-	
 
-	
-	
+
+
+
+
 </div>
 <footer>
 	<div class="top-footer">

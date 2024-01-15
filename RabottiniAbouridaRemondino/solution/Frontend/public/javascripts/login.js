@@ -1,3 +1,4 @@
+var username = '';
 document.addEventListener('DOMContentLoaded', function() {
     const mostraDiv2 = document.getElementById('mostra-div-2');
     const div1 = document.getElementById('div-1');
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     accedi.addEventListener('click', function() {
+        localStorage.setItem(username, document.getElementById('username').value);
         window.location.href = 'homepage.html'; // Cambia 'pagina_di_destinazione.html' con l'URL della pagina a cui desideri collegarti
     });
 

@@ -1,8 +1,7 @@
 const socket = io();
-let myName = "";
-let mySurname ="";
 let currentRoom ="";
 let myColor = "";
+let myUsername;
 
 function init() {
 
@@ -10,72 +9,128 @@ function init() {
     const listaUtenti = document.getElementById('listaUtenti');
     const messageInput1 = document.getElementById('messageInput1');
     const messageButton1 = document.getElementById('messageButton1');
-    const formButton = document.getElementById("form-btn");
+    const princButton = document.getElementById("form-btn1");
+    const premierButton = document.getElementById("form-btn2");
+    const serieaButton = document.getElementById("form-btn3");
+    const ligaButton = document.getElementById("form-btn4");
 
+    //prendo il mio username dalla pagina di login (se null?)
+    myUsername = localStorage.getItem(username);
 
-
-    messageButton1.addEventListener('click', () => {
-        socket.emit('chat message', currentRoom, messageInput1.value, getMyFullName(), getMyColor());
-        messageInput1.value = '';
-    });
-
-
-    formButton.addEventListener('click', (event) => {
-        myName = document.getElementById("name").value;
-        mySurname = document.getElementById("surname").value;
+    //entro nella chat principale
+    princButton.addEventListener('click', (event) => {
         setMyColor();
+        currentRoom = 'Principale';
         document.getElementById("form_container").style.display = 'none';
         document.getElementById("message_container").style.display = 'block';
         document.getElementById("send_container").style.display = 'flex';
-        socket.emit('create or join conversation', currentRoom, getMyFullName(), getMyColor());
-        localStorage.setItem('my_name', myName);
-        localStorage.setItem('my_surname', mySurname);
+        document.getElementById("top-chat").style.display = 'block';
+        socket.emit('create or join conversation', currentRoom, getMyUsername(), getMyColor());
         localStorage.setItem('room', currentRoom);
         document.getElementById('welcome').innerHTML= "Welcome to room "+currentRoom;
-        document.getElementById('logout').style.display='block';
         event.preventDefault()
     });
 
+    //entro nella chat della premier
+    premierButton.addEventListener('click', (event) => {
+        setMyColor();
+        currentRoom = 'Premier';
+        document.getElementById("form_container").style.display = 'none';
+        document.getElementById("message_container").style.display = 'block';
+        document.getElementById("send_container").style.display = 'flex';
+        document.getElementById("top-chat").style.display = 'block';
+        socket.emit('create or join conversation', currentRoom, getMyUsername(), getMyColor());
+        localStorage.setItem('room', currentRoom);
+        document.getElementById('welcome').innerHTML= "Welcome to room "+currentRoom;
+        event.preventDefault()
+    });
+
+    //entro nella chat della serieA
+    serieaButton.addEventListener('click', (event) => {
+        setMyColor();
+        currentRoom = 'SerieA';
+        document.getElementById("form_container").style.display = 'none';
+        document.getElementById("message_container").style.display = 'block';
+        document.getElementById("send_container").style.display = 'flex';
+        document.getElementById("top-chat").style.display = 'block';
+        socket.emit('create or join conversation', currentRoom, getMyUsername(), getMyColor());
+        localStorage.setItem('room', currentRoom);
+        document.getElementById('welcome').innerHTML= "Welcome to room "+currentRoom;
+        event.preventDefault()
+    });
+
+    //entro nella chat della Liga
+    ligaButton.addEventListener('click', (event) => {
+        setMyColor();
+        currentRoom = 'Liga';
+        document.getElementById("form_container").style.display = 'none';
+        document.getElementById("message_container").style.display = 'block';
+        document.getElementById("send_container").style.display = 'flex';
+        document.getElementById("top-chat").style.display = 'block';
+        socket.emit('create or join conversation', currentRoom, getMyUsername(), getMyColor());
+        localStorage.setItem('room', currentRoom);
+        document.getElementById('welcome').innerHTML= "Welcome to room "+currentRoom;
+        event.preventDefault()
+    });
+
+    //bottone di logout per uscire dalla chat
     let logoutButton = document.getElementById('logout');
     logoutButton.addEventListener('click', (event) => {
-        localStorage.clear();
-        // or localstorage.removeItem('my_name');
         document.getElementById("form_container").style.display = 'block';
         document.getElementById("message_container").style.display = 'none';
         document.getElementById("send_container").style.display = 'none';
-        socket.emit('leave room', currentRoom, getMyFullName(), getMyColor()); // Send a leave room event
+        document.getElementById("top-chat").style.display = 'none';
+        socket.emit('leave room', currentRoom, getMyUsername(), getMyColor()); // Send a leave room event
         //pulisco lista utenti
         while (listaUtenti.firstChild) {
             listaUtenti.removeChild(listaUtenti.firstChild);
         }
+        while (messages.firstChild) {
+            messages.firstChild.removeChild(messages.firstChild.firstChild);
+            messages.removeChild(messages.firstChild);
+        }
         currentRoom = null;
     })
 
+    //quando premo enter invio il messaggio
     let field = document.getElementById('messageInput1');
     field.addEventListener('keypress', function (event) {
         if (event.key === 'Enter') {
-            socket.emit('chat message', currentRoom, messageInput1.value, getMyFullName(), getMyColor());
+            socket.emit('chat message', currentRoom, messageInput1.value, getMyUsername(), getMyColor());
             messageInput1.value = '';
             return false;
         }
     });
 
-    socket.on('chat message', (msg, name, color) => {
-        let who = (name === getMyFullName()) ? "Me" : name;
-        const li = document.createElement('li');
-        li.textContent = who + ": " + msg;
-        if(name === getMyFullName()){
-            li.style.textAlign = 'left';
-        }else{
-            li.style.textAlign = 'right';
-        }
-        li.style.backgroundColor = color;
-        messages.appendChild(li);
+    //quando premo il bottone invia verrà inviato il messaggio
+    messageButton1.addEventListener('click', () => {
+        socket.emit('chat message', currentRoom, messageInput1.value, getMyUsername(), getMyColor());
+        messageInput1.value = '';
     });
 
-    socket.on('create or join conversation', (name, color, utenti) => {
+    //quando arriva un messaggio lo aggiungo alla mia chat
+    socket.on('chat message', (msg, username, color) => {
+        let who = (username === getMyUsername()) ? "Me" : username;
+        const li = document.createElement('p');
+        const div = document.createElement('div');
+        li.textContent = who + ": " + msg;
+        if(username === getMyUsername()){
+            div.style.textAlign = 'right';
+            div.style.width = '100%';
+        }else{
+            div.style.textAlign = 'left';
+            div.style.width = '100%';
+        }
+        li.style.backgroundColor = color;
+        messages.appendChild(div);
+        div.appendChild(li);
+    });
+
+    //se sono entrato nella chat aggiorno lista utenti con quelli presenti, se entra qualcun altro
+    //aggiorno lista utenti con il nuovo entrato e aggiungo messaggio alla chat
+    socket.on('create or join conversation', (username, color, utenti) => {
         //sono appena entrato
-        if (name === getMyFullName()){
+        if (username === getMyUsername()){
             //aggiungo il mio nome alla lista utenti insieme a QUELLI GIA DENTRO
             let lista = utenti;
             for(let i=0; i < lista.length; i++){
@@ -88,47 +143,52 @@ function init() {
             return;
         }
         //è entrato qualcun altro
-        const li = document.createElement('li');
-        li.textContent = name + ": " + "has joined the conversation";
+        const li = document.createElement('p');
+        const div = document.createElement('div');
+        li.textContent = username + ": " + "has joined the conversation";
         li.style.backgroundColor = color;
-        messages.appendChild(li);
+        div.style.textAlign = 'center';
+        div.style.width = '100%';
+        messages.appendChild(div);
+        div.appendChild(li);
 
         //aggiungo il nome di chi è entrato alla lista utenti
         const li1 = document.createElement('li');
-        li1.textContent = name;
-        li1.id = name;
+        li1.textContent = username;
+        li1.id = username;
         listaUtenti.appendChild(li1);
     });
 
-    socket.on('leave room', (name, color) => {
-        if (name === getMyFullName()) return;
-        const li = document.createElement('li');
-        li.textContent = name + ": " + "has left the conversation";
+    //esco dalla chat
+    socket.on('leave room', (username, color) => {
+        if (username === getMyUsername()) return;
+        const li = document.createElement('p');
+        const div = document.createElement('div');
+        li.textContent = username + ": " + "has left the conversation";
         li.style.backgroundColor = color;
-        messages.appendChild(li);
+        div.style.textAlign = 'center';
+        div.style.width = '100%';
+        messages.appendChild(div);
+        div.appendChild(li);
         //dico al server che vado via e che deve levare il mio nome dalla lista utenti
-        const li1 = document.getElementById(name);
+        const li1 = document.getElementById(username);
         listaUtenti.removeChild(li1);
-    })
+    });
 
 
-    myName = localStorage.getItem('my_name');
-    mySurname = localStorage.getItem('my_surname');
-    if (myName) {
-        document.getElementById('name').value= myName;
-        document.getElementById('surname').value= mySurname;
-    }
     document.getElementById("form_container").style.display = 'block';
     document.getElementById("message_container").style.display = 'none';
     document.getElementById("send_container").style.display = 'none';
-    document.getElementById('logout').style.display='none';
+    document.getElementById('top-chat').style.display='none';
 
 
+    //se chiudo la finestra esce dalla chat
     window.addEventListener('beforeunload', function (){
         // Send a leave room event quando chiudo direttamente la finestra del browser
         if(currentRoom!== null){
-            socket.emit('leave room', currentRoom, getMyFullName(), getMyColor());
+            socket.emit('leave room', currentRoom, getMyUsername(), getMyColor());
         }
+        localStorage.clear();
     });
 }
 
@@ -165,10 +225,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
-
-function getMyFullName(){
-    return myName+" "+mySurname
+function getMyUsername(){
+    return myUsername
 }
 
 function setMyColor(){
@@ -178,8 +236,9 @@ function getMyColor(){
     return myColor
 }
 
+//funzione per settare un colore random all'utente
 function getRandomLightColor() {
-    const minBrightness = 200; // Luminosità minima (0-255) per essere considerato un colore chiaro
+    const minBrightness = 80; // Luminosità minima (0-255) per essere considerato un colore chiaro
     let color = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
 
     const brightness = color.split(',').reduce((acc, val) => acc + parseInt(val), 0) / 3; // Calcolo approssimato della luminosità
