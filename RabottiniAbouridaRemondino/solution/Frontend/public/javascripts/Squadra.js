@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const squadra = localStorage.getItem('squadra');
+
     const toggleBtn1 = document.getElementById('toggleBtn1');
     const dropdownContent1 = document.getElementById('dropdownContent1');
     const contentToMove1 = document.querySelector('.content-to-move1');

@@ -53,3 +53,15 @@ function mostraAncora() {
         }
     }
 }
+
+function redirectToPage(buttonID) {
+    let val = document.getElementById(buttonID).innerText;
+
+    // Salva il valore nella localStorage
+    localStorage.setItem('squadra', val);
+
+    // Reindirizza alla pagina "ListaSquadre.html"
+    window.location.href = '../public/Squadra.html';
+}
+
+
