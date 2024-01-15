@@ -511,7 +511,7 @@ footer{
 }
 
 .container-x{
-    width: 96%;
+    width: 98%;
     height: auto;
     justify-content: left;
     text-align: left;
@@ -532,25 +532,6 @@ footer{
     font-family: Lexend, 'Source Sans Pro';
     font-size: 2vw;
     font-weight: bold;
-}
-
-.wrap-x1-items{
-    background: #590061;
-    height: 7vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10em;
-}
-
-.wrap-x2-items{
-    border-radius: 0px 0px 30px 30px;
-    background: #590061;
-    height: 7vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
 }
 .table-ris {
     width: 100%;

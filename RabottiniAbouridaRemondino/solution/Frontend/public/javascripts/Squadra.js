@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const squadra = localStorage.getItem('squadra');
-
     const toggleBtn1 = document.getElementById('toggleBtn1');
     const dropdownContent1 = document.getElementById('dropdownContent1');
     const contentToMove1 = document.querySelector('.content-to-move1');
@@ -122,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
             contentToMove4.style.marginTop = `${spostamentoDesiderato}px`; // Applica il nuovo valore per lo spostamento
         }
     });
-
     toggleBtn5.addEventListener('click', function() {
         const tendinaAltezza = dropdownContent5.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
@@ -135,12 +132,10 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdownContent3.style.display = 'none';
             dropdownContent4.style.display = 'none';
             dropdownContent6.style.display = 'none';
-
             dropdownContent5.style.display = 'block';
             contentToMove5.style.marginTop = `${spostamentoDesiderato}px`; // Applica il nuovo valore per lo spostamento
         }
     });
-
     toggleBtn6.addEventListener('click', function() {
         const tendinaAltezza = dropdownContent6.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
@@ -157,6 +152,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
-
+    onSubmit();
 });
+
+function sendAxiosQuerySq(url, squad){
+    // Richiesta POST con annessa la squadra della pagina
+    axios.post(url, squad)
+        .then(function (response) {
+            const matches = response.data;
+
+            // Loop attraverso le partite ricevute
+            for (let i = 0; i < matches.length; i++) {
+                const match = matches[i];
+                const rowId = `rowTable${i + 1}`;
+
+                // Popola le colonne della riga della tabella
+                document.getElementById(`colTable${1 + i * 10}`).innerText = i + 1;
+                document.getElementById(`colTable${2 + i * 10}`).innerText = match.date;
+                document.getElementById(`colTable${3 + i * 10}`).innerText = match.season;
+                document.getElementById(`colTable${4 + i * 10}`).innerText = match.home_club_name === squadName ? match.away_club_name : match.home_club_name;
+                document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.home_club_goals}:${match.away_club_goals}`;
+                document.getElementById(`colTable${6 + i * 10}`).innerText = match.round;
+                document.getElementById(`colTable${7 + i * 10}`).innerText = match.home_club_position === null ? 'N/A' : match.home_club_position;
+                document.getElementById(`colTable${8 + i * 10}`).innerText = match.stadium;
+                document.getElementById(`colTable${9 + i * 10}`).innerText = match.referee;
+                document.getElementById(`colTable${10 + i * 10}`).innerText = match.competition_type;
+            }
+        })
+        .catch(function (error) {
+            // Gestisci gli errori
+            console.error('Error:', error);
+
+            // Puoi aggiornare il DOM con un messaggio di errore
+            document.getElementById('results').innerHTML = "Error occurred";
+        });
+}
+
+function onSubmit(){
+    console.log("Caricamento dati in homepage");
+    const squadra = localStorage.getItem('squadra');
+    // Chiamata a sendAxiosQuery con i valori dei campi
+    sendAxiosQuerySq('/loadSq', squadra);
+}
+
+
+

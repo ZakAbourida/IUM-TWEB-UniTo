@@ -70,6 +70,25 @@ const getRecentGames = async () => {
     }
 };
 
+const getHistorySquadMatches = async (squadName) => {
+    try {
+        // Seleziona solo i campi desiderati
+        const squadMatches = await Games.find({
+            $or: [
+                { home_club_name: squadName },
+                { away_club_name: squadName }
+            ]
+        }).sort({ date: -1 }).limit(5)
+            .select('date season home_club_name away_club_name home_club_goals away_club_goals round home_club_position away_club_position stadium referee competition_type');
+
+        return squadMatches;
+    } catch (error) {
+        throw error;
+    }
+};
+
+
+
 module.exports = {
     createGame,
     getGame,
@@ -77,5 +96,6 @@ module.exports = {
     updateGame,
     deleteGame,
     findGamesByCompetitionId,
-    getRecentGames
+    getRecentGames,
+    getHistorySquadMatches
 };

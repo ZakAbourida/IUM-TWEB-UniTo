@@ -22,4 +22,20 @@ router.get('/loadHP',  async function (req, res, next) {
   }
 });
 
+router.post('/loadSq',  async function (req, res, next) {
+  try {
+    const squadName = req.body.squad;
+
+    const response = await axios.post('http://localhost:3001/loadSq', { squad: squadName });
+
+    console.log("Dati ricevuti: "+ response.data);
+
+    res.json(response.data);
+  } catch (error) {
+    // Gestisci gli errori qui
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 module.exports = router;
