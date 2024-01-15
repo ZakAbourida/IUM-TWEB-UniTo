@@ -53,3 +53,18 @@ function MostraAncora() {
         }
     }
 }
+function redirectToPage(buttonID) {
+    let val = document.getElementById(buttonID).innerText;
+
+    // Salva il valore nella localStorage
+    localStorage.setItem('campionato', val);
+
+    // Reindirizza alla pagina "ListaSquadre.html"
+    window.location.href = '../public/ListaSquadre.html';
+}
+
+
+
+
+
+
