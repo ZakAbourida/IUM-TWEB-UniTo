@@ -1,5 +1,6 @@
 package ium.tweb.serverpostgres.playervaluations;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,6 +8,10 @@ import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 /**
  * <h1>Player Valuations Class</h1>
  * <h3>The Player Valuations class defines the table with its columns for the Postgres server.</h3>
@@ -28,7 +33,8 @@ public class PlayerValuations {
     private Integer last_season;
 
     @Column(name = "datetime")
-    private LocalDate datetime;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime datetime;
 
     @Column(name = "date")
     private LocalDate date;
@@ -73,11 +79,11 @@ public class PlayerValuations {
         this.last_season = last_season;
     }
 
-    public LocalDate getDatetime() {
+    public LocalDateTime getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(LocalDate datetime) {
+    public void setDatetime(LocalDateTime datetime) {
         this.datetime = datetime;
     }
 
@@ -128,4 +134,5 @@ public class PlayerValuations {
     public void setPlayer_club_domestic_competition_id(String player_club_domestic_competition_id) {
         this.player_club_domestic_competition_id = player_club_domestic_competition_id;
     }
+
 }

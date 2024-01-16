@@ -1,5 +1,6 @@
 package ium.tweb.serverpostgres.players;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -76,6 +77,7 @@ public class Players {
     private BigDecimal highest_market_value_in_eur;
 
     @Column(name = "contract_expiration_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private String contract_expiration_date;
 
     @Column(name = "agent_name")
@@ -286,21 +288,4 @@ public class Players {
         this.current_club_name = current_club_name;
     }
 
-
-    /**
-     * <p>Method that manages the date format of 'contract_expiration_date',</p>
-     * <p>because when loading the data on the server this format gave problems when using the LocalDateTime type without modifying the format.</p>
-     * @return A LocalDateTime in a format -> yyyy-MM-dd HH:mm:ss
-     */
-    public LocalDateTime getParsedContractExpirationDate() {
-        if (contract_expiration_date != null && !contract_expiration_date.isEmpty()) {
-            try {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                return LocalDateTime.parse(contract_expiration_date, formatter);
-            } catch (DateTimeParseException e) {
-
-            }
-        }
-        return null;
-    }
 }
