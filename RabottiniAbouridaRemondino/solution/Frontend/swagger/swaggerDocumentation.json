@@ -97,5 +97,229 @@
         }
       }
     }
+  },
+  "components": {
+    "schemas": {
+      "Appearances": {
+        "type": "object",
+        "properties": {
+          "appearances_id": {
+            "type": "string"
+          },
+          "competition_id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "game_id": {
+            "type": "number"
+          },
+          "goals": {
+            "type": "number"
+          },
+          "minutes_played": {
+            "type": "number"
+          },
+          "player_club_id": {
+            "type": "number"
+          },
+          "player_id": {
+            "type": "number"
+          },
+          "player_name": {
+            "type": "string"
+          },
+          "red_cards": {
+            "type": "number"
+          },
+          "yellow_card": {
+            "type": "string"
+          },
+          "assists": {
+            "type": "number"
+          },
+          "player_current_club_id": {
+            "type": "number"
+          }
+        }
+      },
+      "Club_games": {
+        "type": "object",
+        "properties": {
+          "club_id": {
+            "type": "number"
+          },
+          "game_id": {
+            "type": "number"
+          },
+          "hosting": {
+            "type": "string"
+          },
+          "opponent_goals": {
+            "type": "number"
+          },
+          "is_win": {
+            "type": "number"
+          },
+          "opponent_id": {
+            "type": "number"
+          },
+          "opponent_manager_name": {
+            "type": "string"
+          },
+          "opponent_position": {
+            "type": "number"
+          },
+          "own_goals": {
+            "type": "number"
+          },
+          "own_manager_name": {
+            "type": "strinf"
+          },
+          "own_position": {
+            "type": "number"
+          }
+        }
+      },
+      "Game_events": {
+        "type": "object",
+        "properties": {
+          "club_id": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "game_id": {
+            "type": "number"
+          },
+          "minute": {
+            "type": "number"
+          },
+          "player_assist_id": {
+            "type": "number"
+          },
+          "player_id": {
+            "type": "number"
+          },
+          "player_in_id": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          },
+          "game_event_id": {
+            "type": "string"
+          }
+        }
+      },
+      "Game_Lineups": {
+        "type": "object",
+        "properties": {
+          "club_id": {
+            "type": "number"
+          },
+          "game_id": {
+            "type": "number"
+          },
+          "game_lineups_id": {
+            "type": "number"
+          },
+          "number": {
+            "type": "number"
+          },
+          "player_id": {
+            "type": "number"
+          },
+          "player_name": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          },
+          "team_captain": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "Games": {
+        "type": "object",
+        "properties": {
+          "attendance": {
+            "type": "number"
+          },
+          "competition_id": {
+            "type": "string"
+          },
+          "competition_type": {
+            "type": "string"
+          },
+          "game_id": {
+            "type": "number"
+          },
+          "home_club_goals": {
+            "type": "number"
+          },
+          "referee": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "aggregate": {
+            "type": "string"
+          },
+          "away_club_goals": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "home_club_id": {
+            "type": "number"
+          },
+          "round": {
+            "type": "string"
+          },
+          "away_club_id": {
+            "type": "number"
+          },
+          "home_club_manager_name": {
+            "type": "string"
+          },
+          "season": {
+            "type": "number"
+          },
+          "away_club_manager_name": {
+            "type": "string"
+          },
+          "home_club_name": {
+            "type": "string"
+          },
+          "stadium": {
+            "type": "string"
+          },
+          "away_club_name": {
+            "type": "string"
+          },
+          "home_club_position": {
+            "type": "number"
+          },
+          "away_club_position": {
+            "type": "number"
+          }
+        }
+      }
+    }
   }
 }
