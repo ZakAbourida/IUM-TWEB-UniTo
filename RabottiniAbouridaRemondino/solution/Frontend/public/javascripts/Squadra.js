@@ -208,9 +208,8 @@ function sendAxiosQuerySq(url, squad){
 
 function onSubmit(){
     console.log("Caricamento dati in homepage");
-    //const squadra = localStorage.getItem('squadra');
+    const squadra = localStorage.getItem('squadra');
     // Chiamata a sendAxiosQuery con i valori dei campi
-    const squadra = 'Real Madrid Club de Fútbol';
     sendAxiosQuerySq('/loadSq', squadra);
 }
 
