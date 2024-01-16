@@ -135,7 +135,7 @@
 					<h2>Tutti i campionati</h2>
 				</div>
 				
-				<table class="table-ris">
+				<table class="table-ris" id="table" >
 					<thead>
 					<tr>
 						<th >#</th>
@@ -145,7 +145,7 @@
 					<tbody>
 					<tr id="rowTable1">
 						<td id="colTable1">1</td>
-						<td id="colTable2"><button class="button-table" id="buttonTable1" onclick="redirectToPage('buttonTable1')">Premier League</button></td>
+						<td id="colTable2"><button class="button-table" id="buttonTable1" onclick="redirectToPage('buttonTable1')"></button></td>
 					</tr>
 					<tr id="rowTable2">
 						<td id="colTable8">2</td>
@@ -187,6 +187,14 @@
 						<td id="colTable71">11</td>
 						<td id="colTable72"><button class="button-table" id="buttonTable11" onclick="redirectToPage('buttonTable11')"></button></td>
 					</tr>
+					<tr id="rowTable12">
+						<td id="colTable73">12</td>
+						<td id="colTable74"><button class="button-table" id="buttonTable12" onclick="redirectToPage('buttonTable12')"></button></td>
+					</tr>
+					<tr id="rowTable13">
+						<td id="colTable75">13</td>
+						<td id="colTable76"><button class="button-table" id="buttonTable13" onclick="redirectToPage('buttonTable13')"></button></td>
+					</tr>
 					</tbody>
 				</table>
 				
@@ -195,127 +203,7 @@
 				</div>
 			</div>
 		</div>
-		
-		<!--
-		<div class="container-n" id="container-n1">
-			<div class="wrap-n">
-				<h2>Tutti i campionati</h2>
-				<div class="wrap-n3-items">
-					<div><h4>#</h4></div>
-					<div><h4>Nome</h4></div>
-				</div>
-				<div class="wrap-n1-items" id="row1">
-					<div><h3>01</h3></div>
-					<div><h3>Premier League</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row2">
-					<div><h3>02</h3></div>
-					<div><h3>La Liga</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row3">
-					<div><h3>03</h3></div>
-					<div><h3>Serie A</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row4">
-					<div><h3>04</h3></div>
-					<div><h3>Bundesliga</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row5">
-					<div><h3>05</h3></div>
-					<div><h3>Brasileirao Serie A</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row6">
-					<div><h3>06</h3></div>
-					<div><h3>Ligue 1</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row7">
-					<div><h3>07</h3></div>
-					<div><h3>Major League Soccer</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row8">
-					<div><h3>08</h3></div>
-					<div><h3>Primera Division</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row9">
-					<div><h3>09</h3></div>
-					<div><h3>Eredivise</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row10">
-					<div><h3>10</h3></div>
-					<div><h3>Primeira Liga</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row11">
-					<div><h3>11</h3></div>
-					<div><h3>SuperLig</h3></div>
-				</div>
-				<div class="wrap-n4-items">
-					<button id="mostraAncorabtn1" class="button-mostra" onclick="MostraAncora()">
-						<h3>MOSTRA ANCORA</h3>
-					</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container-n" id="container-n2">
-			<div class="wrap-n">
-				<h2>Tutti i campionati</h2>
-				<div class="wrap-n3-items">
-					<div><h4>#</h4></div>
-					<div><h4>Nome</h4></div>
-				</div>
-				<div class="wrap-n1-items" id="row12">
-					<div><h3>12</h3></div>
-					<div><h3>Jupiler Pro League</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row13">
-					<div><h3>13</h3></div>
-					<div><h3>Liga MX</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row14">
-					<div><h3>14</h3></div>
-					<div><h3>Prem''jer-liha</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row15">
-					<div><h3>15</h3></div>
-					<div><h3>Scottish Premiership</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row16">
-					<div><h3>16</h3></div>
-					<div><h3>Allsvenskan</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row17">
-					<div><h3>17</h3></div>
-					<div><h3>Superligaen</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row18">
-					<div><h3>18</h3></div>
-					<div><h3>Super League (Grecia)</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row19">
-					<div><h3>19</h3></div>
-					<div><h3>Super League (Svizzera)</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row20">
-					<div><h3>20</h3></div>
-					<div><h3>J1 League</h3></div>
-				</div>
-				<div class="wrap-n2-items" id="row21">
-					<div><h3>21</h3></div>
-					<div><h3>K League 1</h3></div>
-				</div>
-				<div class="wrap-n1-items" id="row22">
-					<div><h3>22</h3></div>
-					<div><h3>Chinese Super League</h3></div>
-				</div>
-				<div class="wrap-n4-items">
-					<button id="mostraAncorabtn2" class="button-mostra" onclick="MostraAncora()">
-						<h3>MOSTRA ANCORA</h3>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>-->
-	
+
 </div>
 <footer>
 	<div class="top-footer">

@@ -1,8 +1,4 @@
-let container1;
-let container2;
 document.addEventListener('DOMContentLoaded', function() {
-    container1 = document.getElementById('container-n1');
-    container2 = document.getElementById('container-n2');
 
     const barraRicerca = document.getElementById('barra-ricerca');
     const mostraBarra = document.getElementById('mostra-barra');
@@ -29,30 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
             opzioniLogin.classList.add('hidden');
         }
     });
-
-    function init() {
-        if (container1) {
-            container1.style.display = 'block';
-        }
-        if (container2) {
-            container2.style.display = 'none';
-        }
-    }
-    // Chiamata a init() al caricamento del documento
-    init();
+fillTable();
 });
 
-function MostraAncora() {
-    if (container1 && container2) {
-        if (container1.style.display === 'block') {
-            container1.style.display = 'none';
-            container2.style.display = 'block';
-        } else {
-            container1.style.display = 'block';
-            container2.style.display = 'none';
-        }
-    }
-}
 function redirectToPage(buttonID) {
     let val = document.getElementById(buttonID).innerText;
 
@@ -63,8 +38,44 @@ function redirectToPage(buttonID) {
     window.location.href = '../ListaSquadre.html';
 }
 
+function fillTable() {
+    axios.get("/list_competitions")
+        .then(function (response) {
+            // Handle success
+            console.log('Response:', response.data);
 
+            // Trova la tabella
+            for (let i = 0; i < response.data.length; i++) {
+                document.getElementById(`buttonTable${i + 1}`).innerText = response.data[i].Name;
+            }
+        })
+        .catch(function (error) {
+            // Handle errors
+            console.error('Error:', error);
+        });
+}
 
+function aggiungiRiga(numero) {
+    // Trova la tabella
+    let tabella = document.getElementById('table');
 
+    // Inserisci una nuova riga alla fine della tabella
+    let nuovaRiga = tabella.insertRow();
+
+    // Inserisci una cella per il numero
+    let cellaNumero = nuovaRiga.insertCell();
+    cellaNumero.textContent = numero;
+
+    // Inserisci una cella per il pulsante
+    let cellaPulsante = nuovaRiga.insertCell();
+    let pulsante = document.createElement('button');
+    pulsante.className = 'button-table';
+    pulsante.id = `buttonTable${numero}`;
+    pulsante.textContent = `buttonTable${numero}`;
+    pulsante.onclick = function () {
+        redirectToPage(`buttonTable${numero}`);
+    };
+    cellaPulsante.appendChild(pulsante);
+}
 
 
