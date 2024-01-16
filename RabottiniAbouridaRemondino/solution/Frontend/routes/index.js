@@ -26,11 +26,7 @@ router.post('/loadSq',  async function (req, res, next) {
   try {
     const squadName = req.body.squad;
 
-    console.log("Route: "+squadName);
-
     const response = await axios.post('http://localhost:3001/loadSq', { squad: squadName });
-
-    console.log(response.data);
 
     res.json(response.data);
   } catch (error) {

@@ -1,0 +1,101 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "version": "1.0.0",
+    "title": "ServerDocumentation",
+    "description": "User management API",
+    "termsOfService": "http://api_url/terms/",
+    "contact": {
+      "name": "COM3504/6504",
+      "email": "zakaria.abourida@edu.unito.it",
+      "url": "http://shef.ac.uk"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Main Server"
+    },
+    {
+      "url": "http://localhost:3001",
+      "description": "MongoDB Server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get the login page",
+        "responses": {
+          "200": {
+            "description": "Login page retrieved successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/loadHP": {
+      "get": {
+        "summary": "Load the Home page with the recent games",
+        "responses": {
+          "200": {
+            "description": "Recent games retrieved successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/loadSq": {
+      "get": {
+        "summary": "Get historical matches for a squad",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "squad",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Name of the squad"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Squad matches retrieved successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Post historical matches for a squad",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "squad": "Real Madrid Club de Fútbol"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Squad matches posted successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

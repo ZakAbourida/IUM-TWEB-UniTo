@@ -168,6 +168,18 @@ function sendAxiosQuerySq(url, squad){
                 const match = matches[i];
                 const rowId = `rowTable${i + 1}`;
 
+                const dataDalDatabase = match.date;
+
+                // Crea un oggetto Date dalla stringa della data
+                const dataObj = new Date(dataDalDatabase);
+
+                // Ottieni giorno, mese e anno
+                const giorno = dataObj.getDate();
+                const mese = dataObj.getMonth() + 1; // Mese inizia da 0, quindi aggiungi 1
+
+                // Formatta la data nel formato desiderato (dd/mm/yyyy)
+                const dataFormattata = `${giorno}/${mese}`;
+
                 if(squad == match.home_club_name){ // la squadra scelta gioca in casa
                     document.getElementById(`colTable${4 + i * 10}`).innerText = match.away_club_name;
                     document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.home_club_goals}:${match.away_club_goals}`;
@@ -177,7 +189,7 @@ function sendAxiosQuerySq(url, squad){
                     document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.away_club_goals}:${match.home_club_goals}`;
                     document.getElementById(`colTable${7 + i * 10}`).innerText = match.home_club_position;
                 }
-                document.getElementById(`colTable${2 + i * 10}`).innerText = match.date;
+                document.getElementById(`colTable${2 + i * 10}`).innerText = dataFormattata;
                 document.getElementById(`colTable${3 + i * 10}`).innerText = match.season;
                 document.getElementById(`colTable${6 + i * 10}`).innerText = match.round;
                 document.getElementById(`colTable${8 + i * 10}`).innerText = match.stadium;
