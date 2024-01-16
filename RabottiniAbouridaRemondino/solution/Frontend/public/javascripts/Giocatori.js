@@ -1,5 +1,4 @@
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const toggleBtn1 = document.getElementById('toggleBtn1');
     const dropdownContent1 = document.getElementById('dropdownContent1');
     const contentToMove1 = document.querySelector('.content-to-move1');
@@ -30,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const opzioniLogin = document.getElementById('opzioni-login');
     const mostraOpzioni = document.getElementById('mostra-opzioni');
 
-    mostraBarra.addEventListener('click', function() {
-        if(!barraRicerca.classList.contains('visible')) {
+    mostraBarra.addEventListener('click', function () {
+        if (!barraRicerca.classList.contains('visible')) {
             barraRicerca.classList.remove('hidden');
             barraRicerca.classList.add('visible');
         } else {
@@ -40,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    mostraOpzioni.addEventListener('click', function() {
-        if(!opzioniLogin.classList.contains('visible')) {
+    mostraOpzioni.addEventListener('click', function () {
+        if (!opzioniLogin.classList.contains('visible')) {
             opzioniLogin.classList.remove('hidden');
             opzioniLogin.classList.add('visible');
         } else {
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    toggleBtn1.addEventListener('click', function() {
+    toggleBtn1.addEventListener('click', function () {
         const tendinaAltezza = dropdownContent1.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
         if (dropdownContent1.style.display === 'block') {
@@ -68,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    toggleBtn2.addEventListener('click', function() {
+    toggleBtn2.addEventListener('click', function () {
         const tendinaAltezza = dropdownContent2.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
         if (dropdownContent2.style.display === 'block') {
@@ -86,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    toggleBtn3.addEventListener('click', function() {
+    toggleBtn3.addEventListener('click', function () {
         const tendinaAltezza = dropdownContent3.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
         if (dropdownContent3.style.display === 'block') {
@@ -104,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    toggleBtn4.addEventListener('click', function() {
+    toggleBtn4.addEventListener('click', function () {
         const tendinaAltezza = dropdownContent4.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
         if (dropdownContent4.style.display === 'block') {
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    toggleBtn5.addEventListener('click', function() {
+    toggleBtn5.addEventListener('click', function () {
         const tendinaAltezza = dropdownContent5.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
         if (dropdownContent5.style.display === 'block') {
@@ -140,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    toggleBtn6.addEventListener('click', function() {
+    toggleBtn6.addEventListener('click', function () {
         const tendinaAltezza = dropdownContent6.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
         if (dropdownContent6.style.display === 'block') {
@@ -169,9 +168,52 @@ function AxiosCall(url) {
         .then(function (response) {
             // Handle success
             console.log('Response:', response.data);
+            fillDropMenu(response.data, url);
         })
         .catch(function (error) {
             // Handle errors
             console.error('Error:', error);
         });
+}
+
+function fillDropMenu(data, url) {
+    var menu_id;
+    switch (url) {
+        case '/seasons':
+            menu_id = "seasons_menu";
+            break;
+        case '/country':
+            menu_id = "country_menu";
+            break;
+        case '/list_competitions':
+            menu_id = "championships_menu";
+            break;
+        case '/all_teams':
+            menu_id = "club_menu";
+            break;
+        case '/get_role':
+            menu_id = "role_menu";
+            break;
+        default:
+            menu_id = null;
+    }
+    var menu = document.getElementById(menu_id);
+
+    // Pulisci il contenuto esistente
+    menu.innerHTML = '';
+
+    // Loop attraverso l'array di stagioni
+    data.forEach(function (season) {
+        // Crea un nuovo elemento <a>
+        var linkElement = document.createElement("a");
+        if(url == "/list_competitions"){
+            linkElement.setAttribute('value', season.Value);  // Imposta il valore dell'elemento
+            linkElement.textContent = season.Name;
+        }else{
+            linkElement.textContent = season;
+        }
+
+        // Aggiungi l'elemento <a> al menu
+        menu.appendChild(linkElement);
+    });
 }

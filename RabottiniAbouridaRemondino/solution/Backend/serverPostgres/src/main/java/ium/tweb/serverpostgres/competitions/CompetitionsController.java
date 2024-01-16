@@ -1,6 +1,9 @@
 package ium.tweb.serverpostgres.competitions;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,11 +34,13 @@ public class CompetitionsController {
 
     /**
      * <li>Path to obtain the list of national championships</li>
+     *
      * @return List of championships es. {'serie-a, 'premier-league', ecc}
      */
     @GetMapping("/list_competitions")
-    public List<String> ListCompetitions() {
-        return competitionsService.listCompetitions();
+    public ResponseEntity<?> ListCompetitions() throws JSONException {
+        List<JSONObject> championships =  competitionsService.listCompetitions();
+        return ResponseEntity.ok(championships.toString());
     }
 
 }

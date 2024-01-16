@@ -84,7 +84,7 @@ router.get('/list_competitions',  async function (req, res, next) {
 router.get('/all_teams',  async function (req, res, next) {
   try {
     // Richiesta GET al server del database
-    const response = await axios.get('http://localhost:8081/get_role');
+    const response = await axios.get('http://localhost:8081/all_teams');
 
     // Ora si possono passare i dati alla pagina HTML
     res.json(response.data);
@@ -99,7 +99,7 @@ router.get('/all_teams',  async function (req, res, next) {
 router.get('/get_role',  async function (req, res, next) {
   try {
     // Richiesta GET al server del database
-    const response = await axios.get('http://localhost:8081/all_teams');
+    const response = await axios.get('http://localhost:8081/get_role');
 
     // Ora si possono passare i dati alla pagina HTML
     res.json(response.data);
