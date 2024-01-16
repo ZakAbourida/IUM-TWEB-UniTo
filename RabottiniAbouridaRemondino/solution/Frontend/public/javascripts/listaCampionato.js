@@ -55,6 +55,7 @@ function fillTable() {
         });
 }
 
+
 function aggiungiRiga(numero) {
     // Trova la tabella
     let tabella = document.getElementById('table');

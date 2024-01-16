@@ -5,7 +5,7 @@ const axios = require('axios');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendFile(path.join(__dirname, '../public/login.html'));
+  res.sendFile(path.join(__dirname, '../public/Login.html'));
 });
 router.get('/loadHP',  async function (req, res, next) {
   try {

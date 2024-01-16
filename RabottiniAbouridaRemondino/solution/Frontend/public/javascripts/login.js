@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     accedi.addEventListener('click', function() {
         localStorage.setItem(username, document.getElementById('username').value);
-        window.location.href = 'homepage.html'; // Cambia 'pagina_di_destinazione.html' con l'URL della pagina a cui desideri collegarti
+        window.location.href = 'Homepage.html'; // Cambia 'pagina_di_destinazione.html' con l'URL della pagina a cui desideri collegarti
     });
 
 });
