@@ -3,6 +3,8 @@ let container2;
 document.addEventListener('DOMContentLoaded', function() {
     const campionato = localStorage.getItem('campionato');
 
+    alert("Ho RICEVUTO: "+ campionato);
+
     const barraRicerca = document.getElementById('barra-ricerca');
     const mostraBarra = document.getElementById('mostra-barra');
 
@@ -39,20 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    fillTable(campionato);
 });
-
-function mostraAncora() {
-    console.log("MOSTRA ANCORA: Chiamata effettuata");
-    if (container1 && container2) {
-        if (container1.style.display === 'block') {
-            container1.style.display = 'none';
-            container2.style.display = 'block';
-        } else {
-            container1.style.display = 'block';
-            container2.style.display = 'none';
-        }
-    }
-}
 
 function redirectToPage(buttonID) {
     let val = document.getElementById(buttonID).innerText;
@@ -62,6 +52,48 @@ function redirectToPage(buttonID) {
 
     // Reindirizza alla pagina "ListaSquadre.html"
     window.location.href = '../Squadra.html';
+}
+
+
+
+function fillTable(comp) {
+    axios.post('/list_teamsbycompetition', {comp: comp})
+        .then(function (response) {
+            // Handle success
+            console.log('Response:', response.data);
+
+            // Trova la tabella
+            for (let i = 0; i < response.data.length; i++) {
+                document.getElementById(`buttonTable${i + 1}`).innerText = response.data[i];
+            }
+        })
+        .catch(function (error) {
+            // Handle errors
+            console.error('Error:', error);
+        });
+}
+
+function aggiungiRiga(num) {
+    // Trova la tabella
+    let tab = document.getElementById('table');
+
+    // Inserisci una nuova riga alla fine della tabella
+    let nuovaRiga = tab.insertRow();
+
+    // Inserisci una cella per il numero
+    let cellaNum = nuovaRiga.insertCell();
+    cellaNum.textContent = num;
+
+    // Inserisci una cella per il pulsante
+    let cellaPulsante = nuovaRiga.insertCell();
+    let pulsante = document.createElement('button');
+    pulsante.className = 'button-table';
+    pulsante.id = `buttonTable${num}`;
+    pulsante.textContent = `buttonTable${num}`;
+    pulsante.onclick = function () {
+        redirectToPage(`buttonTable${num}`);
+    };
+    cellaPulsante.appendChild(pulsante);
 }
 
 

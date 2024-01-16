@@ -29,7 +29,7 @@ fillTable();
 });
 
 function redirectToPage(buttonID) {
-    let val = document.getElementById(buttonID).innerText;
+    let val = document.getElementById(buttonID).value;
 
     // Salva il valore nella localStorage
     localStorage.setItem('campionato', val);
@@ -47,6 +47,7 @@ function fillTable() {
             // Trova la tabella
             for (let i = 0; i < response.data.length; i++) {
                 document.getElementById(`buttonTable${i + 1}`).innerText = response.data[i].Name;
+                document.getElementById(`buttonTable${i + 1}`).value = response.data[i].Value;
             }
         })
         .catch(function (error) {
