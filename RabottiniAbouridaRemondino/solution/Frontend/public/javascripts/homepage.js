@@ -98,6 +98,5 @@ function onSubmit() {
     console.log("Caricamento dati in homepage");
     // Chiamata a sendAxiosQuery con i valori dei campi
     sendAxiosQuery('/loadHP');
-
 }
 

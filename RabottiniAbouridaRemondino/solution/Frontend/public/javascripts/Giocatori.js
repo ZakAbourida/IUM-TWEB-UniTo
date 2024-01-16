@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const toggleBtn1 = document.getElementById('toggleBtn1');
     const dropdownContent1 = document.getElementById('dropdownContent1');
@@ -155,6 +156,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
+    AxiosCall('/seasons');
+    AxiosCall('/country');
+    AxiosCall('/list_competitions');
+    AxiosCall('/all_teams');
+    AxiosCall('/get_role');
 
 });
+
+function AxiosCall(url) {
+    axios.get(url)
+        .then(function (response) {
+            // Handle success
+            console.log('Response:', response.data);
+        })
+        .catch(function (error) {
+            // Handle errors
+            console.error('Error:', error);
+        });
+}

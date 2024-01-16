@@ -413,6 +413,8 @@ footer{
 }
 .dropdown {
     float: left;
+    width: 100%;
+    height: auto;
 }
 .dropdown .dropbtn {
     font-size: 1.7vw;
@@ -424,7 +426,7 @@ footer{
     font-family: inherit;
 }
 .navbar-w2 a:hover, .dropdown:hover .dropbtn {
-    background-color: darkgray;
+
 }
 .dropdown-content1 {
     display: none;
@@ -794,6 +796,19 @@ footer{
     background: #8C0098;
 }
 
+.btn-custom {
+    background-color: #e3c976;
+    color: #000000;
+    border-color: darkgoldenrod;
+    font-size: 2vh;
+}
+.dropdown-content1{
+    border-radius: 20px;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: rgb(128, 128, 128);
+}
 
 
 
