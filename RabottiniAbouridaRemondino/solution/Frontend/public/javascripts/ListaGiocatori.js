@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const opzioniLogin = document.getElementById('opzioni-login');
     const mostraOpzioni = document.getElementById('mostra-opzioni');
 
+    changeAnnoNascitatext();
+
     mostraBarra.addEventListener('click', function () {
         if (!barraRicerca.classList.contains('visible')) {
             barraRicerca.classList.remove('hidden');
@@ -178,24 +180,31 @@ function AxiosCall(url) {
 
 function fillDropMenu(data, url) {
     var menu_id;
+    var btnMenu;
     switch (url) {
         case '/seasons':
             menu_id = "seasons_menu";
+            btnMenu = "btn-stagione";
             break;
         case '/country':
             menu_id = "country_menu";
+            btnMenu = "btn-paese";
             break;
         case '/list_competitions':
             menu_id = "championships_menu";
+            btnMenu = "btn-campionato";
             break;
         case '/all_teams':
             menu_id = "club_menu";
+            btnMenu = "btn-club";
             break;
         case '/get_role':
             menu_id = "role_menu";
+            btnMenu = "btn-ruolo";
             break;
         default:
             menu_id = null;
+            btnMenu = null;
     }
     var menu = document.getElementById(menu_id);
 
@@ -206,14 +215,28 @@ function fillDropMenu(data, url) {
     data.forEach(function (season) {
         // Crea un nuovo elemento <a>
         var linkElement = document.createElement("a");
-        if(url == "/list_competitions"){
+        if(url === "/list_competitions"){
             linkElement.setAttribute('value', season.Value);  // Imposta il valore dell'elemento
             linkElement.textContent = season.Name;
         }else{
             linkElement.textContent = season;
         }
 
+        linkElement.id = linkElement.textContent;
+
+        document.getElementById(linkElement.id).addEventListener('click', function (){
+            btnMenu.innerText = document.getElementById(linkElement.id).innerText;
+        });
+
         // Aggiungi l'elemento <a> al menu
         menu.appendChild(linkElement);
     });
+}
+
+function changeAnnoNascitatext(){
+    for(let i = 1; i<21; i++){
+        document.getElementById('anno'+i).addEventListener('click', function (){
+            document.getElementById('btn-annonascita').innerText = document.getElementById('anno'+i).innerText;
+        });
+    }
 }
