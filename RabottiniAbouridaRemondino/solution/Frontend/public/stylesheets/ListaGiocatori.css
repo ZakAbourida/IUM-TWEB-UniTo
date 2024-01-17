@@ -415,9 +415,10 @@ footer{
     width: 100%;
     height: auto;
 }
+
 .dropdown .dropbtn {
     width: 100%;
-    font-size: 1.7rem;
+    font-size: 3rem;
     border: none;
     outline: none;
     color: white;
@@ -441,10 +442,8 @@ footer{
 
     flex-direction: column;
     border-radius: 20px;
-    justify-content: center;
+    justify-content: initial;
     align-items: flex-start;
-    margin-top: 2vh;
-
 }
 .dropdown-content1 a {
     position: relative;
@@ -817,7 +816,7 @@ footer{
 }
 .dropdown-content1{
     border-radius: 20px;
-    justify-content: center;
+    justify-content: initial;
     width: 100%;
     background-color: rgb(128, 128, 128);
 }
