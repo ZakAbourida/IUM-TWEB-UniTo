@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    toggleBtn1.addEventListener('click', function () {
+    /*toggleBtn1.addEventListener('click', function () {
         const tendinaAltezza = dropdownContent1.clientHeight;
         const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
         if (dropdownContent1.style.display === 'block') {
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             dropdownContent6.style.display = 'block';
         }
-    });
+    });*/
 
     AxiosCall('/seasons');
     AxiosCall('/country');
@@ -224,9 +224,10 @@ function fillDropMenu(data, url) {
 
         linkElement.id = linkElement.textContent;
 
-        document.getElementById(linkElement.id).addEventListener('click', function (){
+        /*document.getElementById(linkElement.id).addEventListener('click', function (){
             btnMenu.innerText = document.getElementById(linkElement.id).innerText;
-        });
+        });*/
+        console.log(linkElement.id);
 
         // Aggiungi l'elemento <a> al menu
         menu.appendChild(linkElement);
