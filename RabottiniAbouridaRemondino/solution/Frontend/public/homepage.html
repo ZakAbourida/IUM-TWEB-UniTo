@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Mega%3A700"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans%3A400"/>
-    <!-- CSS -->
-    <link href="stylesheets/Homepage.css" rel="stylesheet">
     <!-- Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -31,6 +29,8 @@
     <script src="javascripts/Homepage.js"></script>
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- CSS -->
+    <link href="stylesheets/Homepage.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
@@ -66,50 +66,42 @@
             </div>
             <div class="opzioni-login-container">
                 <div id="opzioni-login" class="hidden wrap-opzioni-login">
-                    <button >Profilo</button>
-                    <button >Sicurezza</button>
-                    <button >Log out</button>
+                    <button>Profilo</button>
+                    <button>Sicurezza</button>
+                    <button>Log out</button>
                 </div>
             </div>
         </div>
     </header>
 
-    <div id="myCarousel" class="carousel" data-ride="carousel">
-
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"
+                    aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                    class=""></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                    class=""></button>
+        </div>
         <div class="carousel-inner">
-            <div class="item active">
-                <img src="./images/messi.png" alt="messi1">
-                <div class="carousel-caption">
-                    <h3>Messi 1</h3>
-                    <p>LA is always so much fun!</p>
-                </div>
+            <div class="carousel-item active">
+                <img src="/images/GettyImages-1016702318.webp" width="100%" height="100%" alt="Descrizione dell'immagine" aria-hidden="true">
             </div>
-
-            <div class="item">
-                <img src="./images/ronaldo.png" alt="messi2">
-                <div class="carousel-caption">
-                    <h3>Messi 2</h3>
-                    <p>Thank you, Chicago!</p>
-                </div>
+            <div class="carousel-item">
+                <img src="/images/GettyImages-1243754441-1200x675.webp" width="100%" height="100%" alt="Descrizione dell'immagine" aria-hidden="true">
             </div>
-
-            <div class="item">
-                <img src="./images/messi.png" alt="messi3">
-                <div class="carousel-caption">
-                    <h3>Messi 3</h3>
-                    <p>We love the Big Apple!</p>
-                </div>
+            <div class="carousel-item">
+                <img src="/images/w768xh576_GettyImages-941534222.jpg" width="100%" height="100%" alt="Descrizione dell'immagine" aria-hidden="true">
             </div>
         </div>
-
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
     <div class="container-w-n">
@@ -122,7 +114,8 @@
                         <div class="container-single-w-img">
                             <img src="./images/Saka-homepage.png" alt="whisper1">
                         </div>
-                        <p> Ancora un record per Saka è il quinto più giovane a raggiungere 150 presenze in premier league</p>
+                        <p> Ancora un record per Saka è il quinto più giovane a raggiungere 150 presenze in premier
+                            league</p>
                         <div class="container-w-descr">
                             <img src="./images/img-Cheyenne-Gouse.png" alt="profilo-img">
                             <p> Chyenne Gouse</p>
@@ -132,7 +125,8 @@
                         <div class="container-single-w-img">
                             <img src="./images/graficoAltezzePortieri.png" alt="whisper2">
                         </div>
-                        <p> Secondo uno studio l'altezza dei portieri è aumentata con gli anni. Nello studio viene evidenziato...</p>
+                        <p> Secondo uno studio l'altezza dei portieri è aumentata con gli anni. Nello studio viene
+                            evidenziato...</p>
                         <div class="container-w-descr">
                             <img src="./images/img-Cheyenne-Gouse.png" alt="profilo-img">
                             <p> Chyenne Gouse</p>
@@ -145,7 +139,8 @@
                         <div class="container-single-w-img">
                             <img src="./images/whispers3.png" alt="whisper3">
                         </div>
-                        <p> Napoli-Salernitana si gioca sabato 13 gennaio 2024. Il calcio d'inizio è fissato alle ore 15. La sfida sarà trasmessa in diretta su Dazn.</p>
+                        <p> Napoli-Salernitana si gioca sabato 13 gennaio 2024. Il calcio d'inizio è fissato alle ore
+                            15. La sfida sarà trasmessa in diretta su Dazn.</p>
                         <div class="container-w-descr">
                             <img src="./images/img-Cheyenne-Gouse.png" alt="profilo-img">
                             <p> Chyenne Gouse</p>
@@ -179,9 +174,12 @@
                         <div class="container-n-descr">
                             <p> Premier League: Chelsea a -3 dalla zona Europa. Alle 18.30 Newcastle-Manchester City
                                 La grande giornata di calcio si arricchisce con il programma della Premier League, oggi
-                                in scena con due sfide. Il Chelsea di Pochettino, alle 13.30, sconfigge il Fulham per 1-0
-                                (rete di Palmer) e si porta a -3 dal 6° posto. Alle 18.30, big match fra Newcastle e Manchester
-                                City: Magpies per riavvicinarsi alla zona Europa, Citizens per non lasciare scappare il Liverpool
+                                in scena con due sfide. Il Chelsea di Pochettino, alle 13.30, sconfigge il Fulham per
+                                1-0
+                                (rete di Palmer) e si porta a -3 dal 6° posto. Alle 18.30, big match fra Newcastle e
+                                Manchester
+                                City: Magpies per riavvicinarsi alla zona Europa, Citizens per non lasciare scappare il
+                                Liverpool
                                 in vetta (Reds attualmente a +5 sugli uomini di Guardiola).</p>
                             <div class="container-n-descr1">
                                 <img src="./images/img-Cheyenne-Gouse.png" alt="profilo-img">
@@ -194,10 +192,14 @@
                             <img src="./images/news2.png" alt="news2">
                         </div>
                         <div class="container-n-descr">
-                            <p>Alla vigilia della partita contro il Milan Josè Mourinho fa la conta degli assenti: "Davanti Azmoun
-                                è fuori, Dybala è fuori. E sono due in meno". Emergenza totale, per questo l'allenatore della Roma
-                                pesca nella Primavera: "Sarà convocato João Costa". Classe 2005, attaccante esterno - gioca a destra
-                                con piede mancino - che può fare anche il trequartista o la seconda punta, brasiliano con passaporto
+                            <p>Alla vigilia della partita contro il Milan Josè Mourinho fa la conta degli assenti:
+                                "Davanti Azmoun
+                                è fuori, Dybala è fuori. E sono due in meno". Emergenza totale, per questo l'allenatore
+                                della Roma
+                                pesca nella Primavera: "Sarà convocato João Costa". Classe 2005, attaccante esterno -
+                                gioca a destra
+                                con piede mancino - che può fare anche il trequartista o la seconda punta, brasiliano
+                                con passaporto
                                 portoghese per le origini della madre.</p>
                             <div class="container-n-descr1">
                                 <img src="images/img-Cheyenne-Gouse.png" alt="profilo-img">
@@ -211,10 +213,14 @@
                         </div>
                         <div class="container-n-descr">
                             <p>Juve: ottimismo per Chiesa, Rabiot a parte. Le ultime verso il Sassuolo
-                                Arrivano buone notizie per il tecnico della Juventus Massimiliano Allegri, in vista della sfida di
-                                martedì sera contro il Sassuolo. Secondo quanto riportato da Sky Sport, infatti, durante l'ultimo
-                                allenamento odierno, Federico Chiesa si è parzialmente allenato col gruppo a disposizione del tecnico
-                                livornese e, salvo sorprese dell'ultimo minuto, verrà convocato per la sfida contro i neroverdi di
+                                Arrivano buone notizie per il tecnico della Juventus Massimiliano Allegri, in vista
+                                della sfida di
+                                martedì sera contro il Sassuolo. Secondo quanto riportato da Sky Sport, infatti, durante
+                                l'ultimo
+                                allenamento odierno, Federico Chiesa si è parzialmente allenato col gruppo a
+                                disposizione del tecnico
+                                livornese e, salvo sorprese dell'ultimo minuto, verrà convocato per la sfida contro i
+                                neroverdi di
                                 Dionisi.</p>
                             <div class="container-n-descr1">
                                 <img src="./images/img-Cheyenne-Gouse.png" alt="profilo-img">
@@ -231,8 +237,10 @@
                         </div>
                         <div class="container-n-descr">
                             <p>Toney, il Brentford vuole tenerselo stretto
-                                Ci sono molte voci che sostengono che l'attaccante Ivan Toney, voluto dall'Arsenal, lascerà il
-                                Brentford in questa sessione di mercato. Ma dal club inglese sono fiduciosi che non sia così.
+                                Ci sono molte voci che sostengono che l'attaccante Ivan Toney, voluto dall'Arsenal,
+                                lascerà il
+                                Brentford in questa sessione di mercato. Ma dal club inglese sono fiduciosi che non sia
+                                così.
                                 Lo ha affermato il secondo allenatore della squadra, Sam Saunders.</p>
                             <div class="container-n-descr1">
                                 <img src="./images/img-Cheyenne-Gouse.png" alt="profilo-img">
@@ -247,7 +255,8 @@
                         <div class="container-n-descr">
                             <p>Manchester United, nel mirino un giovane mediano dell'Anversa
                                 Secondo 'Football Insider', il Manchester United starebbe raccogliendo tutti i soldi per
-                                Arthur Vermeeren, 18enne centrocampista dell'Anversa. Il club belga chiede circa 30 milioni di euro</p>
+                                Arthur Vermeeren, 18enne centrocampista dell'Anversa. Il club belga chiede circa 30
+                                milioni di euro</p>
                             <div class="container-n-descr1">
                                 <img src="./images/img-Cheyenne-Gouse.png" alt="profilo-img">
                                 <p> Chyenne Gouse</p>
@@ -259,12 +268,17 @@
                             <img src="./images/news6.png" alt="news6">
                         </div>
                         <div class="container-n-descr">
-                            <p>Cristiano Ronaldo è il miglior marcatore dell'annata, superati Kane e Mbappé. In top 10 anche il giallorosso
+                            <p>Cristiano Ronaldo è il miglior marcatore dell'annata, superati Kane e Mbappé. In top 10
+                                anche il giallorosso
                                 Romelu Lukaku.
-                                Non si smentisce Cristiano Ronaldo. Seppur in Arabia Saudita e lontano dal calcio che conta, il portoghese si è
-                                tolto una soddisfazione importante trionfando nel premio IFFHS di "Miglior marcatore maschile" del 2023.
-                                Il fuoriclasse, ormai 38enne, si è laureato anche in quest'occasione come bomber dell'annata. Per lui si tratta
-                                del quinto trionfo in questa speciale categoria, che in precedenza aveva vinto nel 2013, 2014, 2016, 2017, 2019.</p>
+                                Non si smentisce Cristiano Ronaldo. Seppur in Arabia Saudita e lontano dal calcio che
+                                conta, il portoghese si è
+                                tolto una soddisfazione importante trionfando nel premio IFFHS di "Miglior marcatore
+                                maschile" del 2023.
+                                Il fuoriclasse, ormai 38enne, si è laureato anche in quest'occasione come bomber
+                                dell'annata. Per lui si tratta
+                                del quinto trionfo in questa speciale categoria, che in precedenza aveva vinto nel 2013,
+                                2014, 2016, 2017, 2019.</p>
                             <div class="container-n-descr1">
                                 <img src="images/img-Cheyenne-Gouse.png" alt="profilo-img">
                                 <p> Chyenne Gouse</p>
@@ -392,11 +406,11 @@
                     <div class="stadium-rp">
                         <p id="stadio1"></p>
                     </div>
-	                <div class="match-rp-risultato">
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa1">
-		                <h2 id="risultato1"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa1">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa1">
+                        <h2 id="risultato1"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa1">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-1">
                             <h2 id="nome_squadra_casa1"></h2>
@@ -405,7 +419,7 @@
                             <h2 id="nome_squadra_fuori_casa1"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori1"></p>
                     </div>
                 </div>
@@ -413,11 +427,11 @@
                     <div class="stadium-rp">
                         <p id="stadio2"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa2">
-		                <h2 id="risultato2"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa2">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa2">
+                        <h2 id="risultato2"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa2">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-2">
                             <h2 id="nome_squadra_casa2"></h2>
@@ -426,7 +440,7 @@
                             <h2 id="nome_squadra_fuori_casa2"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori2"></p>
                     </div>
                 </div>
@@ -434,11 +448,11 @@
                     <div class="stadium-rp">
                         <p id="stadio3"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa3">
-		                <h2 id="risultato3"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa3">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa3">
+                        <h2 id="risultato3"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa3">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-3">
                             <h2 id="nome_squadra_casa3"></h2>
@@ -447,7 +461,7 @@
                             <h2 id="nome_squadra_fuori_casa3"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori3"></p>
                     </div>
                 </div>
@@ -455,11 +469,11 @@
                     <div class="stadium-rp">
                         <p id="stadio4"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa4">
-		                <h2 id="risultato4"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa4">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa4">
+                        <h2 id="risultato4"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa4">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-4">
                             <h2 id="nome_squadra_casa4"></h2>
@@ -468,7 +482,7 @@
                             <h2 id="nome_squadra_fuori_casa4"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori4"></p>
                     </div>
                 </div>
@@ -476,11 +490,11 @@
                     <div class="stadium-rp">
                         <p id="stadio5"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa5">
-		                <h2 id="risultato5"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa5">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa5">
+                        <h2 id="risultato5"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa5">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-5">
                             <h2 id="nome_squadra_casa5"></h2>
@@ -489,7 +503,7 @@
                             <h2 id="nome_squadra_fuori_casa5"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori5"></p>
                     </div>
                 </div>
@@ -497,11 +511,11 @@
                     <div class="stadium-rp">
                         <p id="stadio6"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa6">
-		                <h2 id="risultato6"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa6">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa6">
+                        <h2 id="risultato6"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa6">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-6">
                             <h2 id="nome_squadra_casa6"></h2>
@@ -510,7 +524,7 @@
                             <h2 id="nome_squadra_fuori_casa6"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori6"></p>
                     </div>
                 </div>
@@ -518,11 +532,11 @@
                     <div class="stadium-rp">
                         <p id="stadio7"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa7">
-		                <h2 id="risultato7"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa7">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa7">
+                        <h2 id="risultato7"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa7">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-7">
                             <h2 id="nome_squadra_casa7"></h2>
@@ -531,7 +545,7 @@
                             <h2 id="nome_squadra_fuori_casa7"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori7"></p>
                     </div>
                 </div>
@@ -539,11 +553,11 @@
                     <div class="stadium-rp">
                         <p id="stadio8"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa8">
-		                <h2 id="risultato8"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa8">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa8">
+                        <h2 id="risultato8"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa8">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-8">
                             <h2 id="nome_squadra_casa8"></h2>
@@ -552,7 +566,7 @@
                             <h2 id="nome_squadra_fuori_casa8"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori8"></p>
                     </div>
                 </div>
@@ -560,11 +574,11 @@
                     <div class="stadium-rp">
                         <p id="stadio9"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa9">
-		                <h2 id="risultato9"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa9">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa9">
+                        <h2 id="risultato9"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa9">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-9">
                             <h2 id="nome_squadra_casa9"></h2>
@@ -573,7 +587,7 @@
                             <h2 id="nome_squadra_fuori_casa9"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori9"></p>
                     </div>
                 </div>
@@ -581,11 +595,12 @@
                     <div class="stadium-rp">
                         <p id="stadio10"></p>
                     </div>
-	                <div class="match-rp-risultato" >
-		                <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa10">
-		                <h2 id="risultato10"></h2>
-		                <img src="images/Wolverhampton.png" alt="logo squadra fuori casa" id="logo_squadra_fuori_casa10">
-	                </div>
+                    <div class="match-rp-risultato">
+                        <img src="images/Arsenal.png" alt="logo squadra in casa" id="logo_squadra_casa10">
+                        <h2 id="risultato10"></h2>
+                        <img src="images/Wolverhampton.png" alt="logo squadra fuori casa"
+                             id="logo_squadra_fuori_casa10">
+                    </div>
                     <div class="match-rp">
                         <div class="match-rp-team1" id="team1-10">
                             <h2 id="nome_squadra_casa10"></h2>
@@ -594,7 +609,7 @@
                             <h2 id="nome_squadra_fuori_casa10"></h2>
                         </div>
                     </div>
-                    <div class="scorer-rp" >
+                    <div class="scorer-rp">
                         <p id="marcatori10"></p>
                     </div>
                 </div>
@@ -620,7 +635,7 @@
             <h2>CONTATTI</h2>
             <div class="top-footer-info-posti">
                 <p>Via Roma 2, Torino, TO 10100, IT</p>
-                <p>info@footballwhispers.com  +39 347 3085745</p>
+                <p>info@footballwhispers.com +39 347 3085745</p>
             </div>
         </div>
     </div>

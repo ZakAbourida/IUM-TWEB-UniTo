@@ -7,230 +7,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Lista Campionati</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- GoogleLapis -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish%3A400%2C700"/>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca%3A400%2C700"/>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend%3A400%2C700"/>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Exa%3A700"/>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C700"/>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Mega%3A700"/>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans%3A400"/>
-	<!-- CSS -->
-	<link href="stylesheets/ListaCampionati.css" rel="stylesheet">
-	<!-- Bootstrap -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- Javascript -->
-	<script src="javascripts/ListaCampionato.js"></script>
-	<!-- Axios -->
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Lista Campionati</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GoogleLapis -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Exa%3A700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Mega%3A700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans%3A400"/>
+    <!-- CSS -->
+    <link href="stylesheets/ListaCampionati.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Javascript -->
+    <script src="javascripts/ListaCampionato.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body onload="">
 <div class="container-fluid">
-	<header class="header">
-		<div class="title-container">
-			<div class="container-logo">
-				<img class="logo" src="images/logo-homepage.png" alt="Logo Football Whisper">
-			</div>
-			<div class="link-container">
-				<nav>
-					<ul class="link-header">
-						<li><a class="altri-a" href="Homepage.html">Home</a></li>
-						<li><a class="altri-a" href="Canale.html">Canale</a></li>
-						<li><a class="homepage-a" href="ListaCampionati.html">Campionati</a></li>
-						<li><a class="altri-a" href="ListaSquadre.html">Squadre</a></li>
-						<li><a class="altri-a" href="ListaGiocatori.html">Giocatori</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="search-login-container">
-				<button id="mostra-barra" class="search-button">
-					<img class="search-img" src="images/searchbar.png" alt="searchbar">
-				</button>
-				<button id="mostra-opzioni" class="login-button">
-					<img class="login-img" src="images/login-img.png" alt="login">
-				</button>
-			</div>
-		</div>
-		<div class="wrap-barra-ricerca">
-			<div id="barra-ricerca" class="hidden barra-ricerca-container">
-				<input id="input-ricerca" type="text" placeholder="Cerca..."/>
-			</div>
-			<div class="opzioni-login-container">
-				<div id="opzioni-login" class="hidden wrap-opzioni-login">
-					<button >Profilo</button>
-					<button >Sicurezza</button>
-					<button >Log out</button>
-				</div>
-			</div>
-		</div>
-	</header>
-	<div class="container-w-n">
-		<div class="container-w">
-			<div class="wrap-w">
-				<h2>Campionati più cercati</h2>
-				<div class="wrap-wn-items">
-					<div class="container-single-w img">
-						<button class="round-button-w">
-							<img class="round-button-w img" src="images/premierLeagueLogo.jpg" alt="premier league logo">
-						</button>
-					</div>
-					<div><h3><button class="button-table" id="premierLeagueButton" onclick="redirectToPage('premierLeagueButton')">PREMIER LEAGUE</button></h3></div>
-				</div>
-				<div class="wrap-wn-items">
-					<div class="container-single-w img">
-						<button class="round-button-w">
-							<img class="round-button-w img" src="images/LaligaLogo.jpg" alt="la liga logo">
-						</button>
-					</div>
-					<div><h3><button class="button-table" id="laLigaButton" onclick="redirectToPage('laLigaButton')">LA LIGA</button></h3></div>
-				</div>
-				<div class="wrap-wn-items">
-					<div class="container-single-w img">
-						<button class="round-button-w">
-							<img class="round-button-w img" src="images/SerieALogo.png" alt="serie A logo">
-						</button>
-					</div>
-					<div><h3><button class="button-table" id="serieAButton" onclick="redirectToPage('serieAButton')">SERIE A</button></h3></div>
-				</div>
-				<div class="wrap-wn-items">
-					<div class="container-single-w img">
-						<button class="round-button-w">
-							<img class="round-button-w img" src="images/BundesligaLogo.png" alt="bundesliga logo">
-						</button>
-					</div>
-					<div><h3><button class="button-table" id="bundesligaButton" onclick="redirectToPage('bundesligaButton')">BUNDESLIGA</button></h3></div>
-				</div>
-				<div class="wrap-wn-items">
-					<div class="container-single-w img">
-						<button class="round-button-w">
-							<img class="round-button-w img" src="images/SerieBLogo.png.jpeg" alt="serie B logo">
-						</button>
-					</div>
-					<div><h3><button class="button-table" id="serieBButton" onclick="redirectToPage('serieBButton')">SERIE B</button></h3></div>
-				</div>
-				<div class="wrap-wn-items">
-					<div class="container-single-w img">
-						<button class="round-button-w">
-							<img class="round-button-w img" src="images/Ligue1Logo.png" alt="ligue 1 logo">
-						</button>
-					</div>
-					<div><h3><button class="button-table" id="ligue1Button" onclick="redirectToPage('ligue1Button')">LIGUE 1</button></h3></div>
-				</div>
-			</div>
-			
-		</div>
-		
-		<div class="container-ris">
-			<div class="wrap-ris">
-				<div class="wrap-ris5-items">
-					<h2>Tutti i campionati</h2>
-				</div>
-				
-				<table class="table-ris" id="table" >
-					<thead>
-					<tr>
-						<th >#</th>
-						<th>Nome</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr id="rowTable1">
-						<td id="colTable1">1</td>
-						<td id="colTable2"><button class="button-table" id="buttonTable1" value="" onclick="redirectToPage('buttonTable1')"></button></td>
-					</tr>
-					<tr id="rowTable2">
-						<td id="colTable8">2</td>
-						<td id="colTable9"><button class="button-table" id="buttonTable2" value="" onclick="redirectToPage('buttonTable2')"></button></td>
-					</tr>
-					<tr id="rowTable3">
-						<td id="colTable15">3</td>
-						<td id="colTable16"><button class="button-table" id="buttonTable3" value="" onclick="redirectToPage('buttonTable3')"></button></td>
-					</tr>
-					<tr id="rowTable4">
-						<td id="colTable22">4</td>
-						<td id="colTable23"><button class="button-table" id="buttonTable4" value="" onclick="redirectToPage('buttonTable4')"></button></td>
-					</tr>
-					<tr id="rowTable5">
-						<td id="colTable29">5</td>
-						<td id="colTable30"><button class="button-table" id="buttonTable5" value="" onclick="redirectToPage('buttonTable5')"></button></td>
-					</tr>
-					<tr id="rowTable6">
-						<td id="colTable36">6</td>
-						<td id="colTable37"><button class="button-table" id="buttonTable6" value="" onclick="redirectToPage('buttonTable6')"></button></td>
-					</tr>
-					<tr id="rowTable7">
-						<td id="colTable43">7</td>
-						<td id="colTable44"><button class="button-table" id="buttonTable7" value="" onclick="redirectToPage('buttonTable7')"></button></td>
-					</tr>
-					<tr id="rowTable8">
-						<td id="colTable50">8</td>
-						<td id="colTable51"><button class="button-table" id="buttonTable8" value="" onclick="redirectToPage('buttonTable8')"></button></td>
-					</tr>
-					<tr id="rowTable9">
-						<td id="colTable57">9</td>
-						<td id="colTable58"><button class="button-table" id="buttonTable9" value="" onclick="redirectToPage('buttonTable9')"></button></td>
-					</tr>
-					<tr id="rowTable10">
-						<td id="colTable64">10</td>
-						<td id="colTable65"><button class="button-table" id="buttonTable10" value="" onclick="redirectToPage('buttonTable10')"></button></td>
-					</tr>
-					<tr id="rowTable11">
-						<td id="colTable71">11</td>
-						<td id="colTable72"><button class="button-table" id="buttonTable11" value="" onclick="redirectToPage('buttonTable11')"></button></td>
-					</tr>
-					<tr id="rowTable12">
-						<td id="colTable73">12</td>
-						<td id="colTable74"><button class="button-table" id="buttonTable12" value="" onclick="redirectToPage('buttonTable12')"></button></td>
-					</tr>
-					<tr id="rowTable13">
-						<td id="colTable75">13</td>
-						<td id="colTable76"><button class="button-table" id="buttonTable13" value="" onclick="redirectToPage('buttonTable13')"></button></td>
-					</tr>
-					</tbody>
-				</table>
-				
-				<div class="wrap-ris4-items">
-					.
-				</div>
-			</div>
-		</div>
+    <header class="header">
+        <div class="title-container">
+            <div class="container-logo">
+                <img class="logo" src="images/logo-homepage.png" alt="Logo Football Whisper">
+            </div>
+            <div class="link-container">
+                <nav>
+                    <ul class="link-header">
+                        <li><a class="altri-a" href="Homepage.html">Home</a></li>
+                        <li><a class="altri-a" href="Canale.html">Canale</a></li>
+                        <li><a class="homepage-a" href="ListaCampionati.html">Campionati</a></li>
+                        <li><a class="altri-a" href="ListaSquadre.html">Squadre</a></li>
+                        <li><a class="altri-a" href="ListaGiocatori.html">Giocatori</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search-login-container">
+                <button id="mostra-barra" class="search-button">
+                    <img class="search-img" src="images/searchbar.png" alt="searchbar">
+                </button>
+                <button id="mostra-opzioni" class="login-button">
+                    <img class="login-img" src="images/login-img.png" alt="login">
+                </button>
+            </div>
+        </div>
+        <div class="wrap-barra-ricerca">
+            <div id="barra-ricerca" class="hidden barra-ricerca-container">
+                <input id="input-ricerca" type="text" placeholder="Cerca..."/>
+            </div>
+            <div class="opzioni-login-container">
+                <div id="opzioni-login" class="hidden wrap-opzioni-login">
+                    <button>Profilo</button>
+                    <button>Sicurezza</button>
+                    <button>Log out</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-w-n">
+        <div class="container-w">
+            <div class="wrap-w">
+                <h2>Campionati più cercati</h2>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/premierLeagueLogo.jpg"
+                                 alt="premier league logo">
+                        </button>
+                    </div>
+                    <div>
+                        <h3>
+                            <button class="button-table" id="premierLeagueButton"
+                                    onclick="redirectToPage('premierLeagueButton')">PREMIER LEAGUE
+                            </button>
+                        </h3>
+                    </div>
+                </div>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/LaligaLogo.jpg" alt="la liga logo">
+                        </button>
+                    </div>
+                    <div>
+                        <h3>
+                            <button class="button-table" id="laLigaButton" onclick="redirectToPage('laLigaButton')">LA
+                                LIGA
+                            </button>
+                        </h3>
+                    </div>
+                </div>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/SerieALogo.png" alt="serie A logo">
+                        </button>
+                    </div>
+                    <div>
+                        <h3>
+                            <button class="button-table" id="serieAButton" onclick="redirectToPage('serieAButton')">
+                                SERIE A
+                            </button>
+                        </h3>
+                    </div>
+                </div>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/BundesligaLogo.png" alt="bundesliga logo">
+                        </button>
+                    </div>
+                    <div>
+                        <h3>
+                            <button class="button-table" id="bundesligaButton"
+                                    onclick="redirectToPage('bundesligaButton')">BUNDESLIGA
+                            </button>
+                        </h3>
+                    </div>
+                </div>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/SerieBLogo.png.jpeg" alt="serie B logo">
+                        </button>
+                    </div>
+                    <div>
+                        <h3>
+                            <button class="button-table" id="serieBButton" onclick="redirectToPage('serieBButton')">
+                                SERIE B
+                            </button>
+                        </h3>
+                    </div>
+                </div>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/Ligue1Logo.png" alt="ligue 1 logo">
+                        </button>
+                    </div>
+                    <div>
+                        <h3>
+                            <button class="button-table" id="ligue1Button" onclick="redirectToPage('ligue1Button')">
+                                LIGUE 1
+                            </button>
+                        </h3>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+
+        <div class="container-ris">
+            <div class="wrap-ris">
+                <div class="wrap-ris5-items">
+                    <h2>Tutti i campionati</h2>
+                </div>
+
+                <table class="table-ris" id="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="rowTable1">
+                        <td id="colTable1">1</td>
+                        <td id="colTable2">
+                            <button class="button-table" id="buttonTable1" value=""
+                                    onclick="redirectToPage('buttonTable1')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable2">
+                        <td id="colTable8">2</td>
+                        <td id="colTable9">
+                            <button class="button-table" id="buttonTable2" value=""
+                                    onclick="redirectToPage('buttonTable2')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable3">
+                        <td id="colTable15">3</td>
+                        <td id="colTable16">
+                            <button class="button-table" id="buttonTable3" value=""
+                                    onclick="redirectToPage('buttonTable3')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable4">
+                        <td id="colTable22">4</td>
+                        <td id="colTable23">
+                            <button class="button-table" id="buttonTable4" value=""
+                                    onclick="redirectToPage('buttonTable4')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable5">
+                        <td id="colTable29">5</td>
+                        <td id="colTable30">
+                            <button class="button-table" id="buttonTable5" value=""
+                                    onclick="redirectToPage('buttonTable5')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable6">
+                        <td id="colTable36">6</td>
+                        <td id="colTable37">
+                            <button class="button-table" id="buttonTable6" value=""
+                                    onclick="redirectToPage('buttonTable6')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable7">
+                        <td id="colTable43">7</td>
+                        <td id="colTable44">
+                            <button class="button-table" id="buttonTable7" value=""
+                                    onclick="redirectToPage('buttonTable7')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable8">
+                        <td id="colTable50">8</td>
+                        <td id="colTable51">
+                            <button class="button-table" id="buttonTable8" value=""
+                                    onclick="redirectToPage('buttonTable8')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable9">
+                        <td id="colTable57">9</td>
+                        <td id="colTable58">
+                            <button class="button-table" id="buttonTable9" value=""
+                                    onclick="redirectToPage('buttonTable9')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable10">
+                        <td id="colTable64">10</td>
+                        <td id="colTable65">
+                            <button class="button-table" id="buttonTable10" value=""
+                                    onclick="redirectToPage('buttonTable10')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable11">
+                        <td id="colTable71">11</td>
+                        <td id="colTable72">
+                            <button class="button-table" id="buttonTable11" value=""
+                                    onclick="redirectToPage('buttonTable11')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable12">
+                        <td id="colTable73">12</td>
+                        <td id="colTable74">
+                            <button class="button-table" id="buttonTable12" value=""
+                                    onclick="redirectToPage('buttonTable12')"></button>
+                        </td>
+                    </tr>
+                    <tr id="rowTable13">
+                        <td id="colTable75">13</td>
+                        <td id="colTable76">
+                            <button class="button-table" id="buttonTable13" value=""
+                                    onclick="redirectToPage('buttonTable13')"></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="wrap-ris4-items">
+                    .
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <footer>
-	<div class="top-footer">
-		<div class="top-footer-info">
-			<h2>FOOTBALL WHISPERS</h2>
-			<p>Da noi tutte le statistiche dei giocatori e delle squadre. Non perderti neanche i nostri pronostici!</p>
-		</div>
-		<div class="top-footer-info">
-			<h2>SOCIAL</h2>
-			<div class="top-footer-info-social">
-				<p>Facebook</p>
-				<p>Instagram</p>
-				<p>Twitter</p>
-			</div>
-		</div>
-		<div class="top-footer-info">
-			<h2>CONTATTI</h2>
-			<div class="top-footer-info-posti">
-				<p>Via Roma 2, Torino, TO 10100, IT</p>
-				<p>info@footballwhispers.com  +39 347 3085745</p>
-			</div>
-		</div>
-	</div>
-	<div class="bottom-footer">
-		<p class="bottom-footer1">@2021 Copyright: </p>
-		<p class="bottom-footer2">footballwhispers.com</p>
-	</div>
+    <div class="top-footer">
+        <div class="top-footer-info">
+            <h2>FOOTBALL WHISPERS</h2>
+            <p>Da noi tutte le statistiche dei giocatori e delle squadre. Non perderti neanche i nostri pronostici!</p>
+        </div>
+        <div class="top-footer-info">
+            <h2>SOCIAL</h2>
+            <div class="top-footer-info-social">
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Twitter</p>
+            </div>
+        </div>
+        <div class="top-footer-info">
+            <h2>CONTATTI</h2>
+            <div class="top-footer-info-posti">
+                <p>Via Roma 2, Torino, TO 10100, IT</p>
+                <p>info@footballwhispers.com  +39 347 3085745</p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <p class="bottom-footer1">@2021 Copyright: </p>
+        <p class="bottom-footer2">footballwhispers.com</p>
+    </div>
 </footer>
 </body>
 </html>
