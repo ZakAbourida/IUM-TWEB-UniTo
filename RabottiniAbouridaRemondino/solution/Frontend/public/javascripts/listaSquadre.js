@@ -3,8 +3,6 @@ let container2;
 document.addEventListener('DOMContentLoaded', function() {
     const campionato = localStorage.getItem('campionato');
 
-    alert("Ho RICEVUTO: "+ campionato);
-
     const barraRicerca = document.getElementById('barra-ricerca');
     const mostraBarra = document.getElementById('mostra-barra');
 
