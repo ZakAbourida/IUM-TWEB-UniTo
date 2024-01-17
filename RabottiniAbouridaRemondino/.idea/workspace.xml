@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="48267a1a-3252-49f4-a643-4194f0c90965" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/solution/Backend/serverPostgres">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/solution/Backend/serverPostgres">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="serverPostgres" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="OpenAPI" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2aj4V4sWLULqH4p3aImB7HfNA8W" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.Build serverPostgres.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.serverPostgres.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.app.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.homepage.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.www.executor&quot;: &quot;Run&quot;,
+    &quot;OpenAPI/Swagger Code Generator.DocumentazioneServer.json.executor&quot;: &quot;Run&quot;,
+    &quot;OpenAPI/Swagger Code Generator.swaggerDocumentation.json.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ServerPostgresApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zakariaabourida/Desktop/UNI/IUM- TWEB/PROGETTO/TWEB/IUM-TWEB-UniTo/RabottiniAbouridaRemondino/solution/Backend/serverMongo/controllers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;,
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/solution/Backend/serverMongo/controllers" />
+      <recent name="$PROJECT_DIR$/solution/Backend/serverMongo/models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/solution/Backend/serverMongo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Database Script.www">
+    <configuration name="www" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/solution/Backend/serverMongo/bin/www" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="ServerPostgresApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="serverPostgres.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ium.tweb.serverpostgres.ServerPostgresApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="swaggerDocumentation.json" type="SwaggerCodegen" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="customTemplatesPath" value="" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="generateToPath" value="$PROJECT_DIR$/solution/Backend/serverPostgres/src/main/gen" />
+      <option name="generationParameters">
+        <list />
+      </option>
+      <option name="generatorType" value="OPENAPI_GENERATOR_V6" />
+      <option name="jdkPath" value="$APPLICATION_HOME_DIR$/jbr/Contents/Home/bin/java" />
+      <option name="language" value="java" />
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="specificationPath" value="$PROJECT_DIR$/solution/Frontend/swagger/swaggerDocumentation.json" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/solution/Frontend/swagger" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="OpenAPI/Swagger Code Generator.swaggerDocumentation.json" />
+        <item itemvalue="Database Script.www" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-203781b8" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48267a1a-3252-49f4-a643-4194f0c90965" name="Changes" comment="" />
+      <created>1704818674769</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704818674769</updated>
+      <workItem from="1704818675832" duration="786000" />
+      <workItem from="1704819783804" duration="213000" />
+      <workItem from="1704820015243" duration="287000" />
+      <workItem from="1704820378021" duration="29000" />
+      <workItem from="1704820460487" duration="2152000" />
+      <workItem from="1704902695358" duration="1333000" />
+      <workItem from="1704919020010" duration="3552000" />
+      <workItem from="1704923095202" duration="130000" />
+      <workItem from="1704923291513" duration="601000" />
+      <workItem from="1704963618612" duration="3475000" />
+      <workItem from="1704969319703" duration="329000" />
+      <workItem from="1704977712572" duration="9716000" />
+      <workItem from="1704988229702" duration="25000" />
+      <workItem from="1704988299348" duration="6925000" />
+      <workItem from="1705009683596" duration="3801000" />
+      <workItem from="1705048479564" duration="6076000" />
+      <workItem from="1705056307878" duration="1263000" />
+      <workItem from="1705067994051" duration="6037000" />
+      <workItem from="1705074578616" duration="115000" />
+      <workItem from="1705151486652" duration="3186000" />
+      <workItem from="1705154697580" duration="121000" />
+      <workItem from="1705157073331" duration="7618000" />
+      <workItem from="1705177150985" duration="80000" />
+      <workItem from="1705177240889" duration="133000" />
+      <workItem from="1705327095043" duration="630000" />
+      <workItem from="1705332108987" duration="3455000" />
+      <workItem from="1705351023468" duration="5846000" />
+      <workItem from="1705356974855" duration="44000" />
+      <workItem from="1705395431921" duration="7202000" />
+      <workItem from="1705403756758" duration="86000" />
+      <workItem from="1705411884015" duration="905000" />
+      <workItem from="1705412938721" duration="82000" />
+      <workItem from="1705413096631" duration="2886000" />
+      <workItem from="1705423012413" duration="18617000" />
+      <workItem from="1705450744921" duration="970000" />
+      <workItem from="1705493206398" duration="6329000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
