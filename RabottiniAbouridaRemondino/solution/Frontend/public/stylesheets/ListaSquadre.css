@@ -249,30 +249,38 @@ footer{
 
 .dropdown {
     float: left;
+    width: 100%;
+    height: auto;
+    text-align: center;
 }
 
 .dropdown .dropbtn {
-    font-size: 1.4vw;
-    text-align: center;
+    font-size: 1.5vw;
     border: none;
     outline: none;
     color: white;
     background-color: inherit;
     font-family: inherit;
-}
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: darkgray;
 }
+.navbar-w2 a:hover, .dropdown:hover .dropbtn {
 
+}
 .dropdown-content {
     display: none;
+    height: 40vh;
+    overflow-y: auto;
     position: absolute;
-    border-radius: 20px;
-    background-color: #f9f9f9;
+    background-color: rgb(128, 128, 128);
     width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 3vh;
 }
 
 .dropdown-content a {

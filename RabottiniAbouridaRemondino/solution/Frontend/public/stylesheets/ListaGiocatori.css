@@ -416,7 +416,7 @@ footer{
     height: auto;
 }
 .dropdown .dropbtn {
-    font-size: 1.7vw;
+    font-size: 1.7rem;
     border: none;
     outline: none;
     color: white;
@@ -441,6 +441,7 @@ footer{
     border-radius: 20px;
     justify-content: center;
     align-items: flex-start;
+    margin-top: 2vh;
 }
 .dropdown-content1 a {
     position: relative;
