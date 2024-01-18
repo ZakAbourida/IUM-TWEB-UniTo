@@ -233,11 +233,11 @@ footer{
     margin: 3%;
     margin-top: 2vh;
     border-radius: 30px;
+    padding: 2% 0% 0% 2%;
     position: relative;
     height: 100%;
-    padding: 2% 2%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
     text-align: left;
 }
@@ -269,7 +269,6 @@ footer{
 .info-container{
     height: 100%;
     width: 30%;
-    padding: 1% 1%;
 }
 .info-container p{
     padding: 5% 0%;
@@ -277,7 +276,7 @@ footer{
     line-height: 1.25;
     color: #ffffff;
     font-family: Lexend, 'Source Sans Pro';
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
 .wrap-w2 {
     background-color: #4e0055;

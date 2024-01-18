@@ -206,11 +206,64 @@ function sendAxiosQuerySq(url, squad){
         });
 }
 
+function infoSquadra(url, squad) {
+    // Richiesta POST con annessa la squadra della pagina
+    axios.post(url, { squad: squad })
+        .then(function (response) {
+            console.log("Info squadra: ", response.data);
+
+            // Supponendo che ci sia solo un elemento nell'array
+            const info = response.data[0];
+
+            // Accesso alle proprietà dell'oggetto
+            console.log("Stadium Name: ", info.stadium_name);
+            console.log("Stadium Seats: ", info.stadium_seats);
+            console.log("Average Age: ", info.average_age);
+            console.log("Coach Name: ", info.coach_name);
+            console.log("Squad Size: ", info.squad_size);
+            console.log("URL: ", info.url);
+
+            // Puoi anche aggiornare il DOM con le informazioni
+            document.getElementById('Infostadio').innerText = "  " + info.stadium_name;
+            document.getElementById('Infoposti_stadio').innerText =  "  " + info.stadium_seats;
+            document.getElementById('Infoeta_media').innerText =  "  " + info.average_age;
+            document.getElementById('Infoallenatore').innerText =  "  " + info.coach_name;
+            document.getElementById('Infodim_squadra').innerText =  "  " + info.squad_size;
+            document.getElementById('Infosito_ufficiale').innerText =  "  " + info.url;
+        })
+        .catch(function (error) {
+            // Gestisci gli errori
+            console.error('Error:', error);
+
+            // Puoi aggiornare il DOM con un messaggio di errore
+            document.getElementById('results').innerHTML = "Error occurred";
+        });
+}
+
+function giocatoriSquadra(url, squad) {
+    // Richiesta POST con annessa la squadra della pagina
+    axios.post(url, {squad: squad})
+        .then(function (response) {
+
+            console.log("Giocatori: "+response.data);
+
+        })
+        .catch(function (error) {
+            // Gestisci gli errori
+            console.error('Error:', error);
+
+            // Puoi aggiornare il DOM con un messaggio di errore
+            document.getElementById('results').innerHTML = "Error occurred";
+        });
+}
+
 function onSubmit(){
     console.log("Caricamento dati in homepage");
     const squadra = localStorage.getItem('squadra');
     // Chiamata a sendAxiosQuery con i valori dei campi
     sendAxiosQuerySq('/loadSq', squadra);
+    infoSquadra('/list_info_squad', squadra);
+    //giocatoriSquadra('/squad_players', squadra);
 }
 
 
