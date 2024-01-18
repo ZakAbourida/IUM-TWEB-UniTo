@@ -240,6 +240,7 @@ footer{
     justify-content: space-around;
     align-items: baseline;
     text-align: left;
+    white-space: normal;
 }
 .logo-container{
     padding: 1% 1%;
@@ -253,9 +254,12 @@ footer{
 }
 .nome-container{
     height: auto;
-    width: 10vw;
+    width: 20vw;
     margin-bottom: 2vh;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .nome-container h1{
     height: 100%;
@@ -269,6 +273,10 @@ footer{
 .info-container{
     height: 100%;
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    word-wrap: anywhere;
 }
 .info-container p{
     padding: 5% 0%;
