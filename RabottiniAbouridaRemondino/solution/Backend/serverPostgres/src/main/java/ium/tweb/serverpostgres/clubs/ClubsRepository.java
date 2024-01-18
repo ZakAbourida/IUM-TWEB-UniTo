@@ -32,12 +32,4 @@ public interface ClubsRepository extends JpaRepository<Clubs, Long> {
      */
     @Query(value = "SELECT DISTINCT c.name FROM Clubs c ORDER BY c.name ASC")
     List<String> listTeams();
-
-    /**
-     * Query used to obtain specific information about a team by name.
-     * @param squadName Name of the squad
-     * @return Club information for the specified team name
-     */
-    @Query("SELECT c FROM Clubs c WHERE c.name = :squadName")
-    List<Clubs> squadInfoList(String squadName);
 }

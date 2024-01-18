@@ -25,8 +25,4 @@ public class ClubsService {
     public List<String> listTeams() {
         return clubsRepository.listTeams();
     }
-
-    public List<Clubs> squadInfoList(String squadName) {
-         return clubsRepository.squadInfoList(squadName);
-    }
 }
