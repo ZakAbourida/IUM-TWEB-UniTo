@@ -52,17 +52,48 @@ function redirectToPage(buttonID) {
     window.location.href = '../Squadra.html';
 }
 
-
-
 function fillTable(comp) {
     axios.post('/list_teamsbycompetition', {comp: comp})
         .then(function (response) {
-            // Handle success
             console.log('Response:', response.data);
 
-            // Trova la tabella
+            const numSq = response.data.length;
+            const table = document.getElementById('table');
+
+            /*Rimozione di tutte le righe per mantenere i dati aggiornati ed evitare problemi
+            *  come righe obsolete o dati duplicati. Ciò consente di mantenere la tabella aggiornata
+            *  con i dati più recenti.*/
+            while (table.rows.length > 0) {
+                table.deleteRow(0);
+            }
+
+            // Aggiungi una nuova riga per ogni squadra
+            for (let i = 0; i < numSq; i++) {
+                const newRow = table.insertRow();
+                const cellNum = newRow.insertCell();
+                cellNum.textContent = i + 1;
+
+                const cellButton = newRow.insertCell();
+                const button = document.createElement('button');
+                button.className = 'button-table';
+                button.id = `buttonTable${i + 1}`;
+                button.textContent = `buttonTable${i+1}`;
+                button.onclick = function () {
+                    redirectToPage(`buttonTable${i + 1}`);
+                };
+                cellButton.appendChild(button);
+            }
+
+            // Aggiungi righe aggiuntive se necessario
+            const rowsToAdd = Math.max(0, 11 - numSq);
+            for (let i = numSq; i < numSq + rowsToAdd; i++) {
+                aggiungiRiga(i + 1);
+            }
+            //Sostituzione valore nelle righe della tabella
             for (let i = 0; i < response.data.length; i++) {
-                document.getElementById(`buttonTable${i + 1}`).innerText = response.data[i];
+                (function (index) {
+                    document.getElementById(`buttonTable${index + 1}`).innerText = response.data[index];
+                })(i);
             }
         })
         .catch(function (error) {
@@ -73,18 +104,18 @@ function fillTable(comp) {
 
 function aggiungiRiga(num) {
     // Trova la tabella
-    let tab = document.getElementById('table');
+    const tab = document.getElementById('table');
 
-    // Inserisci una nuova riga alla fine della tabella
-    let nuovaRiga = tab.insertRow();
+    // Inserisce una nuova riga alla fine della tabella
+    const nuovaRiga = tab.insertRow();
 
-    // Inserisci una cella per il numero
-    let cellaNum = nuovaRiga.insertCell();
+    // Inserisce una cella per il numero
+    const cellaNum = nuovaRiga.insertCell();
     cellaNum.textContent = num;
 
-    // Inserisci una cella per il pulsante
-    let cellaPulsante = nuovaRiga.insertCell();
-    let pulsante = document.createElement('button');
+    // Inserisce una cella per il pulsante
+    const cellaPulsante = nuovaRiga.insertCell();
+    const pulsante = document.createElement('button');
     pulsante.className = 'button-table';
     pulsante.id = `buttonTable${num}`;
     pulsante.textContent = `buttonTable${num}`;
