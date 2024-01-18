@@ -1,35 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const toggleBtn1 = document.getElementById('toggleBtn1');
-    const dropdownContent1 = document.getElementById('dropdownContent1');
-    const contentToMove1 = document.querySelector('.content-to-move1');
-
-    const toggleBtn2 = document.getElementById('toggleBtn2');
-    const dropdownContent2 = document.getElementById('dropdownContent2');
-    const contentToMove2 = document.querySelector('.content-to-move2');
-
-    const toggleBtn3 = document.getElementById('toggleBtn3');
-    const dropdownContent3 = document.getElementById('dropdownContent3');
-    const contentToMove3 = document.querySelector('.content-to-move3');
-
-    const toggleBtn4 = document.getElementById('toggleBtn4');
-    const dropdownContent4 = document.getElementById('dropdownContent4');
-    const contentToMove4 = document.querySelector('.content-to-move4');
-
-    const toggleBtn5 = document.getElementById('toggleBtn5');
-    const dropdownContent5 = document.getElementById('dropdownContent5');
-    const contentToMove5 = document.querySelector('.content-to-move5');
-
-    const toggleBtn6 = document.getElementById('toggleBtn6');
-    const dropdownContent6 = document.getElementById('dropdownContent6');
-    /*const contentToMove6 = document.querySelector('.content-to-move6');*/
+    /**
+     * <h2>Call axios to get the data that fills the dropdown menus.<h2>
+     */
+    AxiosCall('/seasons');
+    AxiosCall('/country');
+    AxiosCall('/list_competitions');
+    AxiosCall('/all_teams');
+    AxiosCall('/get_role');
+    AxiosCall('/get_birth_years');
 
     const barraRicerca = document.getElementById('barra-ricerca');
     const mostraBarra = document.getElementById('mostra-barra');
 
     const opzioniLogin = document.getElementById('opzioni-login');
     const mostraOpzioni = document.getElementById('mostra-opzioni');
+    document.getElementById('advanced_searchbtn').onclick = AdvancedSearch;
 
-    changeAnnoNascitatext();
 
     mostraBarra.addEventListener('click', function () {
         if (!barraRicerca.classList.contains('visible')) {
@@ -50,129 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
             opzioniLogin.classList.add('hidden');
         }
     });
-
-    /*toggleBtn1.addEventListener('click', function () {
-        const tendinaAltezza = dropdownContent1.clientHeight;
-        const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
-        if (dropdownContent1.style.display === 'block') {
-            dropdownContent1.style.display = 'none';
-            contentToMove1.style.marginTop = '0';
-        } else {
-            dropdownContent2.style.display = 'none';
-            dropdownContent3.style.display = 'none';
-            dropdownContent4.style.display = 'none';
-            dropdownContent5.style.display = 'none';
-            dropdownContent6.style.display = 'none';
-
-            dropdownContent1.style.display = 'block';
-            contentToMove1.style.marginTop = `${spostamentoDesiderato}px`; // Applica il nuovo valore per lo spostamento
-        }
-    });
-
-    toggleBtn2.addEventListener('click', function () {
-        const tendinaAltezza = dropdownContent2.clientHeight;
-        const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
-        if (dropdownContent2.style.display === 'block') {
-            dropdownContent2.style.display = 'none';
-            contentToMove2.style.marginTop = '0';
-        } else {
-            dropdownContent1.style.display = 'none';
-            dropdownContent3.style.display = 'none';
-            dropdownContent4.style.display = 'none';
-            dropdownContent5.style.display = 'none';
-            dropdownContent6.style.display = 'none';
-
-            dropdownContent2.style.display = 'block';
-            contentToMove2.style.marginTop = `${spostamentoDesiderato}px`; // Applica il nuovo valore per lo spostamento
-        }
-    });
-
-    toggleBtn3.addEventListener('click', function () {
-        const tendinaAltezza = dropdownContent3.clientHeight;
-        const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
-        if (dropdownContent3.style.display === 'block') {
-            dropdownContent3.style.display = 'none';
-            contentToMove3.style.marginTop = '0';
-        } else {
-            dropdownContent1.style.display = 'none';
-            dropdownContent2.style.display = 'none';
-            dropdownContent4.style.display = 'none';
-            dropdownContent5.style.display = 'none';
-            dropdownContent6.style.display = 'none';
-
-            dropdownContent3.style.display = 'block';
-            contentToMove3.style.marginTop = `${spostamentoDesiderato}px`; // Applica il nuovo valore per lo spostamento
-        }
-    });
-
-    toggleBtn4.addEventListener('click', function () {
-        const tendinaAltezza = dropdownContent4.clientHeight;
-        const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
-        if (dropdownContent4.style.display === 'block') {
-            dropdownContent4.style.display = 'none';
-            contentToMove4.style.marginTop = '0';
-        } else {
-            dropdownContent1.style.display = 'none';
-            dropdownContent2.style.display = 'none';
-            dropdownContent3.style.display = 'none';
-            dropdownContent5.style.display = 'none';
-            dropdownContent6.style.display = 'none';
-
-            dropdownContent4.style.display = 'block';
-            contentToMove4.style.marginTop = `${spostamentoDesiderato}px`; // Applica il nuovo valore per lo spostamento
-        }
-    });
-
-    toggleBtn5.addEventListener('click', function () {
-        const tendinaAltezza = dropdownContent5.clientHeight;
-        const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
-        if (dropdownContent5.style.display === 'block') {
-            dropdownContent5.style.display = 'none';
-            contentToMove5.style.marginTop = '0';
-        } else {
-            dropdownContent1.style.display = 'none';
-            dropdownContent2.style.display = 'none';
-            dropdownContent3.style.display = 'none';
-            dropdownContent4.style.display = 'none';
-            dropdownContent6.style.display = 'none';
-
-            dropdownContent5.style.display = 'block';
-            contentToMove5.style.marginTop = `${spostamentoDesiderato}px`; // Applica il nuovo valore per lo spostamento
-        }
-    });
-
-    toggleBtn6.addEventListener('click', function () {
-        const tendinaAltezza = dropdownContent6.clientHeight;
-        const spostamentoDesiderato = tendinaAltezza > 100 ? 50 : tendinaAltezza * 0.5; // Modifica questa parte per regolare l'altezza dello spostamento desiderato
-        if (dropdownContent6.style.display === 'block') {
-            dropdownContent6.style.display = 'none';
-        } else {
-            dropdownContent1.style.display = 'none';
-            dropdownContent2.style.display = 'none';
-            dropdownContent3.style.display = 'none';
-            dropdownContent4.style.display = 'none';
-            dropdownContent5.style.display = 'none';
-
-            dropdownContent6.style.display = 'block';
-        }
-    });*/
-
-    AxiosCall('/seasons');
-    AxiosCall('/country');
-    AxiosCall('/list_competitions');
-    AxiosCall('/all_teams');
-    AxiosCall('/get_role');
-
 });
 
-function init(){
-    AxiosCall('/seasons');
-    AxiosCall('/country');
-    AxiosCall('/list_competitions');
-    AxiosCall('/all_teams');
-    AxiosCall('/get_role');
-}
-
+/**
+ *
+ * @param url
+ * @constructor
+ */
 function AxiosCall(url) {
     axios.get(url)
         .then(function (response) {
@@ -186,6 +56,11 @@ function AxiosCall(url) {
         });
 }
 
+/**
+ *
+ * @param data
+ * @param url
+ */
 function fillDropMenu(data, url) {
     var menu_id;
     switch (url) {
@@ -203,7 +78,9 @@ function fillDropMenu(data, url) {
             break;
         case '/get_role':
             menu_id = "role_menu";
-
+            break;
+        case '/get_birth_years':
+            menu_id = "years_birth_menu";
             break;
         default:
             menu_id = null;
@@ -220,13 +97,7 @@ function fillDropMenu(data, url) {
         var linkElement = document.createElement("a");
         linkElement.classList.add("dropdown-item"); // Aggiungi la classe 'dropdown-item'
 
-        // Verifica la struttura dei dati e imposta il testo
-        if (url === "/list_competitions") {
-            linkElement.setAttribute('value', season.Value);  // Imposta il valore dell'elemento
-            linkElement.textContent = season.Name;
-        } else {
-            linkElement.textContent = season;
-        }
+        linkElement.textContent = season;
 
         // Aggiungi un listener per il click
         linkElement.addEventListener('click', function () {
@@ -246,11 +117,29 @@ function fillDropMenu(data, url) {
         document.getElementById(menu_id).appendChild(linkElement);
     });
 }
+function AdvancedSearch(){
+    // Funzione helper per ottenere il valore o null se non modificato
 
-function changeAnnoNascitatext(){
-    for(let i = 1; i<21; i++){
-        document.getElementById('anno'+i).addEventListener('click', function (){
-            document.getElementById('btn-annonascita').innerText = document.getElementById('anno'+i).innerText;
-        });
-    }
+    const season = getSelectedValueOrFallback('seasons_menu', 'Season');
+    const country = getSelectedValueOrFallback('country_menu', 'Country');
+    const championship = getSelectedValueOrFallback('championships_menu', 'Championship');
+    const birthYear = getSelectedValueOrFallback('years_birth_menu', 'Birth');
+    const club = getSelectedValueOrFallback('club_menu', 'Club');
+    const role = getSelectedValueOrFallback('role_menu', 'Role');
+
+    // Console log per vedere i valori selezionati (puoi rimuoverlo o sostituirlo con la logica di ricerca)
+    console.log('Season:', season);
+    console.log('Country:', country);
+    console.log('Championship:', championship);
+    console.log('Year of Birth:', birthYear);
+    console.log('Club:', club);
+    console.log('Role:', role);
+
+    // Qui puoi aggiungere la logica pe
 }
+// Funzione helper per ottenere il valore o null se non modificato
+function getSelectedValueOrFallback(dropdownId, defaultValue) {
+    const buttonText = document.querySelector(`.wrap-filtri #${dropdownId}`).closest('.dropdown').querySelector('.btn.dropdown-toggle').textContent.trim();
+    return buttonText !== defaultValue ? buttonText : null;
+}
+
