@@ -1,5 +1,6 @@
 package ium.tweb.serverpostgres.players;
 
+import ium.tweb.serverpostgres.clubs.Clubs;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,8 @@ public class PlayersService {
     public List<String> getCountry() {
         return playersRepository.getCountry();
     }
+
+    public List<Players> squadPlayers(String squadName) {return playersRepository.squadPlayers(squadName);}
 
     public List<Integer> getSeasons() {
         return playersRepository.getSeasons();

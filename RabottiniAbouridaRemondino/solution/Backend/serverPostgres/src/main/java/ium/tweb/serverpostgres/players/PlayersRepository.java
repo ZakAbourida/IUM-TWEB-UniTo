@@ -1,5 +1,6 @@
 package ium.tweb.serverpostgres.players;
 
+import ium.tweb.serverpostgres.clubs.Clubs;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -70,4 +71,12 @@ public interface PlayersRepository extends JpaRepository<Players, Long> {
      */
     @Query(value = "SELECT DISTINCT YEAR(p.date_of_birth) FROM Players p ORDER BY YEAR(p.date_of_birth) DESC")
     List<Integer> yearsBirth();
+
+    /**
+     * Query used to obtain specific PLayer's information about a team by name.
+     * @param squadName Name of the squad
+     * @return Player information for the specified team name
+     */
+    @Query("SELECT p FROM Players p JOIN Clubs c ON c.club_id = p.current_club_id  WHERE c.name = :squadName")
+    List<Players> squadPlayers(String squadName);
 }

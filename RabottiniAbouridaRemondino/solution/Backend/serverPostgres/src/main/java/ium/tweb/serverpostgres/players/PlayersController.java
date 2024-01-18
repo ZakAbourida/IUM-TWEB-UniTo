@@ -1,5 +1,6 @@
 package ium.tweb.serverpostgres.players;
 
+import ium.tweb.serverpostgres.clubs.Clubs;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -98,5 +99,13 @@ public class PlayersController {
         return playersService.yearsBirth();
     }
 
-
+    /**
+     * <li>Path to obtain the info of a specific team</li>
+     * @param squadName es. 'Palermo FC'
+     * @return List of the player about the named team
+     */
+    @PostMapping("/squad_players")
+    public List<Players> squadPlayers(@RequestParam String squadName) {
+        return playersService.squadPlayers(squadName);
+    }
 }

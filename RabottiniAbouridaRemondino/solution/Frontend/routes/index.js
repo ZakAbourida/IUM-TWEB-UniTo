@@ -161,10 +161,14 @@ router.post('/squad_players',  async function (req, res, next) {
   try {
     const squadName = req.body.squad;
 
+    console.log(squadName);
+
     const params = new URLSearchParams();
     params.append('squadName', squadName);
 
     const response = await axios.post('http://localhost:8081/squad_players', params);
+
+    console.log(response.data);
 
     res.json(response.data);
   } catch (error) {
