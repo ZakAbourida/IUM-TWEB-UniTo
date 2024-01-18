@@ -165,6 +165,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+function init(){
+    AxiosCall('/seasons');
+    AxiosCall('/country');
+    AxiosCall('/list_competitions');
+    AxiosCall('/all_teams');
+    AxiosCall('/get_role');
+}
+
 function AxiosCall(url) {
     axios.get(url)
         .then(function (response) {
@@ -180,31 +188,26 @@ function AxiosCall(url) {
 
 function fillDropMenu(data, url) {
     var menu_id;
-    var btnMenu;
     switch (url) {
         case '/seasons':
             menu_id = "seasons_menu";
-            btnMenu = "btn-stagione";
             break;
         case '/country':
             menu_id = "country_menu";
-            btnMenu = "btn-paese";
             break;
         case '/list_competitions':
             menu_id = "championships_menu";
-            btnMenu = "btn-campionato";
             break;
         case '/all_teams':
             menu_id = "club_menu";
-            btnMenu = "btn-club";
             break;
         case '/get_role':
             menu_id = "role_menu";
-            btnMenu = "btn-ruolo";
+
             break;
         default:
             menu_id = null;
-            btnMenu = null;
+
     }
     var menu = document.getElementById(menu_id);
 
@@ -215,22 +218,32 @@ function fillDropMenu(data, url) {
     data.forEach(function (season) {
         // Crea un nuovo elemento <a>
         var linkElement = document.createElement("a");
-        if(url === "/list_competitions"){
+        linkElement.classList.add("dropdown-item"); // Aggiungi la classe 'dropdown-item'
+
+        // Verifica la struttura dei dati e imposta il testo
+        if (url === "/list_competitions") {
             linkElement.setAttribute('value', season.Value);  // Imposta il valore dell'elemento
             linkElement.textContent = season.Name;
-        }else{
+        } else {
             linkElement.textContent = season;
         }
 
-        linkElement.id = linkElement.textContent;
+        // Aggiungi un listener per il click
+        linkElement.addEventListener('click', function () {
+            // Trova il genitore 'dropdown' più vicino
+            var dropdownParent = this.closest('.dropdown');
 
-        /*document.getElementById(linkElement.id).addEventListener('click', function (){
-            btnMenu.innerText = document.getElementById(linkElement.id).innerText;
-        });*/
-        console.log(linkElement.id);
+            // Trova il pulsante all'interno di questo genitore 'dropdown' e aggiorna il suo testo
+            if (dropdownParent) {
+                var button = dropdownParent.querySelector('.btn.dropdown-toggle');
+                if (button) {
+                    button.textContent = this.textContent;
+                }
+            }
+        });
 
-        // Aggiungi l'elemento <a> al menu
-        menu.appendChild(linkElement);
+        // Aggiungi l'elemento <a> al menu a tendina
+        document.getElementById(menu_id).appendChild(linkElement);
     });
 }
 

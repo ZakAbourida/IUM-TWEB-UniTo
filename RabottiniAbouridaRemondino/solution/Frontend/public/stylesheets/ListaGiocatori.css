@@ -410,60 +410,6 @@ footer{
     padding: 2% 2%;
     text-decoration: none;
 }
-.dropdown {
-    float: left;
-    width: 100%;
-    height: auto;
-}
-
-.dropdown .dropbtn {
-    width: 100%;
-    font-size: 3rem;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 5% 0%;
-    background-color: inherit;
-    font-family: inherit;
-}
-.navbar-w2 a:hover, .dropdown:hover .dropbtn {
-
-}
-.dropdown-content1 {
-    display: none;
-    height: 40vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: absolute;
-    background-color: rgb(128, 128, 128);
-    width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-
-    flex-direction: column;
-    border-radius: 20px;
-    justify-content: initial;
-    align-items: flex-start;
-}
-.dropdown-content1 a {
-    position: relative;
-    color: black;
-    padding: 5% 5%;
-    font-size: 1.5vw;
-    text-decoration: none;
-    /*display: block;*/
-    width: 100%;
-    text-align: left;
-}
-
-.dropdown-content1 a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content1 {
-    display: flex;
-}
-
 .container-w-n-p{
     list-style-type: none;
     width: 100%;
@@ -689,9 +635,6 @@ footer{
     font-family: Lexend Exa, 'Source Sans Pro';
 }
 
-
-
-
 .statistiche-w2{
     width: 80%;
     display: flex;
@@ -814,13 +757,26 @@ footer{
     font-size: 1.4vw;
     font-family: 'Lexend Mega', 'Source Sans Pro';
 }
-.dropdown-content1{
-    border-radius: 20px;
-    justify-content: initial;
+
+.btn-lg.dropdown-toggle {
     width: 100%;
-    background-color: rgb(128, 128, 128);
+    font-size: 1vw;
+    padding: .75em 1.3em;
+    border-radius: 10px;
+}
+.dropdown {
+    position: relative;
 }
 
-
-
-
+/* Centra la dropdown-menu */
+.dropdown-menu {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #6c757d;
+    max-height: 15vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.dropdown-menu a {
+    color: white;
+}
