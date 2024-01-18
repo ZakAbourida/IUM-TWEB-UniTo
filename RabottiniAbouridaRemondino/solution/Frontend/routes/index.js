@@ -143,11 +143,6 @@ router.post('/list_teamsbycompetition',  async function (req, res, next) {
 router.post('/list_info_squad',  async function (req, res, next) {
   try {
     const squadName = req.body.squad;
-    /*console.log("route--->"+squadName);
-    const encodedSquadName = encodeURIComponent(squadName);
-    const requestBody = { squad: squadName };
-
-    const response = await axios.post('http://localhost:8081/list_info_squad', squadName);*/
 
     const params = new URLSearchParams();
     params.append('squadName', squadName);
@@ -166,7 +161,10 @@ router.post('/squad_players',  async function (req, res, next) {
   try {
     const squadName = req.body.squad;
 
-    const response = await axios.post('http://localhost:8081/squad_players', squadName);
+    const params = new URLSearchParams();
+    params.append('squadName', squadName);
+
+    const response = await axios.post('http://localhost:8081/squad_players', params);
 
     res.json(response.data);
   } catch (error) {

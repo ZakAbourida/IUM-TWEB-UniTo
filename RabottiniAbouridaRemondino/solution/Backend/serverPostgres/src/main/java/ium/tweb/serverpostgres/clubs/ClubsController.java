@@ -1,10 +1,7 @@
 package ium.tweb.serverpostgres.clubs;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -49,5 +46,13 @@ public class ClubsController {
         return clubsService.listTeams();
     }
 
-
+    /**
+     * <li>Path to obtain the info of a specific team</li>
+     * @param squadName es. 'Palermo FC'
+     * @return Information of the specified team
+     */
+    @PostMapping("/list_info_squad")
+    public List<Clubs> SquadInfoList(@RequestParam String squadName) {
+        return clubsService.squadInfoList(squadName);
+    }
 }
