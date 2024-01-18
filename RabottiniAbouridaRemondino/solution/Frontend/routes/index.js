@@ -168,8 +168,6 @@ router.post('/squad_players',  async function (req, res, next) {
 
     const response = await axios.post('http://localhost:8081/squad_players', params);
 
-    console.log(response.data);
-
     res.json(response.data);
   } catch (error) {
     // Gestisci gli errori qui

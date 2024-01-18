@@ -77,7 +77,7 @@ function fillTable(comp) {
                 const button = document.createElement('button');
                 button.className = 'button-table';
                 button.id = `buttonTable${i + 1}`;
-                button.textContent = `buttonTable${i+1}`;
+                button.textContent = `buttonTable${i}`;
                 button.onclick = function () {
                     redirectToPage(`buttonTable${i + 1}`);
                 };

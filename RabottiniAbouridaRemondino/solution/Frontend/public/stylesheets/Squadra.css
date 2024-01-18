@@ -575,4 +575,32 @@ footer{
     background: transparent;
     border: none;
 }
+.table-one {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-one th,
+.table-one td {
+    padding-left: 1vw;
+    font-size: 1vw;
+    color: #ffffff;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: left;
+
+}
+.table-one td{
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+.table-one th {
+    background: #590061;
+}
+
+.table-one .row-ris1 {
+    background: #8C0098;
+}
 

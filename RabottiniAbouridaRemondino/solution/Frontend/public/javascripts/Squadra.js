@@ -155,6 +155,16 @@ document.addEventListener('DOMContentLoaded', function() {
     onSubmit();
 });
 
+function redirectToPage(buttonID) {
+    let val = document.getElementById(buttonID).innerText;
+
+    // Salva il valore nella localStorage
+    localStorage.setItem('giocatore', val);
+
+    // Reindirizza alla pagina "ListaSquadre.html"
+    window.location.href = '../Giocatore.html';
+}
+
 function sendAxiosQuerySq(url, squad){
     // Richiesta POST con annessa la squadra della pagina
     axios.post(url, {squad: squad})
@@ -235,9 +245,42 @@ function infoSquadra(url, squad) {
 function giocatoriSquadra(url, squad) {
     // Richiesta POST con annessa la squadra della pagina
     axios.post(url, {squad: squad})
-        .then(function (response) {
+        .then(function (response){
+            const numGiocatori = response.data.length;
+            const Table = document.getElementById('table');
 
-            console.log("Giocatori: "+response.data);
+            /*Rimozione di tutte le righe per mantenere i dati aggiornati ed evitare problemi
+            *  come righe obsolete o dati duplicati. Ciò consente di mantenere la tabella aggiornata
+            *  con i dati più recenti.*/
+            while (Table.rows.length > 0) {
+                Table.deleteRow(0);
+            }
+
+            for (let i = 0; i < numGiocatori; i++) {
+                const NewRow = Table.insertRow();
+                const CellNum = NewRow.insertCell();
+                CellNum.textContent = i + 1;
+                const CellButton = NewRow.insertCell();
+                const Button = document.createElement('button');
+                Button.className = 'button-table';
+                Button.id = `buttonTable${i + 1}`;
+                Button.textContent = `buttonTable${i+1}`;
+                Button.onclick = function () {
+                    redirectToPage(`buttonTable${i + 1}`);
+                };
+                CellButton.appendChild(Button);
+            }
+            // Aggiungi righe aggiuntive se necessario
+            const rowsToAdd = Math.max(0, 11 - numGiocatori);
+            for (let i = numGiocatori; i < numGiocatori + rowsToAdd; i++) {
+                aggiungiRiga(i + 1);
+            }
+            //Sostituzione valore nelle righe della tabella
+            for (let i = 0; i < response.data.length; i++) {
+                (function (index) {
+                    document.getElementById(`buttonTable${index + 1}`).innerText = response.data[index].first_name + " " +response.data[index].last_name;
+                })(i);
+            }
 
         })
         .catch(function (error) {
@@ -247,6 +290,29 @@ function giocatoriSquadra(url, squad) {
             // Puoi aggiornare il DOM con un messaggio di errore
             document.getElementById('results').innerHTML = "Error occurred";
         });
+}
+
+function aggiungiRiga(num) {
+    // Trova la tabella
+    const tab = document.getElementById('table');
+
+    // Inserisce una nuova riga alla fine della tabella
+    const nuovaRiga = tab.insertRow();
+
+    // Inserisce una cella per il numero
+    const cellaNum = nuovaRiga.insertCell();
+    cellaNum.textContent = num;
+
+    // Inserisce una cella per il pulsante
+    const cellaPulsante = nuovaRiga.insertCell();
+    const pulsante = document.createElement('button');
+    pulsante.className = 'button-table';
+    pulsante.id = `buttonTable${num}`;
+    pulsante.textContent = `buttonTable${num}`;
+    pulsante.onclick = function () {
+        redirectToPage(`buttonTable${num}`);
+    };
+    cellaPulsante.appendChild(pulsante);
 }
 
 function onSubmit(){
