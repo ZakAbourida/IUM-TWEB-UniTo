@@ -88,4 +88,13 @@ public class PlayersController {
          List<JSONObject> results =  playersService.advancedSearch(Season,Country,Competition,Year_Birth,Team,Role);
          return ResponseEntity.ok(results.toString());
     }
+
+    /**
+     *Route that queries the database for players' birthday years
+     * @return List of years birthday es. {1974,1978,1979, ecc}
+     */
+    @GetMapping("/get_birth_years")
+    public List<Integer> YearsBirth(){
+        return playersService.yearsBirth();
+    }
 }

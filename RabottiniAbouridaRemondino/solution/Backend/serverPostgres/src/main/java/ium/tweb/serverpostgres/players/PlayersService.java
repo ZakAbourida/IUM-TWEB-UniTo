@@ -31,6 +31,10 @@ public class PlayersService {
         return playersRepository.getRole();
     }
 
+    public List<Integer> yearsBirth(){
+        return playersRepository.yearsBirth();
+    }
+
     public JSONObject InfoPlayer(String Name) throws JSONException, IOException {
         Players player =  playersRepository.infoPlayer(Name);
         JSONObject playerJson = new JSONObject();

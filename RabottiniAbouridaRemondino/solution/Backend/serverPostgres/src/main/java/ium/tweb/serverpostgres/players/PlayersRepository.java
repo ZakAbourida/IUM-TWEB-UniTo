@@ -17,7 +17,7 @@ public interface PlayersRepository extends JpaRepository<Players, Long> {
      * <li>It is used to fill the drop-down menu of positions in the advanced search.</li>
      * @return list of each role es. {'Second Striker','Goalkeeper','Centre-Back', ecc}
      */
-    @Query(value = "SELECT DISTINCT sub_position FROM Players")
+    @Query(value = "SELECT DISTINCT sub_position FROM Players ORDER BY sub_position ASC")
     public List<String> getRole();
 
 
@@ -36,7 +36,7 @@ public interface PlayersRepository extends JpaRepository<Players, Long> {
      * <li>Query to get all the players' countries of origin. Responds to the /country route.</li>
      * @return List of each country es {'Alaska', 'Brazil', ecc}
      */
-    @Query(value = "SELECT DISTINCT p.country_of_birth FROM Players p")
+    @Query(value = "SELECT DISTINCT p.country_of_birth FROM Players p ORDER BY p.country_of_birth ASC")
     List<String> getCountry();
 
 
@@ -45,7 +45,7 @@ public interface PlayersRepository extends JpaRepository<Players, Long> {
      * <li>In such a way as to fill the drop-down menu with only the current years. Responds to the /seasons route.</li>
      * @return List of each season es. {2003,2004,2005, ecc}
      */
-    @Query(value = "SELECT DISTINCT p.last_season FROM Players p ")
+    @Query(value = "SELECT DISTINCT p.last_season FROM Players p ORDER BY p.last_season DESC")
     List<Integer> getSeasons();
 
     /**
@@ -63,4 +63,11 @@ public interface PlayersRepository extends JpaRepository<Players, Long> {
      */
     @Query(value = "SELECT p FROM Players p JOIN Competitions c ON c.competition_id = p.current_club_domestic_competition_id  WHERE (:Season IS NULL OR p.last_season = :Season) AND (:Country IS NULL OR p.country_of_birth = :Country) AND (:Competition IS NULL OR c.name = :Competition) AND (:Year_Birth IS NULL OR YEAR(p.date_of_birth) = :Year_Birth) AND (:Team IS NULL OR p.current_club_name = :Team) AND (:Role IS NULL OR p.sub_position = :Role)")
     List<Players> advancedSearch(Integer Season, String Country, String Competition, Integer Year_Birth, String Team, String Role);
+
+    /**
+     *Query that returns the players' birthday years. Responds to /get_birth_years route.
+     * @return List of years birthday es. {1974,1978,1979, ecc}
+     */
+    @Query(value = "SELECT DISTINCT YEAR(p.date_of_birth) FROM Players p ORDER BY YEAR(p.date_of_birth) DESC")
+    List<Integer> yearsBirth();
 }
