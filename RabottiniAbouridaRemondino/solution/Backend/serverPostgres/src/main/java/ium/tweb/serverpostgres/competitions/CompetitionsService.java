@@ -21,60 +21,61 @@ public class CompetitionsService {
         competitionsRepository.saveAll(competitions);
     }
 
-    public List<JSONObject> listCompetitions() throws JSONException {
-        List<String> championships =  competitionsRepository.listCompetitions();
-        List<JSONObject> ChampionshipsJSONList  = new ArrayList<>();
-        for(String championship : championships){
-            JSONObject championshipJson = new JSONObject();
-            if(championship != null){
-                championshipJson.put("Value", championship);
-                switch (championship){
+    public List<String> listCompetitions(){
+        List<String> championships = competitionsRepository.listCompetitions();
+        List<String> updatedChampionships = new ArrayList<>();
+
+        for (String championship : championships) {
+            if (championship != null) {
+                switch (championship) {
                     case "bundesliga":
-                        championshipJson.put("Name","Bundesliga");
+                        championship = "Bundesliga";
                         break;
                     case "eredivisie":
-                        championshipJson.put("Name","Eredivisie");
+                        championship = "Eredivisie";
                         break;
                     case "jupiler-pro-league":
-                        championshipJson.put("Name","Jupiler Pro League");
+                        championship = "Jupiler Pro League";
                         break;
                     case "laliga":
-                        championshipJson.put("Name","LaLiga");
+                        championship = "LaLiga";
                         break;
                     case "liga-portugal-bwin":
-                        championshipJson.put("Name","Liga Portugal");
+                        championship = "Liga Portugal";
                         break;
                     case "ligue-1":
-                        championshipJson.put("Name","Ligue 1");
+                        championship = "Ligue 1";
                         break;
                     case "premier-league":
-                        championshipJson.put("Name","Premier League");
+                        championship = "Premier League";
                         break;
                     case "premier-liga":
-                        championshipJson.put("Name","Premier Liga");
+                        championship = "Premier Liga";
                         break;
                     case "serie-a":
-                        championshipJson.put("Name","Serie A");
+                        championship = "Serie A";
                         break;
                     case "super-league-1":
-                        championshipJson.put("Name","Souper Ligka Ellada");
+                        championship = "Souper Ligka Ellada";
                         break;
                     case "super-lig":
-                        championshipJson.put("Name","Süper Lig");
+                        championship = "Süper Lig";
                         break;
                     case "superligaen":
-                        championshipJson.put("Name","Superligaen");
+                        championship = "Superligaen";
                         break;
                     case "scottish-premiership":
-                        championshipJson.put("Name","Scottish Premiership");
+                        championship = "Scottish Premiership";
                         break;
-
+                    // Aggiungi qui altri casi se necessario
+                    default:
+                        // Opzionale: gestisci i casi non mappati
+                        break;
                 }
-
-                ChampionshipsJSONList.add(championshipJson);
+                updatedChampionships.add(championship);
             }
         }
-        return ChampionshipsJSONList;
+        return updatedChampionships;
     }
 
 

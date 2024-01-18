@@ -126,6 +126,21 @@ router.get('/list_competitions',  async function (req, res, next) {
   }
 });
 
+router.get('/get_birth_years',  async function (req, res, next) {
+  try {
+    // Richiesta GET al server del database
+    const response = await axios.get('http://localhost:8081/get_birth_years');
+
+    // Ora si possono passare i dati alla pagina HTML
+    res.json(response.data);
+
+  } catch (error) {
+    // Gestisci gli errori qui
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 router.post('/list_teamsbycompetition',  async function (req, res, next) {
   try {
     const compName = req.body.comp;

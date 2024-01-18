@@ -34,13 +34,11 @@ public class CompetitionsController {
 
     /**
      * <li>Path to obtain the list of national championships</li>
-     *
-     * @return List of championships es. {'serie-a, 'premier-league', ecc}
+     * @return List of championships es. {'Serie A', 'Premier League', ecc}
      */
     @GetMapping("/list_competitions")
-    public ResponseEntity<?> ListCompetitions() throws JSONException {
-        List<JSONObject> championships =  competitionsService.listCompetitions();
-        return ResponseEntity.ok(championships.toString());
+    public List<String> ListCompetitions() {
+        return  competitionsService.listCompetitions();
     }
 
 }
