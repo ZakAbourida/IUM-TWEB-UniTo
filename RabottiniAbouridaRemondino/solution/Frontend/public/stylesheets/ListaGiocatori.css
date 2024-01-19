@@ -283,6 +283,7 @@ footer{
     justify-content: center;
     text-align: center;
     align-items: center;
+
 }
 
 .container-ris h2{
@@ -760,9 +761,12 @@ footer{
 
 .btn-lg.dropdown-toggle {
     width: 100%;
-    font-size: 1vw;
+    font-size: 0.95vw;
     padding: .75em 1.3em;
     border-radius: 10px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 .dropdown {
     position: relative;
@@ -776,7 +780,16 @@ footer{
     max-height: 15vw;
     overflow-y: auto;
     overflow-x: hidden;
+    font-size: 1.8em;
 }
 .dropdown-menu a {
     color: white;
 }
+.body-n{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
