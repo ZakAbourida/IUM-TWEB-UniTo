@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     AxiosCall('/seasons');
     AxiosCall('/country');
-    AxiosCall('/list_competitions');
+    AxiosCall('/list_competitions_SoloName');
     AxiosCall('/all_teams');
     AxiosCall('/get_role');
     AxiosCall('/get_birth_years');
@@ -70,7 +70,7 @@ function fillDropMenu(data, url) {
         case '/country':
             menu_id = "country_menu";
             break;
-        case '/list_competitions':
+        case '/list_competitions_SoloName':
             menu_id = "championships_menu";
             break;
         case '/all_teams':

@@ -36,9 +36,21 @@ public class CompetitionsController {
      * <li>Path to obtain the list of national championships</li>
      * @return List of championships es. {'Serie A', 'Premier League', ecc}
      */
+    @GetMapping("/list_competitions_SoloName")
+    public List<String> ListCompetitionsSoloName() {
+        return  competitionsService.ListCompetitionsSoloName();
+    }
+
+
+    /**
+     * <li>Path to obtain the list of national championships</li>
+     *
+     * @return List of championships es. {'serie-a, 'premier-league', ecc}
+     */
     @GetMapping("/list_competitions")
-    public List<String> ListCompetitions() {
-        return  competitionsService.listCompetitions();
+    public ResponseEntity<?> ListCompetitions() throws JSONException {
+        List<JSONObject> championships =  competitionsService.listCompetitions();
+        return ResponseEntity.ok(championships.toString());
     }
 
 }
