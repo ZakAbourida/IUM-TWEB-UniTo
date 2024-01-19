@@ -90,7 +90,7 @@ const getHistorySquadMatches = async (squadName) => {
             stadium: { $exists: true, $ne: null, $ne: undefined },
             referee: { $exists: true, $ne: null, $ne: undefined },
             competition_type: { $exists: true, $ne: null, $ne: undefined }
-        }).sort({ date: -1 }).limit(10)
+        }).sort({ date: -1 }).limit(30)
             .select('date season home_club_name away_club_name home_club_goals away_club_goals away_club_position home_club_position round stadium referee competition_type');
 
         return squadMatches;

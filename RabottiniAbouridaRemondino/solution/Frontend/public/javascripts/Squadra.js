@@ -165,17 +165,119 @@ function redirectToPage(buttonID) {
     window.location.href = '../Giocatore.html';
 }
 
+
+/*
+
+// Loop attraverso le partite ricevute
+for (let i = 0; i < matches.length; i++) {
+    const match = matches[i];
+    const rowId = `rowTable${i + 1}`;
+
+    const dataDalDatabase = match.date;
+
+    // Crea un oggetto Date dalla stringa della data
+    const dataObj = new Date(dataDalDatabase);
+
+    // Ottieni giorno, mese e anno
+    const giorno = dataObj.getDate();
+    const mese = dataObj.getMonth() + 1; // Mese inizia da 0, quindi aggiungi 1
+
+    // Formatta la data nel formato desiderato (dd/mm/yyyy)
+    const dataFormattata = `${giorno}/${mese}`;
+
+    if(squad == match.home_club_name){ // la squadra scelta gioca in casa
+        document.getElementById(`colTable${4 + i * 10}`).innerText = match.away_club_name;
+        document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.home_club_goals}:${match.away_club_goals}`;
+        document.getElementById(`colTable${7 + i * 10}`).innerText = match.away_club_position;
+    }else{                             // la squadra scelta gioca fuori casa
+        document.getElementById(`colTable${4 + i * 10}`).innerText = match.home_club_name;
+        document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.away_club_goals}:${match.home_club_goals}`;
+        document.getElementById(`colTable${7 + i * 10}`).innerText = match.home_club_position;
+    }
+    document.getElementById(`colTable${2 + i * 10}`).innerText = dataFormattata;
+    document.getElementById(`colTable${3 + i * 10}`).innerText = match.season;
+    document.getElementById(`colTable${6 + i * 10}`).innerText = match.round;
+    document.getElementById(`colTable${8 + i * 10}`).innerText = match.stadium;
+    document.getElementById(`colTable${9 + i * 10}`).innerText = match.referee;
+    document.getElementById(`colTable${10 + i * 10}`).innerText = match.competition_type;
+}
+
+
+
+
+
+
+
+function fillTable(comp) {
+    axios.post('/list_teamsbycompetition', {comp: comp})
+        .then(function (response) {
+            console.log('Response:', response.data);
+
+            const numSq = response.data.length;
+            const table = document.getElementById('table');
+
+            /*Rimozione di tutte le righe per mantenere i dati aggiornati ed evitare problemi
+            *  come righe obsolete o dati duplicati. Ciò consente di mantenere la tabella aggiornata
+            *  con i dati più recenti.
+            while (table.rows.length > 0) {
+                table.deleteRow(0);
+            }
+
+            // Aggiungi una nuova riga per ogni squadra
+            for (let i = 0; i < numSq; i++) {
+                const newRow = table.insertRow();
+                const cellNum = newRow.insertCell();
+                cellNum.textContent = i + 1;
+
+                const cellButton = newRow.insertCell();
+                const button = document.createElement('button');
+                button.className = 'button-table';
+                button.id = `buttonTable${i + 1}`;
+                button.textContent = `buttonTable${i}`;
+                button.onclick = function () {
+                    redirectToPage(`buttonTable${i + 1}`);
+                };
+                cellButton.appendChild(button);
+            }
+
+            // Aggiungi righe aggiuntive se necessario
+            const rowsToAdd = Math.max(0, 11 - numSq);
+            for (let i = numSq; i < numSq + rowsToAdd; i++) {
+                aggiungiRiga(i + 1);
+            }
+            //Sostituzione valore nelle righe della tabella
+            for (let i = 0; i < response.data.length; i++) {
+                (function (index) {
+                    document.getElementById(`buttonTable${index + 1}`).innerText = response.data[index];
+                })(i);
+            }
+        })
+
+
+*/
+
 function sendAxiosQuerySq(url, squad){
     // Richiesta POST con annessa la squadra della pagina
-    axios.post(url, {squad: squad})
+    axios.post(url, { squad: squad })
         .then(function (response) {
-            const matches = response.data;
+            const numPartite = response.data.length;
+            const tabellaStorico = document.getElementById('table-ris');
 
-            console.log(matches);
+            console.log("Numero partite: "+numPartite);
 
-            // Loop attraverso le partite ricevute
-            for (let i = 0; i < matches.length; i++) {
-                const match = matches[i];
+            /* Rimozione di tutte le righe per mantenere i dati aggiornati ed evitare problemi
+             * come righe obsolete o dati duplicati. Ciò consente di mantenere la tabella aggiornata
+             * con i dati più recenti. */
+            while (tabellaStorico.rows.length > 1) {
+                tabellaStorico.deleteRow(1);
+            }
+
+            for (let i = 0; i < numPartite; i++) {
+                aggiungiRigaTabellaStorico(i *10 + 1);
+            }
+            // Aggiungi una nuova riga per ogni partita
+            for (let i = 0; i < numPartite; i++) {
+                const match = response.data[i];
                 const rowId = `rowTable${i + 1}`;
 
                 const dataDalDatabase = match.date;
@@ -190,15 +292,16 @@ function sendAxiosQuerySq(url, squad){
                 // Formatta la data nel formato desiderato (dd/mm/yyyy)
                 const dataFormattata = `${giorno}/${mese}`;
 
-                if(squad == match.home_club_name){ // la squadra scelta gioca in casa
+                if (squad == match.home_club_name) { // la squadra scelta gioca in casa
                     document.getElementById(`colTable${4 + i * 10}`).innerText = match.away_club_name;
                     document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.home_club_goals}:${match.away_club_goals}`;
                     document.getElementById(`colTable${7 + i * 10}`).innerText = match.away_club_position;
-                }else{                             // la squadra scelta gioca fuori casa
+                } else {                             // la squadra scelta gioca fuori casa
                     document.getElementById(`colTable${4 + i * 10}`).innerText = match.home_club_name;
                     document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.away_club_goals}:${match.home_club_goals}`;
                     document.getElementById(`colTable${7 + i * 10}`).innerText = match.home_club_position;
                 }
+                document.getElementById(`colTable${1 + i * 10}`).innerText = i + 1;
                 document.getElementById(`colTable${2 + i * 10}`).innerText = dataFormattata;
                 document.getElementById(`colTable${3 + i * 10}`).innerText = match.season;
                 document.getElementById(`colTable${6 + i * 10}`).innerText = match.round;
@@ -229,7 +332,6 @@ function infoSquadra(url, squad) {
             document.getElementById('Infostadio').innerText = "  " + info.stadium_name;
             document.getElementById('Infoposti_stadio').innerText =  "  " + info.stadium_seats;
             document.getElementById('Infoeta_media').innerText =  "  " + info.average_age;
-            document.getElementById('Infoallenatore').innerText =  "  " + info.coach_name;
             document.getElementById('Infodim_squadra').innerText =  "  " + info.squad_size;
             document.getElementById('Infosito_ufficiale').innerText =  "  " + info.url;
         })
@@ -314,6 +416,42 @@ function aggiungiRiga(num) {
     };
     cellaPulsante.appendChild(pulsante);
 }
+
+function aggiungiRigaTabellaStorico(num) {
+    // Trova la tabella
+    const tab = document.getElementById('table-body-ris');
+
+    // Inserisce una nuova riga alla fine della tabella
+    const nuovaRiga = tab.insertRow();
+
+    // Array con l'ID delle colonne nell'intestazione
+    const colIds = [
+        `colTable${num}`,
+        `colTable${num + 1}`,
+        `colTable${num + 2}`,
+        `colTable${num + 3}`,
+        `colTable${num + 4}`,
+        `colTable${num + 5}`,
+        `colTable${num + 6}`,
+        `colTable${num + 7}`,
+        `colTable${num + 8}`,
+        `colTable${num + 9}`
+    ];
+    // Imposta la classe sulla riga in base al numero
+    if (num % 2 === 0) {
+        nuovaRiga.className = 'table-ris tr:nth-child(even)';
+    } else {
+        nuovaRiga.className = 'table-ris tr:nth-child(odd)';
+    }
+
+    // Inserisce le celle nella nuova riga
+    for (let i = 0; i < colIds.length; i++) {
+        const cella = nuovaRiga.insertCell();
+        cella.id = colIds[i];
+    }
+}
+
+
 
 function onSubmit(){
     const squadra = localStorage.getItem('squadra');

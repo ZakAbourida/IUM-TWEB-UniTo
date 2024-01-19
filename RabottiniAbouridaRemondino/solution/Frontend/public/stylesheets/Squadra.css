@@ -532,6 +532,11 @@ footer{
     width: 100%;
     padding:1% 1%;
 }
+.body-x{
+    display: flex;
+    height: 62vh;
+    overflow-y: auto;
+}
 .container-x h2{
     font-weight: 400;
     line-height: 1.25;
@@ -572,13 +577,14 @@ footer{
     - primo pari
     - secondo dispari
 */
-.table-ris tbody tr:nth-child(even) {
+.table-ris tr:nth-child(even) {
     background: #590061;
 }
 
-.table-ris tbody tr:nth-child(odd) {
+.table-ris tr:nth-child(odd) {
     background: #8C0098;
 }
+
 .button-table{
     background: transparent;
     border: none;
@@ -611,4 +617,6 @@ footer{
 .table-one .row-ris1 {
     background: #8C0098;
 }
+
+
 
