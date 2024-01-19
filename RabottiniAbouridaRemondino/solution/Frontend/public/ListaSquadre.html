@@ -1,0 +1,267 @@
+<!--
+    Autori: Daniel Rabottini - Tommaso Remondino - Zakaria Abourida
+    Data: 2023/2024
+    Descrizione: Pagina contentente l'elenco di tutti i campionati
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Squadre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GoogleLapis -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Exa%3A700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Mega%3A700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans%3A400"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link href="stylesheets/ListaSquadre.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Javascript -->
+    <script src="javascripts/ListaSquadre.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <header class="header">
+        <div class="title-container">
+            <div class="container-logo">
+                <img class="logo" src="images/logo-homepage.png" alt="Logo Football Whisper">
+            </div>
+            <div class="link-container">
+                <nav>
+                    <ul class="link-header">
+                        <li><a class="altri-a" href="Homepage.html">Home</a></li>
+                        <li><a class="altri-a" href="Canale.html">Canale</a></li>
+                        <li><a class="altri-a" href="ListaCampionati.html">Campionati</a></li>
+                        <li><a class="homepage-a" href="ListaSquadre.html">Squadre</a></li>
+                        <li><a class="altri-a" href="ListaGiocatori.html">Giocatori</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search-login-container">
+                <button id="mostra-barra" class="search-button">
+                    <img class="search-img" src="images/searchbar.png" alt="searchbar">
+                </button>
+                <button id="mostra-opzioni" class="login-button">
+                    <img class="login-img" src="images/login-img.png" alt="login">
+                </button>
+            </div>
+        </div>
+        <div class="wrap-barra-ricerca">
+            <div id="barra-ricerca" class="hidden barra-ricerca-container">
+                <input id="input-ricerca" type="text" placeholder="Cerca..."/>
+            </div>
+            <div class="opzioni-login-container">
+                <div id="opzioni-login" class="hidden wrap-opzioni-login">
+                    <button>Profilo</button>
+                    <button>Sicurezza</button>
+                    <button>Log out</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-w-n">
+        <div class="container-n" id="container-n1">
+            <div class="navbar">
+                <div class="dropdown">
+                    <button class="dropbtn"> Premier League
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="ListaSquadre.html">Link 1</a>
+                        <a href="ListaSquadre.html">Link 2</a>
+                        <a href="ListaSquadre.html">Link 3</a>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-n">
+                <h2>Tutti le squadre</h2>
+                <table class="table-ris" id="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <button class="button-table" id="buttonTable1"
+                                    onclick="redirectToPage('buttonTable1')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <button class="button-table" id="buttonTable2"
+                                    onclick="redirectToPage('buttonTable2')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <button class="button-table" id="buttonTable3"
+                                    onclick="redirectToPage('buttonTable3')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <button class="button-table" id="buttonTable4"
+                                    onclick="redirectToPage('buttonTable4')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <button class="button-table" id="buttonTable5"
+                                    onclick="redirectToPage('buttonTable5')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <button class="button-table" id="buttonTable6"
+                                    onclick="redirectToPage('buttonTable6')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            <button class="button-table" id="buttonTable7"
+                                    onclick="redirectToPage('buttonTable7')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            <button class="button-table" id="buttonTable8"
+                                    onclick="redirectToPage('buttonTable8')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            <button class="button-table" id="buttonTable9"
+                                    onclick="redirectToPage('buttonTable9')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            <button class="button-table" id="buttonTable10"
+                                    onclick="redirectToPage('buttonTable10')"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>
+                            <button class="button-table" id="buttonTable11"
+                                    onclick="redirectToPage('buttonTable11')"></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container-w">
+            <div class="wrap-w-chat">
+                <div class="wrap-w-chat-logo">
+                    <img class="round-button-w img" src="images/premierLeagueLogo.jpg" alt="premier league logo">
+                </div>
+                <div class="wrap-w-chat-nome">
+                    <h1>PREMIER LEAGUE</h1>
+                </div>
+                <div class="wrap-w-chat-info">
+                    <p>Fondazione: 1992</p>
+                    <p>Squadre: 20</p>
+                    <p>Retrocessione: ultime 3</p>
+                    <p>Qualificazione Champions League: prime 4</p>
+                </div>
+            </div>
+            <div class="wrap-w">
+                <h2>Giocatori più cercati</h2>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w-img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/ManCity.png" alt="premier league logo">
+                        </button>
+                    </div>
+                    <div class="container-single-w-nome"><h3>E.Haaland</h3></div>
+                </div>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w-img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/ManCity.png" alt="premier league logo">
+                        </button>
+                    </div>
+                    <div class="container-single-w-nome"><h3>E.Haaland</h3></div>
+                </div>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w-img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/ManCity.png" alt="premier league logo">
+                        </button>
+                    </div>
+                    <div class="container-single-w-nome"><h3>E.Haaland</h3></div>
+                </div>
+                <div class="wrap-wn-items">
+                    <div class="container-single-w-img">
+                        <button class="round-button-w">
+                            <img class="round-button-w img" src="images/ManCity.png" alt="premier league logo">
+                        </button>
+                    </div>
+                    <div class="container-single-w-nome"><h3>E.Haaland</h3></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="top-footer">
+        <div class="top-footer-info">
+            <h2>FOOTBALL WHISPERS</h2>
+            <p>Da noi tutte le statistiche dei giocatori e delle squadre. Non perderti neanche i nostri pronostici!</p>
+        </div>
+        <div class="top-footer-info">
+            <h2>SOCIAL</h2>
+            <div class="top-footer-info-social">
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Twitter</p>
+            </div>
+        </div>
+        <div class="top-footer-info">
+            <h2>CONTATTI</h2>
+            <div class="top-footer-info-posti">
+                <p>Via Roma 2, Torino, TO 10100, IT</p>
+                <p>info@footballwhispers.com +39 347 3085745</p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <p class="bottom-footer1">@2021 Copyright: </p>
+        <p class="bottom-footer2">footballwhispers.com</p>
+    </div>
+</footer>
+</body>
+</html>
