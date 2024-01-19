@@ -120,22 +120,42 @@ function fillDropMenu(data, url) {
 function AdvancedSearch(){
     // Funzione helper per ottenere il valore o null se non modificato
 
-    const season = getSelectedValueOrFallback('seasons_menu', 'Season');
-    const country = getSelectedValueOrFallback('country_menu', 'Country');
-    const championship = getSelectedValueOrFallback('championships_menu', 'Championship');
-    const birthYear = getSelectedValueOrFallback('years_birth_menu', 'Birth');
-    const club = getSelectedValueOrFallback('club_menu', 'Club');
-    const role = getSelectedValueOrFallback('role_menu', 'Role');
+    const Season = getSelectedValueOrFallback('seasons_menu', 'Season');
+    const Country = getSelectedValueOrFallback('country_menu', 'Country');
+    const Competition = getSelectedValueOrFallback('championships_menu', 'Championship');
+    const Year_Birth = getSelectedValueOrFallback('years_birth_menu', 'Birth');
+    const Team = getSelectedValueOrFallback('club_menu', 'Club');
+    const Role = getSelectedValueOrFallback('role_menu', 'Role');
 
-    // Console log per vedere i valori selezionati (puoi rimuoverlo o sostituirlo con la logica di ricerca)
-    console.log('Season:', season);
-    console.log('Country:', country);
-    console.log('Championship:', championship);
-    console.log('Year of Birth:', birthYear);
-    console.log('Club:', club);
-    console.log('Role:', role);
 
-    // Qui puoi aggiungere la logica pe
+    console.log('Season:', Season);
+    console.log('Country:', Country);
+    console.log('Championship:', Competition);
+    console.log('Year of Birth:', Year_Birth);
+    console.log('Club:', Team);
+    console.log('Role:', Role);
+
+    const searchDTO = {
+        season: Season,
+        country: Country,
+        competition: Competition,
+        year_birth: Year_Birth,
+        team: Team,
+        role: Role
+    }
+
+    axios.post('/advanced_search', searchDTO, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(function (response) {
+            console.log('Risposta dal server:', response.data);
+        })
+        .catch(function (error) {
+            console.error('Errore durante la chiamata Axios:', error);
+        });
+
 }
 // Funzione helper per ottenere il valore o null se non modificato
 function getSelectedValueOrFallback(dropdownId, defaultValue) {

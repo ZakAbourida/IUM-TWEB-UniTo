@@ -67,9 +67,7 @@ public class CompetitionsService {
                     case "scottish-premiership":
                         championship = "Scottish Premiership";
                         break;
-                    // Aggiungi qui altri casi se necessario
                     default:
-                        // Opzionale: gestisci i casi non mappati
                         break;
                 }
                 updatedChampionships.add(championship);

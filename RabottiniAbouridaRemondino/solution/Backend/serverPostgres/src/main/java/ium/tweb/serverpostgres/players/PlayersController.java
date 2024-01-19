@@ -1,5 +1,6 @@
 package ium.tweb.serverpostgres.players;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import ium.tweb.serverpostgres.clubs.Clubs;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,6 +18,72 @@ import java.util.List;
 @RestController
 public class PlayersController {
     private final PlayersService playersService;
+
+    /**
+     * <h2>Support class used to transfer data from Express to Springboot</h2>
+     */
+    public static class AdvancedSearchDTO{
+        @JsonProperty("season")
+        Integer season;
+        @JsonProperty("country")
+        String country;
+        @JsonProperty("competition")
+        String competition;
+        @JsonProperty("year_birth")
+        Integer year_birth;
+        @JsonProperty("team")
+        String team;
+        @JsonProperty("role")
+        String role;
+
+        public Integer getSeason() {
+            return season;
+        }
+
+        public void setSeason(Integer season) {
+            this.season = season;
+        }
+
+        public String getCountry() {
+            return country;
+        }
+
+        public void setCountry(String country) {
+            this.country = country;
+        }
+
+        public String getCompetition() {
+            return competition;
+        }
+
+        public void setCompetition(String competition) {
+            this.competition = competition;
+        }
+
+        public Integer getYear_birth() {
+            return year_birth;
+        }
+
+        public void setYear_birth(Integer year_birth) {
+            this.year_birth = year_birth;
+        }
+
+        public String getTeam() {
+            return team;
+        }
+
+        public void setTeam(String team) {
+            this.team = team;
+        }
+
+        public String getRole() {
+            return role;
+        }
+
+        public void setRole(String role) {
+            this.role = role;
+        }
+    }
 
     @Autowired
     public PlayersController(PlayersService playersService) {
@@ -73,21 +140,22 @@ public class PlayersController {
     }
 
     /**
-     * <li>Path to get a specific player list based on following fields.</li>
-     * @param Season es. 2020
-     * @param Country es. Italy
-     * @param Competition es. serie-a
-     * @param Year_Birth es. 1999
-     * @param Team es. Juventus FC
-     * @param Role es. Goalkeeper
+     *<li>Path to get a specific player list based on following fields.</li>
+     * @param searchDTO Contains the parameters to pass to the route to query the database es. {season:2022,country:'Italy',competition:'Serie A',year_birth:2000,team:'Juventus',role:'Left Wing'}
      * @return List of players es {"Name":'Mattia Perin',"Team": 'Juventus FC', ecc}
-     *                            {"Name":'Gianluigi Buffon,"Team": 'Juventus FC', ecc}
-     * @throws JSONException Handle errors
+     * @throws JSONException  Handle errors
      */
     @PostMapping("/advanced_search")
-    public ResponseEntity<?> AdvancedSearch(Integer Season,String Country,String Competition,Integer Year_Birth, String Team,String Role) throws JSONException {
-         List<JSONObject> results =  playersService.advancedSearch(Season,Country,Competition,Year_Birth,Team,Role);
-         return ResponseEntity.ok(results.toString());
+    public ResponseEntity<?> AdvancedSearch(@RequestBody AdvancedSearchDTO searchDTO) throws JSONException {
+        List<JSONObject> results = playersService.advancedSearch(
+                searchDTO.getSeason(),
+                searchDTO.getCountry(),
+                searchDTO.getCompetition(),
+                searchDTO.getYear_birth(),
+                searchDTO.getTeam(),
+                searchDTO.getRole()
+        );
+        return ResponseEntity.ok(results.toString());
     }
 
     /**
@@ -108,4 +176,5 @@ public class PlayersController {
     public List<Players> squadPlayers(@RequestParam String squadName) {
         return playersService.squadPlayers(squadName);
     }
+
 }

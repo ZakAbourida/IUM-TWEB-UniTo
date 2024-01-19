@@ -191,5 +191,24 @@ router.post('/squad_players',  async function (req, res, next) {
   }
 });
 
+router.post('/advanced_search', async (req, res) => {
+  try {
+    // Estrai searchDTO dal corpo della richiesta
+    const searchDTO = req.body;
+
+    // Inoltra la richiesta al server Spring Boot
+    const response = await axios.post('http://localhost:8081/advanced_search', searchDTO, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    // Invia la risposta ricevuta dal server Spring Boot al client originale
+    res.json(response.data);
+  } catch (error) {
+    console.error('Errore durante la chiamata al server Spring Boot:', error);
+    res.status(500).send('Errore interno del server');
+  }
+});
 
 module.exports = router;
