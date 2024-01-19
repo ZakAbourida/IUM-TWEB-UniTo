@@ -117,7 +117,7 @@ public class PlayersService {
                 playerJson.put("Name", player.getName());
                 playerJson.put("Nationality", player.getCountry_of_citizenship());
                 if(player.getDate_of_birth() != null){
-                    playerJson.put("Year of birth", player.getDate_of_birth());
+                    playerJson.put("Birth", player.getDate_of_birth());
                 }else{
                     playerJson.put("Birth", "N/A");
                 }

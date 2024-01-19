@@ -151,6 +151,7 @@ function AdvancedSearch(){
     })
         .then(function (response) {
             console.log('Risposta dal server:', response.data);
+            fillTable(response.data);
         })
         .catch(function (error) {
             console.error('Errore durante la chiamata Axios:', error);
@@ -161,5 +162,34 @@ function AdvancedSearch(){
 function getSelectedValueOrFallback(dropdownId, defaultValue) {
     const buttonText = document.querySelector(`.wrap-filtri #${dropdownId}`).closest('.dropdown').querySelector('.btn.dropdown-toggle').textContent.trim();
     return buttonText !== defaultValue ? buttonText : null;
+}
+
+//popola le righe della tabella
+
+function fillTable(dati) {
+    // Seleziona il corpo della tabella
+    var bodyTable = document.querySelector(".table-ris tbody");
+
+    // Pulisci il corpo della tabella prima di popolarlo
+    bodyTable.innerHTML = '';
+
+    // Itera attraverso l'array di dati
+    dati.forEach((player, index) => {
+        // Crea una nuova riga
+        var row = document.createElement("tr");
+
+        // Aggiungi le celle alla riga
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${player.Name}</td>
+            <td>${player.Nationality}</td>
+            <td>${player.Birth}</td>
+            <td>${player.Team}</td>
+            <td>${player.Position}</td>
+        `;
+
+        // Aggiungi la riga al corpo della tabella
+        bodyTable.appendChild(row);
+    });
 }
 

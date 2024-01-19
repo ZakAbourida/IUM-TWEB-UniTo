@@ -62,7 +62,7 @@ public interface PlayersRepository extends JpaRepository<Players, Long> {
      * "Mustafa,Seyhan,Mustafa Seyhan,2020,820,mustafa-seyhan"
      * }
      */
-    @Query(value = "SELECT p FROM Players p JOIN Competitions c ON c.competition_id = p.current_club_domestic_competition_id  WHERE (:Season IS NULL OR p.last_season = :Season) AND (:Country IS NULL OR p.country_of_birth = :Country) AND (:Competition IS NULL OR c.name = :Competition) AND (:Year_Birth IS NULL OR YEAR(p.date_of_birth) = :Year_Birth) AND (:Team IS NULL OR p.current_club_name = :Team) AND (:Role IS NULL OR p.sub_position = :Role)")
+    @Query(value = "SELECT p FROM Players p JOIN Competitions c ON c.competition_id  = p.current_club_domestic_competition_id JOIN Clubs cl ON cl.club_id = p.current_club_id WHERE (:Season IS NULL OR p.last_season = :Season) AND (:Country IS NULL OR p.country_of_birth = :Country) AND (:Competition IS NULL OR c.name = :Competition) AND (:Year_Birth IS NULL OR YEAR(p.date_of_birth) = :Year_Birth) AND (:Team IS NULL OR cl.name = :Team) AND (:Role IS NULL OR p.sub_position = :Role)")
     List<Players> advancedSearch(Integer Season, String Country, String Competition, Integer Year_Birth, String Team, String Role);
 
     /**
