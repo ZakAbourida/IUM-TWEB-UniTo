@@ -210,4 +210,21 @@ router.post('/advanced_search', async (req, res) => {
   }
 });
 
+router.post('/squad_stats',  async function (req, res, next) {
+  try {
+    const squadName = req.body.squad;
+
+    // chiamata per per le statistiche della squadra
+    const response = await axios.post('http://localhost:3001/squad_stats', { squad: squadName});
+
+    console.log("ROUTEEE---> "+ response.data);
+
+    res.json(response.data);
+  } catch (error) {
+    // Gestisci gli errori qui
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 module.exports = router;

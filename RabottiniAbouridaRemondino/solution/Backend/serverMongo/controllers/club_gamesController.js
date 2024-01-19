@@ -43,10 +43,27 @@ const deleteClubGame = async (clubGameId) => {
     }
 };
 
-// Funzione di query
 const findClubGamesByClubId = async (clubId) => {
     try {
         return await ClubGames.find({ club_id: clubId });
+    } catch (error) {
+        throw error;
+    }
+};
+
+const getClubStats = async (clubId) => {
+    try {
+        const clubGames = await ClubGames.find({ club_id: clubId });
+
+        const stats = {
+            totalMatches: clubGames.length,
+            goalsScored: clubGames.reduce((total, game) => total + game.own_goals, 0),
+            goalsConceded: clubGames.reduce((total, game) => total + game.opponent_goals, 0),
+            victories: clubGames.filter(game => game.is_win === 1).length,
+            defeats: clubGames.filter(game => game.is_win === 0).length,
+        };
+
+        return stats;
     } catch (error) {
         throw error;
     }
@@ -59,4 +76,5 @@ module.exports = {
     updateClubGame,
     deleteClubGame,
     findClubGamesByClubId,
+    getClubStats
 };

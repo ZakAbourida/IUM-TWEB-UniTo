@@ -99,7 +99,23 @@ const getHistorySquadMatches = async (squadName) => {
     }
 };
 
+const getClubIdByClubName = async (clubName) => {
+    try {
+        // Utilizza il modello 'Games' e il metodo 'findOne' di Mongoose per cercare il club per nome
+        const game = await Games.findOne({ $or: [{ home_club_name: clubName }, { away_club_name: clubName }] });
 
+        // Se il gioco è trovato, restituisci l'ID del club corrispondente
+        if (game) {
+            return game.home_club_id || game.away_club_id;
+        } else {
+            // Se il club non è stato trovato, restituisce null
+            return null;
+        }
+    } catch (error) {
+        // Gestisci gli errori, ad esempio, loggandoli o lanciando un'eccezione
+        throw error;
+    }
+};
 
 module.exports = {
     createGame,
@@ -109,5 +125,6 @@ module.exports = {
     deleteGame,
     findGamesByCompetitionId,
     getRecentGames,
-    getHistorySquadMatches
+    getHistorySquadMatches,
+    getClubIdByClubName
 };

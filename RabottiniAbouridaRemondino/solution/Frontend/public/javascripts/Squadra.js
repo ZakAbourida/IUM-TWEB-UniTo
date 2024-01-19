@@ -164,98 +164,6 @@ function redirectToPage(buttonID) {
     // Reindirizza alla pagina "ListaSquadre.html"
     window.location.href = '../Giocatore.html';
 }
-
-
-/*
-
-// Loop attraverso le partite ricevute
-for (let i = 0; i < matches.length; i++) {
-    const match = matches[i];
-    const rowId = `rowTable${i + 1}`;
-
-    const dataDalDatabase = match.date;
-
-    // Crea un oggetto Date dalla stringa della data
-    const dataObj = new Date(dataDalDatabase);
-
-    // Ottieni giorno, mese e anno
-    const giorno = dataObj.getDate();
-    const mese = dataObj.getMonth() + 1; // Mese inizia da 0, quindi aggiungi 1
-
-    // Formatta la data nel formato desiderato (dd/mm/yyyy)
-    const dataFormattata = `${giorno}/${mese}`;
-
-    if(squad == match.home_club_name){ // la squadra scelta gioca in casa
-        document.getElementById(`colTable${4 + i * 10}`).innerText = match.away_club_name;
-        document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.home_club_goals}:${match.away_club_goals}`;
-        document.getElementById(`colTable${7 + i * 10}`).innerText = match.away_club_position;
-    }else{                             // la squadra scelta gioca fuori casa
-        document.getElementById(`colTable${4 + i * 10}`).innerText = match.home_club_name;
-        document.getElementById(`colTable${5 + i * 10}`).innerText = `${match.away_club_goals}:${match.home_club_goals}`;
-        document.getElementById(`colTable${7 + i * 10}`).innerText = match.home_club_position;
-    }
-    document.getElementById(`colTable${2 + i * 10}`).innerText = dataFormattata;
-    document.getElementById(`colTable${3 + i * 10}`).innerText = match.season;
-    document.getElementById(`colTable${6 + i * 10}`).innerText = match.round;
-    document.getElementById(`colTable${8 + i * 10}`).innerText = match.stadium;
-    document.getElementById(`colTable${9 + i * 10}`).innerText = match.referee;
-    document.getElementById(`colTable${10 + i * 10}`).innerText = match.competition_type;
-}
-
-
-
-
-
-
-
-function fillTable(comp) {
-    axios.post('/list_teamsbycompetition', {comp: comp})
-        .then(function (response) {
-            console.log('Response:', response.data);
-
-            const numSq = response.data.length;
-            const table = document.getElementById('table');
-
-            /*Rimozione di tutte le righe per mantenere i dati aggiornati ed evitare problemi
-            *  come righe obsolete o dati duplicati. Ciò consente di mantenere la tabella aggiornata
-            *  con i dati più recenti.
-            while (table.rows.length > 0) {
-                table.deleteRow(0);
-            }
-
-            // Aggiungi una nuova riga per ogni squadra
-            for (let i = 0; i < numSq; i++) {
-                const newRow = table.insertRow();
-                const cellNum = newRow.insertCell();
-                cellNum.textContent = i + 1;
-
-                const cellButton = newRow.insertCell();
-                const button = document.createElement('button');
-                button.className = 'button-table';
-                button.id = `buttonTable${i + 1}`;
-                button.textContent = `buttonTable${i}`;
-                button.onclick = function () {
-                    redirectToPage(`buttonTable${i + 1}`);
-                };
-                cellButton.appendChild(button);
-            }
-
-            // Aggiungi righe aggiuntive se necessario
-            const rowsToAdd = Math.max(0, 11 - numSq);
-            for (let i = numSq; i < numSq + rowsToAdd; i++) {
-                aggiungiRiga(i + 1);
-            }
-            //Sostituzione valore nelle righe della tabella
-            for (let i = 0; i < response.data.length; i++) {
-                (function (index) {
-                    document.getElementById(`buttonTable${index + 1}`).innerText = response.data[index];
-                })(i);
-            }
-        })
-
-
-*/
-
 function sendAxiosQuerySq(url, squad){
     // Richiesta POST con annessa la squadra della pagina
     axios.post(url, { squad: squad })
@@ -450,6 +358,25 @@ function aggiungiRigaTabellaStorico(num) {
         cella.id = colIds[i];
     }
 }
+function squadStats(url, squad){
+    axios.post(url, { squad: squad })
+        .then(function (response) {
+            console.log("Stat squadra: ", response.data);
+
+            document.getElementById('num_partite').innerText = "- Partite: " + response.data.totalMatches;
+            document.getElementById('num_vittorie').innerText = "- Vittorie: " + response.data.victories;
+            document.getElementById('num_sconfitte').innerText = "- Sconfitte: " + response.data.defeats;
+            document.getElementById('num_goal_fatti').innerText = "- Goal fatti: " + response.data.goalsScored;
+            document.getElementById('num_goal_concessi').innerText = "- Goal concessi: " + response.data.goalsConceded;
+        })
+        .catch(function (error) {
+            // Gestisci gli errori
+            console.error('Error:', error);
+
+            // Puoi aggiornare il DOM con un messaggio di errore
+            document.getElementById('results').innerHTML = "Error occurred";
+        });
+}
 
 
 
@@ -460,6 +387,7 @@ function onSubmit(){
     sendAxiosQuerySq('/loadSq', squadra);
     infoSquadra('/list_info_squad', squadra);
     giocatoriSquadra('/squad_players', squadra);
+    squadStats('/squad_stats', squadra);
 }
 
 
