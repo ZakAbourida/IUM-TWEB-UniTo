@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
             opzioniLogin.classList.add('hidden');
         }
     });
+
+    setupClickableRows();
+
 });
 
 /**
@@ -48,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function AxiosCall(url) {
     axios.get(url)
         .then(function (response) {
-            console.log('Response:', response.data);
             fillDropMenu(response.data, url);
         })
         .catch(function (error) {
@@ -127,14 +129,6 @@ function AdvancedSearch() {
     const Team = getSelectedValueOrFallback('club_menu', 'Club');
     const Role = getSelectedValueOrFallback('role_menu', 'Role');
 
-
-    console.log('Season:', Season);
-    console.log('Country:', Country);
-    console.log('Championship:', Competition);
-    console.log('Year of Birth:', Year_Birth);
-    console.log('Club:', Team);
-    console.log('Role:', Role);
-
     const searchDTO = {
         season: Season,
         country: Country,
@@ -150,16 +144,14 @@ function AdvancedSearch() {
         }
     })
         .then(function (response) {
-            console.log('Risposta dal server:', response.data);
             fillTable(response.data);
         })
         .catch(function (error) {
-            console.error('Errore durante la chiamata Axios:', error);
+            console.error('Error calling Axios:', error);
         });
 
 }
 
-// Funzione helper per ottenere il valore o null se non modificato
 /**
  *<li>
  * Function that selects the value of the dropdown menu</li>
@@ -173,7 +165,6 @@ function getSelectedValueOrFallback(dropdownId, defaultValue) {
     return buttonText !== defaultValue ? buttonText : null;
 }
 
-//popola le righe della tabella
 /**
  *<li>
  * Function that takes the data received as a response from the axios call for advanced search and populates the table with players.</li>
@@ -188,6 +179,7 @@ function fillTable(data) {
     data.forEach((player, index) => {
 
         var row = document.createElement("tr");
+        row.classList.add('has-text')
 
         row.innerHTML = `
             <td>${index + 1}</td>
@@ -200,4 +192,19 @@ function fillTable(data) {
         bodyTable.appendChild(row);
     });
 }
+
+/**
+ * Funzione che permette l'hover sulle righe della tabella
+ */
+function setupClickableRows() {
+    document.querySelectorAll('.table-ris tbody tr').forEach(row => {
+        // Verifica se la riga contiene testo
+        if (row.textContent.trim().length > 0) {
+            row.classList.add('has-text');
+
+        }
+    });
+}
+
+
 
