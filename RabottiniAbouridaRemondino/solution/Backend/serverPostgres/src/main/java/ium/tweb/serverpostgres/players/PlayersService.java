@@ -1,12 +1,9 @@
 package ium.tweb.serverpostgres.players;
 
-import ium.tweb.serverpostgres.clubs.Clubs;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -15,6 +12,10 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
+/**
+ * <h1>Players Service</h1>
+ * <h3>Within this class all operations will be carried out on requests and data entering and leaving the database. (Data refinement)</h3>
+ */
 @Service
 public class PlayersService {
     private final PlayersRepository playersRepository;
@@ -24,18 +25,38 @@ public class PlayersService {
         this.playersRepository = playersRepository;
     }
 
+    /**
+     *<li>Send data to repository to save data to database</li>
+     * @param players JSON file containing the players
+     */
     public void savePlayers(List<Players> players) {
         playersRepository.saveAll(players);
     }
 
+    /**
+     * <li>
+     * Passes the call to the repository which returns the locations.</li>
+     * @return List of positionig es. {'Goalkeeper','Left Wing',ecc}
+     */
     public List<String> getRole() {
         return playersRepository.getRole();
     }
 
+    /**
+     * <li>Transmits the call to the repository and returns the list of years.</li>
+     * @return List of years es.{1968,1970,1971, ecc}
+     */
     public List<Integer> yearsBirth(){
         return playersRepository.yearsBirth();
     }
 
+    /**
+     * <li>Transmits the call with the name of a player as input and returns a json object containing the information relating to a player.</li>
+     * @param Name Name of a player
+     * @return List of selected information for players es {Name: "Bukayo Saka", Height:175, Position:"Left Winger",ecc}
+     * @throws JSONException Handle errors
+     * @throws IOException Handle errors
+     */
     public JSONObject InfoPlayer(String Name) throws JSONException, IOException {
         Players player =  playersRepository.infoPlayer(Name);
         JSONObject playerJson = new JSONObject();
@@ -54,15 +75,43 @@ public class PlayersService {
         return playerJson;
     }
 
+    /**
+     * <li>
+     * Transmits the call to the repository and returns the list of countries.</li>
+     * @return List of countries es. {'Albania', 'Armenia', ecc}
+     */
     public List<String> getCountry() {
         return playersRepository.getCountry();
     }
 
+    /**
+     * <li>
+     * Passes the call to the repository with the team name as input and returns the associated players.</li>
+     * @param squadName Name of a team es. Arsenal FC
+     * @return List of player of a team es {'Bukauo Saka,'Aaron Ramsdale' ecc}
+     */
     public List<Players> squadPlayers(String squadName) {return playersRepository.squadPlayers(squadName);}
 
+    /**
+     *
+     * @return List of seasons es {2003,2004,2005,2006, ecc}
+     */
     public List<Integer> getSeasons() {
         return playersRepository.getSeasons();
     }
+
+    /**
+     * <li>
+     * Passes the call to the repository with the following parameters and returns a list of players. It is possible to pass all the parameters or none or only some, for a more specific and targeted search.</li>
+     * @param Season es. 2020
+     * @param Country es. Italy
+     * @param Competition es. Bundesliga
+     * @param Year_Birth es. 2000
+     * @param Team es. Juventus FC
+     * @param Role es. Goalkeeper
+     * @return List of JSON objects. JSON objects contain the players found based on the input parameters and their primary information.
+     * @throws JSONException Handle errors
+     */
     public List<JSONObject> advancedSearch(Integer Season, String Country, String Competition, Integer Year_Birth, String Team, String Role) throws JSONException {
         if (Competition != null) {
             switch (Competition) {
@@ -130,7 +179,12 @@ public class PlayersService {
     }
 
 
-    //Metodo che prende l'url dell'immagine come parametro e la scarica in base64.
+    /**
+     *<li>Method that takes the URL of the player's image as a parameter and converts it into a base 64 image. It returns the image which will then be inserted into the json object containing information about a player.</li>
+     * @param imageUrl
+     * @return Base 64 decoded image.
+     * @throws IOException Handle errors
+     */
     public static String encodeImageToBase64(URL imageUrl) throws IOException {
         try (InputStream inputStream = imageUrl.openStream()) {
             byte[] imageBytes = inputStream.readAllBytes();

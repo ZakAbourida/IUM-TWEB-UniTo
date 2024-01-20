@@ -15,6 +15,10 @@ public class PlayerValuationsService {
         this.playerValuationsRepository = playerValuationsRepository;
     }
 
+    /**
+     * <li>Send data to repository to save data to database</li>
+     * @param playerValuations JSON file containing the player valuations
+     */
     public void savePlayerValuations(List<PlayerValuations> playerValuations) {
         playerValuationsRepository.saveAll(playerValuations);
     }

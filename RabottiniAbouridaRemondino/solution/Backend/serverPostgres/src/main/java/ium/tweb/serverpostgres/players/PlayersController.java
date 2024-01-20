@@ -1,8 +1,6 @@
 package ium.tweb.serverpostgres.players;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import ium.tweb.serverpostgres.clubs.Clubs;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

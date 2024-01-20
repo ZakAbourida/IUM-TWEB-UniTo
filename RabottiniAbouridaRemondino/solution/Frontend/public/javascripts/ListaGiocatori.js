@@ -1,10 +1,13 @@
+/**
+ * Listener that sets the initial parameters of the page.
+ */
 document.addEventListener('DOMContentLoaded', function () {
     /**
      * <h2>Call axios to get the data that fills the dropdown menus.<h2>
      */
     AxiosCall('/seasons');
     AxiosCall('/country');
-    AxiosCall('/list_competitions_SoloName');
+    AxiosCall('/list_competitions');
     AxiosCall('/all_teams');
     AxiosCall('/get_role');
     AxiosCall('/get_birth_years');
@@ -39,27 +42,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /**
- *
- * @param url
- * @constructor
+ *<li>Function that sends axios calls to Express routes.</li>
+ * @param url es. /seasons - /country ecc
  */
 function AxiosCall(url) {
     axios.get(url)
         .then(function (response) {
-            // Handle success
             console.log('Response:', response.data);
             fillDropMenu(response.data, url);
         })
         .catch(function (error) {
-            // Handle errors
             console.error('Error:', error);
         });
 }
 
 /**
- *
- * @param data
- * @param url
+ * <li>Function which, based on the URL, takes the data received from the response of the Axios call and fills the dropdown menus.</li>
+ * @param data Data received from the call
+ * @param url es.  /seasons - /country ecc
  */
 function fillDropMenu(data, url) {
     var menu_id;
@@ -70,7 +70,7 @@ function fillDropMenu(data, url) {
         case '/country':
             menu_id = "country_menu";
             break;
-        case '/list_competitions_SoloName':
+        case '/list_competitions':
             menu_id = "championships_menu";
             break;
         case '/all_teams':
@@ -84,27 +84,25 @@ function fillDropMenu(data, url) {
             break;
         default:
             menu_id = null;
-
     }
     var menu = document.getElementById(menu_id);
 
-    // Pulisci il contenuto esistente
     menu.innerHTML = '';
 
-    // Loop attraverso l'array di stagioni
-    data.forEach(function (season) {
-        // Crea un nuovo elemento <a>
+    data.forEach(function (element) {
+
         var linkElement = document.createElement("a");
-        linkElement.classList.add("dropdown-item"); // Aggiungi la classe 'dropdown-item'
+        linkElement.classList.add("dropdown-item");
+        if(url === "/list_competitions"){
+            linkElement.textContent = element.Name;
+        }else{
+            linkElement.textContent = element;
+        }
 
-        linkElement.textContent = season;
-
-        // Aggiungi un listener per il click
         linkElement.addEventListener('click', function () {
-            // Trova il genitore 'dropdown' più vicino
+
             var dropdownParent = this.closest('.dropdown');
 
-            // Trova il pulsante all'interno di questo genitore 'dropdown' e aggiorna il suo testo
             if (dropdownParent) {
                 var button = dropdownParent.querySelector('.btn.dropdown-toggle');
                 if (button) {
@@ -112,13 +110,15 @@ function fillDropMenu(data, url) {
                 }
             }
         });
-
-        // Aggiungi l'elemento <a> al menu a tendina
         document.getElementById(menu_id).appendChild(linkElement);
     });
 }
-function AdvancedSearch(){
-    // Funzione helper per ottenere il valore o null se non modificato
+
+/**
+ * <li>Function that takes data from the dropdown menus and encapsulates it in a json object and sends it to the route via axios call.</li>
+ *
+ */
+function AdvancedSearch() {
 
     const Season = getSelectedValueOrFallback('seasons_menu', 'Season');
     const Country = getSelectedValueOrFallback('country_menu', 'Country');
@@ -158,27 +158,37 @@ function AdvancedSearch(){
         });
 
 }
+
 // Funzione helper per ottenere il valore o null se non modificato
+/**
+ *<li>
+ * Function that selects the value of the dropdown menu</li>
+ * @param dropdownId id of the dropdown menu
+ * @param defaultValue Default drop-down value before performing a search
+ * @returns {string|null}
+ * If the value is equal to the default parameter of the dropdown menu it returns null, otherwise the selected value.
+ */
 function getSelectedValueOrFallback(dropdownId, defaultValue) {
     const buttonText = document.querySelector(`.wrap-filtri #${dropdownId}`).closest('.dropdown').querySelector('.btn.dropdown-toggle').textContent.trim();
     return buttonText !== defaultValue ? buttonText : null;
 }
 
 //popola le righe della tabella
+/**
+ *<li>
+ * Function that takes the data received as a response from the axios call for advanced search and populates the table with players.</li>
+ * @param data List of players received from the axios response.
+ */
+function fillTable(data) {
 
-function fillTable(dati) {
-    // Seleziona il corpo della tabella
     var bodyTable = document.querySelector(".table-ris tbody");
 
-    // Pulisci il corpo della tabella prima di popolarlo
     bodyTable.innerHTML = '';
 
-    // Itera attraverso l'array di dati
-    dati.forEach((player, index) => {
-        // Crea una nuova riga
+    data.forEach((player, index) => {
+
         var row = document.createElement("tr");
 
-        // Aggiungi le celle alla riga
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${player.Name}</td>
@@ -187,8 +197,6 @@ function fillTable(dati) {
             <td>${player.Team}</td>
             <td>${player.Position}</td>
         `;
-
-        // Aggiungi la riga al corpo della tabella
         bodyTable.appendChild(row);
     });
 }

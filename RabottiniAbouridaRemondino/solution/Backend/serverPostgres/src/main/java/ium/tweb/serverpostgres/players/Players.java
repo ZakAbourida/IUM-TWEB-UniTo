@@ -9,9 +9,6 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 /**
  * <h1>Players Class</h1>
  * <h3>The Players class defines the table with its columns for the Postgres server.</h3>
