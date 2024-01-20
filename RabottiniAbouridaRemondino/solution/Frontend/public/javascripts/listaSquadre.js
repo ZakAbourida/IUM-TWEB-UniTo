@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     fillTable(campionato);
+    Info_Competition(campionato);
 });
 
 function redirectToPage(buttonID) {
@@ -50,6 +51,23 @@ function redirectToPage(buttonID) {
 
     // Reindirizza alla pagina "ListaSquadre.html"
     window.location.href = '../Squadra.html';
+}
+
+function Info_Competition(comp){
+    axios.post('/info_competition', {comp: comp})
+        .then(function (response) {
+            console.log('Info Campionato: ', response.data);
+
+            document.getElementById('ID_competizione').innerText =response.data.competition_id;
+            document.getElementById('Nome_competizione').innerText = response.data.name;
+            document.getElementById('country').innerText = "Nazione: " + response.data.country_name;
+            document.getElementById('confederazione').innerText = "Confederazione: " + response.data.confederation;
+            document.getElementById('url').innerText = "URL: " + response.data.url;
+        })
+        .catch(function (error) {
+            // Handle errors
+            console.error('Error:', error);
+        });
 }
 
 function fillTable(comp) {

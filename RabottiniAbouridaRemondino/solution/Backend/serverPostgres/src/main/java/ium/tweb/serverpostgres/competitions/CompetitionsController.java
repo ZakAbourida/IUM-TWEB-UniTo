@@ -4,10 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 /**
@@ -42,6 +39,15 @@ public class CompetitionsController {
     public ResponseEntity<?> ListCompetitions() throws JSONException {
         List<JSONObject> championships =  competitionsService.listCompetitions();
         return ResponseEntity.ok(championships.toString());
+    }
+
+    /**
+     * <li>Paths for loading competitions into the database</li>
+     * @param competition JSON files containing the name of the competition
+     */
+    @PostMapping("/info_competition")
+    public Competitions InfoCompetition(@RequestParam String competition) {
+        return  competitionsService.InfoCompetition(competition);
     }
 
 }

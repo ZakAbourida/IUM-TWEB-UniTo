@@ -1,5 +1,6 @@
 package ium.tweb.serverpostgres.competitions;
 
+import ium.tweb.serverpostgres.players.Players;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,12 @@ public interface CompetitionsRepository extends JpaRepository<Competitions, Long
      */
     @Query("SELECT DISTINCT c.name FROM Competitions AS c WHERE c.sub_type = 'first_tier'")
     List<String> listCompetitions();
+
+    /**
+     * Query used to obtain specific Competitions's information.
+     * @param competition Name of the competition
+     * @return Competition information for the specified one
+     */
+    @Query("SELECT c FROM Competitions c WHERE c.name = :competition")
+    Competitions InfoCompetition(String competition);
 }

@@ -242,4 +242,23 @@ router.post('/squad_stats',  async function (req, res, next) {
   }
 });
 
+router.post('/info_competition',  async function (req, res, next) {
+  try {
+    const competition = req.body.comp;
+
+    console.log(competition);
+
+    const params = new URLSearchParams();
+    params.append('competition', competition);
+
+    const response = await axios.post('http://localhost:8081/info_competition', params);
+
+    res.json(response.data);
+  } catch (error) {
+    // Gestisci gli errori qui
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 module.exports = router;
