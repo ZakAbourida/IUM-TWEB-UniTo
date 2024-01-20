@@ -809,6 +809,15 @@ footer{
     height: auto;
     background-color: rgb(128, 128, 128);
 }
+.round-img{
+    cursor: pointer;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 100px;
+}
 
 
 

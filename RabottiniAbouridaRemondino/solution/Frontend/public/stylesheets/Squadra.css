@@ -425,6 +425,7 @@ footer{
     font-family: Lexend, 'Source Sans Pro';
     text-align: left;
     font-size: 2vw;
+    justify-content: center;
 }
 
 .tendina-w2 button {
@@ -617,6 +618,16 @@ footer{
 .table-one .row-ris1 {
     background: #8C0098;
 }
-
+.round-img{
+    cursor: pointer;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 40px;
+    display: block;
+    margin: 0 auto;
+}
 
 
