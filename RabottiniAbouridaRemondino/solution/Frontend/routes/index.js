@@ -265,7 +265,6 @@ router.post('/comp_players',  async function (req, res, next) {
   try {
     const compId = req.body.comp;
 
-
     const response = await axios.post('http://localhost:8081/comp_players', compId);
 
     const primi30 = response.data.slice(0, 30);

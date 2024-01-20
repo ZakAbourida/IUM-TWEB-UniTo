@@ -90,4 +90,12 @@ public class CompetitionsService {
         }
         return ChampionshipsJSONList;
     }
+
+    /**
+     * <li>
+     * Passes the call to the repository with the competition name as input and returns all the info about it.</li>
+     * @param competition Name of a competition es. Bundesliga
+     * @return Bundesliga:{competition_id, competition_code, name...}
+     */
+    public Competitions InfoCompetition(String competition) {return competitionsRepository.InfoCompetition(competition);}
 }
