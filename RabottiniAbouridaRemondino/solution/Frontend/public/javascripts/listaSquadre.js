@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function redirectToPage(buttonID) {
+function redirectToSquad(buttonID) {
     let val = document.getElementById(buttonID).innerText;
 
     // Salva il valore nella localStorage
@@ -55,14 +55,15 @@ function redirectToPage(buttonID) {
     window.location.href = '../Squadra.html';
 }
 
-function redirectToPageGiocatori(buttonID) {
+function redirectToPlayers(buttonID) {
     let val = document.getElementById(buttonID).innerText;
 
     // Salva il valore nella localStorage
     localStorage.setItem('giocatore', val);
+    const gioc = localStorage.getItem('giocatore');
 
     // Reindirizza alla pagina "ListaSquadre.html"
-    window.location.href = '../Giocatore.html';
+    window.location.href = '../Giocatore.html?player=' + encodeURIComponent(gioc);
 }
 
 function Info_Competition(comp){
@@ -91,7 +92,7 @@ function fillTableSquad(comp) {
             console.log('Response:', response.data);
 
             const numSq = response.data.length;
-            const table = document.getElementById('table');
+            const table = document.getElementById('table-squadre');
 
             /*Rimozione di tutte le righe per mantenere i dati aggiornati ed evitare problemi
             *  come righe obsolete o dati duplicati. Ciò consente di mantenere la tabella aggiornata
@@ -112,7 +113,7 @@ function fillTableSquad(comp) {
                 button.id = `buttonTable${i + 1}`;
                 button.textContent = `buttonTable${i}`;
                 button.onclick = function () {
-                    redirectToPage(`buttonTable${i + 1}`);
+                    redirectToSquad(`buttonTable${i + 1}`);
                 };
                 cellButton.appendChild(button);
             }
@@ -160,7 +161,7 @@ function fillTablePlayers() {
                     Button.id = `buttonTableG${i + 1}`;
                     Button.textContent = `buttonTableG${i+1}`;
                     Button.onclick = function () {
-                        redirectToPage(`buttonTableG${i + 1}`);
+                        redirectToPlayers(`buttonTableG${i + 1}`);
                     };
                     CellButton.appendChild(Button);
                 }
@@ -184,7 +185,7 @@ function fillTablePlayers() {
 
 function aggiungiRigaTabellaSquadre(num) {
     // Trova la tabella
-    const tab = document.getElementById('table');
+    const tab = document.getElementById('table-squadre');
 
     // Inserisce una nuova riga alla fine della tabella
     const nuovaRiga = tab.insertRow();
@@ -200,13 +201,13 @@ function aggiungiRigaTabellaSquadre(num) {
     pulsante.id = `buttonTable${num}`;
     pulsante.textContent = `buttonTable${num}`;
     pulsante.onclick = function () {
-        redirectToPage(`buttonTable${num}`);
+        redirectToSquad(`buttonTable${num}`);
     };
     cellaPulsante.appendChild(pulsante);
 }
 function aggiungiRigaTabellaGiocatori(num) {
     // Trova la tabella
-    const tab = document.getElementById('table');
+    const tab = document.getElementById('table-giocatori');
 
     // Inserisce una nuova riga alla fine della tabella
     const nuovaRiga = tab.insertRow();
@@ -222,7 +223,7 @@ function aggiungiRigaTabellaGiocatori(num) {
     pulsante.id = `buttonTable${num}`;
     pulsante.textContent = `buttonTable${num}`;
     pulsante.onclick = function () {
-        redirectToPage(`buttonTable${num}`);
+        redirectToPlayers(`buttonTable${num}`);
     };
     cellaPulsante.appendChild(pulsante);
 }

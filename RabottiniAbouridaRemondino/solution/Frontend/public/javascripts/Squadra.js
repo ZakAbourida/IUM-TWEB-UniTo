@@ -113,9 +113,10 @@ function redirectToPage(buttonID) {
 
     // Salva il valore nella localStorage
     localStorage.setItem('giocatore', val);
+    const gioc = localStorage.getItem('giocatore');
 
     // Reindirizza alla pagina "ListaSquadre.html"
-    window.location.href = '../Giocatore.html';
+    window.location.href = '../Giocatore.html?player=' + encodeURIComponent(gioc);
 }
 function sendAxiosQuerySq(url, squad){
     // Richiesta POST con annessa la squadra della pagina
