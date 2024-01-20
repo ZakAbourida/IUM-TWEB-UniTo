@@ -244,7 +244,6 @@ function giocatoriSquadra(url, squad) {
                     document.getElementById(`buttonTable${index + 1}`).innerText = response.data[index].first_name + " " +response.data[index].last_name;
                 })(i);
             }
-
         })
         .catch(function (error) {
             // Gestisci gli errori

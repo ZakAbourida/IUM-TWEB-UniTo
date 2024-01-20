@@ -261,4 +261,20 @@ router.post('/info_competition',  async function (req, res, next) {
   }
 });
 
+router.post('/comp_players',  async function (req, res, next) {
+  try {
+    const compId = req.body.comp;
+
+
+    const response = await axios.post('http://localhost:8081/comp_players', compId);
+
+    const primi30 = response.data.slice(0, 30);
+
+    res.json(primi30);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 module.exports = router;

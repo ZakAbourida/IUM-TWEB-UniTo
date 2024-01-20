@@ -25,6 +25,6 @@ public interface CompetitionsRepository extends JpaRepository<Competitions, Long
      * @param competition Name of the competition
      * @return Competition information for the specified one
      */
-    @Query("SELECT c FROM Competitions c WHERE c.name = :competition")
+    @Query("SELECT c FROM Competitions c WHERE c.name = :competition ORDER BY c.name ASC")
     Competitions InfoCompetition(String competition);
 }

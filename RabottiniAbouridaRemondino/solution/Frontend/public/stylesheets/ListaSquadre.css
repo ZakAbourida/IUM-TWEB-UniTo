@@ -322,6 +322,7 @@ footer{
     height: 30%;
     padding:2% 2%;
     align-items: center;
+    word-wrap: anywhere;
 }
 .wrap-w-chat-logo img{
     margin-left: 30%;
@@ -443,6 +444,12 @@ footer{
     height: auto;
     padding:1% 1%;
 }
+.body-n{
+    display: flex;
+    flex-direction: column;
+    height: 112vh;
+    overflow-y: auto;
+}
 .wrap-n1-items{
     background: #8C0098;
     height: 7vh;
@@ -527,6 +534,32 @@ footer{
 .table-ris tbody tr:nth-child(odd) {
     background: #8C0098;
 }
+
+.table-one {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-one th,
+.table-one td {
+    padding-left: 1vw;
+    font-size: 1.5vw;
+    color: #000000;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: left;
+}
+.table-one td{
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+.table-one th,
+.table-one .row-ris1{
+    background: #ffffff;
+}
+
 .button-table{
     background: transparent;
     border: none;
