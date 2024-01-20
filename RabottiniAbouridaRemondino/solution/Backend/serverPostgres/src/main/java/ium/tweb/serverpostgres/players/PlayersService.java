@@ -93,14 +93,6 @@ public class PlayersService {
     public List<Players> squadPlayers(String squadName) {return playersRepository.squadPlayers(squadName);}
 
     /**
-     * <li>
-     * Passes the call to the repository with the competition_id  as input and returns the associated players.</li>
-     * @param compId ID of the competition
-     * @return List of player of a competition es {'Bukauo Saka,'Aaron Ramsdale' ecc}
-     */
-    public List<Players> compPlayers(String compId) {return playersRepository.compPlayers(compId);}
-
-    /**
      *
      * @return List of seasons es {2003,2004,2005,2006, ecc}
      */

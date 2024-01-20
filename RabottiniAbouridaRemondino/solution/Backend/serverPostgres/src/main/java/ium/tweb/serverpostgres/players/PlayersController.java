@@ -175,13 +175,4 @@ public class PlayersController {
         return playersService.squadPlayers(squadName);
     }
 
-    /**
-     * <li>Path to obtain a list of player of specific competition</li>
-     * @param compId es. 'IT1'
-     * @return List of the player about the competition
-     */
-    @PostMapping("/comp_players")
-    public List<Players> compPlayers(@RequestBody String compId) {
-        return playersService.compPlayers(compId);
-    }
 }

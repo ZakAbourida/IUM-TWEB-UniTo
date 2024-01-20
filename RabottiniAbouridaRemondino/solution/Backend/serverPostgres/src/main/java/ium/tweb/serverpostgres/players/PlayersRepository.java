@@ -79,12 +79,4 @@ public interface PlayersRepository extends JpaRepository<Players, Long> {
      */
     @Query("SELECT p FROM Players p JOIN Clubs c ON c.club_id = p.current_club_id  WHERE c.name = :squadName")
     List<Players> squadPlayers(String squadName);
-
-    /**
-     * Query used to obtain specific PLayer's information about a competition by ID.
-     * @param compId ID of the competition
-     * @return Player information for the specified competition ID
-     */
-    @Query("SELECT p FROM Players p WHERE p.current_club_domestic_competition_id = :compId")
-    List<Players> compPlayers(String compId);
 }
