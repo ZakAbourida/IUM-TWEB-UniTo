@@ -41,8 +41,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     setupClickableRows();
+    test();
 
 });
+
+function test(){
+    var table = document.querySelector(".table-ris tbody");
+
+    table.addEventListener('click', function(event) {
+        var target = event.target;
+
+        // Assicurati che il click sia avvenuto su una riga della tabella
+        while (target != table && !target.matches("tr.has-text")) {
+            target = target.parentNode;
+        }
+
+        // Se un elemento della tabella è stato cliccato
+        if (target != table) {
+            var playerName = target.cells[1].textContent; // Ottiene il nome dal secondo <td>
+            window.location.href = 'Giocatore.html?player=' + encodeURIComponent(playerName);
+        }
+    });
+}
 
 /**
  *<li>Function that sends axios calls to Express routes.</li>
