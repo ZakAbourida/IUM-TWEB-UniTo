@@ -1,8 +1,10 @@
+/* Contenitore di tutta la pagina */
 .container-fluid{
     background: linear-gradient(180deg, #690072 15.1%, rgba(152, 0, 19, 0.75) 97.07%);
     height: 100%;
     width: 100%;
 }
+/* Header: contenitore per il logo, i link alle pagine e i button di supporto utente. */
 header{
     height: 10%;
     width: 100%;
@@ -117,7 +119,7 @@ header{
     font-family: Lexend Deca, 'Source Sans Pro';
     padding-left: 8%;
 }
-
+/* visible-hidden: Opzioni per gestire barra di ricerca e opzioni profilo dal javascript */
 .visible{
     display: flex;
 }
@@ -152,7 +154,175 @@ header{
     background-color: #DDBB4E;
 }
 
+/* Contenitore per sezione di ricerca avanzata per i giocatori con le varie variabili di ricerca */
+.container-advSearch{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 1vh;
+}
+.container-advSearch h2{
+    font-size: 4vh;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    align-content: center;
+    margin-top: 1vh;
+}
+.wrap-advS{
+    background-color: transparent;
+    border-radius: 30px;
+    position: relative;
+    height: auto;
+    width: 99%;
+    align-items: center;
+}
+.wrap-advS-item{
+    height: auto;
+    width: 12vw;
+    padding: 1vh;
+    text-align: center;
+}
+.wrap-filtri{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3vw;
+}
+.btn-custom {
+    background-color: #e3c976;
+    color: #000000;
+    border-color: darkgoldenrod;
+    border-radius: 20px;
+    font-size: 1.4vw;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+}
 
+.btn-lg.dropdown-toggle {
+    width: 100%;
+    font-size: 0.95vw;
+    padding: .75em 1.3em;
+    border-radius: 10px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.dropdown {
+    position: relative;
+}
+
+/* Centra la dropdown-menu */
+.dropdown-menu {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #6c757d;
+    max-height: 15vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 1.8em;
+}
+.dropdown-menu a {
+    color: white;
+}
+
+/* Contenitore per sezione dei risultati della ricerca avanzata */
+.container-ris{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.container-ris h2{
+    font-size: 4vh;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    margin: 1vh;
+}
+.wrap-ris{
+    border-radius: 30px;
+    position: relative;
+    height: auto;
+    width: 99%;
+    padding:0.5%;
+    margin: 1vh;
+}
+.body-n{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.wrap-ris2-items{
+    background: #590061;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8em;
+    white-space: nowrap;
+}
+.wrap-ris4-items{
+    border-radius: 0px 0px 30px 30px;
+    background: #590061;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10em;
+}
+.wrap-ris5-items{
+    border-radius: 30px 30px 0px 0px;
+    background: #590061;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.table-ris {
+    width: 100%;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-ris th,
+.table-ris td {
+    padding: 0.5%;
+    font-size: 1.4vw;
+    color: #ffffff;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: center;
+}
+
+.table-ris th {
+    background: #590061;
+}
+
+.table-ris .row-ris1 {
+    background: #8C0098;
+}
+/* colore per i pari */
+.table-ris tbody tr:nth-child(even) {
+    background: #590061;
+}
+/*colore per i dispari*/
+.table-ris tbody tr:nth-child(odd) {
+    background: #8C0098;
+}
+.table-ris tbody tr.has-text {
+    cursor: pointer; /* Cambia il cursore in una "mano" per indicare che è cliccabile */
+}
+.table-ris tbody tr.has-text:hover {
+    background-color: #e3c976; /* Cambia lo sfondo della riga */
+}
+
+/* Contenitore footer */
 footer{
     height: 13vh;
     width: 100%;
@@ -230,573 +400,3 @@ footer{
     font-weight: bolder;
     text-align: center;
 }
-.container-advSearch{
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: 1vh;
-}
-.container-advSearch h2{
-    font-size: 4vh;
-    font-weight: bold;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    align-content: center;
-    margin-top: 1vh;
-}
-.container-advSearch h3{
-    font-size: 1vw;
-    font-weight: bold;
-    color: #000000;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    align-content: center;
-    margin-top: 15%;
-}
-.wrap-advS{
-    background-color: transparent;
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 99%;
-    align-items: center;
-}
-.wrap-advS-item{
-    height: auto;
-    width: 12vw;
-    padding: 1vh;
-    text-align: center;
-}
-.wrap-filtri{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 3vw;
-}
-.container-ris{
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-
-}
-
-.container-ris h2{
-    font-size: 4vh;
-    font-weight: bold;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin: 1vh;
-}
-.container-ris h3{
-    font-size: 1vw;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-}
-.container-ris h4{
-    font-size: 1.4vw;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-}
-.wrap-ris{
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 99%;
-    padding:0.5%;
-    margin: 1vh;
-}
-.wrap-ris1-items{
-    background: #8C0098;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8em;
-    white-space: nowrap;
-}
-.wrap-ris2-items{
-    background: #590061;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8em;
-    white-space: nowrap;
-}
-.wrap-ris3-items{
-    background: #590061;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-    white-space: nowrap;
-    width: auto;
-}
-.wrap-ris4-items{
-    border-radius: 0px 0px 30px 30px;
-    background: #590061;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-}
-.wrap-ris5-items{
-    border-radius: 30px 30px 0px 0px;
-    background: #590061;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-.button-mostra{
-    border-radius: 0px 0px 30px 30px;
-    background: #590061;
-    height: 7vh;
-    width: 100%;
-    display: flex;
-    gap: 10em;
-    border: none;
-    justify-content: center;
-    align-items: center;
-}
-.text-wrapped{
-    width: auto;
-    top: 0;
-    left: 0;
-    text-shadow: 0px 15px 10px #00000066;
-    font-family: "Lexend Deca-SemiBold", Helvetica;
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 3vw;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-    margin-bottom: 3vh;
-    margin-top: 3vh;
-}
-.statistiche-w2{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.navbar-w2 {
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 110%;
-    height: 6vh;
-    background-color: rgb(128, 128, 128);
-}
-.navbar-w2 a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 2% 2%;
-    text-decoration: none;
-}
-.container-w-n-p{
-    list-style-type: none;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: 200%;
-    align-content: center;
-    justify-content: center;
-    gap: 5vh;
-}
-.container-w{
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    text-align: center;
-}
-.container-n{
-    width: 60%;
-    height: 200%;
-    justify-content: center;
-    text-align: center;
-}
-.container-p{
-    width: 100%;
-    margin-top: 1vh;
-    height: 200%;
-    justify-content: center;
-    text-align: center;
-}
-.wrap-w{
-    background-color: #590061;
-    margin-top: 2vh;
-    margin-right: 5%;
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 25vw;
-    padding:2% 2%;
-}
-.wrap-n{
-    background-color: #870093;
-    margin-top: 2vh;
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 60vw;
-}
-.wrap-p{
-    background-color: #ffffff;
-    border-radius: 30px;
-    position: relative;
-    height: 30vh;
-    padding:2% 2%;
-}
-.container-w h2{
-    height: 5vh;
-    font-size: 3vh;
-    font-weight: bold;
-    margin-top: 2vh;
-    line-height: 1.25;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-n h2{
-    height: 5vh;
-    font-size: 3vh;
-    font-weight: bold;
-    line-height: 1.25;
-    margin-top: 0.5vh;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-p h2{
-    height: 5vh;
-    font-size: 3vh;
-    font-weight: bold;
-    line-height: 1.25;
-    margin-top: 2vh;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-w h3{
-    height: 7vh;
-    font-size: 2.5vh;
-    font-weight: bold;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-n h3{
-    height: 4vh;
-    text-align: left;
-    font-size: 2.5vh;
-    margin-top: 2vh;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-p h3{
-    height: 7vh;
-    margin-top: 1vh;
-    font-weight: bold;
-    font-size: 2vh;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-
-.container-w h4{
-    font-size: 2vh;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-n h4{
-    font-size: 2vh;
-    margin-left: 1vh;
-    line-height: 1.25;
-    text-align: left;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-p h4{
-    margin-top: 1vh;
-    font-size: 1.5vh;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.wrap-w-item{
-    margin: 1vh;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    min-height: min-content;
-}
-.wrap-n-item{
-    margin: 1vh;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-.wrap-p-item{
-    margin: 1vh;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-.wrap-n-item-top{
-    height: 10vh;
-    padding-top: 2.5vh;
-    width: 100%;
-    background: #590061;
-    border-radius: 30px 30px 0px 0px;
-    text-align: center;
-}
-.container-n-img{
-    background: #590061;
-    margin: 2%;
-    width: 96%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    border-radius: 30px;
-    align-content: center;
-    justify-content: center;
-}
-
-.container-stat{
-    list-style-type: none;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: auto;
-    align-content: center;
-    justify-content: center;
-    gap: 5vh;
-}
-.wrap-stat{
-    background-color: #590061;
-    margin: 1vh;
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 90vw;
-    padding:1% 1%;
-}
-.container-stat h2{
-    height: 5vh;
-    font-size: 3vh;
-    font-weight: bold;
-    line-height: 1.25;
-    margin-top: 2vh;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-stat h3{
-    height: 7vh;
-    font-size: 2vh;
-    font-weight: bold;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-stat h4{
-    font-size: 1.5vh;
-    margin-left: 1vh;
-    line-height: 1.25;
-    text-align: left;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-
-.statistiche-w2{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.statistiche-w2 h2{
-    font-weight: 400;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend, 'Source Sans Pro';
-    font-size: 2vw;
-}
-.wrap-stat-item{
-    display: flex;
-}
-.statistiche-w2-img{
-    background: #870093;
-    border-radius: 30px;
-    padding: 1%;
-    height: 85%;
-    width: 70%;
-}
-.statistiche-w2-img img{
-    height: 100%;
-    width: 100%;
-}
-.tendina-w2{
-    height: 85%;
-    width: 30%;
-}
-.tendina-single-w2{
-    padding: 2% 2%;
-    width: 100%;
-    height: 20%;
-}
-.content-to-move1 {
-    transition: all 0.3s ease;
-}
-.content-to-move2 {
-    transition: all 0.3s ease;
-}
-.content-to-move3 {
-    transition: all 0.3s ease;
-}
-.content-to-move4 {
-    transition: all 0.3s ease;
-}
-.content-to-move5 {
-    transition: all 0.3s ease;
-}
-
-.dropdown-content2{
-    display: none;
-    padding: 1%;
-    background-color: #fff;
-    border-radius: 20px;
-    font-weight: 400;
-    line-height: 1.25;
-    color: black;
-    font-family: Lexend, 'Source Sans Pro';
-    text-align: left;
-    font-size: 2.5vh;
-}
-
-.tendina-w2 button {
-    border-radius: 20px;
-    width: 100%;
-    height: 6vh;
-    padding: 2% 0%;
-    cursor: pointer;
-}
-.tendina-single-w2 h3{
-    font-size: 3vh;
-    font-weight: 500;
-    line-height: 1.25;
-    color: black;
-    font-family: Lexend, 'Source Sans Pro';
-}
-.table-ris {
-    width: 100%;
-    border-collapse: collapse;
-    justify-content: center;
-}
-.table-ris th,
-.table-ris td {
-    padding: 0.5%;
-    font-size: 1.4vw;
-    color: #ffffff;
-    font-family: 'Lexend Mega', 'Source Sans Pro';
-    white-space: normal;
-    text-align: center;
-}
-
-.table-ris th {
-    background: #590061;
-}
-
-.table-ris .row-ris1 {
-    background: #8C0098;
-}
-
-/* per applicare colori alternati alle righe del corpo della tabella:
-    - primo pari
-    - secondo dispari
-*/
-.table-ris tbody tr:nth-child(even) {
-    background: #590061;
-}
-
-.table-ris tbody tr:nth-child(odd) {
-    background: #8C0098;
-}
-.table-ris tbody tr.has-text {
-    cursor: pointer; /* Cambia il cursore in una "mano" per indicare che è cliccabile */
-}
-
-.table-ris tbody tr.has-text:hover {
-    background-color: #e3c976; /* Cambia lo sfondo della riga */
-}
-
-.btn-custom {
-    background-color: #e3c976;
-    color: #000000;
-    border-color: darkgoldenrod;
-    border-radius: 20px;
-    font-size: 1.4vw;
-    font-family: 'Lexend Mega', 'Source Sans Pro';
-}
-
-.btn-lg.dropdown-toggle {
-    width: 100%;
-    font-size: 0.95vw;
-    padding: .75em 1.3em;
-    border-radius: 10px;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
-.dropdown {
-    position: relative;
-}
-
-/* Centra la dropdown-menu */
-.dropdown-menu {
-    width: 100%;
-    border-radius: 10px;
-    background-color: #6c757d;
-    max-height: 15vw;
-    overflow-y: auto;
-    overflow-x: hidden;
-    font-size: 1.8em;
-}
-.dropdown-menu a {
-    color: white;
-}
-.body-n{
-    display: flex;
-    flex-direction: column;
-    height: 80vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
