@@ -1,7 +1,7 @@
 <!--
     Autori: Daniel Rabottini - Tommaso Remondino - Zakaria Abourida
     Data: 2023/2024
-    Descrizione: Pagina contentente l'elenco di tutti i campionati
+    Descrizione: Pagina contentente la squadra selezionata
 -->
 
 <!DOCTYPE html>
@@ -36,6 +36,7 @@
 
 <body>
 <div class="container-fluid">
+    <!-- Header: contenitore per il logo, i link alle pagine e i button di supporto utente. -->
     <header class="header">
         <div class="title-container">
             <div class="container-logo">
@@ -74,8 +75,10 @@
             </div>
         </div>
     </header>
+    <!-- Contenitore per tutti gli elementi della pagina squadra, esclusi header e footer -->
     <div class="container-w-n">
         <div class="container-w">
+            <!-- Primo container con le info sulla squadra -->
             <div class="wrap-w1">
                 <div class="nome-container">
                     <h1 id="nome_squadra"></h1>
@@ -97,6 +100,7 @@
                     <p id="Infosito_ufficiale"></p>
                 </div>
             </div>
+            <!-- Secondo container con le statitiche sulla squadra -->
             <div class="wrap-w2">
                 <div class="wrap-w2-top">
                     <div class="statistiche-w2">
@@ -153,11 +157,10 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
-
+        <!-- Container a destra con la lista dei giocatori della squadra -->
         <div class="container-n">
             <div class="wrap-n">
                 <div class="title-n">
@@ -254,15 +257,12 @@
                         </tbody>
                     </table>
                 </div>
-
-
-
             </div>
         </div>
     </div>
 
+    <!-- Container con i risultati delle partite della squadra e relative info -->
     <div class="container-x">
-
         <div class="wrap-x">
             <div class="body-x">
                 <table class="table-ris" id="table-ris">
@@ -344,13 +344,10 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
-
     </div>
-
-
 </div>
+<!-- Contenitore footer con informazioni, social e contatti -->
 <footer>
     <div class="top-footer">
         <div class="top-footer-info">

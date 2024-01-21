@@ -1,6 +1,6 @@
-/**
- * Listener that sets the initial parameters of the page.
- */
+/* Al caricamento della pagina viene eseguita la funzione del listener che imposta i rispettivi
+* listener ai bottoni per la ricerca, le opzioni di profilo utente
+*/
 document.addEventListener('DOMContentLoaded', function () {
 
     const barraRicerca = document.getElementById('barra-ricerca');
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    //tramite l'url ricavo il nome del giocatore
     var urlParams = new URLSearchParams(window.location.search);
     var playerName = urlParams.get('player');
     getInfoPlayer(playerName);
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /**
- *<li>Function that takes a player's name as input and sends a call to the Express server route to receive information associated with the player.</li>
+ * Funzione che prende come parametro il nome del giocatore e fa una chiamata axios al server e chiama la funzione updatePlayerProfile
  * @param playerName es. 'Bukayo Saka'
  */
 function getInfoPlayer(playerName) {
@@ -50,8 +51,8 @@ function getInfoPlayer(playerName) {
 }
 
 /**
- *<li>Function that takes the JSON object containing the information and represents it on the web page. (Fills the determining elements by their id)</li>
- * @param playerData JSON object containing information about a player. es {Name: 'Bukayo Saka', Image: a43rfodwaecfe0gv, ecc}
+ * Funzione che prende l'oggetto JSON con i dati del giocatore e li inserisce nella sezione correta
+ * @param playerData  es {Name: 'Bukayo Saka', Image: a43rfodwaecfe0gv, ecc}
  */
 function updatePlayerProfile(playerData) {
 
@@ -70,6 +71,3 @@ function updatePlayerProfile(playerData) {
         '<h4>' + (playerData.Position || 'Nessun dato') + '</h4>' +
         '<h4>' + (playerData.MarketValue || 'Nessun dato') + '</h4>';
 }
-
-
-
