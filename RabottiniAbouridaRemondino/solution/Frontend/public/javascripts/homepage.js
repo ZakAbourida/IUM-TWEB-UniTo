@@ -1,3 +1,7 @@
+/* Al caricamento della pagina viene eseguita la funzione del listener che imposta i rispettivi
+* listener ai bottoni per la ricerca, le opzioni di profilo utente e i mostra altro di whispers e news
+* infine esegue onSubmit per il caricamento dei dati dal database Mongo per la sezione "risultati partite"
+*/
 document.addEventListener('DOMContentLoaded', function() {
     const barraRicerca = document.getElementById('barra-ricerca');
     const mostraBarra = document.getElementById('mostra-barra');
@@ -60,22 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
             containerN1.classList.add('visible-wn');
         }
     });
-
+    // funzione per caricamento dati in "risultati partite" (le 10 partite più recenti)
     onSubmit();
 });
 function sendAxiosQuery(url) {
-    /* FUNZIONE PER STAMPARE UNA SOLA PARTITA
-     axios.get(url)
-        .then(function (response) {
-            const data = response.data;
-
-            document.getElementById('stadio1').innerText = response.data.stadium.toString();
-            document.getElementById('nome_squadra_casa1').innerText = response.data.home_club_name.toString();
-            document.getElementById('nome_squadra_fuori_casa1').innerText = response.data.away_club_name.toString();
-            document.getElementById('risultato1').innerText = response.data.aggregate.toString();
-
-        })*/
-
+    // caricamento dati dal database
     axios.get(url)
         .then(function (response) {
 
