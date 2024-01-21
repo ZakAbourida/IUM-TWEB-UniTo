@@ -28,9 +28,7 @@
 </head>
 <body>
 <div class="container-fluid">
-    <!--
-    Header: contenitore per il titolo della pagina ed il logo.
-    -->
+    <!-- Header: contenitore per il titolo della pagina ed il logo. -->
     <header class="header">
         <div class="title-container">
             <h1 class="football-whispers">FOOTBALL</h1>
@@ -38,18 +36,11 @@
             <h1 class="football-whispers">WHISPER</h1>
         </div>
     </header>
-    <!--
-    Main: contenitore per il form di login alla pagina e per le info, utilizzato per migliorare l'accessibilità, poiché permette ai lettori di schermo e ad altre tecnologie
-          assistive di identificare rapidamente il contenuto centrale della pagina.
-    -->
+    <!-- Main : Contenitore per sezione di sinistra e di destra della pagina -->
     <main class="container-flex">
+        <!-- Contenitore per gli elementi di sinistra, sezione che gestisce l'interazione con l'utente -->
         <div id="div-1" class="visible container-form">
-            <!--
-             Form: composto dai campi "Email" e "Password", dove è stato aggiunto il tag aria-label, dove
-                   viene utilizzato per fornire una descrizione accessibile per un campo di input.
-                   Il tag aria-describedby  interagisce con il campo di input "Password", dove il lettore di schermo leggerà
-                   sia l'input sia la descrizione associata che è stata resa invisibile attraverso una classe in CSS.
-            -->
+            <!-- Form: gestisce l'accesso dell'utente con Username e Password e il button per l'homepage -->
             <form class="form">
                 <div class="input-div">
                     <label for="username">Username:</label>
@@ -61,34 +52,25 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" minlength="8" placeholder="Insert password"
                            aria-label="Insert password" aria-describedby="password_description" required>
-                    <div id="password_description" class="invisible">
-                        The password must contain at least 8 characters.
-                    </div>
                 </div>
                 <button id="accedi-btn" type="button" class="button" aria-label="Login">Accedi</button>
             </form>
-            <!--
-             Break Section = Interruzione di pagina sviluppata in CSS.
-            -->
+            <!-- Divisore per il supporto dell'utente (registrazione e password dimenticata)  -->
             <div class="break-section">
                 <hr class="line">
                 <span class="or-text">Oppure</span>
                 <hr class="line">
             </div>
-            <!--
-             Nav: sezione dedicata alla navigazione, in questo caso ai collegamenti che rimandano alla pagina di registrazione e di
-                  recupero password.
-                  Utilizzati i tag aria-label come nella sezione per il form.
-            -->
+            <!-- Nav: contiene i link per la pagina "register.html" o per cambiare il div "Login" con il div "Hai dimenticato la password?"  -->
             <nav class="sign-box">
-                <a class="sign-box-a1" href="Register.html" aria-label="Link for sign-in">Registrati</a>
+                <a class="sign-box-a1" href="register.html" aria-label="Link for sign-in">Registrati</a>
                 <a id="mostra-div-2" href="#" aria-label="Link for resume password">Hai dimenticato la password?</a>
             </nav>
         </div>
 
         <!-- Div che cambia quando si clicca il link "Hai dimenticato la password?" -->
         <div id="div-2" class="hidden container-form">
-
+            <!-- Form: campo input per la mail e button per cambiare div con il div "Mail inviata!" -->
             <form class="form">
                 <div>
                     <p class="paragraph">Inserisci l'email per resettare la password</p>
@@ -102,8 +84,9 @@
             </form>
         </div>
 
-        <!-- Div che cambia quando si clicca il link "Hai dimenticato la password?" -->
+        <!-- Div che cambia quando si clicca il button "Invia" del div "Hai dimenticato la passord" -->
         <div id="div-3" class=" hidden container-form">
+            <!-- Form: conferma di mail inviata e button che risetta il div "Login" -->
             <form class="form">
                 <div>
                     <p class="paragraph">L'email è stata inviata!</p>
@@ -112,11 +95,10 @@
                 </button>
             </form>
         </div>
-
         <!--
-          Aside: il tag aside è stato utilizzato per definire questa sezione come collegata al contenuto princiapale ma che si trova , anche graficamente,
-                 in una zona separata.
-                 All'interno sono presenti delle immagini e delle piccole informazioni relative alla sicurezza.
+          Aside: il tag aside è stato utilizzato per definire questa sezione di destra come collegata al contenuto
+           princiapale ma che si trova, anche graficamente, in una zona separata.
+           All'interno sono presenti delle immagini e delle piccole informazioni relative alla sicurezza.
         -->
         <aside class="container-info">
             <div class="info">

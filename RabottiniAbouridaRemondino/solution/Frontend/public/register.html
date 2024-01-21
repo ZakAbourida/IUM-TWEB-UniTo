@@ -27,9 +27,7 @@
 </head>
 <body>
 <div class="container-fluid">
-    <!--
-    Header: contenitore per il titolo della pagina ed il logo.
-    -->
+    <!-- Header: contenitore per il titolo della pagina ed il logo. -->
     <header class="header">
         <div class="title-container">
             <h1 class="football-whispers">FOOTBALL</h1>
@@ -37,18 +35,13 @@
             <h1 class="football-whispers">WHISPER</h1>
         </div>
     </header>
-    <!--
-    Main: contenitore per il form di login alla pagina e per le info, utilizzato per migliorare l'accessibilità, poiché permette ai lettori di schermo e ad altre tecnologie
-          assistive di identificare rapidamente il contenuto centrale della pagina.
-    -->
+    <!-- Main : Contenitore per sezione di sinistra e di destra della pagina -->
     <main class="container-flex">
+        <!-- Contenitore per gli elementi di sinistra, sezione che gestisce l'interazione con l'utente -->
         <div class="container-form">
-            <!--
-             Form: composto dai campi "Email" e "Password", dove è stato aggiunto il tag aria-label, dove
-                   viene utilizzato per fornire una descrizione accessibile per un campo di input.
-                   Il tag aria-describedby  interagisce con il campo di input "Password", dove il lettore di schermo leggerà
-                   sia l'input sia la descrizione associata che è stata resa invisibile attraverso una classe in CSS.
-            -->
+            <!-- Form: gestisce la registrazione dell'utente con Username, Email e Password e il button per la
+                       pagina di login
+             -->
             <form class="form">
                 <div class="input-div">
                     <label for="username">Username:</label>
@@ -65,17 +58,18 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" minlength="8" placeholder="Insert password"
                            aria-label="Insert password" aria-describedby="password_description" required>
-                    <div id="password_description" class="invisible">
-                        The password must contain at least 8 characters.
-                    </div>
                 </div>
-                <button type="button" class="button" aria-label="Registrati" onclick="openLogin()">Registrati</button>
+                <button type="button" class="button" aria-label="Registrati">
+                    <a class="text-button" href="login.html">
+                        Registrati
+                    </a>
+                </button>
             </form>
         </div>
         <!--
-          Aside: il tag aside è stato utilizzato per definire questa sezione come collegata al contenuto princiapale ma che si trova , anche graficamente,
-                 in una zona separata.
-                 All'interno sono presenti delle immagini e delle piccole informazioni relative alla sicurezza.
+          Aside: il tag aside è stato utilizzato per definire questa sezione di destra come collegata al contenuto
+           princiapale ma che si trova, anche graficamente, in una zona separata.
+           All'interno sono presenti delle immagini e delle piccole informazioni relative alla sicurezza.
         -->
         <aside class="container-info">
             <div class="info">

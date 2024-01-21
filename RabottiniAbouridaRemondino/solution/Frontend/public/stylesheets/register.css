@@ -5,7 +5,7 @@
 */
 
 
-/* Definisce lo stile dell'intero container per la pagina.
+/* Contenitore di tutta la pagina.
     !important viene utilizzato per far avere una maggiore priorità di stile a questi parametri personalizzati, rispetto a quelli di Bootstrap.
  */
 .container-fluid {
@@ -16,7 +16,7 @@
     padding-right: 0 !important;
 }
 
-/* Definisce lo stile dell'header della pagina */
+/* Header: contenitore per nome del sito e logo */
 .header {
     height: 15%;
     display: flex;
@@ -24,14 +24,45 @@
     justify-content: space-between;
     background: #590061;
 }
+/* Definisce lo stile per il nome dalla pagina con il logo all'interno dell'header */
+.title-container {
+    /* Layout */
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    margin-left: 5%;
 
-/* Definisce lo stile del container per gli elementi principali della pagina (form,pagine di navigazione) */
+    /* Style */
+    background: linear-gradient(180deg, #E3C977 66.35%, rgba(0, 0, 0, 0.00) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Definisce le dimensioni del logo contenuto nell'header */
+.logo {
+    width: 6%;
+    height: auto;
+    margin: 0 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+/* Definisce il titolo nell'header */
+.football-whispers{
+    font-size: 350%;
+    left: 3.8247rem;
+    top: 1.8rem;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.25;
+    font-family: Lexend Deca, 'Source Sans Pro';
+    white-space: nowrap;
+}
+/* Contenitore per sezione di sinistra e di destra della pagina */
 .container-flex {
     display: flex;
     width: 100%;
     height: 100%;
 }
-/* Definisce lo stile del container del form */
+/* Definisce lo stile dei container di sinistra (div1, div2, div3)*/
 .container-form {
     display: flex;
     width: 50%;
@@ -39,16 +70,7 @@
     justify-content: center;
     background: #D9D9D9;
 }
-/* Definisce lo stile del container per gli elementi secondari della pagina (info sulla sicurezza) */
-.container-info {
-    display: flex;
-    width: 50%;
-    height: auto;
-    background: #870093;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+
 /* Definisce lo stile del form in cui all'interno sono presenti elementi di input, label e bottoni */
 .form {
     display: flex;
@@ -60,7 +82,7 @@
     position: absolute;
     top: 18%;
 }
-/* Definisce lo stile della box di input in cui all'interno vengono inseriti una label e un tag di input*/
+/* Definisce lo stile del container di input in cui all'interno vengono inseriti una label e un tag di input*/
 .input-div {
     display: flex;
     width: 100%;
@@ -101,47 +123,27 @@ input {
     margin: 15%;
     margin-bottom: 20%;
     padding: 4%;
-
-    /*Stile per il testo del bottone */
+}
+/*Stile per il testo del bottone */
+.text-button{
+    text-decoration: none;
     color: #D2BB72;
     font-family: sans-serif;
     font-size: 120%;
     font-weight: 700;
 }
 
-/* Definisce lo stile per il nome dalla pagina con il logo all'interno dell'header */
-.title-container {
-    /* Layout */
-    display: inline-flex;
-    width: auto;
+/* Aside: container per la sezione di destra della pagina */
+.container-info {
+    display: flex;
+    width: 50%;
     height: auto;
-    margin-left: 5%;
-
-    /* Style */
-    background: linear-gradient(180deg, #E3C977 66.35%, rgba(0, 0, 0, 0.00) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: #870093;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
-/* Definisce le dimensioni del logo contenuto nell'header (width: 42px; height: 44px;) */
-.logo {
-    width: 6%;
-    height: auto;
-    margin: 0 1%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-/* Definisce il titolo nell'header */
-.football-whispers{
-    font-size: 350%;
-    left: 3.8247rem;
-    top: 1.8rem;
-    text-align: center;
-    font-weight: 400;
-    line-height: 1.25;
-    font-family: Lexend Deca, 'Source Sans Pro';
-    white-space: nowrap;
-}
-/* Definisce il container dove sono contenute le infomazioni secondarie*/
+/* Definisce il container dove sono contenute le infomazioni*/
 .info {
     width: 90%;
     height: auto;
@@ -169,14 +171,5 @@ input {
     align-items: center;
     margin-top: 2%;
     margin-bottom: 2%;
-}
-/* Rende invisibile la sezione in cui viene utilizzata questa classe */
-.invisible {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
 }
 
