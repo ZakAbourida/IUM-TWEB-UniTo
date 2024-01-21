@@ -32,6 +32,7 @@
 
 <body onload="init()">
 <div class="container-fluid">
+    <!-- Header: contenitore per il logo, i link alle pagine e i button di supporto utente. -->
     <header class="header">
         <div class="title-container">
             <div class="container-logo">
@@ -70,31 +71,21 @@
             </div>
         </div>
     </header>
-
+    <!-- Contenitore per la sezione di sinistra, la chat, e di destra, lista utenti connessi -->
     <div class="container-pp-rp">
+        <!-- Contenitore della sezione di sinistra dove scegliere in che chat accedere o, successivamente, la chat scelta -->
         <div class="container-rp">
             <h2>LIVE CHAT</h2>
             <div class="wrap-rp">
-
                 <div class="container mt-5 w-100">
                     <div id="top-chat" class="row">
                         <h1 id="welcome" class="col-md-10">Welcome!</h1>
                         <button id="logout" class="btn btn-small btn-danger col-md-2">Logout</button>
                     </div>
                 </div>
-
+                <!-- Contenitore per scegliere la chat in cui accedere -->
                 <div class="container mt-5 w-100" id="form_container">
                     <form id="form">
-                        <!--
-                        <div class="row">
-                            <label for="name">Name:</label>
-                            <input id="name" name="name" type="text" class="w-75">
-                        </div>
-                        <div class="row">
-                            <label for="surname">Surname:</label>
-                            <input id="surname" name="surname" type="text" class="w-75">
-                        </div>
-                        -->
                         <h2>Scegli dove chattare!</h2>
                         <div class="row">
                             <button id="form-btn1" class="btn btn-primary mt-4">Entra nel canale principale</button>
@@ -111,31 +102,31 @@
                         </div>
                     </form>
                 </div>
+                <!-- Container della chat scelta -->
                 <div class="container mt-5 w-100" id="message_container">
                     <div id="messages"></div>
                 </div>
-
-
             </div>
         </div>
+
+        <!-- Container della sezione di destra che conterrà la lista degli utenti collegati alla chat scelta -->
         <div class="container-pp">
             <h2>LISTA UTENTI</h2>
             <div class="wrap-pp">
                 <ul id="listaUtenti"></ul>
-
-
             </div>
         </div>
     </div>
 
+    <!-- Container con input per la scrittura del messaggio dell'utente e il tasto per inviarlo -->
     <div id="send_container" class="container-testo-button">
         <input id="messageInput1" class="container-testo" type="text" name="testo"
                placeholder=" Inserisci il tuo messaggio">
         <button id="messageButton1" class="button-invia">INVIA</button>
     </div>
-
-
 </div>
+
+<!-- Contenitore footer con informazioni, social e contatti -->
 <footer>
     <div class="top-footer">
         <div class="top-footer-info">
@@ -163,7 +154,5 @@
         <p class="bottom-footer2">footballwhispers.com</p>
     </div>
 </footer>
-
-
 </body>
 </html>

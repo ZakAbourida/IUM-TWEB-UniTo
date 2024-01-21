@@ -1,8 +1,10 @@
+// Collegamento al socket.js, room della chat, colore dell'utente, Username
 const socket = io();
 let currentRoom ="";
 let myColor = "";
 let myUsername;
 
+// Funzione di inizializzazione degli elementi e rispettivi listener della pagina al caricamento
 function init() {
 
     const messages = document.getElementById('messages');
@@ -14,8 +16,14 @@ function init() {
     const serieaButton = document.getElementById("form-btn3");
     const ligaButton = document.getElementById("form-btn4");
 
-    //prendo il mio username dalla pagina di login (se null?)
+    //prendo il mio username dalla pagina di login
     myUsername = localStorage.getItem(username);
+
+    //imposto correttamente i container
+    document.getElementById("form_container").style.display = 'block';
+    document.getElementById("message_container").style.display = 'none';
+    document.getElementById("send_container").style.display = 'none';
+    document.getElementById('top-chat').style.display='none';
 
     //entro nella chat principale
     princButton.addEventListener('click', (event) => {
@@ -102,7 +110,7 @@ function init() {
         }
     });
 
-    //quando premo il bottone invia verrà inviato il messaggio
+    //quando premo il bottone invia verrà invio il messaggio
     messageButton1.addEventListener('click', () => {
         socket.emit('chat message', currentRoom, messageInput1.value, getMyUsername(), getMyColor());
         messageInput1.value = '';
@@ -142,7 +150,7 @@ function init() {
             }
             return;
         }
-        //è entrato qualcun altro
+        //è entrato qualcun altro nella mia chat
         const li = document.createElement('p');
         const div = document.createElement('div');
         li.textContent = username + ": " + "has joined the conversation";
@@ -175,13 +183,6 @@ function init() {
         listaUtenti.removeChild(li1);
     });
 
-
-    document.getElementById("form_container").style.display = 'block';
-    document.getElementById("message_container").style.display = 'none';
-    document.getElementById("send_container").style.display = 'none';
-    document.getElementById('top-chat').style.display='none';
-
-
     //se chiudo la finestra esce dalla chat
     window.addEventListener('beforeunload', function (){
         // Send a leave room event quando chiudo direttamente la finestra del browser
@@ -193,7 +194,9 @@ function init() {
 }
 
 
-
+/* Al caricamento della pagina viene eseguita la funzione del listener che imposta i rispettivi
+* listener ai bottoni per la ricerca, le opzioni di profilo utente
+ */
 document.addEventListener('DOMContentLoaded', function() {
 
 
