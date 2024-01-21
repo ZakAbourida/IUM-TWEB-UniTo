@@ -3,6 +3,7 @@
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    padding-bottom: 5%;
 }
 
 header{
@@ -85,8 +86,8 @@ header{
     object-fit: contain;
     vertical-align: top;
     flex-shrink: 0;
-    height: 7vh;
-    width: 7vh;
+    height: 5vw;
+    width: 5vw;
 }
 .login-img{
     cursor: pointer;
@@ -112,8 +113,8 @@ header{
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
 }
 #input-ricerca{
-    height: 6vh;
-    width: 40vh;
+    height: 3vw;
+    width: 20vw;
     border-radius: 30px;
     font-size: 250%;
     font-weight: 700;
@@ -413,48 +414,7 @@ footer{
     padding: 2% 2%;
     text-decoration: none;
 }
-.dropdown {
-    float: left;
-    width: 100%;
-    height: auto;
-}
-.dropdown .dropbtn {
-    font-size: 1.7vw;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 5% 0%;
-    background-color: inherit;
-    font-family: inherit;
-}
-.navbar-w2 a:hover, .dropdown:hover .dropbtn {
 
-}
-.dropdown-content1 {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.dropdown-content1 a {
-    float: none;
-    color: black;
-    padding: 5% 5%;
-    font-size: 1.5vw;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content1 a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content1 {
-    display: block;
-}
 
 .container-w-n-p{
     list-style-type: none;
@@ -473,8 +433,7 @@ footer{
     text-align: center;
 }
 .container-n{
-    width: 60%;
-    height: 200%;
+    width: auto;
     justify-content: center;
     text-align: center;
 }
@@ -487,20 +446,17 @@ footer{
 }
 .wrap-w{
     background-color: #590061;
-    margin-top: 2vh;
-    margin-right: 5%;
     border-radius: 30px;
     position: relative;
     height: auto;
-    width: 25vw;
+    width: 100%;
     padding:2% 2%;
 }
 .wrap-n{
     background-color: #870093;
-    margin-top: 2vh;
     border-radius: 30px;
     position: relative;
-    height: auto;
+    height: 100%;
     width: 60vw;
 
 }
@@ -508,14 +464,18 @@ footer{
     background-color: #ffffff;
     border-radius: 30px;
     position: relative;
-    height: 30vh;
+    height: 100%;
     padding:2% 2%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .container-w h2{
     height: 5vh;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     margin-top: 1vw;
+    margin-bottom: 1vw;
     line-height: 1.25;
     color: #d2bb72;
     font-family: Lexend Exa, 'Source Sans Pro';
@@ -531,10 +491,9 @@ footer{
 }
 .container-p h2{
     height: 5vh;
-    font-size: 3vh;
+    font-size: 2vw;
     font-weight: bold;
     line-height: 1.25;
-    margin-top: 2vh;
     color: #d2bb72;
     font-family: Lexend Exa, 'Source Sans Pro';
 }
@@ -554,8 +513,9 @@ footer{
     margin-top: 2vh;
     margin-left: 2vh;
     line-height: 1.25;
-    color: #ffffff;
+    color: #d2bb72;
     font-family: Lexend Exa, 'Source Sans Pro';
+    font-size: 1.5vw;
 }
 .container-p h3{
     height: 7vh;
@@ -569,11 +529,12 @@ footer{
 }
 
 .container-w h4{
-    margin-left: 2vh;
     line-height: 1.25;
     color: #ffffff;
     font-family: Lexend Exa, 'Source Sans Pro';
-    font-size: 1vw;
+    font-size: 0.6vw;
+    white-space: nowrap;
+    padding-top: 3%;
 }
 .container-n h4{
     font-size: 2vh;
@@ -599,6 +560,15 @@ footer{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    min-height: min-content;
+}
+
+.wrap-x-item{
+    margin: 1vh;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     min-height: min-content;
 }
 .wrap-n-item{
@@ -707,8 +677,9 @@ footer{
     vertical-align: top;
     flex-shrink: 0;
     height: 20vh;
-    width: 20vh;
+    width: auto;
     border-radius: 100px;
+    margin:1.5vw;
 }
 
 

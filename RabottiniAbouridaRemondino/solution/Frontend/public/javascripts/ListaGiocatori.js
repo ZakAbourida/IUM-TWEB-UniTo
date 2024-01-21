@@ -41,22 +41,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     setupClickableRows();
-    test();
+    redirectionPlayerPage();
 
 });
 
-function test(){
+/**
+ *<li>Function that manages redirection to the specific player's page. Pass as input as a string, the player's name.</li>
+ */
+function redirectionPlayerPage(){
     var table = document.querySelector(".table-ris tbody");
 
     table.addEventListener('click', function(event) {
         var target = event.target;
 
-        // Assicurati che il click sia avvenuto su una riga della tabella
         while (target != table && !target.matches("tr.has-text")) {
             target = target.parentNode;
         }
 
-        // Se un elemento della tabella è stato cliccato
         if (target != table) {
             var playerName = target.cells[1].textContent; // Ottiene il nome dal secondo <td>
             window.location.href = 'Giocatore.html?player=' + encodeURIComponent(playerName);
@@ -214,11 +215,11 @@ function fillTable(data) {
 }
 
 /**
- * Funzione che permette l'hover sulle righe della tabella
+ * <li>
+ * Function that checks if there is content in the table to activate hovering over the rows.</li>
  */
 function setupClickableRows() {
     document.querySelectorAll('.table-ris tbody tr').forEach(row => {
-        // Verifica se la riga contiene testo
         if (row.textContent.trim().length > 0) {
             row.classList.add('has-text');
 

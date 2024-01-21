@@ -66,7 +66,7 @@ public class PlayersService {
             playerJson.put("Height", player.getHeight_in_cm());
             playerJson.put("Position", player.getSub_position());
             playerJson.put("Age", Year.now().getValue() - player.getDate_of_birth().getYear());
-            playerJson.put("Market Value", player.getMarket_value_in_eur());
+            playerJson.put("MarketValue", player.getMarket_value_in_eur());
             playerJson.put("Nationality", player.getCountry_of_citizenship());
             playerJson.put("Team", player.getCurrent_club_name());
             playerJson.put("Image",encodedImage);

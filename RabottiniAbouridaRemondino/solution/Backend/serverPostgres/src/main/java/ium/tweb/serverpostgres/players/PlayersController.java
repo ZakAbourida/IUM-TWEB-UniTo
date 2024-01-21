@@ -114,7 +114,7 @@ public class PlayersController {
      * @throws IOException Handle errors
      */
     @PostMapping("/info_player")
-    public ResponseEntity<?> InfoPlayer(@RequestBody String Name) throws JSONException, IOException {
+    public ResponseEntity<?> InfoPlayer(@RequestParam String Name) throws JSONException, IOException {
         JSONObject playerJson = playersService.InfoPlayer(Name);
         return ResponseEntity.ok(playerJson.toString());
     }

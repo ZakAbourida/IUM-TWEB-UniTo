@@ -275,5 +275,24 @@ router.post('/comp_players',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
+/**
+ * <li>Route that takes the player name string from the Axios call and sends it to the Spring server.
+ * Returns the JSON object containing the player's information.</li>
+ * Method: POST
+ */
+router.post('/info_player',  async function (req, res, next) {
+  try {
+
+    const Name = req.body.playerName;
+    const params = new URLSearchParams();
+    params.append('Name', Name);
+
+    const response = await axios.post('http://localhost:8081/info_player', params);
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 module.exports = router;
