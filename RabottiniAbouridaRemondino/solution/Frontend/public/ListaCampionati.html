@@ -34,8 +34,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
-<body onload="">
+<body>
 <div class="container-fluid">
+    <!-- Header: contenitore per il logo, i link alle pagine e i button di supporto utente. -->
     <header class="header">
         <div class="title-container">
             <div class="container-logo">
@@ -74,7 +75,9 @@
             </div>
         </div>
     </header>
+    <!-- Contenitore per sezione campionati più cercati e tutti i campionati -->
     <div class="container-w-n">
+        <!-- Contenitore lista dei campionati più cercati (manda alla pagina corretta con i rispettivi dati di Postgres)-->
         <div class="container-w">
             <div class="wrap-w">
                 <h2>Campionati più cercati</h2>
@@ -164,9 +167,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
+        <!-- Contenitore per elenco di tutti i campionati presenti (Postgres)-->
         <div class="container-ris">
             <div class="wrap-ris">
                 <div class="wrap-ris5-items">
@@ -282,6 +284,7 @@
         </div>
     </div>
 </div>
+<!-- Contenitore footer con informazioni, social e contatti -->
 <footer>
     <div class="top-footer">
         <div class="top-footer-info">

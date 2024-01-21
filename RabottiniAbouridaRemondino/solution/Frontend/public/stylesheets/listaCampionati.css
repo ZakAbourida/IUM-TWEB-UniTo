@@ -1,9 +1,10 @@
+/* Contenitore di tutta la pagina */
 .container-fluid{
     background: linear-gradient(180deg, #690072 15.1%, rgba(152, 0, 19, 0.75) 97.07%);
     height: 100%;
     width: 100%;
 }
-
+/* Header: contenitore per il logo, i link alle pagine e i button di supporto utente. */
 header{
     height: 10%;
     width: 100%;
@@ -117,7 +118,7 @@ header{
     font-family: Lexend Deca, 'Source Sans Pro';
     padding-left: 8%;
 }
-
+/* visible-hidden: Opzioni per gestire barra di ricerca e opzioni profilo dal javascript */
 .visible{
     display: flex;
 }
@@ -151,85 +152,7 @@ header{
 .wrap-opzioni-login button:hover{
     background-color: #DDBB4E;
 }
-
-
-footer{
-    height: 13vh;
-    width: 100%;
-}
-.top-footer{
-    background-image: url("../images/Footer.png") ;
-    background-size: cover;
-    background-repeat: repeat;
-    display: flex;
-    height: 80%;
-    padding: 0.5%;
-    opacity: 0.90;
-}
-.top-footer h2{
-    color: #E3C977;
-    font-family: Josefin Sans, 'Source Sans Pro';
-    font-size: 2.5vh;
-    font-weight: bolder;
-    text-align: center;
-}
-.top-footer p{
-    color: white;
-    font-size: 1.5vh;
-}
-.top-footer-info{
-    width: 33.3%;
-}
-.top-footer-info-social{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.top-footer-info-posti{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.top-footer-info-social p{
-    margin: 0.7vh;
-    color: white;
-    text-decoration: underline;
-    font-size: 1.5vh;
-    font-weight: bolder;
-    text-align: center;
-}
-.top-footer-info-posti p{
-    color: white;
-    text-decoration: underline;
-    font-size: 1.5vh;
-    font-weight: bolder;
-    text-align: center;
-}
-.bottom-footer{
-    width: 100%;
-    height: 20%;
-    background-color: #590061;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding:0.5%
-}
-.bottom-footer1{
-     margin:0.7vh;
-     color: #E3C977;
-     font-size: 150%;
-     text-align: center;
- }
-.bottom-footer2{
-    margin:0.7vh;
-    color: white;
-    text-decoration: underline;
-    font-size: 150%;
-    font-weight: bolder;
-    text-align: center;
-}
+/* Contenitore per sezione lista dei campionati più cercati e sezione tutti i campionati */
 .container-w-n{
     list-style-type: none;
     width: 100%;
@@ -238,6 +161,7 @@ footer{
     align-items: flex-start;
     gap: 3vw;
 }
+/* Contenitore lista dei campionati più cercati */
 .container-w{
     width: auto;
     height: 200%;
@@ -307,89 +231,7 @@ footer{
     align-content: center;
     justify-content: center;
 }
-.container-n{
-    display: none;
-    width: 70%;
-    height: auto;
-    justify-content: center;
-}
-.container-n h2{
-    font-size: 2vw;
-    font-weight: bold;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 2vh;
-    margin-left: 2vh;
-}
-.container-n h3{
-    font-size: 1.2vw;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-}
-.container-n h4{
-    font-size: 1.5vw;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-}
-.wrap-n{
-    background-color: #590061;
-    margin: 1%;
-    border-radius: 30px;
-    height: 93vh;
-}
-.wrap-n1-items{
-    background: #8C0098;
-    height: 7vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-}
-.wrap-n2-items{
-    background: #590061;
-    height: 7vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-}
-.wrap-n3-items{
-    background: #590061;
-    height: 5vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-}
-.wrap-n4-items{
-    border-radius: 0px 0px 30px 30px;
-    background: #590061;
-    height: 7vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-}
-.button-mostra{
-    border-radius: 0px 0px 30px 30px;
-    background: #590061;
-    height: 7vh;
-    width: 100%;
-    display: flex;
-    gap: 10em;
-    border: none;
-    justify-content: center;
-    align-items: center;
-}
-
-
+/* Contenitore per elenco di tutti i campionati presenti */
 .container-ris{
     width: 200%;
     height: 200%;
@@ -397,7 +239,6 @@ footer{
     text-align: center;
     align-items: center;
 }
-
 .container-ris h2{
     font-size: 4vh;
     font-weight: bold;
@@ -406,22 +247,6 @@ footer{
     white-space: nowrap;
     margin: 1vh;
 }
-.container-ris h3{
-    font-size: 1vw;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-}
-.container-ris h4{
-    font-size: 1.4vw;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-}
 .wrap-ris{
     border-radius: 30px;
     position: relative;
@@ -429,34 +254,6 @@ footer{
     width: 99%;
     padding:0.5%;
     margin: 1vh;
-}
-.wrap-ris1-items{
-    background: #8C0098;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8em;
-    white-space: nowrap;
-}
-.wrap-ris2-items{
-    background: #590061;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8em;
-    white-space: nowrap;
-}
-.wrap-ris3-items{
-    background: #590061;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-    white-space: nowrap;
-    width: auto;
 }
 .wrap-ris4-items{
     border-radius: 0px 0px 30px 30px;
@@ -500,15 +297,11 @@ footer{
 .table-ris .row-ris1 {
     background: #8C0098;
 }
-
-/* per applicare colori alternati alle righe del corpo della tabella:
-    - primo pari
-    - secondo dispari
-*/
+/* colore per i pari */
 .table-ris tbody tr:nth-child(even) {
     background: #590061;
 }
-
+/*colore per i dispari*/
 .table-ris tbody tr:nth-child(odd) {
     background: #8C0098;
 }
@@ -517,5 +310,81 @@ footer{
     border: none;
 }
 
-
-
+/* Contenitore footer */
+footer{
+    height: 13vh;
+    width: 100%;
+}
+.top-footer{
+    background-image: url("../images/Footer.png") ;
+    background-size: cover;
+    background-repeat: repeat;
+    display: flex;
+    height: 80%;
+    padding: 0.5%;
+    opacity: 0.90;
+}
+.top-footer h2{
+    color: #E3C977;
+    font-family: Josefin Sans, 'Source Sans Pro';
+    font-size: 2.5vh;
+    font-weight: bolder;
+    text-align: center;
+}
+.top-footer p{
+    color: white;
+    font-size: 1.5vh;
+}
+.top-footer-info{
+    width: 33.3%;
+}
+.top-footer-info-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top-footer-info-posti{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.top-footer-info-social p{
+    margin: 0.7vh;
+    color: white;
+    text-decoration: underline;
+    font-size: 1.5vh;
+    font-weight: bolder;
+    text-align: center;
+}
+.top-footer-info-posti p{
+    color: white;
+    text-decoration: underline;
+    font-size: 1.5vh;
+    font-weight: bolder;
+    text-align: center;
+}
+.bottom-footer{
+    width: 100%;
+    height: 20%;
+    background-color: #590061;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding:0.5%
+}
+.bottom-footer1{
+    margin:0.7vh;
+    color: #E3C977;
+    font-size: 150%;
+    text-align: center;
+}
+.bottom-footer2{
+    margin:0.7vh;
+    color: white;
+    text-decoration: underline;
+    font-size: 150%;
+    font-weight: bolder;
+    text-align: center;
+}

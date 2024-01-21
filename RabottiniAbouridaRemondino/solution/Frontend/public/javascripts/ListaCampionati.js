@@ -1,3 +1,6 @@
+/* Al caricamento della pagina viene eseguita la funzione del listener che imposta i rispettivi
+* listener ai bottoni per la ricerca, le opzioni di profilo utente e funzione per caricare i dati dal database Postgres
+*/
 document.addEventListener('DOMContentLoaded', function() {
 
     const barraRicerca = document.getElementById('barra-ricerca');
@@ -25,9 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
             opzioniLogin.classList.add('hidden');
         }
     });
-fillTable();
+    //funzione per caricare i dati dal DB
+    fillTable();
 });
-
+//funzione chiamata quando si clicca su un campionato per andare alla pagina ListaSquadre con i dati corretti
 function redirectToPage(buttonID) {
     let val = document.getElementById(buttonID).value;
 
