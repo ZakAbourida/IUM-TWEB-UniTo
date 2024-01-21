@@ -16,14 +16,17 @@ function init() {
     const serieaButton = document.getElementById("form-btn3");
     const ligaButton = document.getElementById("form-btn4");
 
-    //prendo il mio username dalla pagina di login
-    myUsername = localStorage.getItem(username);
 
     //imposto correttamente i container
     document.getElementById("form_container").style.display = 'block';
     document.getElementById("message_container").style.display = 'none';
     document.getElementById("send_container").style.display = 'none';
     document.getElementById('top-chat').style.display='none';
+
+    //prendo il mio username dalla pagina di login e lo controllo
+    myUsername = localStorage.getItem(username);
+    socket.emit('check username', getMyUsername());
+
 
     //entro nella chat principale
     princButton.addEventListener('click', (event) => {
@@ -114,6 +117,27 @@ function init() {
     messageButton1.addEventListener('click', () => {
         socket.emit('chat message', currentRoom, messageInput1.value, getMyUsername(), getMyColor());
         messageInput1.value = '';
+    });
+
+    //Nel caso in cui non abbia inserito un username nel login avrò un username provvisiorio (es.user1)
+    // nel caso in cui abbia un username uguale ad un altro il mio username avrà un numero in più alla fine
+    socket.on('check username', (utenti, numUser) =>{
+        let num;
+        if(myUsername === ''){
+            myUsername = 'user'+ (numUser).toString();
+        } else {
+            num = 0;
+            let lista = utenti;
+            for(let i=0; i < lista.length; i++){
+                //verifico se e quanti myUsername+num sono già presenti
+                if(new RegExp(`${myUsername}(\\d+)?`).test(lista[i])){
+                    num++;
+                }
+            }
+            if(num>0){
+                myUsername = myUsername+num.toString();
+            }
+        }
     });
 
     //quando arriva un messaggio lo aggiungo alla mia chat

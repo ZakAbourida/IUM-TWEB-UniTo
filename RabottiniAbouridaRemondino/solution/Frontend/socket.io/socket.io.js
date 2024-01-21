@@ -1,6 +1,7 @@
 module.exports = (io) => {
 
     let utenti = [];
+    let numUser = 0;
     let utentiPrinc = [];
     let utentiPremier = [];
     let utentiSerieA = [];
@@ -9,8 +10,18 @@ module.exports = (io) => {
     io.on('connection', (socket) => {
         console.log('A user connected to chat');
 
+        socket.on('check username', (username) => {
+            if(username === ''){
+                numUser++;
+            }
+            socket.emit('check username', utenti, numUser); // invio lista di tutti gli utenti
+        });
+
         socket.on('chat message', (room, msg, username, color) => {
-            io.to(room).emit('chat message', msg, username, color); // Broadcast the message to all connected clients
+            if(msg !== ''){
+                io.to(room).emit('chat message', msg, username, color); // Broadcast the message to all connected clients
+
+            }
         });
 
         socket.on('create or join conversation', (room, username, color) => {
