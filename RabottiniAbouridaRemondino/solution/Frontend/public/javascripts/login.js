@@ -8,6 +8,10 @@ var username = '';
 *  l'username inserito dall'utente
  */
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Salva un valore di default
+    localStorage.setItem('campionato', 'serie-a');
+
     const mostraDiv2 = document.getElementById('mostra-div-2');
     const div1 = document.getElementById('div-1');
     const div2 = document.getElementById('div-2');
