@@ -1,10 +1,9 @@
-/* Contenitore di tutta la pagina */
 .container-fluid{
     background: linear-gradient(180deg, #690072 15.1%, rgba(152, 0, 19, 0.75) 97.07%);
     height: 100%;
     width: 100%;
 }
-/* Header: contenitore per il logo, i link alle pagine e i button di supporto utente. */
+
 header{
     height: 10%;
     width: 100%;
@@ -120,7 +119,7 @@ header{
     font-family: Lexend Deca, 'Source Sans Pro';
     padding-left: 8%;
 }
-/* visible-hidden: Opzioni per gestire barra di ricerca e opzioni profilo dal javascript */
+
 .visible{
     display: flex;
 }
@@ -155,167 +154,10 @@ header{
     background-color: #DDBB4E;
 }
 
-/* Contenitore per sezione tutte le squadre del campionato e sezione con info e giocatori più cercati */
-.container-w-n{
-    list-style-type: none;
-    width: 100%;
-    display: flex;
-    height: 100%;
-    align-items: flex-start;
-}
-/* Contenitore info sul campionato */
-.container-w{
-    width: 30%;
-    height: 100%;
-    justify-content: center;
-    text-align: center;
-}
-.wrap-w-chat{
-    background-color: #ffffff;
-    margin: 3%;
-    border-radius: 30px;
-    height: 30%;
-    padding:2% 2%;
-    align-items: center;
-    word-wrap: anywhere;
-}
-.wrap-w-chat-logo img{
-    margin-left: 30%;
-    width: 40%;
-    height: auto;
-}
-.wrap-w-chat-nome h1{
-    color: #e3c976;
-    font-family: Lexend Deca, 'Source Sans Pro';
-    font-size: 2.5vw;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-.wrap-w-chat-info{
-    padding: 0% 5%;
-    text-align: left;
-}
-.wrap-w-chat-info p{
-    font-size: 1.5vw;
-    font-weight: 400;
-    color: #000000;
-    font-family: Lexend, 'Source Sans Pro';
-}
-.container-w h2{
-    font-size: 1.5vw;
-    font-weight: bold;
-    color: #000000;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    align-content: center;
-    margin-top: 5%;
-}
-/* Contenitore giocatori più cercati */
-.wrap-w{
-    background-color: #ffffff;
-    margin: 4%;
-    border-radius: 30px;
-    height: 70%;
-    padding:1% 1%;
-}
-.body-w{
-    display: flex;
-    flex-direction: column;
-    height: 112vh;
-    overflow-y: auto;
-}
-
-.table-one {
-    width: 100%;
-    height: auto;
-    border-collapse: collapse;
-    justify-content: center;
-}
-.table-one th,
-.table-one td {
-    padding-left: 1vw;
-    font-size: 1.5vw;
-    color: #000000;
-    font-family: 'Lexend Mega', 'Source Sans Pro';
-    white-space: normal;
-    text-align: left;
-}
-.table-one td{
-    padding-bottom: 2vh;
-    padding-top: 2vh;
-}
-
-.table-one th,
-.table-one .row-ris1{
-    background: #ffffff;
-}
-
-.button-table{
-    background: transparent;
-    border: none;
-}
-/* Contenitore per sezione tutte le squadre del campionato selezionato */
-.container-n{
-    display: block;
-    width: 70%;
-    height: 200%;
-    justify-content: center;
-}
-.container-n h2{
-    font-size: 1.5vw;
-    font-weight: bold;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 2vh;
-    margin-left: 2vh;
-}
-.wrap-n{
-    background-color: #590061;
-    margin: 1%;
-    border-radius: 30px;
-    height: auto;
-    padding:1% 1%;
-}
-.table-ris {
-    width: 100%;
-    height: auto;
-    border-collapse: collapse;
-    justify-content: center;
-}
-.table-ris th,
-.table-ris td {
-    padding-left: 1vw;
-    font-size: 1.4vw;
-    color: #ffffff;
-    font-family: 'Lexend Mega', 'Source Sans Pro';
-    white-space: normal;
-    text-align: left;
-}
-.table-ris td{
-    padding-bottom: 1vh;
-    padding-top: 1vh;
-}
-.table-ris th {
-    background: #590061;
-}
-
-.table-ris .row-ris1 {
-    background: #8C0098;
-}
-/* colore per i pari */
-.table-ris tbody tr:nth-child(even) {
-    background: #590061;
-}
-/*colore per i dispari*/
-.table-ris tbody tr:nth-child(odd) {
-    background: #8C0098;
-}
-
-/* Contenitore footer */
 footer{
-    height: 13vh;
-    width: 100%;
-}
+     height: 13vh;
+     width: 100%;
+ }
 .top-footer{
     background-image: url("../images/Footer.png") ;
     background-size: cover;
@@ -389,3 +231,337 @@ footer{
     font-weight: bolder;
     text-align: center;
 }
+.navbar {
+    border-radius: 20px;
+    margin-left: 77%;
+    width: 20%;
+    height: 8vh;
+    background-color: rgb(128, 128, 128);
+}
+
+.navbar a {
+    float: left;
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.dropdown .dropbtn {
+    font-size: 1.5vw;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+
+}
+.navbar-w2 a:hover, .dropdown:hover .dropbtn {
+
+}
+.dropdown-content {
+    display: none;
+    height: 40vh;
+    overflow-y: auto;
+    position: absolute;
+    background-color: rgb(128, 128, 128);
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 3vh;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 1%;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.container-w-n{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+}
+.container-w{
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.wrap-w-chat{
+    background-color: #ffffff;
+    margin: 3%;
+    border-radius: 30px;
+    height: 30%;
+    padding:2% 2%;
+    align-items: center;
+    word-wrap: anywhere;
+}
+.wrap-w-chat-logo img{
+    margin-left: 30%;
+    width: 40%;
+    height: auto;
+}
+.wrap-w-chat-nome h1{
+    color: #e3c976;
+    font-family: Lexend Deca, 'Source Sans Pro';
+    font-size: 2.5vw;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.wrap-w-chat-info{
+    padding: 0% 5%;
+    text-align: left;
+}
+.wrap-w-chat-info p{
+    font-size: 1.5vw;
+    font-weight: 400;
+    color: #000000;
+    font-family: Lexend, 'Source Sans Pro';
+}
+
+
+.container-w h2{
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #000000;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    align-content: center;
+    margin-top: 5%;
+}
+.container-w h3{
+    font-size: 1vw;
+    font-weight: bold;
+    color: #000000;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    align-content: center;
+}
+.wrap-w{
+    background-color: #ffffff;
+    margin: 4%;
+    border-radius: 30px;
+    height: 70%;
+    padding:1% 1%;
+}
+.wrap-wn-items{
+    padding:1% 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.round-button-w {
+    width: auto;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-button-w img {
+    cursor: pointer;
+    object-fit: contain;
+    width: 70%;
+}
+.container-single-w-img{
+    width: 30%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.container-single-w-nome{
+    margin-left: -30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-n{
+    display: none;
+    width: 70%;
+    height: 200%;
+    justify-content: center;
+}
+.container-n h2{
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    margin-top: 2vh;
+    margin-left: 2vh;
+}
+.container-n h3{
+    font-size: 1.2vw;
+    color: #ffffff;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+.container-n h4{
+    font-size: 1vw;
+    color: #ffffff;
+    font-family: Lexend Mega, 'Source Sans Pro';
+    white-space: nowrap;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+.wrap-n{
+    background-color: #590061;
+    margin: 1%;
+    border-radius: 30px;
+    height: auto;
+    padding:1% 1%;
+}
+.body-n{
+    display: flex;
+    flex-direction: column;
+    height: 112vh;
+    overflow-y: auto;
+}
+.wrap-n1-items{
+    background: #8C0098;
+    height: 7vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10em;
+}
+.wrap-n2-items{
+    background: #590061;
+    height: 7vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10em;
+}
+.wrap-n3-items{
+    background: #590061;
+    height: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10em;
+    margin-bottom: 2vh;
+}
+.wrap-n4-items{
+    border-radius: 0px 0px 30px 30px;
+    background: #590061;
+    height: 7vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10em;
+}
+.button-mostra{
+    border-radius: 0px 0px 30px 30px;
+    background: #590061;
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    gap: 10em;
+    border: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-ris {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-ris th,
+.table-ris td {
+    padding-left: 1vw;
+    font-size: 1.4vw;
+    color: #ffffff;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: left;
+}
+.table-ris td{
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+.table-ris th {
+    background: #590061;
+}
+
+.table-ris .row-ris1 {
+    background: #8C0098;
+}
+
+/* per applicare colori alternati alle righe del corpo della tabella:
+    - primo pari
+    - secondo dispari
+*/
+.table-ris tbody tr:nth-child(even) {
+    background: #590061;
+}
+
+.table-ris tbody tr:nth-child(odd) {
+    background: #8C0098;
+}
+
+.table-one {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-one th,
+.table-one td {
+    padding-left: 1vw;
+    font-size: 1.5vw;
+    color: #000000;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: left;
+}
+.table-one td{
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+.table-one th,
+.table-one .row-ris1{
+    background: #ffffff;
+}
+
+.button-table{
+    background: transparent;
+    border: none;
+}
+

@@ -1,9 +1,9 @@
-/* Al caricamento della pagina viene eseguita la funzione del listener che imposta i rispettivi
-* listener ai bottoni per la ricerca, le opzioni di profilo utente e funzione per caricare i dati dal database Postgres
-*/
+/**
+ * Listener that sets the initial parameters of the page.
+ */
 document.addEventListener('DOMContentLoaded', function () {
     /**
-     * Chiamate Axios per database Postgres
+     * <h2>Call axios to get the data that fills the dropdown menus.<h2>
      */
     AxiosCall('/seasons');
     AxiosCall('/country');
@@ -42,10 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setupClickableRows();
     redirectionPlayerPage();
+
 });
 
 /**
- * Funzione che imposta il riferimento alla pagina specifica di quel giocatore. Dando come input il nome del giocatore
+ *<li>Function that manages redirection to the specific player's page. Pass as input as a string, the player's name.</li>
  */
 function redirectionPlayerPage(){
     var table = document.querySelector(".table-ris tbody");
@@ -53,11 +54,11 @@ function redirectionPlayerPage(){
     table.addEventListener('click', function(event) {
         var target = event.target;
 
-        while (target !== table && !target.matches("tr.has-text")) {
+        while (target != table && !target.matches("tr.has-text")) {
             target = target.parentNode;
         }
 
-        if (target !== table) {
+        if (target != table) {
             var playerName = target.cells[1].textContent; // Ottiene il nome dal secondo <td>
             window.location.href = 'Giocatore.html?player=' + encodeURIComponent(playerName);
         }
@@ -65,7 +66,7 @@ function redirectionPlayerPage(){
 }
 
 /**
- * Funzione che fa chiamate Axios alle routes del server Express
+ *<li>Function that sends axios calls to Express routes.</li>
  * @param url es. /seasons - /country ecc
  */
 function AxiosCall(url) {
@@ -79,7 +80,7 @@ function AxiosCall(url) {
 }
 
 /**
- * Funzione che, basata sull'url ricevuto, prende i dati ricevuti in risposta all'axios call e riempie le tendine
+ * <li>Function which, based on the URL, takes the data received from the response of the Axios call and fills the dropdown menus.</li>
  * @param data Data received from the call
  * @param url es.  /seasons - /country ecc
  */
@@ -137,7 +138,8 @@ function fillDropMenu(data, url) {
 }
 
 /**
- * Funzione che prende i dati dalle tendine e li incapsula in oggetti json e li mandd alla route tramite axios call
+ * <li>Function that takes data from the dropdown menus and encapsulates it in a json object and sends it to the route via axios call.</li>
+ *
  */
 function AdvancedSearch() {
 
@@ -172,11 +174,12 @@ function AdvancedSearch() {
 }
 
 /**
- * Funzione che seleziona il valore della tendina
+ *<li>
+ * Function that selects the value of the dropdown menu</li>
  * @param dropdownId id of the dropdown menu
  * @param defaultValue Default drop-down value before performing a search
  * @returns {string|null}
- * Se il valore è uguale al parametro di default ritorna null, se no il valore selezionato
+ * If the value is equal to the default parameter of the dropdown menu it returns null, otherwise the selected value.
  */
 function getSelectedValueOrFallback(dropdownId, defaultValue) {
     const buttonText = document.querySelector(`.wrap-filtri #${dropdownId}`).closest('.dropdown').querySelector('.btn.dropdown-toggle').textContent.trim();
@@ -184,7 +187,8 @@ function getSelectedValueOrFallback(dropdownId, defaultValue) {
 }
 
 /**
- * Funzione che prende i dati ricevuti come risposta dalla ricerca avanzata e popula la tabella con i giocatori corretti
+ *<li>
+ * Function that takes the data received as a response from the axios call for advanced search and populates the table with players.</li>
  * @param data List of players received from the axios response.
  */
 function fillTable(data) {
@@ -211,7 +215,8 @@ function fillTable(data) {
 }
 
 /**
- * Funzione che controlla se c'è contenuto nella tabella per attivare l'effetto passando sopra col mouse
+ * <li>
+ * Function that checks if there is content in the table to activate hovering over the rows.</li>
  */
 function setupClickableRows() {
     document.querySelectorAll('.table-ris tbody tr').forEach(row => {

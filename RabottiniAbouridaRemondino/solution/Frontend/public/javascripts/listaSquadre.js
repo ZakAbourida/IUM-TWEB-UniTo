@@ -1,9 +1,6 @@
-//Variabile la competizione scelta
+let container1;
+let container2;
 let domestic_cup;
-
-/* Al caricamento della pagina viene eseguita la funzione del listener che imposta i rispettivi
-* listener ai bottoni per la ricerca, le opzioni di profilo utente e funzione per caricare i dati dal database Postgres
-*/
 document.addEventListener('DOMContentLoaded', function() {
     const campionato = localStorage.getItem('campionato');
 
@@ -12,6 +9,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const opzioniLogin = document.getElementById('opzioni-login');
     const mostraOpzioni = document.getElementById('mostra-opzioni');
+
+    container1 = document.getElementById('container-n1');
+    container2 = document.getElementById('container-n2');
+
+    if (container1) {
+        container1.style.display = 'block';
+    }
+    if (container2) {
+        container2.style.display = 'none';
+    }
 
     mostraBarra.addEventListener('click', function() {
         if(!barraRicerca.classList.contains('visible')) {
@@ -32,13 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
             opzioniLogin.classList.add('hidden');
         }
     });
-    //funzione per riempire la tabella con le squadre corrette
+
     fillTableSquad(campionato);
-    //funzione per riempire la sezione delle info sulla competizione con le info corrette
     Info_Competition(campionato);
 });
 
-// funzione chiamata quando si clicca su una squadra per andare alla pagina Squadra con i dati corretti
+
 function redirectToSquad(buttonID) {
     let val = document.getElementById(buttonID).innerText;
 
@@ -48,7 +54,7 @@ function redirectToSquad(buttonID) {
     // Reindirizza alla pagina "ListaSquadre.html"
     window.location.href = '../Squadra.html';
 }
-// funzione chiamata quando si clicca su un giocatore per andare alla pagina Giocatore con i dati corretti
+
 function redirectToPlayers(buttonID) {
     let val = document.getElementById(buttonID).innerText;
 
@@ -72,7 +78,6 @@ function Info_Competition(comp){
             document.getElementById('url').innerText = "URL: " + response.data.url;
             domestic_cup = response.data.competition_id;
 
-            //funzione per riempire la sezione dei giocatori più cercati con le info corrette
             fillTablePlayers();
         })
         .catch(function (error) {
@@ -131,7 +136,6 @@ function fillTableSquad(comp) {
         });
 }
 
-//funzione per riempire la sezione dei giocatori più cercati con le info corrette
 function fillTablePlayers() {
         console.log(domestic_cup);
 
@@ -179,7 +183,6 @@ function fillTablePlayers() {
             });
 }
 
-// funzione per aggiungere righe se necessario alla tabella delle squadre
 function aggiungiRigaTabellaSquadre(num) {
     // Trova la tabella
     const tab = document.getElementById('table-squadre');
@@ -202,8 +205,6 @@ function aggiungiRigaTabellaSquadre(num) {
     };
     cellaPulsante.appendChild(pulsante);
 }
-
-// funzione per aggiungere righe se necessario alla tabella dei giocatori più cercati
 function aggiungiRigaTabellaGiocatori(num) {
     // Trova la tabella
     const tab = document.getElementById('table-giocatori');

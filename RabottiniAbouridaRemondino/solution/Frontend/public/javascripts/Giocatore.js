@@ -1,6 +1,6 @@
-/* Al caricamento della pagina viene eseguita la funzione del listener che imposta i rispettivi
-* listener ai bottoni per la ricerca, le opzioni di profilo utente
-*/
+/**
+ * Listener that sets the initial parameters of the page.
+ */
 document.addEventListener('DOMContentLoaded', function () {
 
     const barraRicerca = document.getElementById('barra-ricerca');
@@ -29,18 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    //tramite l'url ricavo il nome del giocatore
     var urlParams = new URLSearchParams(window.location.search);
     var playerName = urlParams.get('player');
     getInfoPlayer(playerName,"/info_player");
     getInfoPlayer(playerName,"/info_appearances");
+    getChart(playerName);
 
 });
 
 /**
- * Funzione che prende come parametro il nome del giocatore e fa una chiamata axios al server e chiama la funzione updatePlayerProfile
+ *<li>Function that takes a player's name as input and sends a call to the Express server route to receive information associated with the player.</li>
  * @param playerName es. 'Bukayo Saka'
+ * @param url es. /info_player
  */
+
 function getInfoPlayer(playerName,url) {
     axios.post(url, {playerName})
         .then(function (response) {
@@ -51,13 +53,13 @@ function getInfoPlayer(playerName,url) {
             }
         })
         .catch(function (error) {
-            console.error('Error fetching player info:', error);
+            console.error('Error:', error);
         });
 }
 
 /**
- * Funzione che prende l'oggetto JSON con i dati del giocatore e li inserisce nella sezione correta
- * @param playerData  es {Name: 'Bukayo Saka', Image: a43rfodwaecfe0gv, ecc}
+ *<li>Function that takes the JSON object containing the information and represents it on the web page. (Fills the determining elements by their id)</li>
+ * @param playerData JSON object containing information about a player. es {Name: 'Bukayo Saka', Image: a43rfodwaecfe0gv, ecc}
  */
 function updatePlayerProfile(playerData) {
 
@@ -76,7 +78,10 @@ function updatePlayerProfile(playerData) {
         '<h4>' + (playerData.Position || 'Nessun dato') + '</h4>' +
         '<h4>' + (playerData.MarketValue || 'Nessun dato') + '</h4>';
 }
-
+/**
+ *<li>Function that takes the JSON object containing the information about the stats and represents it on the web page. (Fills the determining elements by their id)</li>
+ * @param statsData JSON object containing stats about a player. es {totalAppearances: 302, totalMinutesPlayed: 4135, totalGoals: 12, ecc}
+ */
 function fillStats(statsData){
     var statsInfoElement = document.getElementById('stats-info');
     statsInfoElement.innerHTML =
@@ -87,3 +92,52 @@ function fillStats(statsData){
         '<h4>' + (statsData.totalRedCards) + '</h4>' +
         '<h4>' + (statsData.totalYellowCards) + '</h4>';
 }
+
+/**
+ *<li>Function that takes a player's name as input and sends a call to the Express server route to receive chart associated with the player.</li>
+ * @param name es. 'Bukayo Saka'
+ */
+function getChart(name){
+    axios.post('/values_player', {name})
+        .then(function (response) {
+            fillChart(response.data)
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+        });
+}
+
+/**
+ *<li>
+ * Function that takes the graph from the axios response and checks the presence of the container for inserting the graph.</li>
+ * @param graphHtml
+ */
+function fillChart(graphHtml) {
+    var chartContainer = document.getElementById('chart-box');
+    if (chartContainer) {
+        insertAndExecuteScript(chartContainer, graphHtml);
+    } else {
+        console.error('Chart container not found');
+    }
+}
+
+/**
+ *<li>Function that inserts the graph into the container and launches all the scripts to display the graph and make it interactive.</li>
+ * @param container id of the container for the chart
+ * @param html html chart
+ */
+function insertAndExecuteScript(container, html) {
+    container.innerHTML = html;
+    var scripts = Array.from(container.querySelectorAll("script"));
+    for (var script of scripts) {
+        var newScript = document.createElement("script");
+        Array.from(script.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+        if (!script.src) {
+            newScript.appendChild(document.createTextNode(script.innerHTML));
+        }
+        script.parentNode.replaceChild(newScript, script);
+    }
+}
+
+
+

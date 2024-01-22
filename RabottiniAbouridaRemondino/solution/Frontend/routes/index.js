@@ -294,7 +294,11 @@ router.post('/info_player',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
-
+/**
+ * <li>Route that takes the player name string from the Axios call and sends it to the Mongo server.
+ * Returns the JSON object containing information relating to a player's appearances.</li>
+ * Method: POST
+ */
 router.post('/info_appearances',  async function (req, res, next) {
   try {
 
@@ -309,5 +313,25 @@ router.post('/info_appearances',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
+/**
+ * <li>Route that takes the player name string from the Axios call and sends it to the Flask server.
+ * Returns an HTML file with the chart.</li>
+ * Method: POST
+ */
+router.post('/values_player', async (req, res) => {
+  try {
+
+    const playerName = req.body.name;
+
+    const response = await axios.post('http://127.0.0.1:5000/values_player', { name: playerName });
+
+    res.send(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
 
 module.exports = router;
