@@ -76,7 +76,6 @@ function updatePlayerProfile(playerData) {
         '<h4>' + (playerData.Position || 'Nessun dato') + '</h4>' +
         '<h4>' + (playerData.MarketValue || 'Nessun dato') + '</h4>';
 }
-<<<<<<< HEAD
 
 function fillStats(statsData){
     var statsInfoElement = document.getElementById('stats-info');
@@ -88,8 +87,3 @@ function fillStats(statsData){
         '<h4>' + (statsData.totalRedCards) + '</h4>' +
         '<h4>' + (statsData.totalYellowCards) + '</h4>';
 }
-
-
-
-=======
->>>>>>> d4afb82ec2ddf5fcb3ff6694e26ec9d58c69d315

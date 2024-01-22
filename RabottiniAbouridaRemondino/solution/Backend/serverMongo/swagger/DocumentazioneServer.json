@@ -42,8 +42,17 @@
           "required": true,
           "content": {
             "application/json": {
-              "example": {
-                "squad": "Real Madrid Club de Fútbol"
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "squad": {
+                    "type": "string",
+                    "description": "The name of the squad for historical matches"
+                  }
+                },
+                "example": {
+                  "squad": "Real Madrid Club de Fútbol"
+                }
               }
             }
           }
@@ -57,6 +66,70 @@
           }
         }
       }
+    },
+    "/squad_stats": {
+      "post": {
+        "summary": "Get stats of a squad",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "squad": {
+                    "type": "string",
+                    "description": "The name of the squad for the stats"
+                  }
+                },
+                "example": {
+                  "squad": "Real Madrid Club de Fútbol"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Stats of the squad retrieved successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/info_appearances": {
+      "post": {
+        "summary": "Get information about player appearances",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "player_name": {
+                    "type": "string",
+                    "description": "The name of the player for whom to retrieve appearance information"
+                  }
+                },
+                "example": {
+                  "player_name": "Player Name"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Player appearances information retrieved successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -64,221 +137,90 @@
       "Appearances": {
         "type": "object",
         "properties": {
-          "appearances_id": {
-            "type": "string"
-          },
-          "competition_id": {
-            "type": "string"
-          },
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "game_id": {
-            "type": "number"
-          },
-          "goals": {
-            "type": "number"
-          },
-          "minutes_played": {
-            "type": "number"
-          },
-          "player_club_id": {
-            "type": "number"
-          },
-          "player_id": {
-            "type": "number"
-          },
-          "player_name": {
-            "type": "string"
-          },
-          "red_cards": {
-            "type": "number"
-          },
-          "yellow_card": {
-            "type": "string"
-          },
-          "assists": {
-            "type": "number"
-          },
-          "player_current_club_id": {
-            "type": "number"
-          }
+          "appearances_id": { "type": "string" },
+          "competition_id": { "type": "string" },
+          "date": { "type": "string", "format": "date-time" },
+          "game_id": { "type": "number" },
+          "goals": { "type": "number" },
+          "minutes_played": { "type": "number" },
+          "player_club_id": { "type": "number" },
+          "player_id": { "type": "number" },
+          "player_name": { "type": "string" },
+          "red_cards": { "type": "number" },
+          "yellow_card": { "type": "string" },
+          "assists": { "type": "number" },
+          "player_current_club_id": { "type": "number" }
         }
       },
-      "Club_games": {
+      "ClubGames": {
         "type": "object",
         "properties": {
-          "club_id": {
-            "type": "number"
-          },
-          "game_id": {
-            "type": "number"
-          },
-          "hosting": {
-            "type": "string"
-          },
-          "opponent_goals": {
-            "type": "number"
-          },
-          "is_win": {
-            "type": "number"
-          },
-          "opponent_id": {
-            "type": "number"
-          },
-          "opponent_manager_name": {
-            "type": "string"
-          },
-          "opponent_position": {
-            "type": "number"
-          },
-          "own_goals": {
-            "type": "number"
-          },
-          "own_manager_name": {
-            "type": "string"
-          },
-          "own_position": {
-            "type": "number"
-          }
+          "club_id": { "type": "number" },
+          "game_id": { "type": "number" },
+          "hosting": { "type": "string" },
+          "opponent_goals": { "type": "number" },
+          "is_win": { "type": "number" },
+          "opponent_id": { "type": "number" },
+          "opponent_manager_name": { "type": "string" },
+          "opponent_position": { "type": "number" },
+          "own_goals": { "type": "number" },
+          "own_manager_name": { "type": "string" },
+          "own_position": { "type": "number" }
         }
       },
-      "Game_events": {
+      "GameEvents": {
         "type": "object",
         "properties": {
-          "club_id": {
-            "type": "number"
-          },
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "description": {
-            "type": "string"
-          },
-          "game_id": {
-            "type": "number"
-          },
-          "minute": {
-            "type": "number"
-          },
-          "player_assist_id": {
-            "type": "number"
-          },
-          "player_id": {
-            "type": "number"
-          },
-          "player_in_id": {
-            "type": "number"
-          },
-          "type": {
-            "type": "string"
-          },
-          "game_event_id": {
-            "type": "string"
-          }
+          "club_id": { "type": "number" },
+          "date": { "type": "string", "format": "date-time" },
+          "description": { "type": "string" },
+          "game_id": { "type": "number" },
+          "minute": { "type": "number" },
+          "player_assist_id": { "type": "number" },
+          "player_id": { "type": "number" },
+          "player_in_id": { "type": "number" },
+          "type": { "type": "string" },
+          "game_event_id": { "type": "string" }
         }
       },
-      "Game_Lineups": {
+      "GameLineups": {
         "type": "object",
         "properties": {
-          "club_id": {
-            "type": "number"
-          },
-          "game_id": {
-            "type": "number"
-          },
-          "game_lineups_id": {
-            "type": "number"
-          },
-          "number": {
-            "type": "number"
-          },
-          "player_id": {
-            "type": "number"
-          },
-          "player_name": {
-            "type": "string"
-          },
-          "position": {
-            "type": "string"
-          },
-          "team_captain": {
-            "type": "number"
-          },
-          "type": {
-            "type": "string"
-          }
+          "club_id": { "type": "number" },
+          "game_id": { "type": "number" },
+          "game_lineups_id": { "type": "number" },
+          "number": { "type": "number" },
+          "player_id": { "type": "number" },
+          "player_name": { "type": "string" },
+          "position": { "type": "string" },
+          "team_captain": { "type": "number" },
+          "type": { "type": "string" }
         }
       },
       "Games": {
         "type": "object",
         "properties": {
-          "attendance": {
-            "type": "number"
-          },
-          "competition_id": {
-            "type": "string"
-          },
-          "competition_type": {
-            "type": "string"
-          },
-          "game_id": {
-            "type": "number"
-          },
-          "home_club_goals": {
-            "type": "number"
-          },
-          "referee": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "aggregate": {
-            "type": "string"
-          },
-          "away_club_goals": {
-            "type": "number"
-          },
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "home_club_id": {
-            "type": "number"
-          },
-          "round": {
-            "type": "string"
-          },
-          "away_club_id": {
-            "type": "number"
-          },
-          "home_club_manager_name": {
-            "type": "string"
-          },
-          "season": {
-            "type": "number"
-          },
-          "away_club_manager_name": {
-            "type": "string"
-          },
-          "home_club_name": {
-            "type": "string"
-          },
-          "stadium": {
-            "type": "string"
-          },
-          "away_club_name": {
-            "type": "string"
-          },
-          "home_club_position": {
-            "type": "number"
-          },
-          "away_club_position": {
-            "type": "number"
-          }
+          "attendance": { "type": "number" },
+          "competition_id": { "type": "string" },
+          "competition_type": { "type": "string" },
+          "game_id": { "type": "number" },
+          "home_club_goals": { "type": "number" },
+          "referee": { "type": "string" },
+          "url": { "type": "string" },
+          "aggregate": { "type": "string" },
+          "away_club_goals": { "type": "number" },
+          "date": { "type": "string", "format": "date-time" },
+          "home_club_id": { "type": "number" },
+          "round": { "type": "string" },
+          "away_club_id": { "type": "number" },
+          "home_club_manager_name": { "type": "string" },
+          "season": { "type": "number" },
+          "away_club_manager_name": { "type": "string" },
+          "home_club_name": { "type": "string" },
+          "stadium": { "type": "string" },
+          "away_club_name": { "type": "string" },
+          "home_club_position": { "type": "number" },
+          "away_club_position": { "type": "number" }
         }
       }
     }
