@@ -1,0 +1,64 @@
+Upload Club:
+
+$headers = @{"Content-Type" = "application/json"}
+Invoke-WebRequest -Uri "http://localhost:8081/load_clubs" -Method Post -Headers $headers -InFile "C:\Users\danie\Desktop\JSON for Postgres\clubs.json"
+
+Upload Competitions:
+
+$headers = @{"Content-Type" = "application/json"}
+Invoke-WebRequest -Uri "http://localhost:8081/load_competitions" -Method Post -Headers $headers -InFile "C:\Users\danie\Desktop\JSON for Postgres\competitions.json"
+
+Upload Player:
+
+$headers = @{"Content-Type" = "application/json"}
+Invoke-WebRequest -Uri "http://localhost:8081/load_players" -Method Post -Headers $headers -InFile "C:\Users\danie\Desktop\JSON for Postgres\players.json"
+
+
+Upload Player Valuations:
+$headers = @{"Content-Type" = "application/json"}
+Invoke-WebRequest -Uri "http://localhost:8081/load_playervaluations" -Method Post -Headers $headers -InFile "C:\Users\danie\Desktop\JSON for Postgres\player_valuations.json"
+
+
+Comandi per testare le query:
+
+Lista dei campionati(first_tier):
+Invoke-RestMethod -Uri http://localhost:8081/list_competitions
+
+Lista delle posizioni:
+Invoke-RestMethod -Uri http://localhost:8081/get_role
+
+Squadre in base al nome al campionato:
+Invoke-RestMethod -Method Post -Uri http://localhost:8081/list_teamsbycompetition -ContentType "application/json" -Body 'serie-a' 
+
+Lista di tutti i teams:
+Invoke-RestMethod -Uri http://localhost:8081/all_teams
+
+Info Giocatore in base al nome:
+
+$name = [System.Uri]::EscapeDataString("Bukayo Saka")
+Invoke-RestMethod -Method Post -Uri "http://localhost:8081/info_player?Name=$name" -ContentType "application/json"
+
+Nazioni presenti:
+Invoke-RestMethod -Uri http://localhost:8081/country
+
+Season presenti:
+Invoke-RestMethod -Uri http://localhost:8081/seasons
+
+
+Advanced Search:
+$searchDTO = @{
+year_birth = 1979  
+role = "Goalkeeper"
+season = 2014 
+competition = "Bundesliga"  
+country = "Germany"  
+}
+$json = $searchDTO | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri "http://localhost:8081/advanced_search" -ContentType "application/json" -Body $json
+
+
+Presenze per giocatore(MongoDB):
+
+Invoke-RestMethod -Uri "http://localhost:3001/info_appearances" -Method Post -Body (@{player_name="Lionel Messi"} | ConvertTo-Json) -ContentType "application/json"
+
+
