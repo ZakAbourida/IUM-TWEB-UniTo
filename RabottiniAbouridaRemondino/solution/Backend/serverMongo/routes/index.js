@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const gameController = require('../controllers/gamesController');
 const clubGamesController = require("../controllers/club_gamesController");
+const appearancesController = require("../controllers/appeareancesController")
+const {application} = require("express");
 
 router.get('/loadHP', async function (req, res, next) {
   try {
@@ -48,6 +50,18 @@ router.post('/squad_stats', async function (req, res, next) {
   }
 });
 
+router.post('/info_appearances', async function (req, res, next) {
+  try {
+    const player_name = req.body.player_name;
+
+    const infoAppearances = await appearancesController.findPlayerInfoAppearances(player_name);
+
+    res.json(infoAppearances);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 module.exports = router;
 

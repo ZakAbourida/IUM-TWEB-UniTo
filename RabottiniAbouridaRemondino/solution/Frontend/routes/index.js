@@ -295,4 +295,19 @@ router.post('/info_player',  async function (req, res, next) {
   }
 });
 
+router.post('/info_appearances',  async function (req, res, next) {
+  try {
+
+    const Name = req.body.playerName;
+    const params = new URLSearchParams();
+    params.append('player_name', Name);
+
+    const response = await axios.post('http://localhost:3001/info_appearances', params);
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 module.exports = router;

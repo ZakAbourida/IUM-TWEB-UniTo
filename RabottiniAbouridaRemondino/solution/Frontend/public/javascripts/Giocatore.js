@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var urlParams = new URLSearchParams(window.location.search);
     var playerName = urlParams.get('player');
-    getInfoPlayer(playerName);
+    getInfoPlayer(playerName,"/info_player");
+    getInfoPlayer(playerName,"/info_appearances");
 
 });
 
@@ -39,10 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
  *<li>Function that takes a player's name as input and sends a call to the Express server route to receive information associated with the player.</li>
  * @param playerName es. 'Bukayo Saka'
  */
-function getInfoPlayer(playerName) {
-    axios.post('/info_player', {playerName})
+function getInfoPlayer(playerName,url) {
+    axios.post(url, {playerName})
         .then(function (response) {
-            updatePlayerProfile(response.data);
+            if(url === "/info_player"){
+                updatePlayerProfile(response.data);
+            }else{
+                fillStats(response.data);
+            }
         })
         .catch(function (error) {
             console.error('Error fetching player info:', error);
@@ -69,6 +74,17 @@ function updatePlayerProfile(playerData) {
         '<h4>' + (playerData.Team || 'Nessun dato') + '</h4>' +
         '<h4>' + (playerData.Position || 'Nessun dato') + '</h4>' +
         '<h4>' + (playerData.MarketValue || 'Nessun dato') + '</h4>';
+}
+
+function fillStats(statsData){
+    var statsInfoElement = document.getElementById('stats-info');
+    statsInfoElement.innerHTML =
+        '<h4>' + (statsData.totalAppearances ) + '</h4>' +
+        '<h4>' + (statsData.totalMinutesPlayed ) + '</h4>' +
+        '<h4>' + (statsData.totalGoals) + '</h4>' +
+        '<h4>' + (statsData.totalAssists) + '</h4>' +
+        '<h4>' + (statsData.totalRedCards) + '</h4>' +
+        '<h4>' + (statsData.totalYellowCards) + '</h4>';
 }
 
 

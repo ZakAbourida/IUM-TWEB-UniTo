@@ -43,11 +43,43 @@ const findPlayerAppearances = async (playerId) => {
     }
 };
 
+const findPlayerInfoAppearances = async (player_name) => {
+    try {
+        const result = await Appearances.aggregate([
+            { $match: { player_name } },
+            {
+                $group: {
+                    _id: null,
+                    totalAppearances: { $sum: 1 },
+                    totalYellowCards: { $sum: "$yellow_cards" },
+                    totalRedCards: { $sum: "$red_cards" },
+                    totalGoals: { $sum: "$goals" },
+                    totalAssists: { $sum: "$assists" },
+                    totalMinutesPlayed: { $sum: "$minutes_played" }
+                }
+            }
+        ]);
+
+        return result[0] || {
+            totalAppearances: 'Nessun Dato',
+            totalYellowCards: 'Nessun Dato',
+            totalRedCards: 'Nessun Dato',
+            totalGoals: 'Nessun Dato',
+            totalAssists: 'Nessun Dato',
+            totalMinutesPlayed: 'Nessun Dato'
+        };
+
+    } catch (error) {
+        throw error;
+    }
+};
+
 module.exports = {
     createAppearance,
     getAppearances,
     getAppearanceById,
     updateAppearance,
     deleteAppearance,
-    findPlayerAppearances
+    findPlayerAppearances,
+    findPlayerInfoAppearances
 };
