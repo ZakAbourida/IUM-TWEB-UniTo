@@ -1,3 +1,4 @@
+/* Contenitore di tutta la pagina */
 .container-fluid{
     background: linear-gradient(180deg, #690072 15.1%, rgba(152, 0, 19, 0.75) 97.07%);
     height: 100%;
@@ -5,7 +6,7 @@
     overflow-x: hidden;
     padding-bottom: 5%;
 }
-
+/* Header: contenitore per il logo, i link alle pagine e i button di supporto utente. */
 header{
     height: 10%;
     width: 100%;
@@ -18,7 +19,6 @@ header{
     white-space: nowrap;
     flex-shrink: 0;
 }
-
 .altri-a{
     font-size: 2vw;
     font-weight: 700;
@@ -121,7 +121,7 @@ header{
     font-family: Lexend Deca, 'Source Sans Pro';
     padding-left: 8%;
 }
-
+/* visible-hidden: Opzioni per gestire barra di ricerca e opzioni profilo dal javascript */
 .visible{
     display: flex;
 }
@@ -156,6 +156,216 @@ header{
     background-color: #DDBB4E;
 }
 
+/* Contenitore per il nome del giocatore */
+.text-wrapped{
+    width: auto;
+    top: 0;
+    left: 0;
+    text-shadow: 0px 15px 10px #00000066;
+    font-family: "Lexend Deca-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 3vw;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+}
+/* Contenitore delle varie sezioni della pagina giocatore */
+.container-w-n-p{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 200%;
+    align-content: center;
+    justify-content: center;
+    gap: 5vh;
+}
+/* Contenitore con le info principali del profilo del giocatore */
+.container-w{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+}
+.wrap-w{
+    background-color: #590061;
+    border-radius: 30px;
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding:2% 2%;
+}
+.container-w h2{
+    height: 5vh;
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    line-height: 1.25;
+    color: #d2bb72;
+    font-family: Lexend Exa, 'Source Sans Pro';
+}
+.container-w h3{
+    height: 7vh;
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin-left: 2vh;
+    line-height: 1.25;
+    color: #ffffff;
+    font-family: Lexend Exa, 'Source Sans Pro';
+}
+.container-w h4{
+    line-height: 1.25;
+    color: #ffffff;
+    font-family: Lexend Exa, 'Source Sans Pro';
+    font-size: 0.6vw;
+    white-space: nowrap;
+    padding-top: 3%;
+}
+.wrap-w-item{
+    margin: 1vh;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    min-height: min-content;
+}
+.round-img{
+    cursor: pointer;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+    height: 20vh;
+    width: auto;
+    border-radius: 100px;
+    margin:1.5vw;
+}
+/* Contenitore con il palmares del giocatore */
+.container-n{
+    width: auto;
+    justify-content: center;
+    text-align: center;
+}
+.wrap-n{
+    background-color: #870093;
+    border-radius: 30px;
+    position: relative;
+    height: 100%;
+    width: 60vw;
+}
+.container-n h2{
+    height: 5vh;
+    font-size: 2vw;
+    font-weight: bold;
+    line-height: 1.25;
+    margin-top: 0.5vh;
+    color: #d2bb72;
+    font-family: Lexend Exa, 'Source Sans Pro';
+}
+.container-n h3{
+    height: 4vh;
+    text-align: left;
+    font-size: 1.5vw;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    line-height: 1.25;
+    color: #d2bb72;
+    font-family: Lexend Exa, 'Source Sans Pro';
+    font-size: 1.5vw;
+}
+.container-n h4{
+    font-size: 2vh;
+    margin-left: 1vh;
+    line-height: 1.25;
+    text-align: left;
+    color: #ffffff;
+    font-family: Lexend Exa, 'Source Sans Pro';
+    font-size: 1vw;
+}
+.wrap-n-item{
+    margin: 1vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-size: 1vw; !important;
+}
+.wrap-n-item-top{
+    height: 10vh;
+    padding-top: 2.5vh;
+    width: 100%;
+    background: #590061;
+    border-radius: 30px 30px 0px 0px;
+    text-align: center;
+}
+
+/* Contenitore con caratteristiche e statistiche del giocatore */
+.container-p{
+    width: 100%;
+    margin-top: 1vh;
+    height: 200%;
+    justify-content: center;
+    text-align: center;
+}
+.wrap-p{
+    background-color: #ffffff;
+    border-radius: 30px;
+    position: relative;
+    height: 100%;
+    padding:2% 2%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container-p h2{
+    height: 5vh;
+    font-size: 2vw;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #d2bb72;
+    font-family: Lexend Exa, 'Source Sans Pro';
+}
+.container-p h3{
+    height: 7vh;
+    margin-top: 1vh;
+    font-weight: bold;
+    font-size: 2vh;
+    margin-left: 2vh;
+    line-height: 1.25;
+    color: #ffffff;
+    font-family: Lexend Exa, 'Source Sans Pro';
+}
+.container-p h4{
+    margin-top: 1vh;
+    font-size: 1.5vh;
+    margin-left: 2vh;
+    line-height: 1.25;
+    color: #ffffff;
+    font-family: Lexend Exa, 'Source Sans Pro';
+}
+.wrap-p-item{
+    margin: 1vh;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+/* Contenitore con le statistiche del giocatore */
+.wrap-x-item{
+    margin: 1vh;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    min-height: min-content;
+}
 
 footer{
     height: 13vh;
@@ -234,454 +444,4 @@ footer{
     font-weight: bolder;
     text-align: center;
 }
-.container-advSearch{
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: 1vh;
-}
-.container-advSearch h2{
-    font-size: 4vh;
-    font-weight: bold;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    align-content: center;
-    margin-top: 1vh;
-}
-.container-advSearch h3{
-    font-size: 1vw;
-    font-weight: bold;
-    color: #000000;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    align-content: center;
-    margin-top: 15%;
-}
-.wrap-advS{
-    background-color: transparent;
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 99%;
-    align-items: center;
-}
-.wrap-advS-item{
-    height: auto;
-    width: 12vw;
-    padding: 1vh;
-    text-align: center;
-}
-.wrap-filtri{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 3vw;
-}
-.container-ris{
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
-.container-ris h2{
-    font-size: 4vh;
-    font-weight: bold;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin: 1vh;
-}
-.container-ris h3{
-    font-size: 1vw;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-}
-.container-ris h4{
-    font-size: 1.4vw;
-    color: #ffffff;
-    font-family: Lexend Mega, 'Source Sans Pro';
-    white-space: nowrap;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-}
-.wrap-ris{
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 99%;
-    padding:0.5%;
-    margin: 1vh;
-}
-.wrap-ris1-items{
-    background: #8C0098;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8em;
-    white-space: nowrap;
-}
-.wrap-ris2-items{
-    background: #590061;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8em;
-    white-space: nowrap;
-}
-.wrap-ris3-items{
-    background: #590061;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-    white-space: nowrap;
-    width: auto;
-}
-.wrap-ris4-items{
-    border-radius: 0px 0px 30px 30px;
-    background: #590061;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10em;
-}
-.wrap-ris5-items{
-    border-radius: 30px 30px 0px 0px;
-    background: #590061;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-.button-mostra{
-    border-radius: 0px 0px 30px 30px;
-    background: #590061;
-    height: 7vh;
-    width: 100%;
-    display: flex;
-    gap: 10em;
-    border: none;
-    justify-content: center;
-    align-items: center;
-}
-.text-wrapped{
-    width: auto;
-    top: 0;
-    left: 0;
-    text-shadow: 0px 15px 10px #00000066;
-    font-family: "Lexend Deca-SemiBold", Helvetica;
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 3vw;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-    margin-bottom: 3vh;
-    margin-top: 3vh;
-}
-.statistiche-w2{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.navbar-w2 {
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 110%;
-    height: 6vh;
-    background-color: rgb(128, 128, 128);
-}
-.navbar-w2 a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 2% 2%;
-    text-decoration: none;
-}
-
-
-.container-w-n-p{
-    list-style-type: none;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: 200%;
-    align-content: center;
-    justify-content: center;
-    gap: 5vh;
-}
-.container-w{
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    text-align: center;
-}
-.container-n{
-    width: auto;
-    justify-content: center;
-    text-align: center;
-}
-.container-p{
-    width: 100%;
-    margin-top: 1vh;
-    height: 200%;
-    justify-content: center;
-    text-align: center;
-}
-.wrap-w{
-    background-color: #590061;
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 100%;
-    padding:2% 2%;
-}
-.wrap-n{
-    background-color: #870093;
-    border-radius: 30px;
-    position: relative;
-    height: 100%;
-    width: 60vw;
-
-}
-.wrap-p{
-    background-color: #ffffff;
-    border-radius: 30px;
-    position: relative;
-    height: 100%;
-    padding:2% 2%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.container-w h2{
-    height: 5vh;
-    font-size: 1.5vw;
-    font-weight: bold;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
-    line-height: 1.25;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-n h2{
-    height: 5vh;
-    font-size: 2vw;
-    font-weight: bold;
-    line-height: 1.25;
-    margin-top: 0.5vh;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-p h2{
-    height: 5vh;
-    font-size: 2vw;
-    font-weight: bold;
-    line-height: 1.25;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-w h3{
-    height: 7vh;
-    font-size: 2.5vh;
-    font-weight: bold;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-n h3{
-    height: 4vh;
-    text-align: left;
-    font-size: 1.5vw;
-    margin-top: 2vh;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-    font-size: 1.5vw;
-}
-.container-p h3{
-    height: 7vh;
-    margin-top: 1vh;
-    font-weight: bold;
-    font-size: 2vh;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-
-.container-w h4{
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-    font-size: 0.6vw;
-    white-space: nowrap;
-    padding-top: 3%;
-}
-.container-n h4{
-    font-size: 2vh;
-    margin-left: 1vh;
-    line-height: 1.25;
-    text-align: left;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-    font-size: 1vw;
-}
-.container-p h4{
-    margin-top: 1vh;
-    font-size: 1.5vh;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.wrap-w-item{
-    margin: 1vh;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    min-height: min-content;
-}
-
-.wrap-x-item{
-    margin: 1vh;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    min-height: min-content;
-}
-.wrap-n-item{
-    margin: 1vh;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    font-size: 1vw; !important;
-}
-.wrap-p-item{
-    margin: 1vh;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-.wrap-n-item-top{
-    height: 10vh;
-    padding-top: 2.5vh;
-    width: 100%;
-    background: #590061;
-    border-radius: 30px 30px 0px 0px;
-    text-align: center;
-}
-.container-n-img{
-    background: #590061;
-    margin: 2%;
-    width: 96%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    border-radius: 30px;
-    align-content: center;
-    justify-content: center;
-}
-
-.container-stat{
-    list-style-type: none;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: auto;
-    align-content: center;
-    justify-content: center;
-    gap: 5vh;
-}
-.wrap-stat{
-    background-color: #590061;
-    margin: 1vh;
-    border-radius: 30px;
-    position: relative;
-    height: auto;
-    width: 90vw;
-    padding:1% 1%;
-}
-.container-stat h2{
-    height: 5vh;
-    font-size: 3vh;
-    font-weight: bold;
-    line-height: 1.25;
-    margin-top: 2vh;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-stat h3{
-    height: 7vh;
-    font-size: 2vh;
-    font-weight: bold;
-    margin-left: 2vh;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.container-stat h4{
-    font-size: 1.5vh;
-    margin-left: 1vh;
-    line-height: 1.25;
-    text-align: left;
-    color: #ffffff;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-
-.statistiche-w2{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.statistiche-w2 h2{
-    font-weight: 400;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend, 'Source Sans Pro';
-    font-size: 2vw;
-}
-.wrap-stat-item{
-    display: flex;
-}
-
-.round-img{
-    cursor: pointer;
-    object-fit: contain;
-    vertical-align: top;
-    flex-shrink: 0;
-    height: 20vh;
-    width: auto;
-    border-radius: 100px;
-    margin:1.5vw;
-}
-
-
-
 

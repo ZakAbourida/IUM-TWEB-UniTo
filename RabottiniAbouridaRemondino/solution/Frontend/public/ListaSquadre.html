@@ -1,7 +1,7 @@
 <!--
     Autori: Daniel Rabottini - Tommaso Remondino - Zakaria Abourida
     Data: 2023/2024
-    Descrizione: Pagina contentente l'elenco di tutti i campionati
+    Descrizione: Pagina contentente l'elenco di tutte le squadre
 -->
 
 <!DOCTYPE html>
@@ -36,6 +36,7 @@
 
 <body>
 <div class="container-fluid">
+    <!-- Header: contenitore per il logo, i link alle pagine e i button di supporto utente. -->
     <header class="header">
         <div class="title-container">
             <div class="container-logo">
@@ -74,11 +75,12 @@
             </div>
         </div>
     </header>
-
+    <!-- Contenitore per sezione tutte le squadre del campionato e sezione con info e giocatori più cercati -->
     <div class="container-w-n">
+        <!-- Contenitore per sezione tutte le squadre del campionato selezionato (Postgres) -->
         <div class="container-n" id="container-n1">
             <div class="wrap-n">
-                <h2>Tutti le squadre</h2>
+                <h2>Tutte le squadre</h2>
                 <table class="table-ris" id="table-squadre">
                     <thead>
                     <tr>
@@ -112,7 +114,7 @@
                 </table>
             </div>
         </div>
-
+        <!-- Contenitore info sul campionato (Postgres) -->
         <div class="container-w">
             <div class="wrap-w-chat">
                 <div class="wrap-w-chat-nome">
@@ -126,9 +128,10 @@
                     <p id="url"></p>
                 </div>
             </div>
+            <!-- Contenitore giocatori più cercati (Postgres) -->
             <div class="wrap-w">
                 <h2>Giocatori più cercati</h2>
-                <div class="body-n">
+                <div class="body-w">
                     <table class="table-one" id="table-giocatori">
                         <thead>
                         <tr>
@@ -162,11 +165,10 @@
                     </table>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
+<!-- Contenitore footer con informazioni, social e contatti -->
 <footer>
     <div class="top-footer">
         <div class="top-footer-info">

@@ -1,14 +1,12 @@
+/* Contenitore di tutta la pagina */
 .container-fluid{
     background: linear-gradient(180deg, #690072 15.1%, rgba(152, 0, 19, 0.75) 97.07%);
     height: 100%;
     width: 100%;
 }
+/* Header: contenitore per il logo, i link alle pagine e i button di supporto utente. */
 header{
     height: 10%;
-    width: 100%;
-}
-footer{
-    height: 8%;
     width: 100%;
 }
 .homepage-a{
@@ -121,7 +119,7 @@ footer{
     font-family: Lexend Deca, 'Source Sans Pro';
     padding-left: 8%;
 }
-
+/* visible-hidden: Opzioni per gestire barra di ricerca e opzioni profilo dal javascript */
 .visible{
     display: flex;
 }
@@ -155,7 +153,349 @@ footer{
 .wrap-opzioni-login button:hover{
     background-color: #DDBB4E;
 }
+/* Contenitore per tutti gli elementi della pagina squadra */
+.container-w-n{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    height: 82%;
+    margin-top: 1%;
+    align-items: flex-start;
+}
+.container-w{
+    width: 78%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+/* Primo container con le info sulla squadra */
+.wrap-w1 {
+    background-color: #4e0055;
+    margin: 3%;
+    margin-top: 2vh;
+    border-radius: 30px;
+    padding: 2% 0% 0% 2%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    text-align: left;
+    white-space: normal;
+}
+.nome-container{
+    height: auto;
+    width: 20vw;
+    margin-bottom: 2vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nome-container h1{
+    height: 100%;
+    width: 100%;
+    font-size: 4vh;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #d2bb72;
+    font-family: Lexend Exa, 'Source Sans Pro';
+}
+.info-container{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    word-wrap: anywhere;
+}
+.info-container p{
+    padding: 5% 0%;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #ffffff;
+    font-family: Lexend, 'Source Sans Pro';
+    font-size: 1.2vw;
+}
+/* Secondo container con le statitiche sulla squadra */
+.wrap-w2 {
+    background-color: #4e0055;
+    margin: 3%;
+    border-radius: 30px;
+    position: relative;
+    height: 100%;
+    padding: 2% 2%;
+}
+.wrap-w2-top{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    padding: 1% 2%;
+}
+.statistiche-w2{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.statistiche-w2 h2{
+    font-weight: 400;
+    line-height: 1.25;
+    color: #ffffff;
+    font-family: Lexend, 'Source Sans Pro';
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+.dropdown {
+    float: left;
+}
+.dropdown .dropbtn {
+    font-size: 1.4vw;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 5% 0%;
+    background-color: inherit;
+    font-family: inherit;
+}
+.navbar-w2 a:hover, .dropdown:hover .dropbtn {
+    background-color: darkgray;
+}
 
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content1 a {
+    float: none;
+    color: black;
+    padding: 5% 5%;
+    font-size: 2vw;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content1 a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content1 {
+    display: block;
+}
+.wrap-w2-body{
+    display: flex;
+}
+.statistiche-w2-img{
+    padding: 1%;
+    height: 85%;
+    width: 70%;
+}
+.statistiche-w2-img img{
+    height: 100%;
+    width: 100%;
+}
+.tendina-w2{
+    height: 85%;
+    width: 30%;
+}
+.tendina-single-w2{
+    padding: 2% 2%;
+    width: 100%;
+    height: 20%;
+}
+.content-to-move1 {
+    transition: all 0.3s ease;
+}
+.content-to-move2 {
+    transition: all 0.3s ease;
+}
+.content-to-move3 {
+    transition: all 0.3s ease;
+}
+.content-to-move4 {
+    transition: all 0.3s ease;
+}
+.content-to-move5 {
+    transition: all 0.3s ease;
+}
+.dropdown-content2{
+    display: none;
+    padding: 2.5% 5%;
+    background-color: #fff;
+    border-radius: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: black;
+    font-family: Lexend, 'Source Sans Pro';
+    text-align: left;
+    font-size: 2vw;
+    justify-content: center;
+}
+.tendina-w2 button {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 2% 0%;
+    cursor: pointer;
+}
+.tendina-single-w2 h3{
+    font-size: 1.7vw;
+    font-weight: 500;
+    line-height: 1.25;
+    color: black;font-family: Lexend, 'Source Sans Pro';
+}
+.round-img{
+    cursor: pointer;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 40px;
+    display: block;
+    margin: 0 auto;
+}
+/* Container a destra con la lista dei giocatori della squadra */
+.container-n{
+    width: 22%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.wrap-n{
+    background-color: #590061;
+    margin: 2%;
+    margin-top: 2vh;
+    margin-right: 5%;
+    border-radius: 30px;
+    height: 100%;
+    padding:2% 2%;
+}
+.title-n{
+    padding: 5% 8%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 10%;
+}
+.title-n h2{
+    font-size: 2.4vw;
+    font-weight: 500;
+    line-height: 1.25;
+    color: white;
+    font-family: Lexend, 'Source Sans Pro';
+}
+.body-n{
+    display: flex;
+    flex-direction: column;
+    height: 112vh;
+    overflow-y: auto;
+}
+.button-table{
+    background: transparent;
+    border: none;
+}
+.table-one {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-one th,
+.table-one td {
+    padding-left: 1vw;
+    font-size: 1vw;
+    color: #ffffff;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: left;
+
+}
+.table-one td{
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+.table-one th {
+    background: #590061;
+}
+
+.table-one .row-ris1 {
+    background: #8C0098;
+}
+/* Container con i risultati delle partite della squadra e relative info */
+.container-x{
+    width: 98%;
+    height: auto;
+    justify-content: left;
+    text-align: left;
+}
+.wrap-x{
+    background-color: #590061;
+    margin: 1%;
+    margin-top: 2vh;
+    border-radius: 30px;
+    height: auto;
+    width: 100%;
+    padding:1% 1%;
+}
+.body-x{
+    display: flex;
+    height: 62vh;
+    overflow-y: auto;
+}
+.container-x h2{
+    font-weight: 400;
+    line-height: 1.25;
+    color: #ffffff;
+    font-family: Lexend, 'Source Sans Pro';
+    font-size: 2vw;
+    font-weight: bold;
+}
+.table-ris {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    justify-content: center;
+}
+.table-ris th,
+.table-ris td {
+    padding-left: 1vw;
+    font-size: 1vw;
+    color: #ffffff;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+    white-space: normal;
+    text-align: left;
+}
+.table-ris td{
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+.table-ris th {
+    background: #590061;
+}
+
+.table-ris .row-ris1 {
+    background: #8C0098;
+}
+/* colore per i pari */
+.table-ris tr:nth-child(even) {
+    background: #590061;
+}
+/*colore per i dispari*/
+.table-ris tr:nth-child(odd) {
+    background: #8C0098;
+}
+
+/* Contenitore footer */
+footer{
+    height: 8%;
+    width: 100%;
+}
 .top-footer{
     background-image: url("../images/Footer.png") ;
     background-size: cover;
@@ -214,420 +554,3 @@ footer{
     font-weight: bolder;
     text-align: center;
 }
-.container-w-n{
-    list-style-type: none;
-    width: 100%;
-    display: flex;
-    height: 82%;
-    margin-top: 1%;
-    align-items: flex-start;
-}
-.container-w{
-    width: 78%;
-    height: 100%;
-    justify-content: center;
-    text-align: center;
-}
-.wrap-w1 {
-    background-color: #4e0055;
-    margin: 3%;
-    margin-top: 2vh;
-    border-radius: 30px;
-    padding: 2% 0% 0% 2%;
-    position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    text-align: left;
-    white-space: normal;
-}
-.logo-container{
-    padding: 1% 1%;
-    height: auto;
-    width: auto;
-}
-.logo-container img{
-    height: 15vw;
-    width: 15vw;
-    padding-left: 2vw;
-}
-.nome-container{
-    height: auto;
-    width: 20vw;
-    margin-bottom: 2vh;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.nome-container h1{
-    height: 100%;
-    width: 100%;
-    font-size: 4vh;
-    font-weight: 600;
-    line-height: 1.25;
-    color: #d2bb72;
-    font-family: Lexend Exa, 'Source Sans Pro';
-}
-.info-container{
-    height: 100%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    word-wrap: anywhere;
-}
-.info-container p{
-    padding: 5% 0%;
-    font-weight: 400;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend, 'Source Sans Pro';
-    font-size: 1.2vw;
-}
-.wrap-w2 {
-    background-color: #4e0055;
-    margin: 3%;
-    border-radius: 30px;
-    position: relative;
-    height: 100%;
-    padding: 2% 2%;
-}
-.wrap-w2-top{
-    width: 100%;
-    height: 15%;
-    display: flex;
-    padding: 1% 2%;
-}
-.statistiche-w2{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.statistiche-w2 h2{
-    font-weight: 400;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend, 'Source Sans Pro';
-    font-size: 2.5vw;
-    font-weight: bold;
-}
-.navbar-w2 {
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-    background-color: rgb(128, 128, 128);
-}
-.navbar-w2 a {
-    float: left;
-    font-size: 1vw;
-    color: white;
-    text-align: center;
-    padding: 2% 2%;
-    text-decoration: none;
-}
-
-.dropdown {
-    float: left;
-}
-
-.dropdown .dropbtn {
-    font-size: 1.4vw;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 5% 0%;
-    background-color: inherit;
-    font-family: inherit;
-}
-
-.navbar-w2 a:hover, .dropdown:hover .dropbtn {
-    background-color: darkgray;
-}
-
-.dropdown-content1 {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content1 a {
-    float: none;
-    color: black;
-    padding: 5% 5%;
-    font-size: 2vw;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content1 a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content1 {
-    display: block;
-}
-
-.wrap-w2-body{
-    display: flex;
-}
-.statistiche-w2-img{
-    padding: 1%;
-    height: 85%;
-    width: 70%;
-}
-.statistiche-w2-img img{
-    height: 100%;
-    width: 100%;
-}
-.tendina-w2{
-    height: 85%;
-    width: 30%;
-}
-.tendina-single-w2{
-    padding: 2% 2%;
-    width: 100%;
-    height: 20%;
-}
-/*questo*/
-.content-to-move1 {
-    transition: all 0.3s ease;
-}
-.content-to-move2 {
-    transition: all 0.3s ease;
-}
-.content-to-move3 {
-    transition: all 0.3s ease;
-}
-.content-to-move4 {
-    transition: all 0.3s ease;
-}
-.content-to-move5 {
-    transition: all 0.3s ease;
-}
-
-.dropdown-content2{
-    display: none;
-    padding: 2.5% 5%;
-    background-color: #fff;
-    border-radius: 20px;
-    font-weight: 400;
-    line-height: 1.25;
-    color: black;
-    font-family: Lexend, 'Source Sans Pro';
-    text-align: left;
-    font-size: 2vw;
-    justify-content: center;
-}
-
-.tendina-w2 button {
-    border-radius: 20px;
-    width: 100%;
-    height: 100%;
-    padding: 2% 0%;
-    cursor: pointer;
-}
-.tendina-single-w2 h3{
-    font-size: 1.7vw;
-    font-weight: 500;
-    line-height: 1.25;
-    color: black;font-family: Lexend, 'Source Sans Pro';
-}
-.container-n{
-    width: 22%;
-    height: 100%;
-    justify-content: center;
-    text-align: center;
-}
-.wrap-n{
-    background-color: #590061;
-    margin: 2%;
-    margin-top: 2vh;
-    margin-right: 5%;
-    border-radius: 30px;
-    height: 100%;
-    padding:2% 2%;
-}
-.title-n{
-    padding: 5% 8%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    height: 10%;
-}
-.title-n h2{
-    font-size: 2.4vw;
-    font-weight: 500;
-    line-height: 1.25;
-    color: white;
-    font-family: Lexend, 'Source Sans Pro';
-}
-.body-n{
-    display: flex;
-    flex-direction: column;
-    height: 112vh;
-    overflow-y: auto;
-}
-.pattern-n{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8% 1%;
-    height: 10%;
-}
-.pattern1-n{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1% 1%;
-    height: 10%;
-}
-.numero-n{
-    width: 25%;
-}
-.voto-n{
-    width: 20%;
-}
-.nome-n{
-    width: 65%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.pattern-n p{
-    font-size: 1.2vw;
-    font-weight: 500;
-    line-height: 1.25;
-    color: white;
-    font-family: Lexend, 'Source Sans Pro';
-}
-.pattern1-n p{
-    font-size: 240%;
-    font-weight: 500;
-    line-height: 1.25;
-    color: white;
-    font-family: Lexend, 'Source Sans Pro';
-}
-
-.container-x{
-    width: 98%;
-    height: auto;
-    justify-content: left;
-    text-align: left;
-}
-.wrap-x{
-    background-color: #590061;
-    margin: 1%;
-    margin-top: 2vh;
-    border-radius: 30px;
-    height: auto;
-    width: 100%;
-    padding:1% 1%;
-}
-.body-x{
-    display: flex;
-    height: 62vh;
-    overflow-y: auto;
-}
-.container-x h2{
-    font-weight: 400;
-    line-height: 1.25;
-    color: #ffffff;
-    font-family: Lexend, 'Source Sans Pro';
-    font-size: 2vw;
-    font-weight: bold;
-}
-.table-ris {
-    width: 100%;
-    height: auto;
-    border-collapse: collapse;
-    justify-content: center;
-}
-.table-ris th,
-.table-ris td {
-    padding-left: 1vw;
-    font-size: 1vw;
-    color: #ffffff;
-    font-family: 'Lexend Mega', 'Source Sans Pro';
-    white-space: normal;
-    text-align: left;
-}
-.table-ris td{
-    padding-bottom: 1vh;
-    padding-top: 1vh;
-}
-
-.table-ris th {
-    background: #590061;
-}
-
-.table-ris .row-ris1 {
-    background: #8C0098;
-}
-
-/* per applicare colori alternati alle righe del corpo della tabella:
-    - primo pari
-    - secondo dispari
-*/
-.table-ris tr:nth-child(even) {
-    background: #590061;
-}
-
-.table-ris tr:nth-child(odd) {
-    background: #8C0098;
-}
-
-.button-table{
-    background: transparent;
-    border: none;
-}
-.table-one {
-    width: 100%;
-    height: auto;
-    border-collapse: collapse;
-    justify-content: center;
-}
-.table-one th,
-.table-one td {
-    padding-left: 1vw;
-    font-size: 1vw;
-    color: #ffffff;
-    font-family: 'Lexend Mega', 'Source Sans Pro';
-    white-space: normal;
-    text-align: left;
-
-}
-.table-one td{
-    padding-bottom: 2vh;
-    padding-top: 2vh;
-}
-
-.table-one th {
-    background: #590061;
-}
-
-.table-one .row-ris1 {
-    background: #8C0098;
-}
-.round-img{
-    cursor: pointer;
-    object-fit: contain;
-    vertical-align: top;
-    flex-shrink: 0;
-    height: 15vh;
-    width: 15vh;
-    border-radius: 40px;
-    display: block;
-    margin: 0 auto;
-}
-
-

@@ -1,3 +1,6 @@
+/* Al caricamento della pagina viene eseguita la funzione del listener che imposta i rispettivi
+* listener ai bottoni per la ricerca, le opzioni di profilo utente e i vari content-tomove per le tendine
+*/
 document.addEventListener('DOMContentLoaded', function() {
     const toggleBtn1 = document.getElementById('toggleBtn1');
     const dropdownContent1 = document.getElementById('dropdownContent1');
@@ -105,9 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    //funzione di inizializzazione con tutti i dati dal database
     onSubmit();
 });
 
+// funzione che gestisce il reindirizzamento alla pagina del giocatore corretta
 function redirectToPage(buttonID) {
     let val = document.getElementById(buttonID).innerText;
 
@@ -118,6 +123,8 @@ function redirectToPage(buttonID) {
     // Reindirizza alla pagina "ListaSquadre.html"
     window.location.href = '../Giocatore.html?player=' + encodeURIComponent(gioc);
 }
+
+//funzione che imposta i risultati delle ultime partite della squadra con le relative info
 function sendAxiosQuerySq(url, squad){
     // Richiesta POST con annessa la squadra della pagina
     axios.post(url, { squad: squad })
@@ -180,7 +187,7 @@ function sendAxiosQuerySq(url, squad){
             document.getElementById('results').innerHTML = "Error occurred";
         });
 }
-
+//funzione che imposta le informazioni corrette della squadra
 function infoSquadra(url, squad) {
     // Richiesta POST con annessa la squadra della pagina
     axios.post(url, { squad: squad })
@@ -206,6 +213,7 @@ function infoSquadra(url, squad) {
         });
 }
 
+//funzione che imposta i giocatori corretti nella sezione
 function giocatoriSquadra(url, squad) {
     // Richiesta POST con annessa la squadra della pagina
     axios.post(url, {squad: squad})
@@ -255,6 +263,7 @@ function giocatoriSquadra(url, squad) {
         });
 }
 
+// funzione ausiliaria di giocatoriSquadra che aggiunge una riga se necessario
 function aggiungiRiga(num) {
     // Trova la tabella
     const tab = document.getElementById('table');
@@ -278,6 +287,7 @@ function aggiungiRiga(num) {
     cellaPulsante.appendChild(pulsante);
 }
 
+//funzione ausiliaria di sendAxiosQuereySq che aggiunge una riga se necessario
 function aggiungiRigaTabellaStorico(num) {
     // Trova la tabella
     const tab = document.getElementById('table-body-ris');
@@ -311,6 +321,8 @@ function aggiungiRigaTabellaStorico(num) {
         cella.id = colIds[i];
     }
 }
+
+//funzione che imposta i valori delle statistiche della squadra
 function squadStats(url, squad){
     axios.post(url, { squad: squad })
         .then(function (response) {
@@ -330,7 +342,6 @@ function squadStats(url, squad){
             document.getElementById('results').innerHTML = "Error occurred";
         });
 }
-
 
 
 function onSubmit(){
