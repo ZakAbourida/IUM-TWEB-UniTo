@@ -25,6 +25,7 @@
     "/loadHP": {
       "get": {
         "summary": "Load the Home page with the recent games",
+        "description": "Load the Home page with the recent games",
         "responses": {
           "200": {
             "description": "Recent games retrieved successfully"
@@ -38,6 +39,7 @@
     "/loadSq": {
       "post": {
         "summary": "Post historical matches for a squad",
+        "description": "Post historical matches for a squad",
         "requestBody": {
           "required": true,
           "content": {
@@ -70,6 +72,7 @@
     "/squad_stats": {
       "post": {
         "summary": "Get stats of a squad",
+        "description": "Get stats of a squad",
         "requestBody": {
           "required": true,
           "content": {
@@ -102,6 +105,7 @@
     "/info_appearances": {
       "post": {
         "summary": "Get information about player appearances",
+        "description": "Get information about player appearances",
         "requestBody": {
           "required": true,
           "content": {
@@ -115,7 +119,7 @@
                   }
                 },
                 "example": {
-                  "player_name": "Player Name"
+                  "player_name": "Lionel Messi"
                 }
               }
             }

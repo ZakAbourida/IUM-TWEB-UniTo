@@ -10,7 +10,10 @@ const axios = require('axios');
 router.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname, '../public/Login.html'));
 });
-
+/**
+ * Route that handles the request to send to the Springboot server to fill the Homepage.
+ * Method: GET
+ */
 router.get('/loadHP',  async function (req, res, next) {
   try {
     // Richiesta GET al server del database
@@ -25,7 +28,10 @@ router.get('/loadHP',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
-
+/**
+ * Route that handles the request to send to the Express server of MongoDB to fill the page Squadra.
+ * Method: POST
+ */
 router.post('/loadSq',  async function (req, res, next) {
   try {
     const squadName = req.body.squad;
@@ -87,7 +93,10 @@ router.get('/list_competitions',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
-
+/**
+ * Route that handles the request to send to the Springboot server to obtain the list of competitions (solo name).
+ * Method: GET
+ */
 router.get('/list_competitions_SoloName',  async function (req, res, next) {
   try {
     // Richiesta GET al server del database
@@ -168,7 +177,11 @@ router.post('/list_teamsbycompetition',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
-
+/**
+ *
+ * Route that takes its input name from the axios call and sends the request to the Spingboot server to obtain the stats of a teams.
+ * Method: POST
+ */
 router.post('/list_info_squad',  async function (req, res, next) {
   try {
     const squadName = req.body.squad;
@@ -185,7 +198,11 @@ router.post('/list_info_squad',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
-
+/**
+ *
+ * Route that takes its input name from the axios call and sends the request to the Spingboot server to obtain the list of players of a championship.
+ * Method: POST
+ */
 router.post('/squad_players',  async function (req, res, next) {
   try {
     const squadName = req.body.squad;
@@ -226,7 +243,11 @@ router.post('/advanced_search', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
-
+/**
+ * <li>Route that takes the player name string from the Axios call and sends it to the Express server of MongoDB.
+ * Returns the JSON object containing the squad's information.</li>
+ * Method: POST
+ */
 router.post('/squad_stats',  async function (req, res, next) {
   try {
     const squadName = req.body.squad;
@@ -241,7 +262,11 @@ router.post('/squad_stats',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
-
+/**
+ * <li>Route that takes the competition name string from the Axios call and sends it to the Spring server.
+ * Returns the JSON object containing the competition's information.</li>
+ * Method: POST
+ */
 router.post('/info_competition',  async function (req, res, next) {
   try {
     const competition = req.body.comp;
@@ -260,7 +285,11 @@ router.post('/info_competition',  async function (req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
-
+/**
+ * <li>Route that takes the competition name string from the Axios call and sends it to the Spring server.
+ * Returns the JSON object containing the competition's players.</li>
+ * Method: POST
+ */
 router.post('/comp_players',  async function (req, res, next) {
   try {
     const compId = req.body.comp;

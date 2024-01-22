@@ -2,7 +2,7 @@
 
 Main Server Documentation
 - API version: 1.0.0
-  - Build date: 2024-01-22T01:26:25.750006+01:00[Europe/Rome]
+  - Build date: 2024-01-22T22:16:29.109974+01:00[Europe/Rome]
 
 Il Main Server è un'applicazione Node.js basata su Express, progettata per facilitare la comunicazione tra un'applicazione front-end e due server: uno Spring Boot ed un altro Express. Questo server gestisce varie route per fornire servizi come il recupero di informazioni sulle squadre, competizioni e giocatori nel contesto del calcio. Utilizzando richieste HTTP con il modulo axios. La documentazione Swagger è in corso di sviluppo per guidare chiaramente l'uso delle API del server. Con una gestione degli errori attenta e un codice organizzato modularmente.
 
@@ -130,6 +130,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**seasonsGet**](docs/DefaultApi.md#seasonsGet) | **GET** /seasons | Get the list of seasons
 *DefaultApi* | [**squadPlayersPost**](docs/DefaultApi.md#squadPlayersPost) | **POST** /squad_players | Get players of a squad
 *DefaultApi* | [**squadStatsPost**](docs/DefaultApi.md#squadStatsPost) | **POST** /squad_stats | Get stats of a squad
+*DefaultApi* | [**valuesPlayerPost**](docs/DefaultApi.md#valuesPlayerPost) | **POST** /values_player | Route that takes the player name string from the Axios call and sends it to the Flask server. Returns an HTML file with the chart.
 
 
 ## Documentation for Models
@@ -142,6 +143,7 @@ Class | Method | HTTP request | Description
  - [SearchDTO](docs/SearchDTO.md)
  - [SquadPlayersRequest](docs/SquadPlayersRequest.md)
  - [SquadStatsRequest](docs/SquadStatsRequest.md)
+ - [ValuesPlayerPostRequest](docs/ValuesPlayerPostRequest.md)
 
 
 ## Documentation for Authorization

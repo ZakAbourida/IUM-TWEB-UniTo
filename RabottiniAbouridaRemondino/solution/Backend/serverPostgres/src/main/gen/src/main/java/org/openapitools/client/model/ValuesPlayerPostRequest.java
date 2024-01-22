@@ -45,37 +45,37 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * SquadPlayersRequest
+ * ValuesPlayerPostRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-22T22:16:29.109974+01:00[Europe/Rome]")
-public class SquadPlayersRequest {
-  public static final String SERIALIZED_NAME_SQUAD = "squad";
-  @SerializedName(SERIALIZED_NAME_SQUAD)
-  private String squad;
+public class ValuesPlayerPostRequest {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
-  public SquadPlayersRequest() {
+  public ValuesPlayerPostRequest() {
   }
 
-  public SquadPlayersRequest squad(String squad) {
+  public ValuesPlayerPostRequest name(String name) {
     
-    this.squad = squad;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get squad
-   * @return squad
+   * The name of the player for chart retrieval
+   * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The name of the player for chart retrieval")
 
-  public String getSquad() {
-    return squad;
+  public String getName() {
+    return name;
   }
 
 
-  public void setSquad(String squad) {
-    this.squad = squad;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -88,20 +88,20 @@ public class SquadPlayersRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SquadPlayersRequest squadPlayersRequest = (SquadPlayersRequest) o;
-    return Objects.equals(this.squad, squadPlayersRequest.squad);
+    ValuesPlayerPostRequest valuesPlayerPostRequest = (ValuesPlayerPostRequest) o;
+    return Objects.equals(this.name, valuesPlayerPostRequest.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(squad);
+    return Objects.hash(name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SquadPlayersRequest {\n");
-    sb.append("    squad: ").append(toIndentedString(squad)).append("\n");
+    sb.append("class ValuesPlayerPostRequest {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -124,7 +124,7 @@ public class SquadPlayersRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("squad");
+    openapiFields.add("name");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -134,26 +134,26 @@ public class SquadPlayersRequest {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SquadPlayersRequest
+  * @throws IOException if the JSON Object is invalid with respect to ValuesPlayerPostRequest
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (SquadPlayersRequest.openapiRequiredFields.isEmpty()) {
+        if (ValuesPlayerPostRequest.openapiRequiredFields.isEmpty()) {
           return;
         } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SquadPlayersRequest is not found in the empty JSON string", SquadPlayersRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ValuesPlayerPostRequest is not found in the empty JSON string", ValuesPlayerPostRequest.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!SquadPlayersRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SquadPlayersRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ValuesPlayerPostRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ValuesPlayerPostRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      if ((jsonObj.get("squad") != null && !jsonObj.get("squad").isJsonNull()) && !jsonObj.get("squad").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `squad` to be a primitive type in the JSON string but got `%s`", jsonObj.get("squad").toString()));
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }
 
@@ -161,22 +161,22 @@ public class SquadPlayersRequest {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SquadPlayersRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SquadPlayersRequest' and its subtypes
+       if (!ValuesPlayerPostRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ValuesPlayerPostRequest' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SquadPlayersRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SquadPlayersRequest.class));
+       final TypeAdapter<ValuesPlayerPostRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ValuesPlayerPostRequest.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<SquadPlayersRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<ValuesPlayerPostRequest>() {
            @Override
-           public void write(JsonWriter out, SquadPlayersRequest value) throws IOException {
+           public void write(JsonWriter out, ValuesPlayerPostRequest value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public SquadPlayersRequest read(JsonReader in) throws IOException {
+           public ValuesPlayerPostRequest read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -187,18 +187,18 @@ public class SquadPlayersRequest {
   }
 
  /**
-  * Create an instance of SquadPlayersRequest given an JSON string
+  * Create an instance of ValuesPlayerPostRequest given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of SquadPlayersRequest
-  * @throws IOException if the JSON string is invalid with respect to SquadPlayersRequest
+  * @return An instance of ValuesPlayerPostRequest
+  * @throws IOException if the JSON string is invalid with respect to ValuesPlayerPostRequest
   */
-  public static SquadPlayersRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SquadPlayersRequest.class);
+  public static ValuesPlayerPostRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ValuesPlayerPostRequest.class);
   }
 
  /**
-  * Convert an instance of SquadPlayersRequest to an JSON string
+  * Convert an instance of ValuesPlayerPostRequest to an JSON string
   *
   * @return JSON string
   */
