@@ -21,7 +21,7 @@ public interface ClubsRepository extends JpaRepository<Clubs, Long> {
      * @param CompetitionName es. 'serie-a'
      * @return List of Teams es. {'Juventus FC','Atalanta',ecc.}
      */
-    @Query("SELECT DISTINCT c.name FROM Clubs c JOIN Competitions comp ON c.domestic_competition_id = comp.competition_id WHERE comp.name = :CompetitionName AND c.last_season = 2023")
+    @Query(value = "SELECT DISTINCT c.name FROM Clubs c JOIN Competitions comp ON c.domestic_competition_id = comp.competition_id WHERE comp.name = :CompetitionName AND c.last_season = 2023 ORDER BY c.name ASC ")
     List<String> listTeamsByCompetitionName(String CompetitionName);
 
 

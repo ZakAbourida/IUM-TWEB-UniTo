@@ -139,7 +139,7 @@ paths:
         content:
           application/json:
             example:
-              squad: Palermo FC
+              squad: Real Madrid Club de Fútbol
             schema:
               $ref: '#/components/schemas/SquadPlayersRequest'
         required: true
@@ -157,15 +157,7 @@ paths:
         content:
           application/json:
             example:
-              example_field: |
-                {
-                  season: '2023',
-                  country: 'Argentina',
-                  competition: 'LaLiga',
-                  year_birth: null,
-                  team: null,
-                  role: 'Attacking Midfield'
-                }
+              example_field: example_value
             schema:
               $ref: '#/components/schemas/SearchDTO'
         required: true
@@ -240,23 +232,6 @@ paths:
           description: Internal Server Error
       x-content-type: application/json
       x-accepts: application/json
-  /values_player:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/_values_player_post_request'
-        required: true
-      responses:
-        "200":
-          description: HTML chart page retrieved successfully
-        "500":
-          description: Internal Server Error
-      summary: Route that takes the player name string from the Axios call and sends
-        it to the Flask server. Returns an HTML file with the chart.
-      x-content-type: application/json
-      x-accepts: application/json
 components:
   schemas:
     SquadPlayersRequest:
@@ -311,17 +286,9 @@ components:
       type: object
     _list_teamsbycompetition_post_request:
       example:
-        comp: laliga
+        comp: Premier League
       properties:
         comp:
-          type: string
-      type: object
-    _values_player_post_request:
-      example:
-        name: Player Name
-      properties:
-        name:
-          description: The name of the player for chart retrieval
           type: string
       type: object
 

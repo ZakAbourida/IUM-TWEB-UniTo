@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * SearchDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-22T22:16:29.109974+01:00[Europe/Rome]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-22T01:26:25.750006+01:00[Europe/Rome]")
 public class SearchDTO {
   public static final String SERIALIZED_NAME_EXAMPLE_FIELD = "example_field";
   @SerializedName(SERIALIZED_NAME_EXAMPLE_FIELD)

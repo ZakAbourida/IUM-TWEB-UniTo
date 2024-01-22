@@ -20,7 +20,6 @@ All URIs are relative to *http://localhost:3000*
 | [**seasonsGet**](DefaultApi.md#seasonsGet) | **GET** /seasons | Get the list of seasons |
 | [**squadPlayersPost**](DefaultApi.md#squadPlayersPost) | **POST** /squad_players | Get players of a squad |
 | [**squadStatsPost**](DefaultApi.md#squadStatsPost) | **POST** /squad_stats | Get stats of a squad |
-| [**valuesPlayerPost**](DefaultApi.md#valuesPlayerPost) | **POST** /values_player | Route that takes the player name string from the Axios call and sends it to the Flask server. Returns an HTML file with the chart. |
 
 
 <a name="advancedSearchPost"></a>
@@ -953,65 +952,5 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Players of the squad retrieved successfully |  -  |
-| **500** | Internal Server Error |  -  |
-
-<a name="valuesPlayerPost"></a>
-# **valuesPlayerPost**
-> valuesPlayerPost(valuesPlayerPostRequest)
-
-Route that takes the player name string from the Axios call and sends it to the Flask server. Returns an HTML file with the chart.
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.DefaultApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3000");
-
-    DefaultApi apiInstance = new DefaultApi(defaultClient);
-    ValuesPlayerPostRequest valuesPlayerPostRequest = new ValuesPlayerPostRequest(); // ValuesPlayerPostRequest | 
-    try {
-      apiInstance.valuesPlayerPost(valuesPlayerPostRequest);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#valuesPlayerPost");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **valuesPlayerPostRequest** | [**ValuesPlayerPostRequest**](ValuesPlayerPostRequest.md)|  | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | HTML chart page retrieved successfully |  -  |
 | **500** | Internal Server Error |  -  |
 

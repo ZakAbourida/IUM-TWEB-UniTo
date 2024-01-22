@@ -14,7 +14,6 @@ docs/PlayerInfoRequest.md
 docs/SearchDTO.md
 docs/SquadPlayersRequest.md
 docs/SquadStatsRequest.md
-docs/ValuesPlayerPostRequest.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -51,4 +50,4 @@ src/main/java/org/openapitools/client/model/PlayerInfoRequest.java
 src/main/java/org/openapitools/client/model/SearchDTO.java
 src/main/java/org/openapitools/client/model/SquadPlayersRequest.java
 src/main/java/org/openapitools/client/model/SquadStatsRequest.java
-src/main/java/org/openapitools/client/model/ValuesPlayerPostRequest.java
+src/test/java/org/openapitools/client/model/PlayerInfoRequestTest.java
