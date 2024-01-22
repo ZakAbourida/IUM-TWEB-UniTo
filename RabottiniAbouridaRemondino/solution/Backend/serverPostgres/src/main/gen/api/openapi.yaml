@@ -1,0 +1,294 @@
+openapi: 3.0.2
+info:
+  contact:
+    email: zakaria.abourida@edu.unito.it
+    name: Rabottini_Abourida_Remondino
+    url: http://localhost:3000/api-docs
+  description: "Il Main Server è un'applicazione Node.js basata su Express, progettata\
+    \ per facilitare la comunicazione tra un'applicazione front-end e due server:\
+    \ uno Spring Boot ed un altro Express. Questo server gestisce varie route per\
+    \ fornire servizi come il recupero di informazioni sulle squadre, competizioni\
+    \ e giocatori nel contesto del calcio. Utilizzando richieste HTTP con il modulo\
+    \ axios. La documentazione Swagger è in corso di sviluppo per guidare chiaramente\
+    \ l'uso delle API del server. Con una gestione degli errori attenta e un codice\
+    \ organizzato modularmente."
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://api_url/terms/
+  title: Main Server Documentation
+  version: 1.0.0
+servers:
+- description: Main Server
+  url: http://localhost:3000
+paths:
+  /:
+    get:
+      responses:
+        "200":
+          description: Login page retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get the login page
+      x-accepts: application/json
+  /loadHP:
+    get:
+      responses:
+        "200":
+          description: Recent games retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Load the Home page with the recent games
+      x-accepts: application/json
+  /loadSq:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_loadSq_post_request'
+        required: true
+      responses:
+        "200":
+          description: Squad matches posted successfully
+        "500":
+          description: Internal Server Error
+      summary: Post historical matches for a squad
+      x-content-type: application/json
+      x-accepts: application/json
+  /seasons:
+    get:
+      responses:
+        "200":
+          description: List of seasons retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get the list of seasons
+      x-accepts: application/json
+  /country:
+    get:
+      responses:
+        "200":
+          description: List of countries retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get the list of countries
+      x-accepts: application/json
+  /list_competitions:
+    get:
+      responses:
+        "200":
+          description: List of competitions retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get the list of competitions
+      x-accepts: application/json
+  /get_role:
+    get:
+      responses:
+        "200":
+          description: List of player roles retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get the list of player roles
+      x-accepts: application/json
+  /get_birth_years:
+    get:
+      responses:
+        "200":
+          description: List of player birth years retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get the list of player birth years
+      x-accepts: application/json
+  /list_teamsbycompetition:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_list_teamsbycompetition_post_request'
+        required: true
+      responses:
+        "200":
+          description: List of teams for the competition retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get the list of teams for a given competition
+      x-content-type: application/json
+      x-accepts: application/json
+  /list_info_squad:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_loadSq_post_request'
+        required: true
+      responses:
+        "200":
+          description: Information about the squad retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get information about a squad
+      x-content-type: application/json
+      x-accepts: application/json
+  /squad_players:
+    post:
+      requestBody:
+        content:
+          application/json:
+            example:
+              squad: Real Madrid Club de Fútbol
+            schema:
+              $ref: '#/components/schemas/SquadPlayersRequest'
+        required: true
+      responses:
+        "200":
+          description: Players of the squad retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get players of a squad
+      x-content-type: application/json
+      x-accepts: application/json
+  /advanced_search:
+    post:
+      requestBody:
+        content:
+          application/json:
+            example:
+              example_field: example_value
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        "200":
+          description: Advanced search results retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Perform an advanced search for players
+      x-content-type: application/json
+      x-accepts: application/json
+  /squad_stats:
+    post:
+      requestBody:
+        content:
+          application/json:
+            example:
+              squad: Real Madrid Club de Fútbol
+            schema:
+              $ref: '#/components/schemas/SquadStatsRequest'
+        required: true
+      responses:
+        "200":
+          description: Players of the squad retrieved successfully
+        "500":
+          description: Internal Server Error
+      summary: Get stats of a squad
+      x-content-type: application/json
+      x-accepts: application/json
+  /info_competition:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InfoCompetitionRequest'
+        required: true
+      responses:
+        "200":
+          description: Information about the competition retrieved successfully
+        "500":
+          description: Internal Server Error
+      x-content-type: application/json
+      x-accepts: application/json
+  /comp_players:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompPlayersRequest'
+        required: true
+      responses:
+        "200":
+          description: List of players for the competition retrieved successfully
+        "500":
+          description: Internal Server Error
+      x-content-type: application/json
+      x-accepts: application/json
+  /info_player:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlayerInfoRequest'
+        required: true
+      responses:
+        "200":
+          description: Information about the player retrieved successfully
+        "500":
+          description: Internal Server Error
+      x-content-type: application/json
+      x-accepts: application/json
+components:
+  schemas:
+    SquadPlayersRequest:
+      example:
+        squad: Real Madrid Club de Fútbol
+      properties:
+        squad:
+          type: string
+      type: object
+    SquadStatsRequest:
+      example:
+        squad: Real Madrid Club de Fútbol
+      properties:
+        squad:
+          type: string
+      type: object
+    SearchDTO:
+      example:
+        example_field: example_field
+      properties:
+        example_field:
+          description: An example field for advanced search
+          type: string
+      type: object
+    InfoCompetitionRequest:
+      example:
+        comp: Premier League
+      properties:
+        comp:
+          type: string
+      type: object
+    CompPlayersRequest:
+      example:
+        comp: Premier League
+      properties:
+        comp:
+          type: string
+      type: object
+    PlayerInfoRequest:
+      example:
+        playerName: Lionel Messi
+      properties:
+        playerName:
+          type: string
+      type: object
+    _loadSq_post_request:
+      example:
+        squad: Real Madrid Club de Fútbol
+      properties:
+        squad:
+          type: string
+      type: object
+    _list_teamsbycompetition_post_request:
+      example:
+        comp: Premier League
+      properties:
+        comp:
+          type: string
+      type: object
+
