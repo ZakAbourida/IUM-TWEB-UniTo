@@ -543,7 +543,7 @@ footer{
     text-align: left;
     color: #ffffff;
     font-family: Lexend Exa, 'Source Sans Pro';
-    font-size: 1vw;
+    font-size: 0.9vw;
 }
 .container-p h4{
     margin-top: 1vh;
@@ -689,7 +689,5 @@ footer{
     border-radius: 100px;
     margin:1.5vw;
 }
-
-
 
 
