@@ -1,7 +1,11 @@
 const Games = require('../models/games');
 
-// Controller per le operazioni CRUD sulle partite
-
+/**
+ * Funzione asincrona per creare una nuova partita.
+ * @param {Object} gameData - Dati della partita da creare.
+ * @returns {Promise<Object>} - Promise che risolve con l'oggetto della partita appena creata.
+ * @throws {Error} - Eccezione se si verifica un errore durante la creazione.
+ */
 const createGame = async (gameData) => {
     try {
         const newGame = new Games(gameData);
@@ -11,6 +15,11 @@ const createGame = async (gameData) => {
     }
 };
 
+/**
+ * Funzione asincrona per ottenere una partita nel database.
+ * @returns {Promise<Object|null>} - Promise che risolve con l'oggetto della partita trovata o null se non trovata.
+ * @throws {Error} - Eccezione se si verifica un errore durante la lettura della partita.
+ */
 const getGame = async () => {
     try {
         return await Games.findOne();
@@ -19,6 +28,12 @@ const getGame = async () => {
     }
 };
 
+/**
+ * Funzione asincrona per ottenere una partita dato il suo ID.
+ * @param {string} gameId - ID della partita da cercare.
+ * @returns {Promise<Object|null>} - Promise che risolve con l'oggetto della partita trovata o null se non trovata.
+ * @throws {Error} - Eccezione se si verifica un errore durante la lettura della partita per ID.
+ */
 const getGameById = async (gameId) => {
     try {
         return await Games.findById(gameId);
@@ -27,6 +42,13 @@ const getGameById = async (gameId) => {
     }
 };
 
+/**
+ * Funzione asincrona per modificare una partita cercandola tramite il suo ID.
+ * @param {string} gameId - ID della partita da modificare.
+ * @param {Object} updatedData - Dati aggiornati della partita.
+ * @returns {Promise<Object|null>} - Promise che risolve con l'oggetto della partita aggiornata o null se non trovata.
+ * @throws {Error} - Eccezione se si verifica un errore durante l'aggiornamento della partita.
+ */
 const updateGame = async (gameId, updatedData) => {
     try {
         return await Games.findByIdAndUpdate(gameId, updatedData, { new: true });
@@ -35,6 +57,12 @@ const updateGame = async (gameId, updatedData) => {
     }
 };
 
+/**
+ * Funzione asincrona per eliminare una partita dato il suo ID.
+ * @param {string} gameId - ID della partita da eliminare.
+ * @returns {Promise<Object|null>} - Promise che risolve con l'oggetto della partita eliminata o null se non trovata.
+ * @throws {Error} - Eccezione se si verifica un errore durante l'eliminazione della partita.
+ */
 const deleteGame = async (gameId) => {
     try {
         return await Games.findByIdAndDelete(gameId);
@@ -43,7 +71,12 @@ const deleteGame = async (gameId) => {
     }
 };
 
-// Funzione di query
+/**
+ * Funzione asincrona per trovare le partite dato l'ID della competizione.
+ * @param {string} competitionId - ID della competizione.
+ * @returns {Promise<Array>} - Promise che risolve con un array di tutte le partite della competizione specificata.
+ * @throws {Error} - Eccezione se si verifica un errore durante la ricerca delle partite della competizione.
+ */
 const findGamesByCompetitionId = async (competitionId) => {
     try {
         return await Games.find({ competition_id: competitionId });
@@ -51,11 +84,17 @@ const findGamesByCompetitionId = async (competitionId) => {
         throw error;
     }
 };
+
+/**
+ * Funzione asincrona per ottenere le ultime partite.
+ * @returns {Promise<Array>} - Promise che risolve con un array delle ultime 10 partite.
+ * @throws {Error} - Eccezione se si verifica un errore durante la ricerca delle ultime partite.
+ * $ne: null - "not equal to null" - trova i documenti in cui il campo selezionato dev'essere diverso da null
+ * $exist: true - verifica se il campo specificato esiste nel documento
+ */
 const getRecentGames = async () => {
     try {
-        // Seleziona solo i campi desiderati e filtra le partite con dati inconsistenti
-        // $ne              --> (not equal) serve per escludere documenti in cui il campo è nullo o indefinito
-        // $exist: true     --> controlla che il campo esista
+
         const recentGames = await Games.find({
             stadium: { $ne: null, $exists: true },
             home_club_name: { $ne: null, $exists: true },
@@ -70,9 +109,16 @@ const getRecentGames = async () => {
     }
 };
 
+/**
+ * Funzione asincrona per ottenere le partite recenti di una squadra.
+ * @param {string} squadName - Nome della squadra.
+ * @returns {Promise<Array>} - Promise che risolve con un array delle ultime 30 partite della squadra.
+ * @throws {Error} - Eccezione se si verifica un errore durante la ricerca delle partite della squadra.
+ * $ne: null - "not equal to null" - trova i documenti in cui il campo selezionato dev'essere diverso da null
+ * $exist: true - verifica se il campo specificato esiste nel documento
+ */
 const getHistorySquadMatches = async (squadName) => {
     try {
-        // Seleziona solo i campi desiderati e filtra quelli con valori non nulli o undefined
         const squadMatches = await Games.find({
             $or: [
                 { home_club_name: squadName },
@@ -99,24 +145,27 @@ const getHistorySquadMatches = async (squadName) => {
     }
 };
 
+/**
+ * Funzione asincrona per ottenere l'ID del club dato il nome della squadra.
+ * @param {string} clubName - Nome del club/squadra.
+ * @returns {Promise<string|null>} - Promise che risolve con l'ID del club corrispondente o null se non trovato.
+ * @throws {Error} - Eccezione se si verifica un errore durante la ricerca dell'ID del club.
+ */
 const getClubIdByClubName = async (clubName) => {
     try {
-        // Utilizza il modello 'Games' e il metodo 'findOne' di Mongoose per cercare il club per nome
         const game = await Games.findOne({ $or: [{ home_club_name: clubName }, { away_club_name: clubName }] });
 
-        // Se il gioco è trovato, restituisci l'ID del club corrispondente
         if (game) {
             return game.home_club_id || game.away_club_id;
         } else {
-            // Se il club non è stato trovato, restituisce null
             return null;
         }
     } catch (error) {
-        // Gestisci gli errori, ad esempio, loggandoli o lanciando un'eccezione
         throw error;
     }
 };
 
+// Esporta le funzioni definite per l'utilizzo in altri moduli
 module.exports = {
     createGame,
     getGame,
