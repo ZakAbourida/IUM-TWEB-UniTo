@@ -70,6 +70,8 @@ public class PlayersService {
             playerJson.put("Nationality", player.getCountry_of_citizenship());
             playerJson.put("Team", player.getCurrent_club_name());
             playerJson.put("Image",encodedImage);
+            playerJson.put("Foot",player.getFoot());
+            playerJson.put("lastSeason",player.getLast_season());
 
         }
         return playerJson;

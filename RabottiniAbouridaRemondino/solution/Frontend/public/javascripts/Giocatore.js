@@ -1,7 +1,7 @@
 /**
  * Listener that sets the initial parameters of the page.
  */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
 
     const barraRicerca = document.getElementById('barra-ricerca');
     const mostraBarra = document.getElementById('mostra-barra');
@@ -28,12 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
             opzioniLogin.classList.add('hidden');
         }
     });
-
     var urlParams = new URLSearchParams(window.location.search);
     var playerName = urlParams.get('player');
-    getInfoPlayer(playerName,"/info_player");
-    getInfoPlayer(playerName,"/info_appearances");
+    getInfoPlayer(playerName, "/info_player");
+    getInfoPlayer(playerName, "/info_appearances");
     getChart(playerName);
+    const postgresResponse = await getInfoPlayer(playerName, "/info_player");
+    const mongoResponse = await getInfoPlayer(playerName, "/info_appearances");
+    makeDescription(postgresResponse, mongoResponse);
 
 });
 
@@ -43,17 +45,19 @@ document.addEventListener('DOMContentLoaded', function () {
  * @param url es. /info_player
  */
 
-function getInfoPlayer(playerName,url) {
-    axios.post(url, {playerName})
+function getInfoPlayer(playerName, url) {
+    return axios.post(url, { playerName })
         .then(function (response) {
-            if(url === "/info_player"){
+            if (url === "/info_player") {
                 updatePlayerProfile(response.data);
-            }else{
+            } else {
                 fillStats(response.data);
             }
+            return response.data;
         })
         .catch(function (error) {
             console.error('Error:', error);
+            throw error;
         });
 }
 
@@ -137,6 +141,65 @@ function insertAndExecuteScript(container, html) {
         }
         script.parentNode.replaceChild(newScript, script);
     }
+}
+
+/**
+ * <li>Function that generates a description based on the parameters received from the Axios call. It makes the entire page more complete and more visually appreciable.</li>
+ * @param dataPostgres - Data received from the Postgres server relating to a player.
+ * @param dataMongo - Data received from the Mongo server relating to a player.
+ */
+function makeDescription(dataPostgres,dataMongo) {
+    const descriptionBox = document.getElementById('box-description');
+    const currentYear = new Date().getFullYear();
+    let phrase1;
+    let phrase2;
+    let phrase3;
+    let phrase4;
+
+
+
+    if (dataPostgres.lastSeason === null) {
+        phrase1 = "";
+    } else if (dataPostgres.lastSeason < 2023) {
+        phrase1 = `, ha lasciato il campo da gioco delle principali competizioni Europee nel  ${dataPostgres.lastSeason}, giocando la sua ultima partita nel ${dataPostgres.Team}.`;
+    } else {
+        phrase1 = `, attualmente mette in mostra le sue capacità giocando per la squadra ${dataPostgres.Team}.`;
+    }
+
+    if(dataPostgres.Foot === null){
+        phrase2 = "";
+    }else if(dataPostgres.Foot === "right"){
+        phrase2 = "E' un giocatore che predilige il controllo del pallone con il piede destro.";
+    }else{
+        phrase2 = "E' un giocatore che predilige il controllo del pallone con il piede sinistro.";
+    }
+
+    if ('MarketValue' in dataPostgres && dataPostgres.MarketValue !== null) {
+        phrase3 = `Attualmente, il suo valore di mercato è stimato intorno a ${dataPostgres.MarketValue}£.`;
+    } else {
+        phrase3 = "";
+    }
+
+    if ((dataPostgres.Position != null && (dataPostgres.Position == "Left Winger" || dataPostgres.Position == "Right Winger" || dataPostgres.Position == "Centre-Forward" || dataPostgres.Position == "Second Striker") ) && (dataMongo.totalGoals != 0 && dataMongo.totalGoals != "Nessun Dato") && (dataMongo.totalAppearances != 0 && dataMongo.totalAppearances != "Nessun Dato")) {
+        let ratio = (dataMongo.totalGoals / dataMongo.totalAppearances).toFixed(2);
+
+        if (ratio >= 0.5 && dataMongo.totalAppearances >= 100) {
+            phrase4 = phrase4 = `Con le sue straordinarie qualità tecniche in attacco, vanta un impressionante rapporto di ${ratio} gol a partita, a testimonianza del suo eccezionale talento offensivo.`;
+        } else if (ratio >= 0.20) {
+            phrase4 = `Con solide competenze tecniche, questo giocatore mantiene un rispettabile rapporto di ${ratio} gol a partita, dimostrando la sua affidabilità e costanza in campo.`;
+        } else if(ratio >= 0.10 && ratio < 0.20 ){
+            phrase4 = `Attacante con qualità mediocri che si mantiene con un rapporto  di ${ratio} gol a partita`;
+        }else {
+            phrase4 = `Non rientra sicuramente nell'elite degli attaccanti migliori con un rapporto  di ${ratio} gol a partita`;
+        }
+    }else {
+        phrase4 = "";
+    }
+
+
+    let description = `${dataPostgres.Name}, classe ${currentYear - dataPostgres.Age}${phrase1} ${phrase2}\n${phrase3}\n${phrase4}`;
+
+    descriptionBox.innerHTML = `<h4>${description}</h4>`;
 }
 
 

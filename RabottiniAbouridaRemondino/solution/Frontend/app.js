@@ -23,7 +23,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 const swaggerUi = require('swagger-ui-express');
-const openApiDocumentation = require('./swagger/MainServerDocumentation.json');
+const openApiDocumentation = require('./swagger/swaggerDocumentation.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
 
 // catch 404 and forward to error handler
