@@ -275,7 +275,8 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 3vw;
+    gap: 2vw;
+    align-items: center;
 }
 .container-ris{
     width: 100%;
@@ -768,7 +769,7 @@ footer{
 
 .btn-lg.dropdown-toggle {
     width: 100%;
-    font-size: 0.95vw;
+    font-size: 0.90vw;
     padding: .75em 1.3em;
     border-radius: 10px;
     white-space: normal;
@@ -800,3 +801,17 @@ footer{
     overflow-x: hidden;
 }
 
+.wrap-advS-item-x{
+    height: auto;
+    width: auto;
+    padding: 1vh;
+    text-align: center;
+}
+.btn-custom-reset {
+    background-color: #CE4A4A;
+    color: #000000;
+    border-color: red;
+    border-radius: 20px;
+    font-size: 1.4vw;
+    font-family: 'Lexend Mega', 'Source Sans Pro';
+}

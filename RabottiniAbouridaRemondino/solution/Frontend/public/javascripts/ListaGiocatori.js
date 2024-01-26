@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const opzioniLogin = document.getElementById('opzioni-login');
     const mostraOpzioni = document.getElementById('mostra-opzioni');
     document.getElementById('advanced_searchbtn').onclick = AdvancedSearch;
-
+    document.getElementById('btn-reset').onclick = resetDropdowns;
 
     mostraBarra.addEventListener('click', function () {
         if (!barraRicerca.classList.contains('visible')) {
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setupClickableRows();
     redirectionPlayerPage();
+
 
 });
 
@@ -227,5 +228,24 @@ function setupClickableRows() {
     });
 }
 
+/**
+ *<li>Function that resets the default values of the dropdown menus when the "X" button is clicked</li>
+ */
+function resetDropdowns() {
+
+    const defaultValues = {
+        'seasons_menu': 'Season',
+        'country_menu': 'Country',
+        'championships_menu': 'Championship',
+        'years_birth_menu': 'Birth',
+        'club_menu': 'Club',
+        'role_menu': 'Role'
+    };
+
+    for (const [dropdownId, defaultValue] of Object.entries(defaultValues)) {
+        const dropdownButton = document.querySelector(`.wrap-filtri #${dropdownId}`).closest('.dropdown').querySelector('.btn.dropdown-toggle');
+        dropdownButton.textContent = defaultValue;
+    }
+}
 
 

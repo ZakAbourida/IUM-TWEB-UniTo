@@ -151,10 +151,10 @@ function insertAndExecuteScript(container, html) {
 function makeDescription(dataPostgres,dataMongo) {
     const descriptionBox = document.getElementById('box-description');
     const currentYear = new Date().getFullYear();
-    let phrase1;
-    let phrase2;
-    let phrase3;
-    let phrase4;
+    let phrase1 = "";
+    let phrase2 = "";
+    let phrase3 = "";
+    let phrase4 = "";
 
 
 
@@ -180,7 +180,7 @@ function makeDescription(dataPostgres,dataMongo) {
         phrase3 = "";
     }
 
-    if ((dataPostgres.Position != null && (dataPostgres.Position == "Left Winger" || dataPostgres.Position == "Right Winger" || dataPostgres.Position == "Centre-Forward" || dataPostgres.Position == "Second Striker") ) && (dataMongo.totalGoals != 0 && dataMongo.totalGoals != "Nessun Dato") && (dataMongo.totalAppearances != 0 && dataMongo.totalAppearances != "Nessun Dato")) {
+    if ((dataPostgres.Position != null && (dataPostgres.Position == "Left Winger" || dataPostgres.Position == "Right Winger" || dataPostgres.Position == "Centre-Forward" || dataPostgres.Position == "Second Striker") ) && (dataMongo.totalAppearances != 0 && dataMongo.totalAppearances != "Nessun Dato")) {
         let ratio = (dataMongo.totalGoals / dataMongo.totalAppearances).toFixed(2);
 
         if (ratio >= 0.5 && dataMongo.totalAppearances >= 100) {
@@ -189,13 +189,10 @@ function makeDescription(dataPostgres,dataMongo) {
             phrase4 = `Con solide competenze tecniche, questo giocatore mantiene un rispettabile rapporto di ${ratio} gol a partita, dimostrando la sua affidabilità e costanza in campo.`;
         } else if(ratio >= 0.10 && ratio < 0.20 ){
             phrase4 = `Attacante con qualità mediocri che si mantiene con un rapporto  di ${ratio} gol a partita`;
-        }else {
+        }else if(ratio < 0.10 && dataMongo.totalAppearances >= 10){
             phrase4 = `Non rientra sicuramente nell'elite degli attaccanti migliori con un rapporto  di ${ratio} gol a partita`;
         }
-    }else {
-        phrase4 = "";
     }
-
 
     let description = `${dataPostgres.Name}, classe ${currentYear - dataPostgres.Age}${phrase1} ${phrase2}\n${phrase3}\n${phrase4}`;
 
