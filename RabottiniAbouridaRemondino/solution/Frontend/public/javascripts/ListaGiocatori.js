@@ -143,7 +143,6 @@ function fillDropMenu(data, url) {
  *
  */
 function AdvancedSearch() {
-
     const Season = getSelectedValueOrFallback('seasons_menu', 'Season');
     const Country = getSelectedValueOrFallback('country_menu', 'Country');
     const Competition = getSelectedValueOrFallback('championships_menu', 'Championship');
@@ -151,27 +150,29 @@ function AdvancedSearch() {
     const Team = getSelectedValueOrFallback('club_menu', 'Club');
     const Role = getSelectedValueOrFallback('role_menu', 'Role');
 
-    const searchDTO = {
-        season: Season,
-        country: Country,
-        competition: Competition,
-        year_birth: Year_Birth,
-        team: Team,
-        role: Role
-    }
 
-    axios.post('/advanced_search', searchDTO, {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(function (response) {
-            fillTable(response.data);
+    if (Season || Country || Competition || Year_Birth || Team || Role) {
+        const searchDTO = {
+            season: Season,
+            country: Country,
+            competition: Competition,
+            year_birth: Year_Birth,
+            team: Team,
+            role: Role
+        };
+
+        axios.post('/advanced_search', searchDTO, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
-        .catch(function (error) {
-            console.error('Error calling Axios:', error);
-        });
-
+            .then(function (response) {
+                fillTable(response.data);
+            })
+            .catch(function (error) {
+                console.error('Error calling Axios:', error);
+            });
+    }
 }
 
 /**
@@ -247,5 +248,6 @@ function resetDropdowns() {
         dropdownButton.textContent = defaultValue;
     }
 }
+
 
 

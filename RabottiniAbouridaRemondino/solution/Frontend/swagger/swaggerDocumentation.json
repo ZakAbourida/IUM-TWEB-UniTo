@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "version": "1.0.0",
+    "title": "MainServerDocumentation",
+    "description": "Documentation of Main Server",
+    "termsOfService": "http://api_url/terms/",
+    "contact": {
+      "name": "Rabottini_Abourida_Remondino",
+      "email": "zakaria.abourida@edu.unito.it",
+      "url": "http://localhost:3000/api-docs"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Main Server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get the login page",
+        "responses": {
+          "200": {
+            "description": "Login page retrieved successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/loadHP": {
+      "get": {
+        "summary": "Load the Home page with the recent games",
+        "responses": {
+          "200": {
+            "description": "Recent games retrieved successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/loadSq": {
+      "post": {
+        "summary": "Post historical matches for a squad",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "squad": "Real Madrid Club de Fútbol"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Squad matches posted successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
